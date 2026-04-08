@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// --- DICTIONARY FOR BILINGUAL SUPPORT ---
+
 const dict = {
   vi: {
     nav: {
