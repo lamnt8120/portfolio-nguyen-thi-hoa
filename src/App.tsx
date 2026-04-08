@@ -15,7 +15,7 @@ const dict = {
       linkedin: "LinkedIn",
       facebook: "Facebook",
       email: "Email",
-      phone: "Gọi ngay",
+      phone: "Gọi",
     },
     tabs: {
       tab1: "Giới thiệu",
