@@ -201,7 +201,7 @@ const Icons = {
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
   Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
-  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
@@ -264,13 +264,15 @@ export default function App() {
             alt="Luật sư Nguyễn Thị Hoa" 
             className="w-full h-full object-cover object-top md:object-center transition-transform duration-[2s] hover:scale-105"
           />
-          <div className="absolute inset-0 bg-[#1A233A]/20 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/40 to-transparent md:via-[#1A233A]/60"></div>
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/70 to-transparent pointer-events-none"></div>
+          {/* Lớp phủ mờ nhẹ hơn để nhìn rõ nhân vật */}
+          <div className="absolute inset-0 bg-black/5 mix-blend-multiply"></div>
+          {/* Gradient tinh chỉnh để gương mặt sáng hơn */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/20 to-transparent md:via-[#1A233A]/30"></div>
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/40 to-transparent pointer-events-none"></div>
 
           {/* === TOP RIGHT: LANGUAGE TOGGLE SWITCH === */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:right-12 z-30 animate-reveal">
-            <div className="flex items-center bg-[#1A233A]/40 border border-white/15 backdrop-blur-md p-1 rounded-full shadow-sm">
+            <div className="flex items-center bg-[#1A233A]/40 border border-white/10 backdrop-blur-md p-1 rounded-full shadow-lg">
               <div className="pl-2.5 pr-1.5 text-white/80">
                 <Icons.Globe />
               </div>
@@ -287,7 +289,7 @@ export default function App() {
 
           {/* === TOP LEFT: VERTICAL EXPANDING CONTACT BUTTONS === */}
           <div className="absolute top-4 left-4 md:top-8 md:left-8 lg:top-12 lg:left-12 flex flex-col items-start gap-3 z-30 animate-tab">
-            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <Icons.LinkedIn />
               </div>
@@ -296,7 +298,7 @@ export default function App() {
               </span>
             </a>
             
-            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <Icons.Facebook />
               </div>
@@ -305,7 +307,7 @@ export default function App() {
               </span>
             </a>
 
-            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <Icons.Mail />
               </div>
@@ -314,7 +316,7 @@ export default function App() {
               </span>
             </a>
 
-            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <Icons.Phone />
               </div>
@@ -324,12 +326,12 @@ export default function App() {
             </a>
           </div>
           
-          {/* Name & Titles */}
+          {/* Name & Titles - Đã Tinh Chỉnh: Nhỏ lại và Trên 1 dòng */}
           <div className="absolute bottom-0 left-0 w-full p-8 pb-16 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal delay-3 pointer-events-none">
-            <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-serif font-medium mb-3 text-white drop-shadow-2xl leading-[1.1]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-3 text-white drop-shadow-2xl whitespace-nowrap tracking-tight">
               {t.hero.name}
             </h1>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] lg:text-xs font-semibold uppercase tracking-[0.3em] opacity-90">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] lg:text-xs font-semibold uppercase tracking-[0.25em] opacity-90">
               <span className="bg-white/10 px-3 py-1 rounded backdrop-blur-md">{t.hero.role1}</span>
               <span className="hidden sm:block text-[#B8905B] text-lg">•</span>
               <span className="text-[#B8905B] font-bold">{t.hero.role2}</span>
@@ -353,21 +355,21 @@ export default function App() {
 
           <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-8 md:p-12 lg:p-16 pb-24">
             
-            {/* TAB 1: GIỚI THIỆU (ARCHITECTURE RE-ORDERED) */}
+            {/* TAB 1: GIỚI THIỆU */}
             {activeTab === 'tab1' && (
               <div className="max-w-4xl mx-auto md:mx-0 space-y-16">
                 
                 {/* 1. Hook & Summary */}
                 <section className="animate-reveal">
-                  <h2 className="text-3xl md:text-[2.75rem] font-serif font-medium text-[#1A233A] leading-[1.2] mb-8">
+                  <h2 className="text-2xl md:text-4xl font-serif font-medium text-[#1A233A] leading-tight mb-8">
                     {t.summary.hook}
                   </h2>
-                  <p className="text-base md:text-[1.125rem] text-slate-500 font-light leading-relaxed">
+                  <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed">
                     {t.summary.intro}
                   </p>
                 </section>
 
-                {/* 2. THE BRAND QUOTE (VISUAL CENTERPIECE) */}
+                {/* 2. THE BRAND QUOTE */}
                 <section className="animate-reveal delay-1 relative">
                   <div className="absolute -top-10 -left-6 text-[#B8905B]/10 scale-[2.5]">
                     <Icons.QuoteIcon />
@@ -389,7 +391,7 @@ export default function App() {
                   </div>
                 </section>
 
-                {/* 3. CORE COMPETENCIES (THE SKILLS) + LOGOS UNDER BULLET 3 */}
+                {/* 3. CORE COMPETENCIES + LOGOS */}
                 <section className="animate-reveal delay-2 grid gap-10">
                   {[1, 2, 3].map(num => (
                     <div key={num} className="group flex flex-col gap-3">
@@ -401,7 +403,6 @@ export default function App() {
                         </div>
                       </div>
                       
-                      {/* 4 LOGO ĐI KÈM MỤC LỢI THẾ LÃNH ĐẠO (BULLET 3) */}
                       {num === 3 && (
                         <div className="pl-14 md:pl-24 pt-6">
                           <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
@@ -416,7 +417,7 @@ export default function App() {
                   ))}
                 </section>
 
-                {/* 4. KEY STATS (THE PROOF) */}
+                {/* 4. KEY STATS */}
                 <section className="animate-reveal delay-3 bg-white p-10 md:p-12 rounded-[2rem] border border-slate-200 shadow-sm grid grid-cols-1 sm:grid-cols-3 gap-12">
                   {[
                     { val: t.stats.expValue, lab: t.stats.expLabel },
@@ -424,15 +425,14 @@ export default function App() {
                     { val: t.stats.fdiValue, lab: t.stats.fdiLabel },
                   ].map((stat, i) => (
                     <div key={i} className="text-center sm:text-left transition-transform hover:-translate-y-2">
-                      <h3 className="text-4xl md:text-5xl font-serif text-[#B8905B] mb-3">{stat.val}</h3>
+                      <h3 className="text-3xl md:text-5xl font-serif text-[#B8905B] mb-3">{stat.val}</h3>
                       <p className="text-[#1A233A] text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{stat.lab}</p>
                     </div>
                   ))}
                 </section>
 
-                {/* 5. FORMAL CREDENTIALS (SYNCHRONIZED) */}
+                {/* 5. FORMAL CREDENTIALS */}
                 <section className="animate-reveal delay-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Education Card */}
                   <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
                     <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
                       <div className="text-[#B8905B] scale-125"><Icons.GraduationCap /></div>
@@ -448,7 +448,6 @@ export default function App() {
                     </ul>
                   </div>
                   
-                  {/* Associations Card (Synchronized Bullets) */}
                   <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
                     <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
                       <div className="text-[#B8905B] scale-125"><Icons.Users /></div>
@@ -458,7 +457,7 @@ export default function App() {
                       {t.profile.assoItems.map((item, idx) => (
                         <li key={idx} className="flex gap-4 text-sm text-slate-500 font-light leading-relaxed">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#B8905B] mt-1.5 shrink-0 opacity-40"></span>
-                          <span className={idx === 0 ? "font-medium text-[#1A233A]" : ""}>{item}</span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -467,7 +466,7 @@ export default function App() {
               </div>
             )}
 
-            {/* TAB 2: TƯ VẤN (ENHANCED CARDS) */}
+            {/* TAB 2: TƯ VẤN */}
             {activeTab === 'tab2' && (
               <div className="animate-reveal max-w-5xl space-y-16">
                 <section>
@@ -525,17 +524,16 @@ export default function App() {
               </div>
             )}
 
-            {/* TAB 3: DIỄN GIẢ (PROFESSIONAL LISTS) */}
+            {/* TAB 3: DIỄN GIẢ */}
             {activeTab === 'tab3' && (
               <div className="animate-reveal max-w-4xl space-y-16">
                 <section>
-                  <h3 className="text-3xl md:text-[2.75rem] font-serif text-[#1A233A] mb-8">{t.speaker.title}</h3>
+                  <h3 className="text-3xl md:text-4xl font-serif text-[#1A233A] mb-8">{t.speaker.title}</h3>
                   <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed max-w-3xl mb-12">
                     {t.speaker.desc}
                   </p>
 
                   <div className="grid gap-12">
-                    {/* Teaching */}
                     <div>
                       <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-5">
                         <div className="text-[#B8905B]"><Icons.GraduationCap /></div>
@@ -551,7 +549,6 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* Events */}
                     <div>
                       <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-5">
                         <div className="text-[#B8905B]"><Icons.Users /></div>
