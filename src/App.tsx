@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 // --- DICTIONARY FOR BILINGUAL SUPPORT ---
 const dict = {
   vi: {
-    nav: {
-      logoSub: "Luật sư & Cố vấn",
-    },
     hero: {
       name: "Nguyễn Thị Hoa",
       role1: "Giám Đốc",
@@ -25,7 +22,7 @@ const dict = {
     summary: {
       hook: "Chuyên gia Cấu trúc Đầu tư & Quản trị Rủi ro pháp lý.",
       intro: "Với hơn 15 năm kinh nghiệm, Luật sư Nguyễn Thị Hoa cung cấp định hướng pháp lý chiến lược cho các dự án đầu tư quy mô lớn, giải quyết tranh chấp phức tạp và thiết lập khung tuân thủ toàn diện cho hệ thống Ngân hàng, Tài chính và Bất động sản.",
-      quote: "Nếu ví pháp luật như những tấm lụa đa sắc, với vai trò của một luật sư, tôi sẽ đồng hành cùng khách hàng dệt 'CHIẾC KHIÊN LỤA' của riêng họ trên thương trường.",
+      quote: "“Nếu ví pháp luật như những tấm lụa đa sắc, với vai trò của một luật sư, tôi sẽ đồng hành cùng khách hàng dệt ‘CHIẾC KHIÊN LỤA’ của riêng họ trên thương trường.”",
       quoteAuthor: "Luật sư Hoa Nguyễn",
       bullet1Title: "Năng lực Cốt lõi",
       bullet1Desc: "Chuyên sâu tư vấn Doanh nghiệp, M&A và Tái cấu trúc tài chính. Sở hữu thế mạnh đặc biệt trong việc thiết kế khung pháp lý cho hoạt động quản lý ngoại hối và thanh toán quốc tế.",
@@ -80,21 +77,22 @@ const dict = {
       ]
     },
     speaker: {
-      title: "Giảng dạy & Đào tạo",
-      desc: "Bên cạnh công tác điều hành và tư vấn pháp lý, Luật sư Hoa còn trực tiếp tham gia công tác giảng dạy học thuật và đào tạo pháp chế nội bộ cho các tổ chức lớn.",
-      items: [
+      title: "Diễn giả & Đào tạo",
+      desc: "Bên cạnh công tác điều hành và tư vấn pháp lý, Luật sư Hoa còn trực tiếp tham gia công tác giảng dạy học thuật và diễn thuyết tại các diễn đàn doanh nhân lớn.",
+      teachingTitle: "Công tác Giảng dạy & Học thuật",
+      teachingItems: [
         "Giảng viên thỉnh giảng (Bộ môn Luật chung & Tài chính Ngân hàng) tại Đại học Thành Đông (2019 - Nay).",
-        "Giảng viên nội bộ chuyên đề Quản lý Ngoại hối và Thanh toán Quốc tế tại Techcombank (2013 - 2018).",
-        "Cố vấn chuyên môn và Diễn giả thường niên tại các diễn đàn doanh nhân của JCI Việt Nam."
+        "Giảng viên nội bộ chuyên đề Quản lý Ngoại hối và Thanh toán Quốc tế tại Techcombank (2013 - 2018)."
       ],
-      contactText: "Để mời Luật sư tham gia giảng dạy hoặc đào tạo doanh nghiệp:",
-      contactBtn: "Gửi Yêu Cầu Đào Tạo"
+      eventTitle: "Sự kiện & Diễn đàn JCI",
+      eventItems: [
+        "Đang cập nhật thông tin sự kiện..."
+      ],
+      contactText: "Để mời Luật sư tham gia giảng dạy hoặc diễn thuyết sự kiện:",
+      contactBtn: "Gửi Yêu Cầu Liên Hệ"
     }
   },
   en: {
-    nav: {
-      logoSub: "Attorney & Counsel",
-    },
     hero: {
       name: "Hoa Nguyen",
       role1: "CEO",
@@ -114,7 +112,7 @@ const dict = {
     summary: {
       hook: "Risk management and investment structuring expert.",
       intro: "With over 15 years of experience, Attorney Hoa Nguyen provides strategic legal guidance for large-scale investment projects, complex dispute resolution, and regulatory compliance across the Banking, Finance, and Real Estate sectors.",
-      quote: "If the law is likened to a tapestry of multi-colored silk, as a legal counsel, I will stand by my clients to weave their very own 'SILK SHIELD' in the business arena.",
+      quote: "“If the law is likened to a tapestry of multi-colored silk, as a legal counsel, I will stand by my clients to weave their very own ‘SILK SHIELD’ in the business arena.”",
       quoteAuthor: "Attorney Hoa Nguyen",
       bullet1Title: "Core Competencies",
       bullet1Desc: "Corporate advisory, M&A, and financial restructuring. Highly proficient in designing legal frameworks for financial activities, FX management, and cross-border payments.",
@@ -170,14 +168,18 @@ const dict = {
     },
     speaker: {
       title: "Lecturing & Corporate Training",
-      desc: "In addition to her executive and legal advisory roles, Attorney Hoa is actively involved in academic lecturing and internal corporate compliance training.",
-      items: [
+      desc: "In addition to her executive and legal advisory roles, Attorney Hoa is actively involved in academic lecturing and speaking at major business forums.",
+      teachingTitle: "Academic Lecturing",
+      teachingItems: [
         "Visiting Lecturer (Law & Banking Finance) at Thanh Dong University (2019 - Present).",
-        "Internal Lecturer on FX and International Payments at Techcombank (2013 - 2018).",
-        "Professional Advisor & Regular Speaker at JCI Vietnam entrepreneur forums."
+        "Internal Lecturer on FX and International Payments at Techcombank (2013 - 2018)."
       ],
-      contactText: "To invite Attorney Hoa for legal events or corporate training:",
-      contactBtn: "Send Training Request"
+      eventTitle: "JCI Events & Forums",
+      eventItems: [
+        "Updating event information..."
+      ],
+      contactText: "To invite Attorney Hoa for academic lectures or speaking events:",
+      contactBtn: "Send Request"
     }
   }
 };
@@ -185,22 +187,22 @@ const dict = {
 // --- ICONS ---
 const strokeW = "1.5";
 const Icons = {
-  LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
-  Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
-  Mail: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
-  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>,
+  LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
+  Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
+  Mail: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
+  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>,
   Scale: ({size=24}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>,
   Building: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>,
   Briefcase: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-  ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
-  Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
+  ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+  Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
   Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
   Users: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-  QuoteIcon: () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" className="opacity-10"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+  QuoteIcon: () => <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="opacity-10"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
 };
 
 export default function App() {
@@ -211,34 +213,34 @@ export default function App() {
   const toggleLang = () => setLang(prev => prev === 'vi' ? 'en' : 'vi');
 
   return (
-    <div className="bg-[#F6F5F2] font-sans text-slate-800 selection:bg-[#1A233A] selection:text-white">
+    <div className="bg-[#F8F9FA] font-sans text-[#334155] selection:bg-[#B8905B] selection:text-white">
       
-      {/* CSS: Config Tailwind v4 trực tiếp & Import Fonts Tiếng Việt */}
+      {/* CSS: Config Tailwind v4 trực tiếp & Import Fonts Chuẩn Quốc Tế */}
       <style>{`
-        /* 1. Import Fonts chuẩn Tiếng Việt từ Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+        /* 1. Import Fonts: Playfair Display (Serif quyền lực) + Inter (Sans-serif cực kỳ sắc nét) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
 
-        /* 2. Cấu hình Tailwind v4 thông qua @theme (Thay thế cho tailwind.config.js) */
+        /* 2. Cấu hình Tailwind v4 */
         @theme {
-          --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
-          --font-serif: "Lora", ui-serif, Georgia, serif;
+          --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+          --font-serif: "Playfair Display", ui-serif, Georgia, serif;
         }
 
-        /* 3. Fallback đảm bảo Font luôn nhận trên mọi trình duyệt/môi trường */
-        .font-sans { font-family: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif !important; }
-        .font-serif { font-family: "Lora", ui-serif, Georgia, serif !important; }
+        /* 3. Fallback Fonts */
+        .font-sans { font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important; }
+        .font-serif { font-family: "Playfair Display", ui-serif, Georgia, serif !important; }
 
         /* 4. Utilities Tùy chỉnh */
         .hide-scroll::-webkit-scrollbar { width: 4px; }
         .hide-scroll::-webkit-scrollbar-track { background: transparent; }
-        .hide-scroll::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
-        .hide-scroll::-webkit-scrollbar-thumb:hover { background: #CBD5E1; }
+        .hide-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+        .hide-scroll::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
         
         @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
+          from { opacity: 0; transform: translateY(12px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-tab { animation: fadeIn 0.4s ease-out forwards; }
+        .animate-tab { animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       `}</style>
 
       {/* --- SPLIT SCREEN LAYOUT --- */}
@@ -252,140 +254,166 @@ export default function App() {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-[#1A233A]/20 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/60 to-transparent md:from-[#1A233A] md:via-[#1A233A]/80 md:to-transparent"></div>
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/50 to-transparent md:from-[#1A233A] md:via-[#1A233A]/70 md:to-transparent"></div>
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/70 to-transparent"></div>
 
           {/* === TOP BAR: CONTACT BUTTONS === */}
-          <div className="absolute top-0 left-0 w-full p-4 md:p-8 lg:p-12 flex flex-nowrap items-center justify-start gap-2 md:gap-3 z-10 animate-tab overflow-x-auto hide-scroll">
-            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" title="LinkedIn" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white hover:text-[#1A233A] transition-all duration-300 rounded-full group shadow-sm">
+          <div className="absolute top-0 left-0 w-full p-5 md:p-8 lg:p-12 flex flex-nowrap items-center justify-start gap-3 z-10 animate-tab overflow-x-auto hide-scroll">
+            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
               <Icons.LinkedIn />
-              <span className="hidden lg:inline text-[11px] font-semibold tracking-widest uppercase">{t.socials.linkedin}</span>
+              <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.linkedin}</span>
             </a>
-            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" title="Facebook" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white hover:text-[#1A233A] transition-all duration-300 rounded-full group shadow-sm">
+            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
               <Icons.Facebook />
-              <span className="hidden lg:inline text-[11px] font-semibold tracking-widest uppercase">{t.socials.facebook}</span>
+              <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.facebook}</span>
             </a>
-            <a href="mailto:hoant@paxlaw.vn" title="Email" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white hover:text-[#1A233A] transition-all duration-300 rounded-full group shadow-sm">
+            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
               <Icons.Mail />
-              <span className="hidden lg:inline text-[11px] font-semibold tracking-widest uppercase">{t.socials.email}</span>
+              <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.email}</span>
             </a>
-            <a href="tel:+84911553686" title="Hotline" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white hover:text-[#1A233A] transition-all duration-300 rounded-full group shadow-sm">
+            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-[#B8905B]/90 border border-[#B8905B] backdrop-blur-md hover:bg-white hover:border-white hover:text-[#1A233A] text-white transition-all duration-300 rounded-full group shadow-sm">
               <Icons.Phone />
-              <span className="hidden lg:inline text-[11px] font-bold tracking-widest uppercase">{t.socials.phone}</span>
+              <span className="hidden lg:inline text-[10px] font-bold tracking-[0.15em] uppercase">{t.socials.phone}</span>
             </a>
           </div>
           
           {/* Name & Titles */}
           <div className="absolute bottom-0 left-0 w-full p-5 md:p-8 lg:p-12 text-white flex flex-col justify-end items-start animate-tab">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-1 md:mb-3 text-[#F6F5F2] drop-shadow-lg leading-tight pr-4 break-words">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-medium mb-2 md:mb-4 text-white drop-shadow-lg leading-tight pr-4">
               {t.hero.name}
             </h1>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-[9px] md:text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] mb-1 md:mb-4 drop-shadow">
-              <span className="text-white/90">{t.hero.role1}</span>
-              <span className="hidden sm:block text-[#B8905B]/50">|</span>
-              <span className="text-[#B8905B]">{t.hero.role2}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-[0.25em] mb-2 md:mb-4 drop-shadow text-white/90">
+              <span>{t.hero.role1}</span>
+              <span className="hidden sm:block text-[#B8905B]/60">|</span>
+              <span className="text-[#B8905B] font-bold">{t.hero.role2}</span>
             </div>
           </div>
         </div>
 
         {/* === RIGHT PANEL: TABS & CONTENT === */}
-        <div className="flex-1 flex flex-col h-[58dvh] md:h-full overflow-hidden bg-[#F6F5F2] rounded-t-3xl md:rounded-none -mt-4 md:mt-0 relative z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] md:shadow-none">
+        <div className="flex-1 flex flex-col overflow-hidden bg-[#F8F9FA] rounded-t-3xl md:rounded-none -mt-5 md:mt-0 relative z-20 shadow-[0_-15px_40px_rgba(0,0,0,0.2)] md:shadow-none">
           
           {/* --- STICKY TABS HEADER --- */}
-          <div className="shrink-0 bg-white border-b border-slate-200 px-5 md:px-8 lg:px-12 pt-4 md:pt-6 lg:pt-10 z-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] flex justify-between items-end rounded-t-3xl md:rounded-none">
-            <div className="flex gap-5 md:gap-8 lg:gap-12 overflow-x-auto hide-scroll flex-1 pr-4 md:pr-8">
+          <div className="shrink-0 bg-white border-b border-slate-200 px-6 md:px-10 lg:px-14 pt-5 md:pt-8 lg:pt-12 z-10 flex justify-between items-end rounded-t-3xl md:rounded-none">
+            <div className="flex gap-6 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1 pr-4 md:pr-8">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-3 md:pb-4 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold uppercase tracking-widest transition-all duration-300 relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1A233A]' : 'text-slate-400 hover:text-slate-600'}`}>
+                <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-4 md:pb-5 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1A233A]' : 'text-slate-400 hover:text-slate-700'}`}>
                   {t.tabs[tab]}
-                  <span className={`absolute bottom-0 left-0 w-full h-[2.5px] bg-[#B8905B] transition-transform duration-300 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#1A233A] transition-transform duration-300 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               ))}
             </div>
-            <div className="pb-2 md:pb-3 pl-3 md:pl-4 shrink-0 border-l border-slate-200">
-              <button onClick={toggleLang} className="flex items-center justify-center gap-1.5 h-8 px-3 md:h-10 md:px-5 bg-[#1A233A] text-white hover:bg-[#B8905B] hover:text-[#1A233A] transition-all duration-300 rounded-full shadow-md hover:shadow-lg border border-[#1A233A] hover:border-[#B8905B]">
+            <div className="pb-3 md:pb-4 pl-4 md:pl-6 shrink-0">
+              <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-8 px-3 md:h-9 md:px-4 bg-white text-[#1A233A] hover:bg-[#F8F9FA] transition-all duration-300 rounded-full border border-slate-200">
                 <Icons.Globe />
-                <span className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
+                <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
               </button>
             </div>
           </div>
 
           {/* --- SCROLLABLE CONTENT AREA --- */}
-          <div className="flex-1 overflow-y-auto hide-scroll p-5 md:p-8 lg:p-12 pb-12 bg-white/50">
+          <div className="flex-1 overflow-y-auto hide-scroll p-6 md:p-10 lg:p-14 pb-16">
             
             {/* TAB 1: GIỚI THIỆU */}
             {activeTab === 'tab1' && (
-              <div className="animate-tab max-w-4xl">
+              <div className="animate-tab max-w-4xl mx-auto md:mx-0">
+                
                 {/* Intro Hook */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#1A233A] leading-tight mb-4 md:mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-serif font-medium text-[#1A233A] leading-snug mb-5 md:mb-6">
                   {t.summary.hook}
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-slate-600 font-light leading-relaxed mb-8 md:mb-10">
+                <p className="text-sm sm:text-base md:text-[17px] text-slate-500 font-light leading-relaxed mb-10 md:mb-12">
                   {t.summary.intro}
                 </p>
 
-                {/* MỚI THÊM: KHỐI TRÍCH DẪN (QUOTE) CHIẾC KHIÊN LỤA */}
-                <div className="relative bg-white p-6 md:p-10 rounded-2xl border border-[#B8905B]/30 shadow-sm mb-10 md:mb-14 flex flex-col items-center text-center">
-                  <div className="absolute top-4 left-6 text-[#B8905B]">
+                {/* STATS KHỔNG LỒ */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 mb-10 md:mb-14 border-y border-slate-200 py-8 md:py-10">
+                  <div>
+                    <h3 className="text-3xl md:text-5xl font-serif text-[#B8905B] mb-2">{t.stats.expValue}</h3>
+                    <p className="text-[#1A233A] text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">{t.stats.expLabel}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl md:text-5xl font-serif text-[#B8905B] mb-2">{t.stats.dealValue}</h3>
+                    <p className="text-[#1A233A] text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">{t.stats.dealLabel}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl md:text-5xl font-serif text-[#B8905B] mb-2">{t.stats.fdiValue}</h3>
+                    <p className="text-[#1A233A] text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">{t.stats.fdiLabel}</p>
+                  </div>
+                </div>
+
+                {/* KHỐI TRÍCH DẪN (QUOTE) */}
+                <div className="relative bg-[#1A233A] p-8 md:p-12 lg:p-14 rounded-2xl shadow-xl mb-12 md:mb-16 flex flex-col items-center text-center overflow-hidden">
+                  <div className="absolute -top-6 -left-2 text-[#B8905B]/20 scale-150">
                     <Icons.QuoteIcon />
                   </div>
-                  <p className="relative z-10 text-lg md:text-xl lg:text-2xl font-serif italic text-[#1A233A] leading-relaxed max-w-3xl mt-4">
-                    "{t.summary.quote}"
+                  <p className="relative z-10 text-lg md:text-xl lg:text-2xl font-serif font-normal text-[#F6F5F2] leading-[1.8] md:leading-[2] max-w-3xl tracking-wide">
+                    {t.summary.quote}
                   </p>
-                  <div className="relative z-10 mt-6 flex flex-col items-center">
-                    <span className="w-12 h-[2px] bg-[#B8905B] mb-3"></span>
-                    <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#B8905B]">
+                  <div className="relative z-10 mt-8 flex flex-col items-center">
+                    <span className="w-12 h-[1px] bg-[#B8905B] mb-4"></span>
+                    <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#B8905B]">
                       {t.summary.quoteAuthor}
                     </span>
-                    <span className="text-[10px] md:text-xs font-medium text-slate-400 tracking-wider uppercase mt-1">
+                    <span className="text-[10px] md:text-xs font-light text-slate-300 tracking-wider uppercase mt-1.5">
                       {t.hero.role1} / Founder Paxlaw
                     </span>
                   </div>
                 </div>
 
                 {/* Bullets */}
-                <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
-                  <div className="border-l-2 border-[#B8905B] pl-4 md:pl-5">
-                    <h4 className="text-[11px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-[#1A233A] mb-1 md:mb-2">{t.summary.bullet1Title}</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet1Desc}</p>
+                <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
+                  <div className="flex gap-4 md:gap-6">
+                    <div className="w-[1px] bg-[#B8905B] shrink-0 mt-2"></div>
+                    <div>
+                      <h4 className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#1A233A] mb-2">{t.summary.bullet1Title}</h4>
+                      <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet1Desc}</p>
+                    </div>
                   </div>
-                  <div className="border-l-2 border-[#B8905B] pl-4 md:pl-5">
-                    <h4 className="text-[11px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-[#1A233A] mb-1 md:mb-2">{t.summary.bullet2Title}</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet2Desc}</p>
+                  <div className="flex gap-4 md:gap-6">
+                    <div className="w-[1px] bg-[#B8905B] shrink-0 mt-2"></div>
+                    <div>
+                      <h4 className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#1A233A] mb-2">{t.summary.bullet2Title}</h4>
+                      <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet2Desc}</p>
+                    </div>
                   </div>
-                  <div className="border-l-2 border-[#B8905B] pl-4 md:pl-5">
-                    <h4 className="text-[11px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-[#1A233A] mb-1 md:mb-2">{t.summary.bullet3Title}</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet3Desc}</p>
+                  <div className="flex gap-4 md:gap-6">
+                    <div className="w-[1px] bg-[#B8905B] shrink-0 mt-2"></div>
+                    <div>
+                      <h4 className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#1A233A] mb-2">{t.summary.bullet3Title}</h4>
+                      <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary.bullet3Desc}</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* MỚI THÊM: KHỐI HỌC VẤN & HIỆP HỘI (Từ CV) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
-                  {/* Education & Certs */}
-                  <div className="bg-white p-5 md:p-7 rounded-2xl border border-slate-100 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3">
-                      <div className="text-[#B8905B] bg-[#F6F5F2] p-2 rounded-lg"><Icons.GraduationCap /></div>
-                      <h3 className="font-serif text-[#1A233A] text-lg md:text-xl">{t.profile.eduTitle}</h3>
+                {/* KHỐI HỌC VẤN & HIỆP HỘI */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
+                  {/* Education */}
+                  <div className="bg-white p-6 md:p-8 rounded-xl border border-slate-200">
+                    <div className="flex items-center gap-3 mb-5 border-b border-slate-100 pb-4">
+                      <div className="text-[#B8905B]"><Icons.GraduationCap /></div>
+                      <h3 className="font-serif text-[#1A233A] text-lg md:text-xl font-medium">{t.profile.eduTitle}</h3>
                     </div>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {t.profile.eduItems.map((item, idx) => (
-                        <li key={idx} className="flex gap-2.5 text-xs md:text-sm text-slate-600 font-light leading-relaxed">
-                          <span className="text-[#B8905B] mt-1">•</span>
+                        <li key={idx} className="flex gap-3 text-sm text-slate-500 font-light leading-relaxed">
+                          <span className="text-[#B8905B] mt-0.5 opacity-50">•</span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Associations & Languages */}
-                  <div className="bg-white p-5 md:p-7 rounded-2xl border border-slate-100 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3">
-                      <div className="text-[#B8905B] bg-[#F6F5F2] p-2 rounded-lg"><Icons.Users /></div>
-                      <h3 className="font-serif text-[#1A233A] text-lg md:text-xl">{t.profile.assoTitle}</h3>
+                  {/* Associations */}
+                  <div className="bg-white p-6 md:p-8 rounded-xl border border-slate-200">
+                    <div className="flex items-center gap-3 mb-5 border-b border-slate-100 pb-4">
+                      <div className="text-[#B8905B]"><Icons.Users /></div>
+                      <h3 className="font-serif text-[#1A233A] text-lg md:text-xl font-medium">{t.profile.assoTitle}</h3>
                     </div>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {t.profile.assoItems.map((item, idx) => (
-                        <li key={idx} className="flex gap-2.5 text-xs md:text-sm text-slate-600 font-light leading-relaxed">
-                          <span className="text-[#B8905B] mt-1">
+                        <li key={idx} className="flex gap-3 text-sm text-slate-500 font-light leading-relaxed">
+                          <span className="text-[#B8905B] mt-0.5 opacity-50">
                             {idx === 0 ? <Icons.Award /> : "•"}
                           </span>
                           <span className={idx === 0 ? "font-medium text-[#1A233A]" : ""}>{item}</span>
@@ -395,48 +423,32 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Logos */}
-                <div className="flex flex-wrap items-center justify-center md:justify-between gap-5 md:gap-6 mb-8 md:mb-12">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-5 sm:h-6 md:h-8 lg:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 bg-white p-4 md:p-6 rounded-2xl border border-slate-100 shadow-sm mb-6">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#1A233A] mb-1">{t.stats.expValue}</h3>
-                    <p className="text-slate-400 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest">{t.stats.expLabel}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#1A233A] mb-1">{t.stats.dealValue}</h3>
-                    <p className="text-slate-400 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest">{t.stats.dealLabel}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#1A233A] mb-1">{t.stats.fdiValue}</h3>
-                    <p className="text-slate-400 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest">{t.stats.fdiLabel}</p>
-                  </div>
+                {/* Logos Đối Tác */}
+                <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank Logo" className="h-5 sm:h-6 md:h-8 w-auto object-contain" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
                 </div>
               </div>
             )}
 
             {/* TAB 2: LUẬT SƯ TƯ VẤN */}
             {activeTab === 'tab2' && (
-              <div className="animate-tab max-w-4xl">
+              <div className="animate-tab max-w-4xl mx-auto md:mx-0">
                 
-                <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#1A233A] mb-4 md:mb-6 border-b border-slate-200 pb-3 md:pb-4">{t.practice.title}</h3>
+                <h3 className="text-xl md:text-3xl font-serif text-[#1A233A] mb-6 md:mb-8">{t.practice.title}</h3>
                 
                 {/* Practice Areas Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 mb-12 md:mb-16">
                   {[
                     { id: 'ma', icon: <Icons.Briefcase /> },
                     { id: 'finance', icon: <Icons.Building /> },
                     { id: 'realEstate', icon: <Icons.Scale size={24} /> },
                     { id: 'dispute', icon: <Icons.Shield /> }
                   ].map((item, idx) => (
-                    <div key={idx} className="bg-white p-6 md:p-8 rounded-[20px] border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#B8905B]/40 transition-all duration-300 flex flex-col">
-                      <div className="text-[#B8905B] mb-4 md:mb-5 transform scale-110 origin-left">
+                    <div key={idx} className="bg-white p-8 md:p-10 rounded-xl border border-slate-200 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-10px_rgba(26,35,58,0.1)] transition-all duration-300">
+                      <div className="text-[#B8905B] mb-6">
                         {item.icon}
                       </div>
                       <h4 className="text-lg md:text-xl font-serif text-[#1A233A] mb-3 leading-snug">{t.practice[item.id].title}</h4>
@@ -445,18 +457,18 @@ export default function App() {
                   ))}
                 </div>
 
-                <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#1A233A] mb-4 md:mb-6 border-b border-slate-200 pb-3 md:pb-4">{t.cases.title}</h3>
+                <h3 className="text-xl md:text-3xl font-serif text-[#1A233A] mb-6 md:mb-8">{t.cases.title}</h3>
                 
-                {/* Highlight Cases List - Đã map với 5 vụ lấy từ CV */}
-                <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
+                {/* Highlight Cases List */}
+                <div className="space-y-3 md:space-y-4 mb-10 md:mb-16">
                   {t.cases.list.map((caseItem, idx) => (
-                    <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 md:p-5 bg-white border border-slate-100 rounded-xl hover:border-slate-200 transition-colors">
-                      <div className="flex items-center gap-3.5 mb-3 sm:mb-0">
-                        <div className="text-[#B8905B]"><Icons.Check /></div>
-                        <p className="font-medium text-[#1A233A] text-sm md:text-base">{caseItem.title}</p>
+                    <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-5 md:p-6 bg-white border border-slate-200 rounded-xl hover:border-[#1A233A] transition-colors group">
+                      <div className="flex items-center gap-4 mb-3 sm:mb-0">
+                        <div className="text-slate-300 group-hover:text-[#B8905B] transition-colors"><Icons.ArrowRight /></div>
+                        <p className="font-medium text-[#1A233A] text-sm md:text-[15px]">{caseItem.title}</p>
                       </div>
                       <div className="sm:text-right pl-8 sm:pl-0">
-                        <span className="inline-block px-3 py-1.5 bg-[#F6F5F2] text-[#B8905B] text-[10px] md:text-xs font-semibold tracking-widest uppercase rounded-md">
+                        <span className="inline-block px-3 py-1.5 bg-[#1A233A] text-[#B8905B] text-[10px] md:text-[11px] font-bold tracking-widest uppercase rounded">
                           {caseItem.result}
                         </span>
                       </div>
@@ -465,32 +477,24 @@ export default function App() {
                 </div>
 
                 {/* Call to action */}
-                <div className="relative bg-[#1A233A] rounded-[24px] p-6 md:p-8 lg:p-10 overflow-hidden shadow-xl mb-6 border border-[#B8905B]/20 group">
-                  <div className="absolute -right-8 -top-8 text-white/5 transform rotate-12 group-hover:rotate-0 transition-transform duration-700 pointer-events-none">
-                    <Icons.Scale size={180} />
+                <div className="relative bg-[#F8F9FA] rounded-xl p-8 md:p-12 overflow-hidden border border-[#B8905B]/30 flex flex-col items-center text-center">
+                  <div className="max-w-2xl mb-8">
+                    <span className="text-[#B8905B] text-[10px] font-bold tracking-widest uppercase mb-4 block">{t.practice.ctaSubTitle}</span>
+                    <h4 className="text-2xl md:text-3xl font-serif text-[#1A233A] mb-4 leading-snug">
+                      {t.practice.ctaTitle}
+                    </h4>
+                    <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">
+                      {t.practice.ctaText}
+                    </p>
                   </div>
-                  <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
-                    <div className="max-w-xl">
-                      <div className="flex items-center gap-3 mb-3 md:mb-4">
-                         <span className="w-8 h-[1px] bg-[#B8905B]"></span>
-                         <span className="text-[#B8905B] text-[9px] md:text-[10px] font-bold tracking-widest uppercase">{t.practice.ctaSubTitle}</span>
-                      </div>
-                      <h4 className="text-xl md:text-2xl lg:text-3xl font-serif text-white mb-2 md:mb-3 leading-snug">
-                        {t.practice.ctaTitle}
-                      </h4>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-300 font-light leading-relaxed">
-                        {t.practice.ctaText}
-                      </p>
-                    </div>
-                    <div className="flex-shrink-0 mt-2 md:mt-0 flex flex-col items-start md:items-center">
-                      <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2.5 bg-[#B8905B] text-[#1A233A] px-6 py-3.5 md:px-8 md:py-4 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-2xl hover:bg-white hover:text-[#1A233A] hover:shadow-[0_4px_20px_rgba(184,144,91,0.4)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-                        <Icons.MessageCircle /> 
-                        <span>{t.practice.ctaBtn}</span>
-                      </a>
-                      <span className="mt-3 text-[9px] md:text-[10px] text-gray-400 font-light italic max-w-[200px] text-left md:text-center leading-relaxed">
-                        {t.practice.ctaNote}
-                      </span>
-                    </div>
+                  <div className="flex flex-col items-center">
+                    <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" aria-label="Zalo Contact" className="inline-flex items-center justify-center gap-3 bg-[#1A233A] text-white px-8 py-4 md:px-10 md:py-4 text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-[#B8905B] transition-all duration-300 w-full sm:w-auto shadow-md hover:-translate-y-0.5">
+                      <Icons.MessageCircle /> 
+                      <span>{t.practice.ctaBtn}</span>
+                    </a>
+                    <span className="mt-4 text-[10px] md:text-[11px] text-slate-400 font-light italic max-w-[250px] md:max-w-none">
+                      {t.practice.ctaNote}
+                    </span>
                   </div>
                 </div>
 
@@ -499,27 +503,48 @@ export default function App() {
 
             {/* TAB 3: DIỄN GIẢ SỰ KIỆN */}
             {activeTab === 'tab3' && (
-              <div className="animate-tab max-w-3xl">
+              <div className="animate-tab max-w-4xl mx-auto md:mx-0">
                 
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-[#1A233A] mb-4 md:mb-6">{t.speaker.title}</h3>
-                <p className="text-sm sm:text-base md:text-lg text-slate-600 font-light leading-relaxed mb-6 md:mb-10">
+                <h3 className="text-2xl md:text-4xl font-serif text-[#1A233A] mb-4 md:mb-6">{t.speaker.title}</h3>
+                <p className="text-sm md:text-[17px] text-slate-500 font-light leading-relaxed mb-10 md:mb-14 max-w-3xl">
                   {t.speaker.desc}
                 </p>
 
-                {/* Danh sách Diễn giả / Giảng dạy trích xuất từ CV */}
-                <div className="space-y-3 md:space-y-4 mb-10 md:mb-16">
-                  {t.speaker.items.map((item, idx) => (
-                    <div key={idx} className="flex gap-4 md:gap-5 bg-white p-5 md:p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors items-start">
-                      <div className="text-[#B8905B] mt-0.5 shrink-0 bg-[#F6F5F2] p-1.5 rounded-full"><Icons.ArrowRight /></div>
-                      <p className="text-slate-700 text-sm md:text-base font-light leading-relaxed">{item}</p>
-                    </div>
-                  ))}
+                {/* Phần 1: Công tác Giảng dạy */}
+                <div className="mb-10 md:mb-14">
+                  <div className="flex items-center gap-3 mb-6 md:mb-8 border-b border-slate-200 pb-3">
+                    <div className="text-[#B8905B]"><Icons.GraduationCap /></div>
+                    <h4 className="text-xl md:text-2xl font-serif text-[#1A233A]">{t.speaker.teachingTitle}</h4>
+                  </div>
+                  <div className="space-y-4 md:space-y-5">
+                    {t.speaker.teachingItems.map((item, idx) => (
+                      <div key={idx} className="flex gap-5 bg-white p-6 md:p-8 rounded-xl border border-slate-200 items-start hover:border-[#1A233A] transition-colors">
+                        <div className="text-[#B8905B] mt-1 shrink-0"><Icons.ArrowRight /></div>
+                        <p className="text-[#334155] text-sm md:text-base font-light leading-relaxed">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Phần 2: Sự kiện & JCI */}
+                <div className="mb-12 md:mb-16">
+                  <div className="flex items-center gap-3 mb-6 md:mb-8 border-b border-slate-200 pb-3">
+                    <div className="text-[#B8905B]"><Icons.Users /></div>
+                    <h4 className="text-xl md:text-2xl font-serif text-[#1A233A]">{t.speaker.eventTitle}</h4>
+                  </div>
+                  <div className="space-y-4 md:space-y-5">
+                    {t.speaker.eventItems.map((item, idx) => (
+                      <div key={idx} className="flex gap-4 md:gap-5 bg-white/50 p-8 md:p-10 rounded-xl border border-dashed border-slate-300 items-center justify-center text-center">
+                        <p className="text-slate-400 text-sm md:text-base font-light italic tracking-wide">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Call to action for speaking */}
-                <div className="bg-[#1A233A] text-white p-6 md:p-8 lg:p-10 rounded-3xl text-center mb-6 border border-[#B8905B]/20 shadow-lg">
-                  <p className="text-sm md:text-base lg:text-lg font-light mb-4 md:mb-6">{t.speaker.contactText}</p>
-                  <a href="mailto:hoant@paxlaw.vn" className="inline-flex items-center justify-center gap-2 bg-[#B8905B] text-[#1A233A] px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-xs lg:text-sm font-bold tracking-widest uppercase rounded-xl hover:bg-white transition-colors w-full sm:w-auto">
+                <div className="bg-[#1A233A] text-white p-8 md:p-12 rounded-2xl text-center mb-6">
+                  <p className="text-sm md:text-base font-light mb-6 opacity-90">{t.speaker.contactText}</p>
+                  <a href="mailto:hoant@paxlaw.vn" aria-label="Send Email Request" className="inline-flex items-center justify-center gap-3 bg-[#B8905B] text-white px-8 py-4 md:px-10 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-white hover:text-[#1A233A] transition-colors w-full sm:w-auto shadow-md hover:-translate-y-0.5">
                     <Icons.Mail /> {t.speaker.contactBtn}
                   </a>
                 </div>
