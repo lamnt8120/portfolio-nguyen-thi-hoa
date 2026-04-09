@@ -353,7 +353,7 @@ export default function App() {
                   </div>
                   <p className="relative z-10 text-lg md:text-xl lg:text-2xl font-serif font-normal text-[#F6F5F2] leading-[1.8] md:leading-[2] max-w-3xl tracking-wide">
                     {t.summary.quotePart1}
-                    <strong className="italic">{t.summary.quoteHighlight}</strong>
+                    <strong className="font-bold">{t.summary.quoteHighlight}</strong>
                     {t.summary.quotePart2}
                   </p>
                   <div className="relative z-10 mt-8 flex flex-col items-center">
@@ -430,11 +430,11 @@ export default function App() {
                 </div>
 
                 {/* Logos Đối Tác */}
-                <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank Logo" className="h-5 sm:h-6 md:h-8 w-auto object-contain" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest Logo" className="h-6 sm:h-8 md:h-10 w-auto object-contain" />
+                <div className="flex flex-wrap items-center justify-center md:justify-between gap-8 md:gap-10 lg:gap-12 transition-all duration-500 pt-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw Logo" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank Logo" className="h-7 sm:h-9 md:h-10 lg:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield Logo" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest Logo" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
             )}
