@@ -200,6 +200,7 @@ const Icons = {
   Briefcase: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+  Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
   Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
@@ -250,6 +251,11 @@ export default function App() {
           background: linear-gradient(135deg, rgba(46, 183, 147, 0.1) 0%, rgba(29, 98, 102, 0.05) 100%);
           border-radius: 40% 60% 60% 40% / 30% 30% 70% 70%;
         }
+
+        /* Drop shadow nhẹ cho tên để nổi bật trên ảnh */
+        .name-shadow {
+          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
       `}</style>
 
       {/* --- MAIN LAYOUT --- */}
@@ -260,18 +266,28 @@ export default function App() {
           <img 
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
             alt="Luật sư Nguyễn Thị Hoa" 
-            className="w-full h-full object-cover object-top md:object-center opacity-90"
+            className="w-full h-full object-cover object-top md:object-center opacity-95 transition-opacity duration-500"
           />
-          <div className="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
-          {/* Brand Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266] via-transparent to-transparent md:from-[#1d6266]/80"></div>
+          {/* Lớp phủ mờ cực nhẹ */}
+          <div className="absolute inset-0 bg-black/5 mix-blend-multiply"></div>
+          
+          {/* Brand Gradient Overlay - Tăng cường độ đậm ở dưới để tôn chữ trắng */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/90 via-[#1d6266]/30 to-transparent"></div>
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1d6266]/50 to-transparent pointer-events-none"></div>
 
-          {/* TOP RIGHT: Paxlaw Style Language Toggle */}
+          {/* TOP RIGHT: Language Toggle Switch */}
           <div className="absolute top-6 right-6 z-40 animate-reveal">
-            <div className="flex items-center bg-[#1d6266]/40 border border-white/10 backdrop-blur-xl p-1 rounded-full shadow-xl">
+            <div className="flex items-center bg-[#1d6266]/60 border border-white/10 backdrop-blur-xl p-1 rounded-full shadow-2xl">
+              <div className="pl-2.5 pr-1.5 text-white/80">
+                <Icons.Globe />
+              </div>
               <div className="flex items-center gap-1">
-                <button onClick={() => setLang('vi')} className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-widest transition-all ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white'}`}>VI</button>
-                <button onClick={() => setLang('en')} className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-widest transition-all ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white'}`}>EN</button>
+                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest">VI</span>
+                </button>
+                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest">EN</span>
+                </button>
               </div>
             </div>
           </div>
@@ -283,7 +299,7 @@ export default function App() {
                 key={key} 
                 href={key === 'email' ? 'mailto:hoant@paxlaw.vn' : key === 'phone' ? 'tel:+84911553686' : '#'}
                 target="_blank" rel="noreferrer"
-                className="flex items-center h-10 bg-[#1d6266]/50 border border-white/10 backdrop-blur-xl hover:bg-[#2eb793] text-white transition-all duration-500 rounded-full group shadow-md overflow-hidden max-w-[40px] hover:max-w-[160px] animate-reveal"
+                className="flex items-center h-10 bg-[#1d6266]/60 border border-white/10 backdrop-blur-xl hover:bg-[#2eb793] text-white transition-all duration-500 rounded-full group shadow-lg overflow-hidden max-w-[40px] hover:max-w-[160px] animate-reveal"
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
                 <div className="w-10 h-10 flex items-center justify-center shrink-0 scale-90">
@@ -299,24 +315,24 @@ export default function App() {
             ))}
           </div>
           
-          {/* BRAND NAME & ROLES (One line, smaller as requested) */}
-          <div className="absolute bottom-0 left-0 w-full p-8 pb-14 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal pointer-events-none">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold mb-4 tracking-tight whitespace-nowrap">
+          {/* BRAND NAME & ROLES - Tối ưu hóa độ hiển thị */}
+          <div className="absolute bottom-0 left-0 w-full p-8 pb-12 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal pointer-events-none">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight whitespace-nowrap name-shadow">
               {t.hero.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.2em]">
-              <span className="bg-[#2eb793] px-3 py-1.5 rounded-sm">{t.hero.role1}</span>
-              <span className="text-white/60">|</span>
-              <span className="text-[#2eb793] font-bold">{t.hero.role2}</span>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em]">
+              <span className="bg-[#2eb793] text-white px-4 py-2 rounded-md shadow-lg border border-white/10">{t.hero.role1}</span>
+              <span className="text-white/40 font-light text-lg px-1">|</span>
+              <span className="text-white drop-shadow-md">{t.hero.role2}</span>
             </div>
           </div>
         </div>
 
         {/* === RIGHT PANEL (Content) === */}
-        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-15px_40px_rgba(0,0,0,0.1)] md:shadow-none md:overflow-hidden">
+        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.15)] md:shadow-none md:overflow-hidden">
           
           {/* Paxlaw Styled Sticky Tabs */}
-          <div className="shrink-0 sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none">
+          <div className="shrink-0 sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none">
             <div className="flex gap-8 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
                 <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] transition-all relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1d6266]' : 'text-slate-400 hover:text-[#2eb793]'}`}>
@@ -325,7 +341,6 @@ export default function App() {
                 </button>
               ))}
             </div>
-            {/* Logo placeholder in tab bar (Safe space compliant) */}
             <div className="pb-5 ml-4 hidden lg:block opacity-30 select-none pointer-events-none">
                <span className="text-[10px] font-black tracking-tighter uppercase text-[#1d6266]">PAXLAW</span>
             </div>
@@ -333,7 +348,7 @@ export default function App() {
 
           <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-8 md:p-12 lg:p-16 pb-20">
             
-            {/* TAB 1: INTRODUCTION (Architecture Re-ordered) */}
+            {/* TAB 1: INTRODUCTION */}
             {activeTab === 'tab1' && (
               <div className="max-w-4xl mx-auto md:mx-0 space-y-16">
                 
@@ -347,7 +362,7 @@ export default function App() {
                   </p>
                 </section>
 
-                {/* 2. THE BRAND QUOTE (Paxlaw Silk Motif Theme) */}
+                {/* 2. THE BRAND QUOTE */}
                 <section className="animate-reveal relative">
                   <div className="absolute top-0 right-0 w-32 h-32 pax-silk-overlay -mr-10 -mt-10 opacity-30"></div>
                   <div className="relative z-10 bg-[#1d6266] p-10 md:p-14 rounded-[2rem] shadow-2xl overflow-hidden border-l-4 border-[#2eb793]">
@@ -366,7 +381,7 @@ export default function App() {
                   </div>
                 </section>
 
-                {/* 3. CORE COMPETENCIES + INTEGRATED LOGOS (Bullet 3) */}
+                {/* 3. CORE COMPETENCIES + INTEGRATED LOGOS */}
                 <section className="animate-reveal grid gap-12">
                   {[1, 2, 3].map(num => (
                     <div key={num} className="group relative">
@@ -376,10 +391,9 @@ export default function App() {
                           <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1d6266] mb-3">{t.summary[`bullet${num}Title`]}</h4>
                           <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary[`bullet${num}Desc`]}</p>
                           
-                          {/* 4 LOGO ĐI KÈM MỤC LỢI THẾ LÃNH ĐẠO */}
                           {num === 3 && (
-                            <div className="mt-8 flex flex-wrap items-center gap-8 md:gap-12 opacity-80 transition-opacity">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-6 md:h-8 w-auto object-contain grayscale-0" />
+                            <div className="mt-8 flex flex-wrap items-center gap-8 md:gap-12 opacity-90 transition-opacity">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-6 md:h-8 w-auto object-contain" />
                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-5 md:h-6 w-auto object-contain" />
                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-6 md:h-8 w-auto object-contain" />
                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-6 md:h-8 w-auto object-contain" />
