@@ -201,7 +201,7 @@ const Icons = {
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
   Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
-  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
@@ -332,26 +332,14 @@ export default function App() {
         <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-12 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.3)] md:shadow-none md:overflow-hidden">
           
           {/* --- STICKY TABS HEADER --- */}
-          <div className="shrink-0 sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 px-6 md:px-10 lg:px-14 pt-6 md:pt-8 lg:pt-12 flex justify-between items-end rounded-t-[2.5rem] md:rounded-none shadow-sm md:shadow-none">
-            <div className="flex gap-6 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1 pr-4 md:pr-8">
+          <div className="shrink-0 sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 px-6 md:px-10 lg:px-14 pt-6 md:pt-8 lg:pt-12 flex items-end rounded-t-[2.5rem] md:rounded-none shadow-sm md:shadow-none">
+            <div className="flex gap-6 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
                 <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-4 md:pb-5 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1A233A]' : 'text-slate-400 hover:text-slate-700'}`}>
                   {t.tabs[tab]}
                   <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#1A233A] transition-transform duration-300 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               ))}
-            </div>
-            
-            {/* --- TAB HEADER: LANGUAGE TOGGLE SWITCH --- */}
-            <div className="pb-3 md:pb-4 pl-4 md:pl-6 shrink-0">
-              <div className="flex items-center bg-[#F8F9FA] border border-slate-200 p-1 rounded-full shadow-sm">
-                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center px-3 h-7 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#1A233A] text-white shadow-md' : 'text-slate-400 hover:text-[#1A233A] hover:bg-slate-100'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">VI</span>
-                </button>
-                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center px-3 h-7 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#1A233A] text-white shadow-md' : 'text-slate-400 hover:text-[#1A233A] hover:bg-slate-100'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">EN</span>
-                </button>
-              </div>
             </div>
           </div>
 
