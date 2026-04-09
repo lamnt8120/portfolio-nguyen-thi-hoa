@@ -52,7 +52,7 @@ const dict = {
       assoTitle: "Hiệp hội & Ngôn ngữ",
       assoItems: [
         "Phó Chủ tịch Quốc gia JCI Việt Nam (Nhiệm kỳ 2026)",
-        "Thành viên Đoàn Luật sư TP. Hà Nội",
+        "Thành viên Đoàn Luật sư TP. Hà Nội, Liên đoàn Luật sư Việt Nam",
         "Ngôn ngữ: Tiếng Việt (Bản xứ) • Tiếng Anh (Chuyên nghiệp) • Tiếng Nhật (Cơ bản)"
       ]
     },
