@@ -194,7 +194,7 @@ const Icons = {
   LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
   Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
   Mail: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
-  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>,
+  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 {2.81}.7A2 2 0 0 1 22 16.92z"></path></svg>,
   Scale: ({size=24}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>,
   Building: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>,
   Briefcase: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
@@ -268,39 +268,63 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/40 to-transparent md:via-[#1A233A]/60"></div>
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/70 to-transparent pointer-events-none"></div>
 
-          {/* === TOP HEADER ACTIONS === */}
+          {/* === TOP RIGHT: LANGUAGE TOGGLE SWITCH === */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:right-12 z-30 animate-reveal">
-            <div className="flex items-center bg-[#1A233A]/60 border border-white/20 backdrop-blur-xl p-1 rounded-full shadow-2xl">
-              <div className="pl-3 pr-2 text-white/90"><Icons.Globe /></div>
+            <div className="flex items-center bg-[#1A233A]/40 border border-white/15 backdrop-blur-md p-1 rounded-full shadow-sm">
+              <div className="pl-2.5 pr-1.5 text-white/80">
+                <Icons.Globe />
+              </div>
               <div className="flex items-center gap-1">
-                <button onClick={() => setLang('vi')} className={`w-8 h-8 rounded-full text-[10px] font-bold tracking-tighter transition-all ${lang === 'vi' ? 'bg-[#B8905B] text-white shadow-lg scale-110' : 'text-white/40 hover:text-white'}`}>VI</button>
-                <button onClick={() => setLang('en')} className={`w-8 h-8 rounded-full text-[10px] font-bold tracking-tighter transition-all ${lang === 'en' ? 'bg-[#B8905B] text-white shadow-lg scale-110' : 'text-white/40 hover:text-white'}`}>EN</button>
+                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">VI</span>
+                </button>
+                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">EN</span>
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="absolute top-4 left-4 md:top-8 md:left-8 lg:top-12 lg:left-12 flex flex-col items-start gap-3 z-30">
-            {['linkedin', 'facebook', 'email', 'phone'].map((key, i) => (
-              <a 
-                key={key} 
-                href={key === 'email' ? 'mailto:hoant@paxlaw.vn' : key === 'phone' ? 'tel:+84911553686' : '#'}
-                target="_blank" rel="noreferrer"
-                className={`flex items-center h-11 bg-[#1A233A]/60 border border-white/20 backdrop-blur-xl hover:bg-[#B8905B] text-white transition-all duration-500 rounded-full group shadow-lg overflow-hidden max-w-[44px] hover:max-w-[180px] animate-reveal`}
-                style={{ animationDelay: `${0.1 + i * 0.1}s` }}
-              >
-                <div className="w-11 h-11 flex items-center justify-center shrink-0">
-                  {key === 'linkedin' && <Icons.LinkedIn />}
-                  {key === 'facebook' && <Icons.Facebook />}
-                  {key === 'email' && <Icons.Mail />}
-                  {key === 'phone' && <Icons.Phone />}
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap pr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {dict[lang].socials[key]}
-                </span>
-              </a>
-            ))}
+          {/* === TOP LEFT: VERTICAL EXPANDING CONTACT BUTTONS === */}
+          <div className="absolute top-4 left-4 md:top-8 md:left-8 lg:top-12 lg:left-12 flex flex-col items-start gap-3 z-30 animate-tab">
+            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.LinkedIn />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.linkedin}
+              </span>
+            </a>
+            
+            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Facebook />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.facebook}
+              </span>
+            </a>
+
+            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Mail />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.email}
+              </span>
+            </a>
+
+            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Phone />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.phone}
+              </span>
+            </a>
           </div>
           
+          {/* Name & Titles */}
           <div className="absolute bottom-0 left-0 w-full p-8 pb-16 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal delay-3 pointer-events-none">
             <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-serif font-medium mb-3 text-white drop-shadow-2xl leading-[1.1]">
               {t.hero.name}
@@ -314,7 +338,7 @@ export default function App() {
         </div>
 
         {/* === RIGHT PANEL: SCROLLABLE CONTENT === */}
-        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[3rem] md:rounded-none -mt-12 md:mt-0 relative z-20 shadow-[0_-30px_60px_rgba(0,0,0,0.4)] md:shadow-none md:overflow-hidden">
+        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[3rem] md:rounded-none -mt-12 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.3)] md:shadow-none md:overflow-hidden">
           
           <div className="shrink-0 sticky top-0 z-40 bg-white/80 backdrop-blur-2xl border-b border-slate-200 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[3rem] md:rounded-none">
             <div className="flex gap-8 md:gap-12 overflow-x-auto hide-scroll flex-1">
@@ -365,15 +389,29 @@ export default function App() {
                   </div>
                 </section>
 
-                {/* 3. CORE COMPETENCIES (THE SKILLS) */}
+                {/* 3. CORE COMPETENCIES (THE SKILLS) + LOGOS UNDER BULLET 3 */}
                 <section className="animate-reveal delay-2 grid gap-10">
                   {[1, 2, 3].map(num => (
-                    <div key={num} className="group flex gap-6 md:gap-10 items-start">
-                      <div className="text-[2rem] font-serif text-[#B8905B]/20 font-bold group-hover:text-[#B8905B] transition-colors leading-none">0{num}</div>
-                      <div className="pt-2">
-                        <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-[#1A233A] mb-3">{t.summary[`bullet${num}Title`]}</h4>
-                        <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary[`bullet${num}Desc`]}</p>
+                    <div key={num} className="group flex flex-col gap-3">
+                      <div className="flex gap-6 md:gap-10 items-start">
+                        <div className="text-[2rem] font-serif text-[#B8905B]/20 font-bold group-hover:text-[#B8905B] transition-colors leading-none">0{num}</div>
+                        <div className="pt-2">
+                          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-[#1A233A] mb-3">{t.summary[`bullet${num}Title`]}</h4>
+                          <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary[`bullet${num}Desc`]}</p>
+                        </div>
                       </div>
+                      
+                      {/* 4 LOGO ĐI KÈM MỤC LỢI THẾ LÃNH ĐẠO (BULLET 3) */}
+                      {num === 3 && (
+                        <div className="pl-14 md:pl-24 pt-6">
+                          <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-6 md:h-8 w-auto object-contain hover:scale-110 transition-transform" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </section>
@@ -421,16 +459,6 @@ export default function App() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </section>
-
-                {/* 6. TRUST LOGOS */}
-                <section className="animate-reveal delay-5 pt-8 border-t border-slate-200">
-                  <div className="flex flex-wrap items-center justify-center md:justify-between gap-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-1000">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-10 w-auto" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-8 w-auto" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-10 w-auto" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-10 w-auto" />
                   </div>
                 </section>
               </div>
@@ -498,8 +526,8 @@ export default function App() {
             {activeTab === 'tab3' && (
               <div className="animate-reveal max-w-4xl space-y-16">
                 <section>
-                  <h3 className="text-3xl md:text-5xl font-serif text-[#1A233A] mb-8">{t.speaker.title}</h3>
-                  <p className="text-lg text-slate-500 font-light leading-relaxed max-w-3xl mb-12">
+                  <h3 className="text-3xl md:text-[2.75rem] font-serif text-[#1A233A] mb-8">{t.speaker.title}</h3>
+                  <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed max-w-3xl mb-12">
                     {t.speaker.desc}
                   </p>
 
