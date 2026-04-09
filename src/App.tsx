@@ -262,37 +262,36 @@ export default function App() {
       <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] bg-[#F8F9FA]">
         
         {/* === LEFT PANEL (Identity & Visual) === */}
-        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden bg-[#1d6266]">
+        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden bg-white">
           <img 
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
             alt="Luật sư Nguyễn Thị Hoa" 
-            className="w-full h-full object-cover object-top md:object-center opacity-95 transition-opacity duration-500"
+            className="w-full h-full object-cover object-top md:object-center opacity-100 transition-opacity duration-500"
           />
-          {/* Lớp phủ mờ cực nhẹ */}
-          <div className="absolute inset-0 bg-black/5 mix-blend-multiply"></div>
           
-          {/* Brand Gradient Overlay - Tăng cường độ đậm ở dưới để tôn chữ trắng */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/90 via-[#1d6266]/30 to-transparent"></div>
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1d6266]/50 to-transparent pointer-events-none"></div>
+          {/* ĐÃ GỠ BỎ LỚP PHỦ XANH PHÍA TRÊN (TOP GRADIENT) THEO YÊU CẦU */}
 
-          {/* TOP RIGHT: Language Toggle Switch */}
+          {/* BOTTOM BAR GRADIENT: Chốt ở sát mép dưới để tôn chữ trắng, gương mặt vẫn sáng rõ */}
+          <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-[#1d6266] via-[#1d6266]/30 to-transparent pointer-events-none"></div>
+
+          {/* TOP RIGHT: Language Toggle Switch - Nổi bật trên nền ảnh sạch */}
           <div className="absolute top-6 right-6 z-40 animate-reveal">
-            <div className="flex items-center bg-[#1d6266]/60 border border-white/10 backdrop-blur-xl p-1 rounded-full shadow-2xl">
-              <div className="pl-2.5 pr-1.5 text-white/80">
+            <div className="flex items-center bg-[#1d6266]/60 border border-white/20 backdrop-blur-xl p-1 rounded-full shadow-2xl">
+              <div className="pl-2.5 pr-1.5 text-white">
                 <Icons.Globe />
               </div>
               <div className="flex items-center gap-1">
-                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/40 hover:text-white'}`}>
                   <span className="text-[9px] md:text-[10px] font-bold tracking-widest">VI</span>
                 </button>
-                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/40 hover:text-white'}`}>
                   <span className="text-[9px] md:text-[10px] font-bold tracking-widest">EN</span>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* TOP LEFT: Minimal Vertical Contacts */}
+          {/* TOP LEFT: Minimal Vertical Contacts - Nổi bật trên nền ảnh sạch */}
           <div className="absolute top-6 left-6 flex flex-col items-start gap-3 z-40">
             {['linkedin', 'facebook', 'email', 'phone'].map((key, i) => (
               <a 
@@ -315,13 +314,13 @@ export default function App() {
             ))}
           </div>
           
-          {/* BRAND NAME & ROLES - Tối ưu hóa độ hiển thị */}
-          <div className="absolute bottom-0 left-0 w-full p-8 pb-12 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal pointer-events-none">
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight whitespace-nowrap name-shadow">
+          {/* BRAND NAME & ROLES - Sáng và rõ nét */}
+          <div className="absolute bottom-0 left-0 w-full p-8 pb-12 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal delay-3 pointer-events-none z-10">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight whitespace-nowrap name-shadow text-white">
               {t.hero.name}
             </h1>
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em]">
-              <span className="bg-[#2eb793] text-white px-4 py-2 rounded-md shadow-lg border border-white/10">{t.hero.role1}</span>
+              <span className="bg-[#2eb793] text-white px-4 py-2 rounded-md shadow-lg border border-white/20">{t.hero.role1}</span>
               <span className="text-white/40 font-light text-lg px-1">|</span>
               <span className="text-white drop-shadow-md">{t.hero.role2}</span>
             </div>
@@ -329,9 +328,9 @@ export default function App() {
         </div>
 
         {/* === RIGHT PANEL (Content) === */}
-        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.15)] md:shadow-none md:overflow-hidden">
+        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.1)] md:shadow-none md:overflow-hidden">
           
-          {/* Paxlaw Styled Sticky Tabs */}
+          {/* Sticky Tabs */}
           <div className="shrink-0 sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none">
             <div className="flex gap-8 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
@@ -340,9 +339,6 @@ export default function App() {
                   <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#2eb793] transition-transform duration-500 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               ))}
-            </div>
-            <div className="pb-5 ml-4 hidden lg:block opacity-30 select-none pointer-events-none">
-               <span className="text-[10px] font-black tracking-tighter uppercase text-[#1d6266]">PAXLAW</span>
             </div>
           </div>
 
