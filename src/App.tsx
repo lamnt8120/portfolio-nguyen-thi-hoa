@@ -201,7 +201,7 @@ const Icons = {
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
   Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
-  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
@@ -217,7 +217,7 @@ export default function App() {
   const toggleLang = () => setLang(prev => prev === 'vi' ? 'en' : 'vi');
 
   return (
-    <div className="bg-[#F8F9FA] font-sans text-[#334155] selection:bg-[#B8905B] selection:text-white">
+    <div className="bg-[#1A233A] font-sans text-[#334155] selection:bg-[#B8905B] selection:text-white">
       
       {/* CSS: Config Tailwind v4 trực tiếp & Import Fonts Chuẩn Quốc Tế */}
       <style>{`
@@ -247,15 +247,17 @@ export default function App() {
         .animate-tab { animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       `}</style>
 
-      {/* --- SPLIT SCREEN LAYOUT --- */}
-      <div className="flex flex-col md:flex-row w-full h-[100dvh] overflow-hidden bg-[#1A233A]">
+      {/* --- CẤU TRÚC LAYOUT MỚI: CUỘN TỰ NHIÊN (MOBILE) & CHIA ĐÔI (DESKTOP) --- */}
+      <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] bg-[#F8F9FA]">
         
         {/* === LEFT PANEL: IMAGE & CONTACT INFO === */}
-        <div className="relative w-full h-[42dvh] md:h-full md:w-[40%] lg:w-[45%] shrink-0">
+        {/* Nâng chiều cao Mobile lên 65vh để ảnh to, tỷ lệ đẹp như bìa tạp chí */}
+        <div className="relative w-full h-[65vh] sm:h-[75vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0">
           <img 
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
             alt="Lawyer Portrait" 
-            className="w-full h-full object-cover object-center"
+            /* object-top đảm bảo luôn lấy từ đỉnh đầu (khuôn mặt) trở xuống bất kể kích thước màn hình */
+            className="w-full h-full object-cover object-top md:object-center"
           />
           <div className="absolute inset-0 bg-[#1A233A]/20 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/50 to-transparent md:from-[#1A233A] md:via-[#1A233A]/70 md:to-transparent"></div>
@@ -280,9 +282,18 @@ export default function App() {
               <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.phone}</span>
             </a>
           </div>
+
+          {/* === TOP RIGHT: LANGUAGE TOGGLE === */}
+          <div className="absolute top-5 right-5 md:top-8 md:right-8 lg:top-12 lg:right-12 z-20 animate-tab">
+            <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-10 px-4 md:px-5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
+              <Icons.Globe />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
+            </button>
+          </div>
           
           {/* Name & Titles */}
-          <div className="absolute bottom-0 left-0 w-full p-5 md:p-8 lg:p-12 text-white flex flex-col justify-end items-start animate-tab">
+          {/* Tăng padding bottom trên Mobile để không bị khối nội dung bên phải (Right Panel) đè lên chữ */}
+          <div className="absolute bottom-0 left-0 w-full p-6 pb-16 md:p-8 lg:p-12 text-white flex flex-col justify-end items-start animate-tab">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-medium mb-2 md:mb-4 text-white drop-shadow-lg leading-tight pr-4">
               {t.hero.name}
             </h1>
@@ -295,10 +306,12 @@ export default function App() {
         </div>
 
         {/* === RIGHT PANEL: TABS & CONTENT === */}
-        <div className="flex-1 flex flex-col overflow-hidden bg-[#F8F9FA] rounded-t-3xl md:rounded-none -mt-5 md:mt-0 relative z-20 shadow-[0_-15px_40px_rgba(0,0,0,0.2)] md:shadow-none">
+        {/* Trên Mobile không dùng overflow-hidden để tự do cuộn xuống dưới, kéo lề âm lên (-mt-12) tạo hiệu ứng xếp lớp */}
+        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-12 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.3)] md:shadow-none md:overflow-hidden">
           
           {/* --- STICKY TABS HEADER --- */}
-          <div className="shrink-0 bg-white border-b border-slate-200 px-6 md:px-10 lg:px-14 pt-5 md:pt-8 lg:pt-12 z-10 flex justify-between items-end rounded-t-3xl md:rounded-none">
+          {/* Sticky giúp thanh Menu luôn bám trên đỉnh khi người dùng vuốt qua trên Mobile */}
+          <div className="shrink-0 sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 px-6 md:px-10 lg:px-14 pt-6 md:pt-8 lg:pt-12 flex justify-between items-end rounded-t-[2.5rem] md:rounded-none shadow-sm md:shadow-none">
             <div className="flex gap-6 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1 pr-4 md:pr-8">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
                 <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-4 md:pb-5 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1A233A]' : 'text-slate-400 hover:text-slate-700'}`}>
@@ -307,16 +320,10 @@ export default function App() {
                 </button>
               ))}
             </div>
-            <div className="pb-3 md:pb-4 pl-4 md:pl-6 shrink-0">
-              <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-8 px-3 md:h-9 md:px-4 bg-white text-[#1A233A] hover:bg-[#F8F9FA] transition-all duration-300 rounded-full border border-slate-200">
-                <Icons.Globe />
-                <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
-              </button>
-            </div>
           </div>
 
           {/* --- SCROLLABLE CONTENT AREA --- */}
-          <div className="flex-1 overflow-y-auto hide-scroll p-6 md:p-10 lg:p-14 pb-16">
+          <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-6 md:p-10 lg:p-14 pb-16">
             
             {/* TAB 1: GIỚI THIỆU */}
             {activeTab === 'tab1' && (
