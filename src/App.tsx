@@ -188,7 +188,7 @@ const dict = {
   }
 };
 
-// --- ICONS ---
+// --- ICONS (Styled for Paxlaw) ---
 const strokeW = "1.5";
 const Icons = {
   LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
@@ -200,11 +200,9 @@ const Icons = {
   Briefcase: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
-  Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
   Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
-  Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
   Users: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
   QuoteIcon: () => <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="opacity-10"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3996 5.849h3.983v10h-9.983z"/></svg>
 };
@@ -214,289 +212,255 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('tab1');
   const t = dict[lang];
 
+  // --- BRAND COLORS ---
+  const colors = {
+    mint: "#2eb793",
+    deepGreen: "#1d6266",
+    white: "#FFFFFF",
+    bgGray: "#F8F9FA",
+    textDark: "#2D3436"
+  };
+
   return (
-    <div className="bg-[#1A233A] font-sans text-[#334155] selection:bg-[#B8905B] selection:text-white">
+    <div className={`bg-[${colors.deepGreen}] font-sans text-[${colors.textDark}] selection:bg-[${colors.mint}] selection:text-white`}>
       
-      {/* CSS: Config Tailwind v4 directly & Modern Animations */}
+      {/* CSS: Paxlaw Aesthetic Styling */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         @theme {
           --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-          --font-serif: "Playfair Display", ui-serif, Georgia, serif;
         }
 
         .font-sans { font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important; }
-        .font-serif { font-family: "Playfair Display", ui-serif, Georgia, serif !important; }
 
         .hide-scroll::-webkit-scrollbar { width: 4px; height: 4px; }
         .hide-scroll::-webkit-scrollbar-track { background: transparent; }
-        .hide-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+        .hide-scroll::-webkit-scrollbar-thumb { background: ${colors.mint}; border-radius: 10px; }
         
         @keyframes revealUp {
-          from { opacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(15px); }
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes shine {
-          0% { text-shadow: 0 0 0px rgba(184, 144, 91, 0); }
-          50% { text-shadow: 0 0 10px rgba(184, 144, 91, 0.4); }
-          100% { text-shadow: 0 0 0px rgba(184, 144, 91, 0); }
-        }
-
-        .animate-reveal { animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
-        .delay-4 { animation-delay: 0.4s; opacity: 0; }
-        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .animate-reveal { animation: revealUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         
-        .silk-shield-glow { animation: shine 3s infinite; }
+        /* Motif dải lụa Paxlaw */
+        .pax-silk-overlay {
+          background: linear-gradient(135deg, rgba(46, 183, 147, 0.1) 0%, rgba(29, 98, 102, 0.05) 100%);
+          border-radius: 40% 60% 60% 40% / 30% 30% 70% 70%;
+        }
       `}</style>
 
-      {/* --- STRUCTURE LAYOUT --- */}
+      {/* --- MAIN LAYOUT --- */}
       <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] bg-[#F8F9FA]">
         
-        {/* === LEFT PANEL: IMAGE & BRANDING === */}
-        <div className="relative w-full h-[65vh] sm:h-[75vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden">
+        {/* === LEFT PANEL (Identity & Visual) === */}
+        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden bg-[#1d6266]">
           <img 
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
             alt="Luật sư Nguyễn Thị Hoa" 
-            className="w-full h-full object-cover object-top md:object-center transition-transform duration-[2s] hover:scale-105"
+            className="w-full h-full object-cover object-top md:object-center opacity-90"
           />
-          {/* Lớp phủ mờ nhẹ hơn để nhìn rõ nhân vật */}
-          <div className="absolute inset-0 bg-black/5 mix-blend-multiply"></div>
-          {/* Gradient tinh chỉnh để gương mặt sáng hơn */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/20 to-transparent md:via-[#1A233A]/30"></div>
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/40 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+          {/* Brand Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266] via-transparent to-transparent md:from-[#1d6266]/80"></div>
 
-          {/* === TOP RIGHT: LANGUAGE TOGGLE SWITCH === */}
-          <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:right-12 z-30 animate-reveal">
-            <div className="flex items-center bg-[#1A233A]/40 border border-white/10 backdrop-blur-md p-1 rounded-full shadow-lg">
-              <div className="pl-2.5 pr-1.5 text-white/80">
-                <Icons.Globe />
-              </div>
+          {/* TOP RIGHT: Paxlaw Style Language Toggle */}
+          <div className="absolute top-6 right-6 z-40 animate-reveal">
+            <div className="flex items-center bg-[#1d6266]/40 border border-white/10 backdrop-blur-xl p-1 rounded-full shadow-xl">
               <div className="flex items-center gap-1">
-                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">VI</span>
-                </button>
-                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">EN</span>
-                </button>
+                <button onClick={() => setLang('vi')} className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-widest transition-all ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white'}`}>VI</button>
+                <button onClick={() => setLang('en')} className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-widest transition-all ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/50 hover:text-white'}`}>EN</button>
               </div>
             </div>
           </div>
 
-          {/* === TOP LEFT: VERTICAL EXPANDING CONTACT BUTTONS === */}
-          <div className="absolute top-4 left-4 md:top-8 md:left-8 lg:top-12 lg:left-12 flex flex-col items-start gap-3 z-30 animate-tab">
-            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
-              <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icons.LinkedIn />
-              </div>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t.socials.linkedin}
-              </span>
-            </a>
-            
-            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
-              <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icons.Facebook />
-              </div>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t.socials.facebook}
-              </span>
-            </a>
-
-            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
-              <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icons.Mail />
-              </div>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t.socials.email}
-              </span>
-            </a>
-
-            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/10 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
-              <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icons.Phone />
-              </div>
-              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t.socials.phone}
-              </span>
-            </a>
+          {/* TOP LEFT: Minimal Vertical Contacts */}
+          <div className="absolute top-6 left-6 flex flex-col items-start gap-3 z-40">
+            {['linkedin', 'facebook', 'email', 'phone'].map((key, i) => (
+              <a 
+                key={key} 
+                href={key === 'email' ? 'mailto:hoant@paxlaw.vn' : key === 'phone' ? 'tel:+84911553686' : '#'}
+                target="_blank" rel="noreferrer"
+                className="flex items-center h-10 bg-[#1d6266]/50 border border-white/10 backdrop-blur-xl hover:bg-[#2eb793] text-white transition-all duration-500 rounded-full group shadow-md overflow-hidden max-w-[40px] hover:max-w-[160px] animate-reveal"
+                style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+              >
+                <div className="w-10 h-10 flex items-center justify-center shrink-0 scale-90">
+                  {key === 'linkedin' && <Icons.LinkedIn />}
+                  {key === 'facebook' && <Icons.Facebook />}
+                  {key === 'email' && <Icons.Mail />}
+                  {key === 'phone' && <Icons.Phone />}
+                </div>
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {dict[lang].socials[key]}
+                </span>
+              </a>
+            ))}
           </div>
           
-          {/* Name & Titles - Đã Tinh Chỉnh: Nhỏ lại và Trên 1 dòng */}
-          <div className="absolute bottom-0 left-0 w-full p-8 pb-16 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal delay-3 pointer-events-none">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-3 text-white drop-shadow-2xl whitespace-nowrap tracking-tight">
+          {/* BRAND NAME & ROLES (One line, smaller as requested) */}
+          <div className="absolute bottom-0 left-0 w-full p-8 pb-14 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal pointer-events-none">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold mb-4 tracking-tight whitespace-nowrap">
               {t.hero.name}
             </h1>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] lg:text-xs font-semibold uppercase tracking-[0.25em] opacity-90">
-              <span className="bg-white/10 px-3 py-1 rounded backdrop-blur-md">{t.hero.role1}</span>
-              <span className="hidden sm:block text-[#B8905B] text-lg">•</span>
-              <span className="text-[#B8905B] font-bold">{t.hero.role2}</span>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.2em]">
+              <span className="bg-[#2eb793] px-3 py-1.5 rounded-sm">{t.hero.role1}</span>
+              <span className="text-white/60">|</span>
+              <span className="text-[#2eb793] font-bold">{t.hero.role2}</span>
             </div>
           </div>
         </div>
 
-        {/* === RIGHT PANEL: SCROLLABLE CONTENT === */}
-        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[3rem] md:rounded-none -mt-12 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.3)] md:shadow-none md:overflow-hidden">
+        {/* === RIGHT PANEL (Content) === */}
+        <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-15px_40px_rgba(0,0,0,0.1)] md:shadow-none md:overflow-hidden">
           
-          <div className="shrink-0 sticky top-0 z-40 bg-white/80 backdrop-blur-2xl border-b border-slate-200 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[3rem] md:rounded-none">
-            <div className="flex gap-8 md:gap-12 overflow-x-auto hide-scroll flex-1">
+          {/* Paxlaw Styled Sticky Tabs */}
+          <div className="shrink-0 sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none">
+            <div className="flex gap-8 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-5 text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] transition-all relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1A233A]' : 'text-slate-400 hover:text-slate-600'}`}>
+                <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] transition-all relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1d6266]' : 'text-slate-400 hover:text-[#2eb793]'}`}>
                   {t.tabs[tab]}
-                  <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-[#1A233A] transition-transform duration-500 origin-left rounded-t-full ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#2eb793] transition-transform duration-500 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               ))}
             </div>
+            {/* Logo placeholder in tab bar (Safe space compliant) */}
+            <div className="pb-5 ml-4 hidden lg:block opacity-30 select-none pointer-events-none">
+               <span className="text-[10px] font-black tracking-tighter uppercase text-[#1d6266]">PAXLAW</span>
+            </div>
           </div>
 
-          <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-8 md:p-12 lg:p-16 pb-24">
+          <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-8 md:p-12 lg:p-16 pb-20">
             
-            {/* TAB 1: GIỚI THIỆU */}
+            {/* TAB 1: INTRODUCTION (Architecture Re-ordered) */}
             {activeTab === 'tab1' && (
               <div className="max-w-4xl mx-auto md:mx-0 space-y-16">
                 
-                {/* 1. Hook & Summary */}
+                {/* 1. Brand Hook */}
                 <section className="animate-reveal">
-                  <h2 className="text-2xl md:text-4xl font-serif font-medium text-[#1A233A] leading-tight mb-8">
+                  <h2 className={`text-2xl md:text-[2.25rem] font-extrabold text-[#1d6266] leading-tight mb-8 tracking-tight`}>
                     {t.summary.hook}
                   </h2>
-                  <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed">
+                  <p className="text-base text-slate-500 font-light leading-relaxed">
                     {t.summary.intro}
                   </p>
                 </section>
 
-                {/* 2. THE BRAND QUOTE */}
-                <section className="animate-reveal delay-1 relative">
-                  <div className="absolute -top-10 -left-6 text-[#B8905B]/10 scale-[2.5]">
-                    <Icons.QuoteIcon />
-                  </div>
-                  <div className="relative z-10 bg-[#1A233A] p-10 md:p-16 rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#B8905B]/20">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#B8905B]/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-                    <p className="text-xl md:text-2xl lg:text-[1.85rem] font-serif font-normal text-[#F6F5F2] leading-[1.7] tracking-wide mb-10">
+                {/* 2. THE BRAND QUOTE (Paxlaw Silk Motif Theme) */}
+                <section className="animate-reveal relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 pax-silk-overlay -mr-10 -mt-10 opacity-30"></div>
+                  <div className="relative z-10 bg-[#1d6266] p-10 md:p-14 rounded-[2rem] shadow-2xl overflow-hidden border-l-4 border-[#2eb793]">
+                    <p className="text-lg md:text-xl lg:text-[1.65rem] font-light text-white leading-relaxed tracking-wide mb-10">
                       {t.summary.quotePart1}
-                      <span className="font-bold text-[#B8905B] silk-shield-glow">{t.summary.quoteHighlight}</span>
+                      <span className="font-bold text-[#2eb793]">{t.summary.quoteHighlight}</span>
                       {t.summary.quotePart2}
                     </p>
-                    <div className="flex items-center gap-5">
-                      <div className="w-12 h-px bg-[#B8905B]/50"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-px bg-[#2eb793]"></div>
                       <div>
-                        <p className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-[#B8905B]">{t.summary.quoteAuthor}</p>
-                        <p className="text-[10px] font-light text-slate-400 uppercase mt-1">Managing Partner / Founder Paxlaw</p>
+                        <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#2eb793]">{t.summary.quoteAuthor}</p>
+                        <p className="text-[9px] font-medium text-white/40 uppercase mt-1">Founder Paxlaw</p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* 3. CORE COMPETENCIES + LOGOS */}
-                <section className="animate-reveal delay-2 grid gap-10">
+                {/* 3. CORE COMPETENCIES + INTEGRATED LOGOS (Bullet 3) */}
+                <section className="animate-reveal grid gap-12">
                   {[1, 2, 3].map(num => (
-                    <div key={num} className="group flex flex-col gap-3">
+                    <div key={num} className="group relative">
                       <div className="flex gap-6 md:gap-10 items-start">
-                        <div className="text-[2rem] font-serif text-[#B8905B]/20 font-bold group-hover:text-[#B8905B] transition-colors leading-none">0{num}</div>
-                        <div className="pt-2">
-                          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-[#1A233A] mb-3">{t.summary[`bullet${num}Title`]}</h4>
+                        <div className={`text-[1.75rem] font-black text-[#2eb793]/10 group-hover:text-[#2eb793] transition-colors leading-none pt-1`}>0{num}</div>
+                        <div>
+                          <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1d6266] mb-3">{t.summary[`bullet${num}Title`]}</h4>
                           <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary[`bullet${num}Desc`]}</p>
+                          
+                          {/* 4 LOGO ĐI KÈM MỤC LỢI THẾ LÃNH ĐẠO */}
+                          {num === 3 && (
+                            <div className="mt-8 flex flex-wrap items-center gap-8 md:gap-12 opacity-80 transition-opacity">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-6 md:h-8 w-auto object-contain grayscale-0" />
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-5 md:h-6 w-auto object-contain" />
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-6 md:h-8 w-auto object-contain" />
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-6 md:h-8 w-auto object-contain" />
+                            </div>
+                          )}
                         </div>
                       </div>
-                      
-                      {num === 3 && (
-                        <div className="pl-14 md:pl-24 pt-6">
-                          <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-6 md:h-8 w-auto object-contain hover:scale-110 transition-transform" />
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform" />
-                          </div>
-                        </div>
-                      )}
                     </div>
                   ))}
                 </section>
 
                 {/* 4. KEY STATS */}
-                <section className="animate-reveal delay-3 bg-white p-10 md:p-12 rounded-[2rem] border border-slate-200 shadow-sm grid grid-cols-1 sm:grid-cols-3 gap-12">
+                <section className="animate-reveal grid grid-cols-1 sm:grid-cols-3 gap-8 py-10 border-y border-slate-100">
                   {[
                     { val: t.stats.expValue, lab: t.stats.expLabel },
                     { val: t.stats.dealValue, lab: t.stats.dealLabel },
                     { val: t.stats.fdiValue, lab: t.stats.fdiLabel },
                   ].map((stat, i) => (
-                    <div key={i} className="text-center sm:text-left transition-transform hover:-translate-y-2">
-                      <h3 className="text-3xl md:text-5xl font-serif text-[#B8905B] mb-3">{stat.val}</h3>
-                      <p className="text-[#1A233A] text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{stat.lab}</p>
+                    <div key={i}>
+                      <h3 className="text-3xl md:text-4xl font-extrabold text-[#2eb793] mb-2">{stat.val}</h3>
+                      <p className="text-[#1d6266] text-[9px] font-bold uppercase tracking-[0.2em]">{stat.lab}</p>
                     </div>
                   ))}
                 </section>
 
                 {/* 5. FORMAL CREDENTIALS */}
-                <section className="animate-reveal delay-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
-                    <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
-                      <div className="text-[#B8905B] scale-125"><Icons.GraduationCap /></div>
-                      <h3 className="font-serif text-[#1A233A] text-xl font-medium">{t.profile.eduTitle}</h3>
+                <section className="animate-reveal grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[
+                    { title: t.profile.eduTitle, items: t.profile.eduItems, icon: <Icons.GraduationCap /> },
+                    { title: t.profile.assoTitle, items: t.profile.assoItems, icon: <Icons.Users /> }
+                  ].map((card, i) => (
+                    <div key={i} className="bg-white p-8 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-[#2eb793] transition-all">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="text-[#2eb793]">{card.icon}</div>
+                        <h3 className="text-[13px] font-bold tracking-wider text-[#1d6266] uppercase">{card.title}</h3>
+                      </div>
+                      <ul className="space-y-4">
+                        {card.items.map((item, idx) => (
+                          <li key={idx} className="flex gap-3 text-[13px] text-slate-500 font-light leading-relaxed">
+                            <span className="w-1 h-1 rounded-full bg-[#2eb793] mt-2 shrink-0 opacity-40"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul className="space-y-5">
-                      {t.profile.eduItems.map((item, idx) => (
-                        <li key={idx} className="flex gap-4 text-sm text-slate-500 font-light leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#B8905B] mt-1.5 shrink-0 opacity-40"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
-                    <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
-                      <div className="text-[#B8905B] scale-125"><Icons.Users /></div>
-                      <h3 className="font-serif text-[#1A233A] text-xl font-medium">{t.profile.assoTitle}</h3>
-                    </div>
-                    <ul className="space-y-5">
-                      {t.profile.assoItems.map((item, idx) => (
-                        <li key={idx} className="flex gap-4 text-sm text-slate-500 font-light leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#B8905B] mt-1.5 shrink-0 opacity-40"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  ))}
                 </section>
               </div>
             )}
 
-            {/* TAB 2: TƯ VẤN */}
+            {/* TAB 2: LEGAL PRACTICE */}
             {activeTab === 'tab2' && (
               <div className="animate-reveal max-w-5xl space-y-16">
                 <section>
-                  <h3 className="text-3xl font-serif text-[#1A233A] mb-10">{t.practice.title}</h3>
+                  <h3 className="text-2xl font-bold text-[#1d6266] mb-10 tracking-tight">{t.practice.title}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     {['ma', 'finance', 'realEstate', 'dispute'].map((id) => (
-                      <div key={id} className="group bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:border-[#1A233A] transition-all duration-500 hover:-translate-y-2">
-                        <div className="text-[#B8905B] mb-8 transition-transform group-hover:scale-110">
+                      <div key={id} className="group bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#2eb793] transition-all duration-500">
+                        <div className="text-[#2eb793] mb-6 group-hover:scale-110 transition-transform">
                           {id === 'ma' && <Icons.Briefcase />}
                           {id === 'finance' && <Icons.Building />}
-                          {id === 'realEstate' && <Icons.Scale size={32} />}
+                          {id === 'realEstate' && <Icons.Scale size={28} />}
                           {id === 'dispute' && <Icons.Shield />}
                         </div>
-                        <h4 className="text-xl font-serif text-[#1A233A] mb-4">{t.practice[id].title}</h4>
-                        <p className="text-sm text-slate-500 font-light leading-relaxed">{t.practice[id].desc}</p>
+                        <h4 className="text-lg font-bold text-[#1d6266] mb-4">{t.practice[id].title}</h4>
+                        <p className="text-[13px] text-slate-500 font-light leading-relaxed">{t.practice[id].desc}</p>
                       </div>
                     ))}
                   </div>
                 </section>
 
                 <section>
-                  <h3 className="text-3xl font-serif text-[#1A233A] mb-10">{t.cases.title}</h3>
+                  <h3 className="text-2xl font-bold text-[#1d6266] mb-10 tracking-tight">{t.cases.title}</h3>
                   <div className="space-y-4">
                     {t.cases.list.map((caseItem, idx) => (
-                      <div key={idx} className="group flex flex-col sm:flex-row sm:items-center justify-between p-7 bg-white border border-slate-200 rounded-2xl hover:border-[#1A233A] transition-all duration-300">
-                        <div className="flex items-center gap-5 mb-4 sm:mb-0">
-                          <div className="text-slate-300 group-hover:text-[#B8905B] transition-colors"><Icons.ArrowRight /></div>
-                          <p className="font-medium text-[#1A233A] text-[1rem]">{caseItem.title}</p>
+                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 bg-white border border-slate-100 rounded-xl hover:border-[#2eb793] transition-all">
+                        <div className="flex items-center gap-4 mb-3 sm:mb-0">
+                          <div className="text-[#2eb793] opacity-40"><Icons.ArrowRight /></div>
+                          <p className="font-semibold text-[#1d6266] text-sm">{caseItem.title}</p>
                         </div>
-                        <span className="inline-block px-5 py-2 bg-[#1A233A] text-[#B8905B] text-[11px] font-bold tracking-[0.2em] uppercase rounded-full shadow-lg">
+                        <span className="px-4 py-1.5 bg-[#1d6266] text-[#2eb793] text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
                           {caseItem.result}
                         </span>
                       </div>
@@ -504,21 +468,19 @@ export default function App() {
                   </div>
                 </section>
 
-                <section className="bg-[#1A233A] rounded-[3rem] p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#B8905B]/10 to-transparent"></div>
+                <section className="bg-[#1d6266] rounded-[2.5rem] p-12 md:p-16 text-center shadow-xl relative overflow-hidden">
                   <div className="relative z-10">
-                    <span className="text-[#B8905B] text-xs font-bold tracking-[0.4em] uppercase mb-6 block">{t.practice.ctaSubTitle}</span>
-                    <h4 className="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+                    <span className="text-[#2eb793] text-[10px] font-black tracking-[0.4em] uppercase mb-6 block">CONNECT</span>
+                    <h4 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
                       {t.practice.ctaTitle}
                     </h4>
-                    <p className="text-slate-300 font-light max-w-2xl mx-auto mb-12">
+                    <p className="text-white/60 font-light max-w-xl mx-auto mb-10 text-sm">
                       {t.practice.ctaText}
                     </p>
-                    <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-4 bg-[#B8905B] text-white px-12 py-5 text-xs font-bold tracking-[0.3em] uppercase rounded-full hover:bg-white hover:text-[#1A233A] transition-all shadow-xl hover:scale-105 active:scale-95">
+                    <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#2eb793] text-white px-10 py-4 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-white hover:text-[#1d6266] transition-all shadow-lg active:scale-95">
                       <Icons.MessageCircle /> 
                       <span>{t.practice.ctaBtn}</span>
                     </a>
-                    <p className="mt-8 text-[11px] text-slate-500 italic">{t.practice.ctaNote}</p>
                   </div>
                 </section>
               </div>
@@ -528,42 +490,42 @@ export default function App() {
             {activeTab === 'tab3' && (
               <div className="animate-reveal max-w-4xl space-y-16">
                 <section>
-                  <h3 className="text-3xl md:text-4xl font-serif text-[#1A233A] mb-8">{t.speaker.title}</h3>
-                  <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed max-w-3xl mb-12">
+                  <h3 className="text-3xl font-bold text-[#1d6266] mb-8 tracking-tight">{t.speaker.title}</h3>
+                  <p className="text-base text-slate-500 font-light leading-relaxed mb-12">
                     {t.speaker.desc}
                   </p>
 
-                  <div className="grid gap-12">
+                  <div className="grid gap-10">
                     <div>
-                      <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-5">
-                        <div className="text-[#B8905B]"><Icons.GraduationCap /></div>
-                        <h4 className="text-xl font-serif text-[#1A233A]">{t.speaker.teachingTitle}</h4>
+                      <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-5">
+                        <div className="text-[#2eb793]"><Icons.GraduationCap /></div>
+                        <h4 className="text-lg font-bold text-[#1d6266] tracking-tight">{t.speaker.teachingTitle}</h4>
                       </div>
-                      <div className="space-y-6">
+                      <div className="space-y-5">
                         {t.speaker.teachingItems.map((item, idx) => (
-                          <div key={idx} className="flex gap-6 bg-white p-8 rounded-3xl border border-slate-200 items-start hover:border-[#1A233A] transition-all">
-                            <div className="text-[#B8905B] mt-1 shrink-0"><Icons.ArrowRight /></div>
-                            <p className="text-[#334155] leading-relaxed">{item}</p>
+                          <div key={idx} className="flex gap-5 bg-white p-7 rounded-2xl border border-slate-100 items-start hover:border-[#2eb793] transition-all">
+                            <div className="text-[#2eb793] mt-1 shrink-0"><Icons.ArrowRight /></div>
+                            <p className="text-[14px] text-slate-600 leading-relaxed">{item}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-5">
-                        <div className="text-[#B8905B]"><Icons.Users /></div>
-                        <h4 className="text-xl font-serif text-[#1A233A]">{t.speaker.eventTitle}</h4>
+                      <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-5">
+                        <div className="text-[#2eb793]"><Icons.Users /></div>
+                        <h4 className="text-lg font-bold text-[#1d6266] tracking-tight">{t.speaker.eventTitle}</h4>
                       </div>
-                      <div className="bg-white/50 p-16 rounded-[3rem] border-2 border-dashed border-slate-200 flex items-center justify-center text-center">
-                        <p className="text-slate-400 italic tracking-[0.1em]">{t.speaker.eventItems[0]}</p>
+                      <div className="bg-slate-50/50 p-16 rounded-[2rem] border-2 border-dashed border-slate-200 flex items-center justify-center text-center">
+                        <p className="text-slate-400 italic text-sm tracking-wide">{t.speaker.eventItems[0]}</p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                <div className="bg-white p-12 rounded-[2.5rem] border border-slate-200 text-center shadow-sm">
-                  <p className="text-slate-500 font-light mb-8">{t.speaker.contactText}</p>
-                  <a href="mailto:hoant@paxlaw.vn" className="inline-flex items-center justify-center gap-4 bg-[#1A233A] text-white px-10 py-5 text-xs font-bold tracking-[0.3em] uppercase rounded-full hover:bg-[#B8905B] transition-all shadow-lg">
+                <div className="bg-white p-12 rounded-[2rem] border border-slate-100 text-center">
+                  <p className="text-slate-400 font-light mb-8 text-sm">{t.speaker.contactText}</p>
+                  <a href="mailto:hoant@paxlaw.vn" className="inline-flex items-center justify-center gap-3 bg-[#1d6266] text-white px-10 py-4 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-[#2eb793] transition-all shadow-md">
                     <Icons.Mail /> {t.speaker.contactBtn}
                   </a>
                 </div>
