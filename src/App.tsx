@@ -201,7 +201,7 @@ const Icons = {
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
   Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
-  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Award: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>,
@@ -261,43 +261,55 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/50 to-transparent md:from-[#1A233A] md:via-[#1A233A]/70 md:to-transparent"></div>
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/70 to-transparent pointer-events-none"></div>
 
-          {/* === TOP BAR: CONTACT BUTTONS & LANGUAGE (UNIFIED) === */}
-          <div className="absolute top-0 left-0 w-full p-4 md:p-8 lg:p-12 flex justify-between items-start gap-3 md:gap-4 z-30 animate-tab">
-            
-            {/* Cụm Mạng xã hội: Cuộn ngang trên Mobile, không đè nút Ngôn ngữ */}
-            <div className="flex-1 overflow-x-auto hide-scroll pb-2 -mb-2">
-              <div className="flex flex-nowrap items-center justify-start gap-2.5 md:gap-3 w-max pr-4">
-                <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="shrink-0 flex items-center justify-center h-9 md:h-10 px-3.5 md:px-5 gap-2 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-                  <Icons.LinkedIn />
-                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.linkedin}</span>
-                </a>
-                <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="shrink-0 flex items-center justify-center h-9 md:h-10 px-3.5 md:px-5 gap-2 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-                  <Icons.Facebook />
-                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.facebook}</span>
-                </a>
-                <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="shrink-0 flex items-center justify-center h-9 md:h-10 px-3.5 md:px-5 gap-2 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-                  <Icons.Mail />
-                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.email}</span>
-                </a>
-                <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="shrink-0 flex items-center justify-center h-9 md:h-10 px-3.5 md:px-5 gap-2 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-                  <Icons.Phone />
-                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.phone}</span>
-                </a>
-              </div>
-            </div>
+          {/* === TOP RIGHT: LANGUAGE TOGGLE === */}
+          <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:right-12 z-30 animate-tab">
+            <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-10 px-4 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
+              <Icons.Globe />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
+            </button>
+          </div>
 
-            {/* Nút Ngôn ngữ: Cố định góc phải */}
-            <div className="shrink-0">
-              <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-9 md:h-10 px-3.5 md:px-5 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-                <Icons.Globe />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
-              </button>
-            </div>
+          {/* === TOP LEFT: VERTICAL EXPANDING CONTACT BUTTONS === */}
+          <div className="absolute top-4 left-4 md:top-8 md:left-8 lg:top-12 lg:left-12 flex flex-col items-start gap-3 z-30 animate-tab">
+            <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" aria-label={t.socials.linkedin} title="LinkedIn" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.LinkedIn />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.linkedin}
+              </span>
+            </a>
             
+            <a href="https://www.facebook.com/Paxlaw.vn?locale=vi_VN" target="_blank" rel="noreferrer" aria-label={t.socials.facebook} title="Facebook" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Facebook />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.facebook}
+              </span>
+            </a>
+
+            <a href="mailto:hoant@paxlaw.vn" aria-label={t.socials.email} title="Email" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Mail />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.email}
+              </span>
+            </a>
+
+            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center h-10 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-500 ease-out rounded-full group shadow-sm overflow-hidden max-w-[40px] hover:max-w-[160px]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <Icons.Phone />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {t.socials.phone}
+              </span>
+            </a>
           </div>
           
           {/* Name & Titles */}
-          <div className="absolute bottom-0 left-0 w-full p-6 pb-16 md:p-8 lg:p-12 text-white flex flex-col justify-end items-start animate-tab">
+          <div className="absolute bottom-0 left-0 w-full p-6 pb-16 md:p-8 lg:p-12 text-white flex flex-col justify-end items-start animate-tab pointer-events-none">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-medium mb-2 md:mb-4 text-white drop-shadow-lg leading-tight pr-4">
               {t.hero.name}
             </h1>
