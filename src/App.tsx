@@ -194,7 +194,7 @@ const Icons = {
   LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
   Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
   Mail: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
-  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 {2.81}.7A2 2 0 0 1 22 16.92z"></path></svg>,
+  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1 22 16.92z"></path></svg>,
   Scale: ({size=24}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>,
   Building: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>,
   Briefcase: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
@@ -430,8 +430,9 @@ export default function App() {
                   ))}
                 </section>
 
-                {/* 5. FORMAL CREDENTIALS */}
+                {/* 5. FORMAL CREDENTIALS (SYNCHRONIZED) */}
                 <section className="animate-reveal delay-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Education Card */}
                   <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
                     <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
                       <div className="text-[#B8905B] scale-125"><Icons.GraduationCap /></div>
@@ -446,6 +447,8 @@ export default function App() {
                       ))}
                     </ul>
                   </div>
+                  
+                  {/* Associations Card (Synchronized Bullets) */}
                   <div className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-[#1A233A] transition-all">
                     <div className="flex items-center gap-4 mb-8 border-b border-slate-100 pb-6">
                       <div className="text-[#B8905B] scale-125"><Icons.Users /></div>
@@ -454,8 +457,8 @@ export default function App() {
                     <ul className="space-y-5">
                       {t.profile.assoItems.map((item, idx) => (
                         <li key={idx} className="flex gap-4 text-sm text-slate-500 font-light leading-relaxed">
-                          <span className="text-[#B8905B] opacity-60">{idx === 0 ? <Icons.Award /> : <span className="w-1.5 h-1.5 rounded-full bg-[#B8905B] mt-1.5 block"></span>}</span>
-                          <span className={idx === 0 ? "font-semibold text-[#1A233A]" : ""}>{item}</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#B8905B] mt-1.5 shrink-0 opacity-40"></span>
+                          <span className={idx === 0 ? "font-medium text-[#1A233A]" : ""}>{item}</span>
                         </li>
                       ))}
                     </ul>
