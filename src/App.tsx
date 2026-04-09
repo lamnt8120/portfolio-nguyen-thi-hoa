@@ -214,8 +214,6 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('tab1');
   const t = dict[lang];
 
-  const toggleLang = () => setLang(prev => prev === 'vi' ? 'en' : 'vi');
-
   return (
     <div className="bg-[#1A233A] font-sans text-[#334155] selection:bg-[#B8905B] selection:text-white">
       
@@ -261,12 +259,21 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A233A] via-[#1A233A]/50 to-transparent md:from-[#1A233A] md:via-[#1A233A]/70 md:to-transparent"></div>
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A233A]/70 to-transparent pointer-events-none"></div>
 
-          {/* === TOP RIGHT: LANGUAGE TOGGLE === */}
+          {/* === TOP RIGHT: LANGUAGE TOGGLE SWITCH === */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:right-12 z-30 animate-tab">
-            <button onClick={toggleLang} aria-label="Toggle Language" className="flex items-center justify-center gap-1.5 h-10 px-4 bg-[#1A233A]/40 border border-white/15 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
-              <Icons.Globe />
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase mt-[1px]">{lang === 'vi' ? 'EN' : 'VI'}</span>
-            </button>
+            <div className="flex items-center bg-[#1A233A]/40 border border-white/15 backdrop-blur-md p-1 rounded-full shadow-sm">
+              <div className="pl-2.5 pr-1.5 text-white/80">
+                <Icons.Globe />
+              </div>
+              <div className="flex items-center gap-1">
+                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">VI</span>
+                </button>
+                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#B8905B] text-white shadow-md' : 'text-white/50 hover:text-white hover:bg-white/10'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">EN</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* === TOP LEFT: VERTICAL EXPANDING CONTACT BUTTONS === */}
@@ -333,6 +340,18 @@ export default function App() {
                   <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#1A233A] transition-transform duration-300 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               ))}
+            </div>
+            
+            {/* --- TAB HEADER: LANGUAGE TOGGLE SWITCH --- */}
+            <div className="pb-3 md:pb-4 pl-4 md:pl-6 shrink-0">
+              <div className="flex items-center bg-[#F8F9FA] border border-slate-200 p-1 rounded-full shadow-sm">
+                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center px-3 h-7 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#1A233A] text-white shadow-md' : 'text-slate-400 hover:text-[#1A233A] hover:bg-slate-100'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">VI</span>
+                </button>
+                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center px-3 h-7 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#1A233A] text-white shadow-md' : 'text-slate-400 hover:text-[#1A233A] hover:bg-slate-100'}`}>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest mt-[1px]">EN</span>
+                </button>
+              </div>
             </div>
           </div>
 
