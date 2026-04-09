@@ -52,7 +52,7 @@ const dict = {
       assoTitle: "Hiệp hội & Ngôn ngữ",
       assoItems: [
         "Phó Chủ tịch Quốc gia JCI Việt Nam (Nhiệm kỳ 2026)",
-        "Thành viên Đoàn Luật sư TP. Hà Nội, Liên đoàn Luật sư Việt Nam",
+        "Thành viên Đoàn Luật sư TP. Hà Nội",
         "Ngôn ngữ: Tiếng Việt (Bản xứ) • Tiếng Anh (Chuyên nghiệp) • Tiếng Nhật (Cơ bản)"
       ]
     },
@@ -83,7 +83,7 @@ const dict = {
       desc: "Bên cạnh công tác điều hành và tư vấn pháp lý, Luật sư Hoa còn trực tiếp tham gia công tác giảng dạy học thuật và diễn thuyết tại các diễn đàn doanh nhân lớn.",
       teachingTitle: "Công tác Giảng dạy & Học thuật",
       teachingItems: [
-        "Giảng viên thỉnh giảng (Bộ môn Luật chung & Tài chính Ngân hàng) tại Đại học Thành Đông (2019 - 2021).",
+        "Giảng viên thỉnh giảng (Bộ môn Luật chung & Tài chính Ngân hàng) tại Đại học Thành Đông (2019 - Nay).",
         "Giảng viên nội bộ chuyên đề Quản lý Ngoại hối và Thanh toán Quốc tế tại Techcombank (2013 - 2018)."
       ],
       eventTitle: "Sự kiện & Diễn đàn JCI",
