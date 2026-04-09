@@ -12,7 +12,7 @@ const dict = {
       linkedin: "LinkedIn",
       facebook: "Facebook",
       email: "Email",
-      phone: "Gọi ngay"
+      phone: "Gọi"
     },
     tabs: {
       tab1: "Giới thiệu",
@@ -22,7 +22,9 @@ const dict = {
     summary: {
       hook: "Chuyên gia Cấu trúc Đầu tư & Quản trị Rủi ro pháp lý.",
       intro: "Với hơn 15 năm kinh nghiệm, Luật sư Nguyễn Thị Hoa cung cấp định hướng pháp lý chiến lược cho các dự án đầu tư quy mô lớn, giải quyết tranh chấp phức tạp và thiết lập khung tuân thủ toàn diện cho hệ thống Ngân hàng, Tài chính và Bất động sản.",
-      quote: "“Nếu ví pháp luật như những tấm lụa đa sắc, với vai trò của một luật sư, tôi sẽ đồng hành cùng khách hàng dệt ‘CHIẾC KHIÊN LỤA’ của riêng họ trên thương trường.”",
+      quotePart1: "“Nếu ví pháp luật như những tấm lụa đa sắc, với vai trò của một luật sư, tôi sẽ đồng hành cùng khách hàng dệt ",
+      quoteHighlight: "‘CHIẾC KHIÊN LỤA’",
+      quotePart2: " của riêng họ trên thương trường.”",
       quoteAuthor: "Luật sư Hoa Nguyễn",
       bullet1Title: "Năng lực Cốt lõi",
       bullet1Desc: "Chuyên sâu tư vấn Doanh nghiệp, M&A và Tái cấu trúc tài chính. Sở hữu thế mạnh đặc biệt trong việc thiết kế khung pháp lý cho hoạt động quản lý ngoại hối và thanh toán quốc tế.",
@@ -102,7 +104,7 @@ const dict = {
       linkedin: "LinkedIn",
       facebook: "Facebook",
       email: "Email",
-      phone: "Call Now"
+      phone: "Call"
     },
     tabs: {
       tab1: "Introduction",
@@ -112,7 +114,9 @@ const dict = {
     summary: {
       hook: "Risk management and investment structuring expert.",
       intro: "With over 15 years of experience, Attorney Hoa Nguyen provides strategic legal guidance for large-scale investment projects, complex dispute resolution, and regulatory compliance across the Banking, Finance, and Real Estate sectors.",
-      quote: "“If the law is likened to a tapestry of multi-colored silk, as a legal counsel, I will stand by my clients to weave their very own ‘SILK SHIELD’ in the business arena.”",
+      quotePart1: "“If the law is likened to a tapestry of multi-colored silk, as a legal counsel, I will stand by my clients to weave their very own ",
+      quoteHighlight: "‘SILK SHIELD’",
+      quotePart2: " in the business arena.”",
       quoteAuthor: "Attorney Hoa Nguyen",
       bullet1Title: "Core Competencies",
       bullet1Desc: "Corporate advisory, M&A, and financial restructuring. Highly proficient in designing legal frameworks for financial activities, FX management, and cross-border payments.",
@@ -271,9 +275,9 @@ export default function App() {
               <Icons.Mail />
               <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.email}</span>
             </a>
-            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-[#B8905B]/90 border border-[#B8905B] backdrop-blur-md hover:bg-white hover:border-white hover:text-[#1A233A] text-white transition-all duration-300 rounded-full group shadow-sm">
+            <a href="tel:+84911553686" aria-label={t.socials.phone} title="Hotline" className="flex items-center justify-center w-10 h-10 md:w-auto md:px-5 gap-2.5 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-[#B8905B] hover:border-[#B8905B] text-white transition-all duration-300 rounded-full group shadow-sm">
               <Icons.Phone />
-              <span className="hidden lg:inline text-[10px] font-bold tracking-[0.15em] uppercase">{t.socials.phone}</span>
+              <span className="hidden lg:inline text-[10px] font-semibold tracking-[0.15em] uppercase">{t.socials.phone}</span>
             </a>
           </div>
           
@@ -348,7 +352,9 @@ export default function App() {
                     <Icons.QuoteIcon />
                   </div>
                   <p className="relative z-10 text-lg md:text-xl lg:text-2xl font-serif font-normal text-[#F6F5F2] leading-[1.8] md:leading-[2] max-w-3xl tracking-wide">
-                    {t.summary.quote}
+                    {t.summary.quotePart1}
+                    <strong className="italic">{t.summary.quoteHighlight}</strong>
+                    {t.summary.quotePart2}
                   </p>
                   <div className="relative z-10 mt-8 flex flex-col items-center">
                     <span className="w-12 h-[1px] bg-[#B8905B] mb-4"></span>
