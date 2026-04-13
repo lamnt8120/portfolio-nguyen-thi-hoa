@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // --- DICTIONARY FOR BILINGUAL SUPPORT ---
 const dict = {
@@ -188,7 +189,7 @@ const dict = {
   }
 };
 
-// --- ICONS (Styled for Paxlaw) ---
+// --- ICONS ---
 const strokeW = "1.5";
 const Icons = {
   LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
@@ -201,11 +202,22 @@ const Icons = {
   Shield: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
   ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
   Check: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
-  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
   MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
   GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
   Users: () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeW} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
   QuoteIcon: () => <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="opacity-10"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3996 5.849h3.983v10h-9.983z"/></svg>
+};
+
+// --- ANIMATION CONSTANTS ---
+const springTransition = { type: "spring", stiffness: 300, damping: 30 };
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  })
 };
 
 export default function App() {
@@ -213,7 +225,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('tab1');
   const t = dict[lang];
 
-  // --- BRAND COLORS ---
+  // Colors based on brand guidelines
   const colors = {
     mint: "#2eb793",
     deepGreen: "#1d6266",
@@ -225,81 +237,71 @@ export default function App() {
   return (
     <div className={`bg-[${colors.deepGreen}] font-sans text-[${colors.textDark}] selection:bg-[${colors.mint}] selection:text-white`}>
       
-      {/* CSS: Paxlaw Aesthetic Styling */}
+      {/* CSS: Custom Paxlaw Aesthetic */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-        @theme {
-          --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-        }
-
-        .font-sans { font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important; }
-
-        .hide-scroll::-webkit-scrollbar { width: 4px; height: 4px; }
-        .hide-scroll::-webkit-scrollbar-track { background: transparent; }
-        .hide-scroll::-webkit-scrollbar-thumb { background: ${colors.mint}; border-radius: 10px; }
-        
-        @keyframes revealUp {
-          from { opacity: 0; transform: translateY(15px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-reveal { animation: revealUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        
-        /* Motif dải lụa Paxlaw */
+        .font-sans { font-family: "Inter", sans-serif !important; }
+        .hide-scroll::-webkit-scrollbar { width: 0; height: 0; }
         .pax-silk-overlay {
-          background: linear-gradient(135deg, rgba(46, 183, 147, 0.1) 0%, rgba(29, 98, 102, 0.05) 100%);
+          background: linear-gradient(135deg, rgba(46, 183, 147, 0.08) 0%, rgba(29, 98, 102, 0.04) 100%);
           border-radius: 40% 60% 60% 40% / 30% 30% 70% 70%;
         }
-
-        /* Drop shadow nhẹ cho tên để nổi bật trên ảnh */
-        .name-shadow {
-          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        .name-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .silk-shield-shimmer {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background-size: 200% 100%;
+          animation: shimmer 4s infinite linear;
         }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
       `}</style>
 
       {/* --- MAIN LAYOUT --- */}
       <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] bg-[#F8F9FA]">
         
-        {/* === LEFT PANEL (Identity & Visual) === */}
+        {/* === LEFT PANEL: IMAGE & BRANDING === */}
         <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden bg-white">
-          <img 
+          <motion.img 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2, ease: "easeOut" }}
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
-            alt="Luật sư Nguyễn Thị Hoa" 
-            className="w-full h-full object-cover object-top md:object-center opacity-100 transition-opacity duration-500"
+            alt="Lawyer Portfolio" 
+            className="w-full h-full object-cover object-top md:object-center"
           />
           
-          {/* ĐÃ GỠ BỎ LỚP PHỦ XANH PHÍA TRÊN (TOP GRADIENT) THEO YÊU CẦU */}
-
-          {/* BOTTOM BAR GRADIENT: Chốt ở sát mép dưới để tôn chữ trắng, gương mặt vẫn sáng rõ */}
           <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-[#1d6266] via-[#1d6266]/30 to-transparent pointer-events-none"></div>
 
-          {/* TOP RIGHT: Language Toggle Switch - Nổi bật trên nền ảnh sạch */}
-          <div className="absolute top-6 right-6 z-40 animate-reveal">
-            <div className="flex items-center bg-[#1d6266]/60 border border-white/20 backdrop-blur-xl p-1 rounded-full shadow-2xl">
-              <div className="pl-2.5 pr-1.5 text-white">
-                <Icons.Globe />
-              </div>
+          {/* TOP RIGHT: LANGUAGE TOGGLE SWITCH (Press Effect) */}
+          <div className="absolute top-6 right-6 z-40">
+            <motion.div className="flex items-center bg-[#1d6266]/50 border border-white/20 backdrop-blur-xl p-1 rounded-full shadow-2xl">
+              <div className="pl-2.5 pr-1.5 text-white"><Icons.Globe /></div>
               <div className="flex items-center gap-1">
-                <button onClick={() => setLang('vi')} aria-label="Tiếng Việt" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'vi' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/40 hover:text-white'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest">VI</span>
-                </button>
-                <button onClick={() => setLang('en')} aria-label="English" className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/40 hover:text-white'}`}>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-widest">EN</span>
-                </button>
+                {['vi', 'en'].map(l => (
+                  <motion.button 
+                    key={l}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setLang(l)} 
+                    className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${lang === l ? 'bg-[#2eb793] text-white shadow-lg' : 'text-white/40 hover:text-white'}`}
+                  >
+                    <span className="text-[10px] font-bold uppercase">{l}</span>
+                  </motion.button>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* TOP LEFT: Minimal Vertical Contacts - Nổi bật trên nền ảnh sạch */}
+          {/* TOP LEFT: CONTACT BUTTONS (Expandable & Press) */}
           <div className="absolute top-6 left-6 flex flex-col items-start gap-3 z-40">
             {['linkedin', 'facebook', 'email', 'phone'].map((key, i) => (
-              <a 
+              <motion.a 
                 key={key} 
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+                whileHover={{ scale: 1.05, backgroundColor: colors.mint }}
+                whileTap={{ scale: 0.95 }}
                 href={key === 'email' ? 'mailto:hoant@paxlaw.vn' : key === 'phone' ? 'tel:+84911553686' : '#'}
-                target="_blank" rel="noreferrer"
-                className="flex items-center h-10 bg-[#1d6266]/60 border border-white/10 backdrop-blur-xl hover:bg-[#2eb793] text-white transition-all duration-500 rounded-full group shadow-lg overflow-hidden max-w-[40px] hover:max-w-[160px] animate-reveal"
-                style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+                className="flex items-center h-10 bg-black/40 border border-white/10 backdrop-blur-md text-white rounded-full group shadow-lg overflow-hidden max-w-[40px] hover:max-w-[160px] transition-all duration-500 ease-out"
               >
                 <div className="w-10 h-10 flex items-center justify-center shrink-0 scale-90">
                   {key === 'linkedin' && <Icons.LinkedIn />}
@@ -307,240 +309,313 @@ export default function App() {
                   {key === 'email' && <Icons.Mail />}
                   {key === 'phone' && <Icons.Phone />}
                 </div>
-                <span className="text-[9px] font-bold tracking-[0.2em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap pr-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {dict[lang].socials[key]}
                 </span>
-              </a>
+              </motion.a>
             ))}
           </div>
           
-          {/* BRAND NAME & ROLES - Sáng và rõ nét */}
-          <div className="absolute bottom-0 left-0 w-full p-8 pb-12 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start animate-reveal delay-3 pointer-events-none z-10">
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight whitespace-nowrap name-shadow text-white">
+          {/* BRAND NAME & ROLES (Entrance Effect) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="absolute bottom-0 left-0 w-full p-8 pb-12 md:p-12 lg:p-16 text-white flex flex-col justify-end items-start pointer-events-none z-10"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight whitespace-nowrap name-shadow">
               {t.hero.name}
             </h1>
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em]">
-              <span className="bg-[#2eb793] text-white px-4 py-2 rounded-md shadow-lg border border-white/20">{t.hero.role1}</span>
+              <motion.span 
+                animate={{ scale: [1, 1.03, 1] }} 
+                transition={{ repeat: Infinity, duration: 3 }}
+                className="bg-[#2eb793] text-white px-4 py-2 rounded-md shadow-lg border border-white/20"
+              >
+                {t.hero.role1}
+              </motion.span>
               <span className="text-white/40 font-light text-lg px-1">|</span>
               <span className="text-white drop-shadow-md">{t.hero.role2}</span>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* === RIGHT PANEL (Content) === */}
+        {/* === RIGHT PANEL: SCROLLABLE CONTENT === */}
         <div className="flex-1 flex flex-col bg-[#F8F9FA] rounded-t-[2.5rem] md:rounded-none -mt-10 md:mt-0 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.1)] md:shadow-none md:overflow-hidden">
           
-          {/* Sticky Tabs */}
-          <div className="shrink-0 sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none">
+          {/* STICKY TABS (Sliding Indicator Effect) */}
+          <div className="shrink-0 sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 px-8 md:px-12 lg:px-16 pt-8 md:pt-10 flex items-end rounded-t-[2.5rem] md:rounded-none overflow-hidden">
             <div className="flex gap-8 md:gap-10 lg:gap-14 overflow-x-auto hide-scroll flex-1">
               {['tab1', 'tab2', 'tab3'].map((tab) => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] transition-all relative outline-none whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1d6266]' : 'text-slate-400 hover:text-[#2eb793]'}`}>
+                <motion.button 
+                  key={tab} 
+                  whileTap={{ y: -2 }}
+                  onClick={() => setActiveTab(tab)} 
+                  className={`pb-5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] transition-all relative whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1d6266]' : 'text-slate-400'}`}
+                >
                   {t.tabs[tab]}
-                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#2eb793] transition-transform duration-500 origin-left ${activeTab === tab ? 'scale-x-100' : 'scale-x-0'}`}></span>
-                </button>
+                  {activeTab === tab && (
+                    <motion.span 
+                      layoutId="underline" 
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-[#2eb793]"
+                      transition={springTransition}
+                    />
+                  )}
+                </motion.button>
               ))}
             </div>
           </div>
 
           <div className="flex-1 overflow-visible md:overflow-y-auto hide-scroll p-8 md:p-12 lg:p-16 pb-20">
             
-            {/* TAB 1: INTRODUCTION */}
-            {activeTab === 'tab1' && (
-              <div className="max-w-4xl mx-auto md:mx-0 space-y-16">
-                
-                {/* 1. Brand Hook */}
-                <section className="animate-reveal">
-                  <h2 className={`text-2xl md:text-[2.25rem] font-extrabold text-[#1d6266] leading-tight mb-8 tracking-tight`}>
-                    {t.summary.hook}
-                  </h2>
-                  <p className="text-base text-slate-500 font-light leading-relaxed">
-                    {t.summary.intro}
-                  </p>
-                </section>
-
-                {/* 2. THE BRAND QUOTE */}
-                <section className="animate-reveal relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 pax-silk-overlay -mr-10 -mt-10 opacity-30"></div>
-                  <div className="relative z-10 bg-[#1d6266] p-10 md:p-14 rounded-[2rem] shadow-2xl overflow-hidden border-l-4 border-[#2eb793]">
-                    <p className="text-lg md:text-xl lg:text-[1.65rem] font-light text-white leading-relaxed tracking-wide mb-10">
-                      {t.summary.quotePart1}
-                      <span className="font-bold text-[#2eb793]">{t.summary.quoteHighlight}</span>
-                      {t.summary.quotePart2}
+            <AnimatePresence mode="wait">
+              {activeTab === 'tab1' && (
+                <motion.div 
+                  key="tab1"
+                  initial="hidden" animate="visible" exit={{ opacity: 0, x: -10 }}
+                  className="max-w-4xl mx-auto md:mx-0 space-y-20"
+                >
+                  {/* 1. Brand Hook */}
+                  <motion.section custom={0} variants={fadeInVariants}>
+                    <h2 className="text-2xl md:text-[2.25rem] font-extrabold text-[#1d6266] leading-tight mb-8 tracking-tight">
+                      {t.summary.hook}
+                    </h2>
+                    <p className="text-base text-slate-500 font-light leading-relaxed">
+                      {t.summary.intro}
                     </p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-px bg-[#2eb793]"></div>
-                      <div>
-                        <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#2eb793]">{t.summary.quoteAuthor}</p>
-                        <p className="text-[9px] font-medium text-white/40 uppercase mt-1">Founder Paxlaw</p>
+                  </motion.section>
+
+                  {/* 2. BRAND QUOTE (Loop Floating Effect) */}
+                  <motion.section 
+                    custom={1} variants={fadeInVariants}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    className="relative"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 pax-silk-overlay -mr-10 -mt-10 opacity-40"></div>
+                    <div className="relative z-10 bg-[#1d6266] p-10 md:p-14 rounded-[2.5rem] shadow-2xl overflow-hidden border-l-4 border-[#2eb793]">
+                      <div className="absolute inset-0 silk-shield-shimmer opacity-30 pointer-events-none"></div>
+                      <p className="text-lg md:text-xl lg:text-[1.65rem] font-light text-white leading-relaxed tracking-wide mb-10">
+                        {t.summary.quotePart1}
+                        <span className="font-bold text-[#2eb793]">{t.summary.quoteHighlight}</span>
+                        {t.summary.quotePart2}
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-px bg-[#2eb793]"></div>
+                        <div>
+                          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#2eb793]">{t.summary.quoteAuthor}</p>
+                          <p className="text-[9px] font-medium text-white/40 uppercase mt-1">Founder Paxlaw</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </motion.section>
 
-                {/* 3. CORE COMPETENCIES + INTEGRATED LOGOS */}
-                <section className="animate-reveal grid gap-12">
-                  {[1, 2, 3].map(num => (
-                    <div key={num} className="group relative">
-                      <div className="flex gap-6 md:gap-10 items-start">
-                        <div className={`text-[1.75rem] font-black text-[#2eb793]/10 group-hover:text-[#2eb793] transition-colors leading-none pt-1`}>0{num}</div>
+                  {/* 3. COMPETENCIES (Staggered Appear & Hover Lift) */}
+                  <motion.section custom={2} variants={fadeInVariants} className="grid gap-12">
+                    {[1, 2, 3].map(num => (
+                      <motion.div 
+                        key={num} 
+                        whileHover={{ x: 10 }}
+                        className="group flex gap-6 md:gap-10 items-start"
+                      >
+                        <div className="text-[2rem] font-black text-[#2eb793]/10 group-hover:text-[#2eb793] transition-colors leading-none pt-1">0{num}</div>
                         <div>
                           <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1d6266] mb-3">{t.summary[`bullet${num}Title`]}</h4>
                           <p className="text-sm md:text-base text-slate-500 font-light leading-relaxed">{t.summary[`bullet${num}Desc`]}</p>
-                          
                           {num === 3 && (
-                            <div className="mt-8 flex flex-wrap items-center gap-8 md:gap-12 opacity-90 transition-opacity">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s" alt="Paxlaw" className="h-6 md:h-8 w-auto object-contain" />
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s" alt="Techcombank" className="h-5 md:h-6 w-auto object-contain" />
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s" alt="Penfield" className="h-6 md:h-8 w-auto object-contain" />
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s" alt="Green Invest" className="h-6 md:h-8 w-auto object-contain" />
-                            </div>
+                            <motion.div 
+                              drag="x" dragConstraints={{ right: 0, left: -100 }}
+                              className="mt-8 flex flex-wrap items-center gap-8 md:gap-12 cursor-grab active:cursor-grabbing"
+                            >
+                              {['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIdCgyjPpeiTDv0BrLrz6rqtm-Db7Cq3gTQ&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExxae_4L6FCMvq6EsOVn9VHzX9RDYrXMRrA&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgZN0vRbNUkX6vz-bfm8JcH7Wrhxscgkc7w&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHFKnavNAs3hUhillIyW74hlLc2SK6qkd-g&s'].map((url, idx) => (
+                                <motion.img whileHover={{ scale: 1.1 }} key={idx} src={url} className="h-6 md:h-8 w-auto object-contain pointer-events-none" />
+                              ))}
+                            </motion.div>
                           )}
                         </div>
-                      </div>
-                    </div>
-                  ))}
-                </section>
-
-                {/* 4. KEY STATS */}
-                <section className="animate-reveal grid grid-cols-1 sm:grid-cols-3 gap-8 py-10 border-y border-slate-100">
-                  {[
-                    { val: t.stats.expValue, lab: t.stats.expLabel },
-                    { val: t.stats.dealValue, lab: t.stats.dealLabel },
-                    { val: t.stats.fdiValue, lab: t.stats.fdiLabel },
-                  ].map((stat, i) => (
-                    <div key={i}>
-                      <h3 className="text-3xl md:text-4xl font-extrabold text-[#2eb793] mb-2">{stat.val}</h3>
-                      <p className="text-[#1d6266] text-[9px] font-bold uppercase tracking-[0.2em]">{stat.lab}</p>
-                    </div>
-                  ))}
-                </section>
-
-                {/* 5. FORMAL CREDENTIALS */}
-                <section className="animate-reveal grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[
-                    { title: t.profile.eduTitle, items: t.profile.eduItems, icon: <Icons.GraduationCap /> },
-                    { title: t.profile.assoTitle, items: t.profile.assoItems, icon: <Icons.Users /> }
-                  ].map((card, i) => (
-                    <div key={i} className="bg-white p-8 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-[#2eb793] transition-all">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="text-[#2eb793]">{card.icon}</div>
-                        <h3 className="text-[13px] font-bold tracking-wider text-[#1d6266] uppercase">{card.title}</h3>
-                      </div>
-                      <ul className="space-y-4">
-                        {card.items.map((item, idx) => (
-                          <li key={idx} className="flex gap-3 text-[13px] text-slate-500 font-light leading-relaxed">
-                            <span className="w-1 h-1 rounded-full bg-[#2eb793] mt-2 shrink-0 opacity-40"></span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </section>
-              </div>
-            )}
-
-            {/* TAB 2: LEGAL PRACTICE */}
-            {activeTab === 'tab2' && (
-              <div className="animate-reveal max-w-5xl space-y-16">
-                <section>
-                  <h3 className="text-2xl font-bold text-[#1d6266] mb-10 tracking-tight">{t.practice.title}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                    {['ma', 'finance', 'realEstate', 'dispute'].map((id) => (
-                      <div key={id} className="group bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#2eb793] transition-all duration-500">
-                        <div className="text-[#2eb793] mb-6 group-hover:scale-110 transition-transform">
-                          {id === 'ma' && <Icons.Briefcase />}
-                          {id === 'finance' && <Icons.Building />}
-                          {id === 'realEstate' && <Icons.Scale size={28} />}
-                          {id === 'dispute' && <Icons.Shield />}
-                        </div>
-                        <h4 className="text-lg font-bold text-[#1d6266] mb-4">{t.practice[id].title}</h4>
-                        <p className="text-[13px] text-slate-500 font-light leading-relaxed">{t.practice[id].desc}</p>
-                      </div>
+                      </motion.div>
                     ))}
-                  </div>
-                </section>
+                  </motion.section>
 
-                <section>
-                  <h3 className="text-2xl font-bold text-[#1d6266] mb-10 tracking-tight">{t.cases.title}</h3>
-                  <div className="space-y-4">
-                    {t.cases.list.map((caseItem, idx) => (
-                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 bg-white border border-slate-100 rounded-xl hover:border-[#2eb793] transition-all">
-                        <div className="flex items-center gap-4 mb-3 sm:mb-0">
-                          <div className="text-[#2eb793] opacity-40"><Icons.ArrowRight /></div>
-                          <p className="font-semibold text-[#1d6266] text-sm">{caseItem.title}</p>
-                        </div>
-                        <span className="px-4 py-1.5 bg-[#1d6266] text-[#2eb793] text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
-                          {caseItem.result}
-                        </span>
-                      </div>
+                  {/* 4. KEY STATS (Loop Pulse Effect) */}
+                  <motion.section custom={3} variants={fadeInVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-8 py-14 border-y border-slate-100">
+                    {['exp', 'deal', 'fdi'].map((k, i) => (
+                      <motion.div 
+                        key={k}
+                        whileHover={{ y: -5 }}
+                        className="text-center sm:text-left"
+                      >
+                        <motion.h3 
+                          animate={{ opacity: [0.7, 1, 0.7] }}
+                          transition={{ repeat: Infinity, duration: 4, delay: i * 0.5 }}
+                          className="text-3xl md:text-5xl font-black text-[#2eb793] mb-3"
+                        >
+                          {t.stats[`${k}Value`]}
+                        </motion.h3>
+                        <p className="text-[#1d6266] text-[10px] font-bold uppercase tracking-[0.2em]">{t.stats[`${k}Label`]}</p>
+                      </motion.div>
                     ))}
-                  </div>
-                </section>
+                  </motion.section>
 
-                <section className="bg-[#1d6266] rounded-[2.5rem] p-12 md:p-16 text-center shadow-xl relative overflow-hidden">
-                  <div className="relative z-10">
-                    <span className="text-[#2eb793] text-[10px] font-black tracking-[0.4em] uppercase mb-6 block">CONNECT</span>
-                    <h4 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                      {t.practice.ctaTitle}
-                    </h4>
-                    <p className="text-white/60 font-light max-w-xl mx-auto mb-10 text-sm">
-                      {t.practice.ctaText}
-                    </p>
-                    <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#2eb793] text-white px-10 py-4 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-white hover:text-[#1d6266] transition-all shadow-lg active:scale-95">
-                      <Icons.MessageCircle /> 
-                      <span>{t.practice.ctaBtn}</span>
-                    </a>
-                  </div>
-                </section>
-              </div>
-            )}
+                  {/* 5. FORMAL CREDENTIALS */}
+                  <motion.section custom={4} variants={fadeInVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[
+                      { t: t.profile.eduTitle, items: t.profile.eduItems, icon: <Icons.GraduationCap /> },
+                      { t: t.profile.assoTitle, items: t.profile.assoItems, icon: <Icons.Users /> }
+                    ].map((card, i) => (
+                      <motion.div 
+                        key={i} 
+                        whileHover={{ y: -10, borderColor: colors.mint }}
+                        className="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm transition-all"
+                      >
+                        <div className="flex items-center gap-3 mb-8">
+                          <div className="text-[#2eb793]">{card.icon}</div>
+                          <h3 className="text-[13px] font-bold tracking-wider text-[#1d6266] uppercase">{card.t}</h3>
+                        </div>
+                        <ul className="space-y-4">
+                          {card.items.map((item, idx) => (
+                            <li key={idx} className="flex gap-3 text-[13px] text-slate-500 font-light leading-relaxed">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2eb793] mt-1.5 shrink-0 opacity-40"></span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    ))}
+                  </motion.section>
+                </motion.div>
+              )}
 
-            {/* TAB 3: DIỄN GIẢ */}
-            {activeTab === 'tab3' && (
-              <div className="animate-reveal max-w-4xl space-y-16">
-                <section>
-                  <h3 className="text-3xl font-bold text-[#1d6266] mb-8 tracking-tight">{t.speaker.title}</h3>
-                  <p className="text-base text-slate-500 font-light leading-relaxed mb-12">
-                    {t.speaker.desc}
-                  </p>
-
-                  <div className="grid gap-10">
-                    <div>
-                      <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-5">
-                        <div className="text-[#2eb793]"><Icons.GraduationCap /></div>
-                        <h4 className="text-lg font-bold text-[#1d6266] tracking-tight">{t.speaker.teachingTitle}</h4>
-                      </div>
-                      <div className="space-y-5">
-                        {t.speaker.teachingItems.map((item, idx) => (
-                          <div key={idx} className="flex gap-5 bg-white p-7 rounded-2xl border border-slate-100 items-start hover:border-[#2eb793] transition-all">
-                            <div className="text-[#2eb793] mt-1 shrink-0"><Icons.ArrowRight /></div>
-                            <p className="text-[14px] text-slate-600 leading-relaxed">{item}</p>
+              {activeTab === 'tab2' && (
+                <motion.div 
+                  key="tab2"
+                  initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
+                  className="max-w-5xl space-y-20"
+                >
+                  <section>
+                    <h3 className="text-2xl font-bold text-[#1d6266] mb-12 tracking-tight">{t.practice.title}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                      {['ma', 'finance', 'realEstate', 'dispute'].map((id, i) => (
+                        <motion.div 
+                          key={id}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(29, 98, 102, 0.15)" }}
+                          transition={{ delay: i * 0.1 }}
+                          className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all"
+                        >
+                          <div className="text-[#2eb793] mb-8">
+                            {id === 'ma' && <Icons.Briefcase />}
+                            {id === 'finance' && <Icons.Building />}
+                            {id === 'realEstate' && <Icons.Scale size={32} />}
+                            {id === 'dispute' && <Icons.Shield />}
                           </div>
-                        ))}
-                      </div>
+                          <h4 className="text-xl font-bold text-[#1d6266] mb-4">{t.practice[id].title}</h4>
+                          <p className="text-sm text-slate-500 font-light leading-relaxed">{t.practice[id].desc}</p>
+                        </motion.div>
+                      ))}
                     </div>
+                  </section>
 
-                    <div>
-                      <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-5">
-                        <div className="text-[#2eb793]"><Icons.Users /></div>
-                        <h4 className="text-lg font-bold text-[#1d6266] tracking-tight">{t.speaker.eventTitle}</h4>
-                      </div>
-                      <div className="bg-slate-50/50 p-16 rounded-[2rem] border-2 border-dashed border-slate-200 flex items-center justify-center text-center">
-                        <p className="text-slate-400 italic text-sm tracking-wide">{t.speaker.eventItems[0]}</p>
-                      </div>
+                  <section>
+                    <h3 className="text-2xl font-bold text-[#1d6266] mb-12 tracking-tight">{t.cases.title}</h3>
+                    <div className="space-y-4">
+                      {t.cases.list.map((caseItem, idx) => (
+                        <motion.div 
+                          key={idx}
+                          whileHover={{ x: 12, borderColor: colors.deepGreen }}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between p-7 bg-white border border-slate-100 rounded-2xl transition-all cursor-default"
+                        >
+                          <div className="flex items-center gap-5 mb-4 sm:mb-0">
+                            <motion.div whileHover={{ rotate: 90 }} className="text-[#2eb793] opacity-50"><Icons.ArrowRight /></motion.div>
+                            <p className="font-semibold text-[#1d6266]">{caseItem.title}</p>
+                          </div>
+                          <span className="px-6 py-2 bg-[#1d6266] text-[#2eb793] text-[10px] font-black tracking-[0.25em] uppercase rounded-full shadow-lg">
+                            {caseItem.result}
+                          </span>
+                        </motion.div>
+                      ))}
                     </div>
-                  </div>
-                </section>
+                  </section>
 
-                <div className="bg-white p-12 rounded-[2rem] border border-slate-100 text-center">
-                  <p className="text-slate-400 font-light mb-8 text-sm">{t.speaker.contactText}</p>
-                  <a href="mailto:hoant@paxlaw.vn" className="inline-flex items-center justify-center gap-3 bg-[#1d6266] text-white px-10 py-4 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-[#2eb793] transition-all shadow-md">
-                    <Icons.Mail /> {t.speaker.contactBtn}
-                  </a>
-                </div>
-              </div>
-            )}
+                  {/* CTA SECTION (Pulsing Loop) */}
+                  <motion.section 
+                    whileHover={{ scale: 1.01 }}
+                    className="bg-[#1d6266] rounded-[3rem] p-12 md:p-20 text-center shadow-3xl relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2eb793]/10 to-transparent"></div>
+                    <div className="relative z-10">
+                      <span className="text-[#2eb793] text-[11px] font-black tracking-[0.5em] uppercase mb-8 block">CONSULTATION</span>
+                      <h4 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                        {t.practice.ctaTitle}
+                      </h4>
+                      <p className="text-white/50 font-light max-w-2xl mx-auto mb-14 text-base">
+                        {t.practice.ctaText}
+                      </p>
+                      <motion.a 
+                        href="https://zalo.me/0911553686" target="_blank" rel="noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        animate={{ boxShadow: ["0 0 0px rgba(46,183,147,0)", "0 0 30px rgba(46,183,147,0.3)", "0 0 0px rgba(46,183,147,0)"] }}
+                        transition={{ repeat: Infinity, duration: 2.5 }}
+                        className="inline-flex items-center justify-center gap-4 bg-[#2eb793] text-white px-14 py-5 text-xs font-black tracking-[0.3em] uppercase rounded-full shadow-2xl transition-all"
+                      >
+                        <Icons.MessageCircle /> 
+                        <span>{t.practice.ctaBtn}</span>
+                      </motion.a>
+                    </div>
+                  </motion.section>
+                </motion.div>
+              )}
+
+              {activeTab === 'tab3' && (
+                <motion.div 
+                  key="tab3"
+                  initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
+                  className="max-w-4xl mx-auto space-y-20"
+                >
+                  <section>
+                    <h3 className="text-3xl font-bold text-[#1d6266] mb-10 tracking-tight">{t.speaker.title}</h3>
+                    <p className="text-base text-slate-500 font-light leading-relaxed mb-16 max-w-2xl">
+                      {t.speaker.desc}
+                    </p>
+
+                    <div className="grid gap-12">
+                      <div>
+                        <div className="flex items-center gap-4 mb-10 border-b border-slate-100 pb-6">
+                          <div className="text-[#2eb793]"><Icons.GraduationCap /></div>
+                          <h4 className="text-xl font-bold text-[#1d6266]">{t.speaker.teachingTitle}</h4>
+                        </div>
+                        <div className="space-y-6">
+                          {t.speaker.teachingItems.map((item, idx) => (
+                            <motion.div 
+                              key={idx}
+                              whileHover={{ x: 10, backgroundColor: "rgba(46, 183, 147, 0.05)" }}
+                              className="flex gap-6 bg-white p-8 rounded-[2rem] border border-slate-100 items-start transition-all"
+                            >
+                              <div className="text-[#2eb793] mt-1 shrink-0"><Icons.ArrowRight /></div>
+                              <p className="text-[15px] text-slate-600 leading-relaxed font-medium">{item}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <motion.div 
+                        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                        className="bg-slate-100/50 p-20 rounded-[3rem] border-2 border-dashed border-slate-200 flex items-center justify-center text-center"
+                      >
+                        <motion.p 
+                          animate={{ opacity: [0.5, 1, 0.5] }} transition={{ repeat: Infinity, duration: 3 }}
+                          className="text-slate-400 italic text-sm tracking-widest uppercase"
+                        >
+                          {t.speaker.eventItems[0]}
+                        </motion.p>
+                      </motion.div>
+                    </div>
+                  </section>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
           </div>
         </div>
