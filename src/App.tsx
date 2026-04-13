@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// --- TYPES ---
+// --- TYPES FOR TYPESCRIPT SAFETY ---
 type Language = 'vi' | 'en';
 type TabId = 'about' | 'practice' | 'experience' | 'insights';
 
@@ -29,7 +29,14 @@ interface Translation {
     bullet3Title: string;
     bullet3Desc: string;
   };
-  stats: Record<string, string>;
+  stats: {
+    expValue: string;
+    expLabel: string;
+    dealValue: string;
+    dealLabel: string;
+    fdiValue: string;
+    fdiLabel: string;
+  };
   profile: {
     eduTitle: string;
     eduItems: string[];
@@ -51,6 +58,8 @@ interface Translation {
     teachingTitle: string;
     teachingItems: string[];
     eventTitle: string;
+    eventItems: string[];
+    contactText: string;
     contactBtn: string;
   };
 }
@@ -80,12 +89,12 @@ const dict: Record<Language, Translation> = {
       bullet3Title: "Tư duy giải pháp",
       bullet3Desc: "Không chỉ nêu rủi ro, chúng tôi dệt nên giải pháp cá nhân hóa, giúp doanh nghiệp tập trung hoàn toàn vào mục tiêu tăng trưởng."
     },
-    stats: { expValue: "15+", expLabel: "Năm kinh nghiệm", dealValue: "10.000+ Tỷ", dealLabel: "Tổng giá trị thương vụ", fdiValue: "50+", fdiLabel: "Quốc gia mạng lưới" },
+    stats: { expValue: "15+", expLabel: "Năm kinh nghiệm", dealValue: "10.000+ Tỷ", dealLabel: "Tổng giao dịch", fdiValue: "50+", fdiLabel: "Quốc gia mạng lưới" },
     profile: {
       eduTitle: "Học vấn & Chứng chỉ",
       eduItems: ["Thạc sĩ Luật Thương mại Quốc tế - ĐH Ngoại Thương", "Chứng chỉ Hành nghề Luật sư | Quản tài viên", "Chứng chỉ Đại diện Sở hữu Công nghiệp"],
       assoTitle: "Vị trí & Hiệp hội",
-      assoItems: ["Phó Chủ tịch Quốc gia JCI Việt Nam (2026)", "Thành viên Đoàn Luật sư TP. Hà Nội", "Ngôn ngữ: Tiếng Việt, Tiếng Anh (Chuyên nghiệp)"],
+      assoItems: ["Phó Chủ tịch Quốc gia JCI Việt Nam (2026)", "Thành viên Đoàn Luật sư TP. Hà Nội", "Ngôn ngữ: Tiếng Việt, Tiếng Anh, Tiếng Nhật"],
       trustTitle: "Đối tác & Chứng nhận uy tín"
     },
     practice: {
@@ -96,7 +105,7 @@ const dict: Record<Language, Translation> = {
       dispute: { title: "Giải quyết tranh chấp", desc: "Đại diện giải quyết các tranh chấp thương mại phức tạp và tranh chấp thầu xây dựng." },
     },
     cases: {
-      title: "Thương vụ tiêu biểu (Highlights)",
+      title: "Thương vụ tiêu biểu",
       list: [
         { title: "M&A Dự án BĐS Thương mại (NĐT Hàn Quốc)", result: "1.500 Tỷ VNĐ" },
         { title: "Chuyển nhượng Resort Bãi Dài (NĐT Nga)", result: "1.600 Tỷ VNĐ" },
@@ -105,12 +114,14 @@ const dict: Record<Language, Translation> = {
       ]
     },
     speaker: {
-      title: "Diễn giả & Kết nối cộng đồng",
-      desc: "Bên cạnh chuyên môn luật, Luật sư Hoa đóng góp tích cực cho sự phát triển của cộng đồng doanh nhân trẻ qua các diễn đàn giáo dục và kinh tế quốc tế.",
-      teachingTitle: "Học thuật & Đào tạo",
-      teachingItems: ["Giảng viên thỉnh giảng Luật Ngân hàng tại ĐH Thành Đông", "Chuyên gia đào tạo nội bộ Quản lý ngoại hối tại Techcombank"],
+      title: "Diễn giả & Đào tạo",
+      desc: "Luật sư Hoa đóng góp tích cực cho cộng đồng doanh nhân trẻ qua các diễn đàn giáo dục và kinh tế quốc tế.",
+      teachingTitle: "Công tác Giảng dạy",
+      teachingItems: ["Giảng viên thỉnh giảng tại Đại học Thành Đông (2019 - Nay)", "Giảng viên nội bộ tại Techcombank (2013 - 2018)"],
       eventTitle: "Dấu ấn JCI & Sự kiện",
-      contactBtn: "Gửi yêu cầu hợp tác Diễn giả"
+      eventItems: ["Đang cập nhật thông tin sự kiện..."],
+      contactText: "Để mời Luật sư tham gia diễn thuyết:",
+      contactBtn: "Gửi Yêu Cầu Diễn Giả"
     }
   },
   en: {
@@ -136,28 +147,28 @@ const dict: Record<Language, Translation> = {
       bullet3Title: "Solution-Driven",
       bullet3Desc: "We don't just state risks; we weave personalized solutions that empower sustainable business growth."
     },
-    stats: { expValue: "15+", expLabel: "Years Exp", dealValue: "$500M+", dealLabel: "Total Deal Value", fdiValue: "50+", fdiLabel: "Global Network" },
+    stats: { expValue: "15+", expLabel: "Years Exp", dealValue: "$500M+", dealLabel: "Total Deals", fdiValue: "50+", fdiLabel: "Global Network" },
     profile: {
       eduTitle: "Education & Certs",
       eduItems: ["Master of Int. Policy & Law - FTU", "Lawyer Practicing Certificate | Liquidator", "Industrial Property Representative"],
       assoTitle: "Roles & Associations",
-      assoItems: ["National VP - JCI Vietnam (2026)", "Member of Hanoi Bar Association", "Languages: Vietnamese, English (Fluent)"],
+      assoItems: ["National VP - JCI Vietnam (2026)", "Member of Hanoi Bar Association", "Vietnamese, English, Japanese"],
       trustTitle: "Trusted Partners & Accreditations"
     },
     practice: {
       title: "Practice Areas",
       ma: { title: "M&A & Restructuring", desc: "Transactional structuring, legal due diligence (LDD), and merger negotiations." },
       finance: { title: "Banking & Finance", desc: "Overseas overdue debt handling and international payment legal frameworks." },
-      realEstate: { title: "Real Estate & Projects", desc: "Legal development of hospitality and urban projects from pre-investment to operation." },
+      realEstate: { title: "Real Estate & Projects", desc: "Legal development of projects from pre-investment to operation." },
       dispute: { title: "Dispute Resolution", desc: "Representing clients in complex commercial and construction EPC disputes." },
     },
     cases: {
       title: "Key Transactions",
       list: [
-        { title: "Commercial Real Estate M&A (Korean Investor)", result: "$60M USD" },
+        { title: "Commercial Real Estate M&A (Korean)", result: "$60M USD" },
         { title: "Resort Transfer Project (Russian Investor)", result: "$65M USD" },
         { title: "Top EPC Share Acquisition (Japanese Investor)", result: "$20M USD" },
-        { title: "Corporate Bond Crisis Management (7 Packages)", result: "$30M/Pkg" }
+        { title: "Bond Crisis Management (7 Packages)", result: "$30M/Pkg" }
       ]
     },
     speaker: {
@@ -166,11 +177,14 @@ const dict: Record<Language, Translation> = {
       teachingTitle: "Academic Lecturing",
       teachingItems: ["Visiting Lecturer at Thanh Dong University", "Internal FX Trainer at Techcombank"],
       eventTitle: "JCI Milestones & Events",
+      eventItems: ["Updating JCI event data..."],
+      contactText: "To invite for speaking engagements:",
       contactBtn: "Send Speaker Request"
     }
   }
 };
 
+// --- ICONS ---
 const Icons = {
   LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>,
   Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
@@ -187,7 +201,6 @@ const colors = {
   mint: "#2eb793",
   deepGreen: "#1d6266",
   white: "#FFFFFF",
-  textSecondary: "#64748B",
   textDark: "#1E293B"
 };
 
@@ -199,7 +212,7 @@ export default function App() {
   return (
     <div className="bg-[#F8F9FA] font-sans text-slate-800 selection:bg-[#2eb793] selection:text-white">
       
-      {/* CSS: Optimized Serious Aesthetics */}
+      {/* CSS: Paxlaw Aesthetic */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
         .font-sans { font-family: "Inter", sans-serif !important; }
@@ -208,7 +221,6 @@ export default function App() {
         .hero-gradient { background: linear-gradient(to top, rgba(29, 98, 102, 0.95), rgba(29, 98, 102, 0.2), transparent); }
         .cta-pulse { animation: pulse-shadow 3s infinite; }
         @keyframes pulse-shadow { 0% { box-shadow: 0 0 0 0 rgba(46, 183, 147, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(46, 183, 147, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 183, 147, 0); } }
-        will-change: transform, opacity;
       `}</style>
 
       <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] overflow-hidden">
@@ -217,7 +229,7 @@ export default function App() {
         <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden bg-slate-200">
           <img 
             src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
-            alt="Nguyen Thi Hoa Portrait" 
+            alt="Lawyer Portrait" 
             className="w-full h-full object-cover object-top md:object-center"
             loading="eager"
           />
@@ -308,8 +320,8 @@ export default function App() {
                   <section className="grid grid-cols-1 sm:grid-cols-3 gap-8 py-12 border-y border-slate-100">
                     {['exp', 'deal', 'fdi'].map((k) => (
                       <div key={k}>
-                        <h3 className="text-3xl lg:text-5xl font-black text-[#2eb793] mb-2 tracking-tighter">{t.stats[`${k}Value`]}</h3>
-                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest leading-snug">{t.stats[`${k}Label`]}</p>
+                        <h3 className="text-3xl lg:text-5xl font-black text-[#2eb793] mb-2 tracking-tighter">{t.stats[`${k}Value` as keyof Translation['stats']]}</h3>
+                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest leading-snug">{t.stats[`${k}Label` as keyof Translation['stats']]}</p>
                       </div>
                     ))}
                   </section>
@@ -327,7 +339,7 @@ export default function App() {
                     ))}
                   </section>
 
-                  {/* Credentials & Trust Badges */}
+                  {/* Trust Badges */}
                   <section className="pt-8">
                     <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-10 text-center">{t.profile.trustTitle}</h4>
                     <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
@@ -337,25 +349,7 @@ export default function App() {
                     </div>
                   </section>
 
-                  {/* Certificates Card */}
-                  <section className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <div className="p-10 bg-slate-50 rounded-2xl border border-slate-100">
-                      <div className="text-[#2eb793] mb-6"><Icons.GraduationCap /></div>
-                      <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-6">{t.profile.eduTitle}</h3>
-                      <ul className="space-y-4 text-sm text-slate-500">
-                        {t.profile.eduItems.map((item, i) => <li key={i} className="flex gap-3"><span className="text-[#2eb793]">•</span>{item}</li>)}
-                      </ul>
-                    </div>
-                    <div className="p-10 bg-slate-50 rounded-2xl border border-slate-100">
-                      <div className="text-[#2eb793] mb-6"><Icons.Users /></div>
-                      <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-6">{t.profile.assoTitle}</h3>
-                      <ul className="space-y-4 text-sm text-slate-500">
-                        {t.profile.assoItems.map((item, i) => <li key={i} className="flex gap-3"><span className="text-[#2eb793]">•</span>{item}</li>)}
-                      </ul>
-                    </div>
-                  </section>
-
-                  {/* Brand Quote (The Silk Shield) */}
+                  {/* Brand Quote */}
                   <section className="bg-[#1d6266] p-10 lg:p-14 rounded-3xl border-l-8 border-[#2eb793] text-white shadow-2xl">
                     <p className="text-xl lg:text-2xl font-light italic leading-relaxed mb-8 opacity-90">
                       {t.summary.quotePart1}
