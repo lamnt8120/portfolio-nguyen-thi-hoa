@@ -406,7 +406,7 @@ export default function App() {
             <ContactIcon 
               icon={<Phone />} 
               label="Điện thoại" 
-              value="0911 55 3686" 
+              value="+84 911 55 3686" 
               href="tel:+84911553686" 
             />
 
@@ -432,7 +432,7 @@ export default function App() {
               icon={<Facebook />} 
               label="Facebook" 
               value="Hoa Nguyen" 
-              href="https://www.facebook.com/Paxlaw.vn" 
+              href="https://facebook.com" 
               qrUrl="https://facebook.com"
             />
 
