@@ -1,370 +1,493 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Briefcase, 
-  Quote, 
-  ChevronRight, 
-  MapPin, 
-  Globe, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Users, 
-  Flag, 
-  Facebook,
-  Linkedin,
-  MessageCircle
+  Menu, X, Scale, Briefcase, GraduationCap, 
+  Landmark, Building2, FileText, Globe2, 
+  Mail, Phone, Linkedin, Facebook, ChevronRight, Award, ShieldCheck
 } from 'lucide-react';
 
-const App = () => {
+export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState(''); // Đã fix lỗi TypeScript
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // ==========================================================================
-  // 1. QUẢN LÝ HÌNH ẢNH
-  // ==========================================================================
-  const assets = {
-    portrait: 'https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png',
-    logoUrl: 'https://paxlaw.vn/wp-content/uploads/2024/05/logo-paxlaw-ngang.png'
-  };
-
-  // ==========================================================================
-  // 2. DANH SÁCH LIÊN HỆ & MÃ QR
-  // ==========================================================================
-  const socialLinks = [
-    { 
-      id: 'fb', 
-      label: 'FB', 
-      name: 'Facebook', 
-      icon: <Facebook size={18} />,
-      url: 'https://www.facebook.com/Paxlaw.vn', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-facebook.png' 
-    },
-    { 
-      id: 'ln', 
-      label: 'LN', 
-      name: 'LinkedIn', 
-      icon: <Linkedin size={18} />,
-      url: 'https://vn.linkedin.com/in/lawyerhoanguyen', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-linkedin.png' 
-    },
-    { 
-      id: 'zl', 
-      label: 'ZL', 
-      name: 'Zalo', 
-      icon: <MessageCircle size={18} />,
-      url: 'https://zalo.me/0396216467', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-zalo.png' 
-    }
-  ];
-
-  // Component Logo SVG Paxlaw
-  const PaxlawLogo = ({ className = "h-8" }) => (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <svg viewBox="0 0 40 40" className="h-full w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="6" fill="#1d6266"/>
-        <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 19.3137 25.3137 22 22 22H16V30H12V10ZM16 18H22C23.1046 18 24 17.1046 24 16C24 14.8954 23.1046 14 22 14H16V18Z" fill="white"/>
-      </svg>
-      <span className="font-black text-[#1d6266] tracking-tighter text-xl leading-none">PAXLAW</span>
-    </div>
-  );
-
+  // Xử lý hiệu ứng navbar khi cuộn trang
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const practiceAreas = [
-    {
-      title: "PaxFlow (Pháp chế thuê ngoài)",
-      desc: "Giải pháp thay thế hoàn toàn phòng pháp chế nội bộ cho doanh nghiệp.",
-      deal: "Dịch vụ tiên phong"
-    },
-    {
-      title: "M&A & Restructuring",
-      desc: "Tư vấn cấu trúc giao dịch, soát xét pháp lý chuyên sâu.",
-      deal: "Deal tiêu biểu: 1.500 tỷ"
-    },
-    {
-      title: "Investment & Real Estate",
-      desc: "Xử lý rào cản thủ tục đầu tư, dệt nên các chiến lược cá nhân hóa.",
-      deal: "Quy mô: >50ha"
-    },
-    {
-      title: "P.A.N (Global Network)",
-      desc: "Kết nối mạng lưới luật sư tại hơn 50 quốc gia toàn cầu.",
-      deal: "Mạng lưới quốc tế"
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
     }
-  ];
+  };
 
   return (
-    <div className="font-sans bg-white text-slate-900 selection:bg-[#2eb793]/20">
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <PaxlawLogo className="h-7 md:h-8" />
-
-          <div className="hidden md:flex gap-8 text-[11px] font-black text-[#1d6266] uppercase tracking-[0.2em]">
-            <a href="#about" className="hover:text-[#2eb793] transition-colors py-2">Giới thiệu</a>
-            <a href="#expertise" className="hover:text-[#2eb793] transition-colors py-2">Lĩnh vực</a>
-            <a href="#experience" className="hover:text-[#2eb793] transition-colors py-2">Kinh nghiệm</a>
-            <a href="#contact" className="bg-[#1d6266] text-white px-5 py-2 rounded-full hover:bg-[#2eb793] transition-all shadow-sm">Liên hệ</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* 1. HERO SECTION */}
-      <section className="relative grid md:grid-cols-2 min-h-screen items-stretch overflow-hidden bg-white">
-        <div className="relative h-[50vh] md:h-full overflow-hidden bg-slate-50 flex items-center justify-center">
-          <img
-            src={assets.portrait}
-            alt="Luật sư Nguyễn Thị Hoa"
-            className="w-full h-full object-cover object-top transition-opacity duration-1000 opacity-0"
-            onLoad={(e) => { e.currentTarget.style.opacity = '1'; }}
-            onError={(e) => { e.currentTarget.src = assets.logoUrl; }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/10 to-transparent md:hidden"></div>
-        </div>
-
-        <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 relative">
-          <div className="inline-block px-3 py-1 bg-[#2eb793]/10 text-[#2eb793] text-[9px] font-black rounded-sm mb-6 w-fit uppercase tracking-[0.3em]">
-            Managing Partner
-          </div>
-          <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-4 text-[#1d6266] leading-[1.1] tracking-tight">
-            Nguyễn Thị Hoa
-          </h1>
-          <p className="text-lg md:text-xl text-[#2eb793] mb-10 font-bold italic opacity-90">
-            Be Grace, Build Grand.
-          </p>
-
-          <div className="grid grid-cols-3 gap-4 mb-12 border-y border-slate-100 py-8 max-w-md text-center md:text-left">
-            <div>
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">15+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Kinh nghiệm</div>
-            </div>
-            <div className="border-x border-slate-100 px-2">
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">50+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Quốc gia</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">10k+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Tỷ giao dịch</div>
-            </div>
-          </div>
-
-          <p className="text-slate-600 mb-10 leading-relaxed max-w-md font-bold italic border-l-2 border-[#2eb793] pl-6 text-[15px]">
-            "Paxlaw không chỉ bảo vệ mà còn để khơi mở những tiềm năng lớn lao, tạo nền tảng vững chắc cho sự phát triển bền vững."
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-[#1d6266] text-white px-8 py-4 rounded-xl font-black hover:bg-[#2eb793] transition-all shadow-md flex items-center gap-2 uppercase text-[10px] tracking-widest">
-              Đặt lịch tư vấn <ChevronRight size={14} />
-            </button>
-            <button className="border-2 border-[#1d6266]/10 text-[#1d6266] px-8 py-4 rounded-xl font-black hover:bg-slate-50 transition-all uppercase text-[10px] tracking-widest">
-              Profile (.PDF)
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. TRUST BAR */}
-      <section className="py-10 border-y bg-slate-50/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-             <span className="text-sm font-black text-slate-800 tracking-tighter uppercase font-sans tracking-[0.1em]">Techcombank</span>
-             <PaxlawLogo className="h-5 md:h-6 grayscale" />
-             <span className="text-base md:text-lg font-black text-[#1d6266] uppercase tracking-tighter">JCI Vietnam</span>
-             <span className="text-sm font-serif font-black text-slate-600 tracking-tighter uppercase">Penfield</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. ABOUT */}
-      <section id="about" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Triết lý hành nghề</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight text-[#1d6266]">
-              "Dệt" nên những chiến lược pháp lý sâu sắc
-            </h3>
-            <p className="text-slate-600 mb-10 leading-relaxed text-[17px] font-bold">
-              Giống như dải lụa ôm lấy từng góc cạnh, chúng tôi bảo vệ doanh nghiệp bằng sự tinh tế và chuyên môn vững vàng.
-            </p>
-
-            <div className="space-y-6">
-              {[
-                { icon: <ShieldCheck size={18} />, text: "Minh bạch - Tinh tế - Sâu sắc" },
-                { icon: <Globe size={18} />, text: "Mạng lưới toàn cầu P.A.N" },
-                { icon: <Users size={18} />, text: "Pháp chế thuê ngoài PaxFlow" }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-4 items-center">
-                  <div className="p-2 bg-[#2eb793]/10 rounded text-[#2eb793]">{item.icon}</div>
-                  <p className="text-slate-800 font-black text-xs tracking-wider uppercase">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="relative group">
-             <div className="bg-[#1d6266] rounded-[2rem] p-10 md:p-12 text-white shadow-2xl relative z-10 overflow-hidden border border-white/5">
-                <Quote size={32} className="text-[#2eb793] opacity-20 mb-6" />
-                <p className="text-xl md:text-2xl font-bold italic leading-relaxed mb-10 relative z-10">
-                  “Pháp lý không chỉ là tuân thủ, mà là nghệ thuật sử dụng luật pháp để bảo vệ tối đa lợi ích thương mại.”
-                </p>
-                <div className="flex items-center gap-3 relative z-10 border-t border-white/10 pt-6">
-                   <div className="w-10 h-10 rounded-full overflow-hidden border border-[#2eb793]/40 shadow-inner">
-                     <img src={assets.portrait} className="object-cover w-full h-full" alt="Mini Profile" />
-                   </div>
-                   <div>
-                     <p className="font-black text-[12px] uppercase tracking-widest">LS. Nguyễn Thị Hoa</p>
-                     <p className="text-[#2eb793] text-[9px] font-black uppercase tracking-tighter">Managing Partner</p>
-                   </div>
-                </div>
-             </div>
-             <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-[#2eb793]/10 rounded-[2rem] -z-0 group-hover:scale-105 transition-transform"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. PRACTICE AREAS */}
-      <section id="expertise" className="bg-[#1d6266] py-24 md:py-32 text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="mb-20 text-center md:text-left">
-            <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Dịch vụ chuyên môn</h2>
-            <h3 className="text-4xl font-bold tracking-tight text-white">Giải pháp pháp lý toàn diện</h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {practiceAreas.map((item, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#2eb793]/40 transition-all group flex flex-col h-full">
-                <div className="w-10 h-10 bg-[#2eb793] rounded-lg flex items-center justify-center mb-8 shadow-lg group-hover:scale-105 transition-transform">
-                  <CheckCircle2 size={18} className="text-white" />
-                </div>
-                <h3 className="text-lg font-black mb-4 leading-snug tracking-tight text-white">{item.title}</h3>
-                <p className="text-slate-200 text-[13px] mb-8 leading-relaxed font-bold opacity-80 italic">
-                  {item.desc}
-                </p>
-                <div className="pt-6 border-t border-white/5 mt-auto text-right">
-                  <span className="text-[8px] font-black text-[#2eb793] tracking-widest uppercase">
-                    {item.deal}
-                  </span>
-                </div>
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-[#2eb793] selection:text-white">
+      
+      {/* N A V B A R */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Brand Logo Area */}
+            <div className="flex items-center cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              <div className={`flex items-center justify-center w-10 h-10 rounded bg-[#1d6266] text-white mr-3 group-hover:bg-[#2eb793] transition-colors`}>
+                <Scale className="h-6 w-6" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. KEY DEALS */}
-      <section id="experience" className="max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
-        <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Thành tựu</h2>
-        <h3 className="text-3xl font-bold mb-16 text-[#1d6266] font-serif italic">Thương vụ nổi bật</h3>
-
-        <div className="grid gap-3 text-left">
-          {[
-            { label: "M&A Bất động sản", detail: "Thương vụ quy mô 1.500 tỷ đồng (Đối tác Hàn Quốc)", icon: <Briefcase size={16} /> },
-            { label: "Dự án Resort & Golf", detail: "Xây dựng nền tảng pháp lý quy mô 1.600 tỷ đồng (Vốn Nga)", icon: <MapPin size={16} /> },
-            { label: "Hợp đồng EPC Năng lượng", detail: "Dự án trị giá 20 triệu USD (Nhà thầu Nhật Bản)", icon: <Flag size={16} /> },
-            { label: "Tái cấu trúc Tập đoàn", detail: "Tái cấu trúc danh mục tài sản > 1.000 tỷ đồng", icon: <ShieldCheck size={16} /> },
-          ].map((deal, idx) => (
-            <div key={idx} className="flex items-center justify-between p-5 rounded-xl bg-white border border-slate-100 hover:shadow-lg hover:border-[#2eb793]/20 transition-all group cursor-pointer shadow-sm">
-               <div className="flex items-center gap-6">
-                  <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-[#1d6266] group-hover:bg-[#2eb793] group-hover:text-white transition-all">
-                    {deal.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-black text-[14px] text-[#1d6266] uppercase tracking-wide">{deal.label}</h4>
-                    <p className="text-slate-500 text-[12px] mt-1 font-bold">{deal.detail}</p>
-                  </div>
-               </div>
-               <ChevronRight size={18} className="text-slate-200 group-hover:text-[#2eb793]" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-20 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-12 mb-16 items-start">
-            {/* Cột Logo & Slogan */}
-            <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-              <PaxlawLogo className="h-8 mb-8" />
-              <p className="text-slate-500 text-[13px] leading-relaxed max-w-xs italic border-l-2 border-[#2eb793] pl-5 font-bold text-slate-500">
-                "Be Grace, Build Grand. Đơn vị dẫn đầu trong lĩnh vực tư vấn pháp lý và pháp chế thuê ngoài."
-              </p>
+              <div className="flex flex-col">
+                <span className={`font-bold text-xl tracking-wide leading-tight ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`}>
+                  PAXLAW
+                </span>
+                <span className={`text-[10px] font-medium tracking-widest uppercase ${isScrolled ? 'text-[#2eb793]' : 'text-[#2eb793]'}`}>
+                  Luật sư Hoa Nguyễn
+                </span>
+              </div>
             </div>
             
-            {/* Cột Văn phòng */}
-            <div className="md:col-span-4 text-center md:text-left">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Văn phòng Hà Nội</h4>
-              <div className="flex gap-4 items-start mb-6 justify-center md:justify-start">
-                <div className="p-1 bg-[#2eb793]/10 rounded-full mt-1 shrink-0">
-                  <MapPin size={16} className="text-[#2eb793]" />
-                </div>
-                <p className="text-slate-700 text-[14px] leading-relaxed font-bold text-center md:text-left">
-                  Tầng 5, số 31A Nguyễn Quốc Trị, <br /> Trung Hoà, Yên Hoà, Cầu Giấy, Hà Nội
-                </p>
-              </div>
-              <div className="flex items-center gap-4 justify-center md:justify-start">
-                <div className="p-1 bg-[#2eb793]/10 rounded-full shrink-0">
-                  <Globe size={16} className="text-[#2eb793]" />
-                </div>
-                <span className="text-[14px] font-black text-[#1d6266] border-b-2 border-transparent hover:border-[#1d6266] transition-all cursor-pointer">www.paxlaw.vn</span>
-              </div>
-            </div>
-
-            {/* Cột Kết nối trực tiếp & QR */}
-            <div className="md:col-span-3 flex flex-col items-center md:items-end">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Kết nối trực tuyến</h4>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((link) => (
-                  <div 
-                    key={link.id} 
-                    className="relative group"
-                    onMouseEnter={() => setHoveredSocial(link.id)}
-                    onMouseLeave={() => setHoveredSocial('')}
+            {/* Desktop Menu */}
+            <div className="hidden md:flex space-x-8">
+              {['Giới thiệu', 'Lĩnh vực luật sư', 'Ngoại khoá', 'Liên hệ'].map((item, index) => {
+                const ids = ['gioi-thieu', 'linh-vuc', 'ngoai-khoa', 'lien-he'];
+                return (
+                  <button 
+                    key={item}
+                    onClick={() => scrollTo(ids[index])}
+                    className={`font-bold text-sm uppercase tracking-wide transition-colors hover:text-[#2eb793] ${isScrolled ? 'text-[#1d6266]' : 'text-slate-100'}`}
                   >
-                    <a 
-                      href={link.url} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#1d6266] hover:bg-[#2eb793] hover:text-white transition-all shadow-sm border border-slate-200"
-                      aria-label={link.name}
-                    >
-                      {link.icon}
-                    </a>
-
-                    {/* QR POPOVER */}
-                    <div className={`hidden md:block absolute bottom-full mb-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 origin-bottom ${hoveredSocial === link.id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                      <div className="bg-white p-3 rounded-2xl shadow-2xl border-2 border-[#1d6266]/5 w-40 text-center">
-                        <div className="w-full aspect-square bg-slate-50 rounded-xl flex items-center justify-center border border-[#2eb793]/10 overflow-hidden mb-2">
-                           <img 
-                              src={link.qrImage} 
-                              alt={`Mã QR truy cập ${link.name}`} 
-                              className="w-full h-full object-contain p-1"
-                              onError={(e) => { 
-                                e.currentTarget.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
-                              }}
-                           />
-                        </div>
-                        <p className="text-[9px] font-black text-[#1d6266] uppercase tracking-widest leading-none">Quét cho {link.name}</p>
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-[8px] border-transparent border-t-white"></div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[10px] text-slate-400 mt-6 italic md:block hidden font-bold tracking-wider uppercase">Di chuột để kết nối</p>
+                    {item}
+                  </button>
+                )
+              })}
             </div>
-          </div>
-          
-          <div className="pt-10 border-t border-slate-200 text-slate-400 text-[9px] font-black tracking-[0.3em] uppercase text-center">
-             <p>© 2024 PAXLAW LEGAL CONSULTING CO., LTD. ALL RIGHTS RESERVED.</p>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={isScrolled ? 'text-[#1d6266]' : 'text-white'}>
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-[#1d6266] shadow-xl py-4 flex flex-col items-center space-y-4 border-t border-[#2eb793]/30">
+            {['Giới thiệu', 'Lĩnh vực luật sư', 'Ngoại khoá', 'Liên hệ'].map((item, index) => {
+              const ids = ['gioi-thieu', 'linh-vuc', 'ngoai-khoa', 'lien-he'];
+              return (
+                <button 
+                  key={item}
+                  onClick={() => scrollTo(ids[index])}
+                  className="font-bold text-white uppercase tracking-wide w-full py-2 hover:text-[#2eb793]"
+                >
+                  {item}
+                </button>
+              )
+            })}
+          </div>
+        )}
+      </nav>
+
+      {/* H E R O   S E C T I O N */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1d6266] pt-24 pb-20">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#2eb793] rounded-full mix-blend-multiply filter blur-[100px] opacity-30"></div>
+          <div className="absolute bottom-20 -left-20 w-72 h-72 bg-[#2eb793] rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-10 lg:mt-0">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+            
+            {/* Text Content - Left */}
+            <div className="lg:w-1/2 text-center lg:text-left z-10">
+              <p className="text-[#2eb793] font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Founder / CEO & Luật sư Điều hành</p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                HOA NGUYỄN
+              </h1>
+              <p className="text-xl md:text-2xl text-[#2eb793] font-medium mb-6 italic">"Be Grace, Build Grand."</p>
+              <p className="text-base md:text-lg text-slate-200 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                Hơn 15 năm kinh nghiệm. Đồng hành kiến tạo khung pháp lý bền vững, bảo vệ quyền lợi và khơi mở tiềm năng phát triển cho doanh nghiệp thông qua mạng lưới toàn cầu P.A.N.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button onClick={() => scrollTo('lien-he')} className="px-8 py-3 bg-[#2eb793] hover:bg-[#259b7c] text-white font-bold rounded shadow-lg hover:shadow-[#2eb793]/30 uppercase tracking-wide text-sm w-full sm:w-auto transition-all">
+                  Kết nối chuyên gia
+                </button>
+                <button onClick={() => scrollTo('linh-vuc')} className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-[#1d6266] text-white font-bold rounded uppercase tracking-wide text-sm w-full sm:w-auto transition-all">
+                  Khám phá giải pháp
+                </button>
+              </div>
+            </div>
+
+            {/* Image Content - Right */}
+            <div className="lg:w-1/2 w-full flex justify-center lg:justify-end relative z-10 pb-16 lg:pb-0">
+              {/* Decorative frame behind image */}
+              <div className="absolute inset-0 bg-[#2eb793] rounded-2xl transform translate-x-4 translate-y-4 opacity-40 hidden lg:block w-4/5 ml-auto"></div>
+              
+              <img 
+                src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
+                alt="Luật sư Hoa Nguyễn - CEO Paxlaw" 
+                className="relative z-10 w-full max-w-sm lg:max-w-md rounded-2xl shadow-2xl object-cover object-top border-4 border-[#2eb793]/30 aspect-[4/5] lg:aspect-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Motif Dải Lụa (Silk Ribbon Wave) ở đáy Hero */}
+        <div className="absolute bottom-0 left-0 w-full leading-none z-10 pointer-events-none">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block">
+             <path fill="#ffffff" fillOpacity="0.1" d="M0 60 C 360 120, 1080 0, 1440 60 L 1440 120 L 0 120 Z"></path>
+             <path fill="#ffffff" fillOpacity="0.4" d="M0 80 C 480 140, 960 -20, 1440 80 L 1440 120 L 0 120 Z"></path>
+             <path fill="#ffffff" d="M0 100 C 600 160, 840 20, 1440 100 L 1440 120 L 0 120 Z"></path>
+          </svg>
+        </div>
+      </section>
+
+      {/* 1. G I Ớ I   T H I Ệ U */}
+      <section id="gioi-thieu" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-16">
+            
+            {/* Cột trái: Thông tin chung */}
+            <div className="lg:w-1/2">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="h-1 w-12 bg-[#2eb793]"></div>
+                <h2 className="text-3xl font-extrabold text-[#1d6266] uppercase tracking-wide">Về Tôi</h2>
+              </div>
+              
+              <p className="text-slate-600 leading-relaxed mb-6 text-lg text-justify font-light">
+                Trong thế giới pháp luật vốn mang sắc thái cứng nhắc, tôi lựa chọn phương pháp tiếp cận <b className="text-[#1d6266]">Tinh tế (Graceful)</b> và <b className="text-[#1d6266]">Sâu sắc (Insightful)</b>. Với tư cách là người sáng lập Paxlaw, tôi tin rằng giải pháp pháp lý không chỉ để giải quyết tranh chấp mà còn để phòng ngừa rủi ro, tạo nền tảng vững chắc để doanh nghiệp tự tin tiến xa.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-8 text-lg text-justify font-light">
+                Với 15 năm thực chiến, chuyên môn của tôi tập trung vào cấu trúc M&A, tư vấn đầu tư, quản lý ngoại hối và các giao dịch xuyên biên giới. Thông qua việc tiên phong cung cấp giải pháp pháp chế thuê ngoài <b className="text-[#2eb793]">PaxFlow</b> và mạng lưới <b className="text-[#2eb793]">P.A.N</b> toàn cầu, tôi cam kết bảo vệ lợi ích tối đa cho khách hàng đa quốc gia.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="bg-slate-50 p-5 rounded border-l-4 border-[#1d6266] group hover:bg-[#1d6266] transition-colors">
+                  <h4 className="font-extrabold text-[#1d6266] group-hover:text-white text-3xl mb-1">15+</h4>
+                  <p className="text-sm font-medium text-slate-500 group-hover:text-[#2eb793]">Năm Kinh Nghiệm</p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded border-l-4 border-[#2eb793] group hover:bg-[#2eb793] transition-colors">
+                  <h4 className="font-extrabold text-[#1d6266] group-hover:text-white text-3xl mb-1">50+</h4>
+                  <p className="text-sm font-medium text-slate-500 group-hover:text-white">Quốc Gia (Mạng lưới P.A.N)</p>
+                </div>
+              </div>
+
+              {/* Học vấn & Ngôn ngữ */}
+              <div className="bg-[#1d6266]/5 p-6 rounded-lg space-y-4 border border-[#1d6266]/10">
+                <h3 className="font-bold text-xl text-[#1d6266] flex items-center"><GraduationCap className="w-5 h-5 mr-2 text-[#2eb793]"/> Học Vấn & Chứng Chỉ</h3>
+                <ul className="list-disc list-inside text-slate-700 space-y-2 ml-2 font-medium">
+                  <li>Thạc sỹ Chính sách & Luật thương mại quốc tế (ĐH Ngoại Thương)</li>
+                  <li>Chứng chỉ hành nghề Luật sư & Quản Tài Viên</li>
+                  <li>Chứng chỉ Đại diện Sở hữu Công nghiệp & Nghiệp vụ Ngân hàng</li>
+                </ul>
+                <div className="pt-4 flex items-center space-x-2 text-slate-700 border-t border-[#1d6266]/10 mt-4">
+                  <Globe2 className="w-5 h-5 text-[#2eb793]"/>
+                  <span className="font-bold text-[#1d6266]">Ngôn ngữ:</span> 
+                  <span className="font-medium">Tiếng Việt, Tiếng Anh, Tiếng Nhật.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Cột phải: Kinh nghiệm làm việc */}
+            <div className="lg:w-1/2">
+               <h3 className="text-2xl font-extrabold text-[#1d6266] mb-8 flex items-center">
+                  <Briefcase className="w-6 h-6 mr-3 text-[#2eb793]"/> Hành Trình Sự Nghiệp
+               </h3>
+               
+               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-[#2eb793] before:to-transparent">
+                  
+                  {/* Item 1 */}
+                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-[#1d6266] text-white shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform group-hover:scale-110">
+                      <Scale className="w-4 h-4" />
+                    </div>
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-lg border border-[#2eb793]/20 bg-white shadow-sm transition-all hover:shadow-lg hover:border-[#2eb793]">
+                      <div className="flex items-center justify-between space-x-2 mb-2">
+                        <div className="font-extrabold text-[#1d6266] text-lg">Paxlaw Law Firm</div>
+                        <span className="px-2 py-1 bg-[#2eb793]/10 text-[#2eb793] rounded text-xs font-bold">12/2024 - Nay</span>
+                      </div>
+                      <div className="text-sm text-[#2eb793] font-bold mb-2 uppercase tracking-wide">CEO / Luật sư Điều hành</div>
+                      <p className="text-sm text-slate-600 font-light">Thiết kế chiến lược pháp lý cá nhân hóa, cung cấp dịch vụ PaxFlow trọn gói về M&A, đầu tư cho khách hàng đa quốc gia.</p>
+                    </div>
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-[#1d6266] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors group-hover:bg-[#2eb793] group-hover:text-white">
+                      <Landmark className="w-4 h-4" />
+                    </div>
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-lg border border-slate-100 bg-white shadow-sm transition-all hover:shadow-lg hover:border-[#2eb793]">
+                      <div className="flex items-center justify-between space-x-2 mb-2">
+                        <div className="font-bold text-[#1d6266] text-lg">Green Investment JSC</div>
+                        <span className="text-xs font-medium text-slate-500">2022 - Nay</span>
+                      </div>
+                      <div className="text-sm text-slate-500 font-bold mb-2">Giám đốc Pháp chế</div>
+                      <p className="text-sm text-slate-600 font-light">Quản trị rủi ro, đảm bảo tuân thủ pháp luật, tạo nền tảng vững chắc cho các dự án đầu tư và liên doanh.</p>
+                    </div>
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-[#1d6266] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors group-hover:bg-[#2eb793] group-hover:text-white">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-lg border border-slate-100 bg-white shadow-sm transition-all hover:shadow-lg hover:border-[#2eb793]">
+                      <div className="flex items-center justify-between space-x-2 mb-2">
+                        <div className="font-bold text-[#1d6266] text-lg">Penfield Law Firm</div>
+                        <span className="text-xs font-medium text-slate-500">2018 - 2024</span>
+                      </div>
+                      <div className="text-sm text-slate-500 font-bold mb-2">Phó Giám Đốc / Partner</div>
+                      <p className="text-sm text-slate-600 font-light">Dẫn dắt các thương vụ M&A phức tạp và thiết lập kế hoạch tái cấu trúc tài chính cho các tập đoàn lớn nghìn tỷ.</p>
+                    </div>
+                  </div>
+
+                  {/* Item 4 */}
+                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-[#1d6266] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors group-hover:bg-[#2eb793] group-hover:text-white">
+                      <Building2 className="w-4 h-4" />
+                    </div>
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-lg border border-slate-100 bg-white shadow-sm transition-all hover:shadow-lg hover:border-[#2eb793]">
+                      <div className="flex items-center justify-between space-x-2 mb-2">
+                        <div className="font-bold text-[#1d6266] text-lg">Techcombank</div>
+                        <span className="text-xs font-medium text-slate-500">2012 - 2018</span>
+                      </div>
+                      <div className="text-sm text-slate-500 font-bold mb-2">Chuyên viên Pháp chế cao cấp</div>
+                      <p className="text-sm text-slate-600 font-light">Hỗ trợ pháp lý ngoại hối, quản lý vốn, và chuẩn hóa quy trình phục vụ hệ thống Khách hàng Doanh nghiệp lớn.</p>
+                    </div>
+                  </div>
+
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. L Ĩ N H   V Ự C   &   V Ụ   V I Ệ C   Đ I Ể N   H Ì N H */}
+      <section id="linh-vuc" className="py-24 bg-[#1d6266] text-white relative">
+        {/* Decorative background Motif */}
+        <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
+          <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#2eb793" d="M42.7,-73.4C55.9,-66.6,67.6,-56.3,77.5,-43.5C87.4,-30.8,95.5,-15.4,96.3,0.5C97.1,16.3,90.6,32.7,80.7,45.4C70.8,58.1,57.5,67.2,43.3,74.1C29.1,81,14.6,85.6,0.5,84.7C-13.6,83.8,-27.1,77.3,-40.4,70C-53.7,62.7,-66.8,54.6,-75.4,42.5C-84,30.4,-88.1,15.2,-87.3,0.5C-86.5,-14.3,-80.8,-28.6,-72.1,-40.5C-63.4,-52.4,-51.7,-61.9,-39,-69C-26.2,-76.1,-13.1,-80.8,0.7,-82C14.5,-83.2,29.4,-80.1,42.7,-73.4Z" transform="translate(100 100)" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wide mb-4">Lĩnh vực Trọng tâm & Vụ việc Điển hình</h2>
+            <div className="h-1 w-24 bg-[#2eb793] mx-auto"></div>
+            <p className="mt-6 text-slate-300 max-w-2xl mx-auto font-light text-lg">Thiết kế các chiến lược pháp lý Đáng tin cậy (Trustworthy), mang lại thành công bền vững cho doanh nghiệp trong các giao dịch nghìn tỷ.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Card 1 */}
+            <div className="bg-[#144b4e] p-8 rounded-lg border border-[#2eb793]/20 hover:border-[#2eb793] transition-all hover:-translate-y-1 group shadow-lg">
+              <div className="bg-[#1d6266] w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2eb793] transition-colors">
+                <Building2 className="text-[#2eb793] group-hover:text-white w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">M&A & Tái Cấu Trúc</h3>
+              <ul className="space-y-3 text-slate-300 text-sm font-light">
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Tư vấn thâu tóm công ty sản xuất thép (Miền Bắc) giá trị <b className="text-white ml-1">1.000 tỷ VNĐ</b>.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Chuyển nhượng dự án BĐS nghỉ dưỡng Bãi Dài (Khánh Hòa) trị giá <b className="text-white ml-1">1.600 tỷ VNĐ</b>.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Tái cấu trúc tài chính tập đoàn khoáng sản Thái Nguyên (Vốn <b className="text-white ml-1">1.000+ tỷ VNĐ</b>).</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Tư vấn bán cổ phần EPC top đầu VN cho đối tác Nhật Bản giá trị <b className="text-white ml-1">20 triệu USD</b>.</li>
+              </ul>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-[#144b4e] p-8 rounded-lg border border-[#2eb793]/20 hover:border-[#2eb793] transition-all hover:-translate-y-1 group shadow-lg">
+              <div className="bg-[#1d6266] w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2eb793] transition-colors">
+                <Landmark className="text-[#2eb793] group-hover:text-white w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Tài Chính - Ngân Hàng</h3>
+              <ul className="space-y-3 text-slate-300 text-sm font-light">
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Tư vấn phát hành trái phiếu riêng lẻ dự án tại Bà Rịa - Vũng Tàu trị giá <b className="text-white ml-1">800 tỷ VNĐ</b>.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Quản trị rủi ro, xử lý khủng hoảng cho 07 gói trái phiếu với giá trị <b className="text-white ml-1">500 - 850 tỷ VNĐ</b> mỗi gói.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Thiết kế cấu trúc các khoản vay và trả nợ quá hạn (<b className="text-white">3.5 triệu USD</b>) cho Tập đoàn tài chính Hà Lan.</li>
+              </ul>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-[#144b4e] p-8 rounded-lg border border-[#2eb793]/20 hover:border-[#2eb793] transition-all hover:-translate-y-1 group shadow-lg">
+              <div className="bg-[#1d6266] w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2eb793] transition-colors">
+                <Globe2 className="text-[#2eb793] group-hover:text-white w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Đầu Tư Xuyên Biên Giới & BĐS</h3>
+              <ul className="space-y-3 text-slate-300 text-sm font-light">
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Cố vấn toàn diện dự án nghỉ dưỡng <b className="text-white mx-1">1000+ Condotel 5 sao</b> tại Nha Trang.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Cố vấn pháp lý phát triển dự án khu đô thị quy mô <b className="text-white mx-1">37.4ha</b> tại Bà Rịa - Vũng Tàu.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Xây dựng và cập nhật Báo cáo chính sách PPP tại Việt Nam cho Bộ Kế hoạch & Đầu tư Hàn Quốc.</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Thiết lập pháp nhân, tư vấn vận hành cho nhà đầu tư FDI từ Mỹ, Nhật Bản, Hong Kong.</li>
+              </ul>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-[#144b4e] p-8 rounded-lg border border-[#2eb793]/20 hover:border-[#2eb793] transition-all hover:-translate-y-1 group shadow-lg">
+              <div className="bg-[#1d6266] w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#2eb793] transition-colors">
+                <ShieldCheck className="text-[#2eb793] group-hover:text-white w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Hợp Đồng & Giải Quyết Tranh Chấp</h3>
+              <ul className="space-y-3 text-slate-300 text-sm font-light">
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Soạn thảo chuẩn hóa bộ mẫu hợp đồng dịch vụ trên nền tảng E-commerce (Shopee, Lazada, Tiki).</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Đại diện giải quyết tranh chấp hợp đồng EPC của Tập đoàn Xây dựng VN (Trị giá <b className="text-white ml-1">250 tỷ VNĐ</b>).</li>
+                <li className="flex items-start"><ChevronRight className="w-5 h-5 text-[#2eb793] shrink-0 mr-2"/> Bảo vệ quyền lợi Chủ đầu tư trong tranh chấp thầu xây dựng tại Khánh Hòa (Trị giá <b className="text-white ml-1">350 tỷ VNĐ</b>).</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. N G O Ạ I   K H Ó A */}
+      <section id="ngoai-khoa" className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Motif góc trái */}
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#2eb793] rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute top-20 -right-20 w-64 h-64 bg-[#1d6266] rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1d6266] uppercase tracking-wide mb-4">Cộng đồng & Xã hội</h2>
+            <div className="h-1 w-24 bg-[#2eb793] mx-auto"></div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#2eb793] hover:shadow-md transition-shadow flex flex-col sm:flex-row items-start">
+              <Award className="w-10 h-10 text-[#2eb793] shrink-0 mt-1 sm:mr-5 mb-4 sm:mb-0" />
+              <div>
+                <h3 className="text-xl font-bold text-[#1d6266]">Phó Chủ Tịch Quốc Gia JCI Việt Nam 2026</h3>
+                <p className="text-slate-600 mt-2 font-light text-justify">
+                  Thành viên Ban Lãnh đạo cấp cao tại JCI Việt Nam (Junior Chamber International). Cống hiến với tư duy lãnh đạo dẫn dắt, tạo ra những tác động tích cực và xây dựng giá trị bền vững cho cộng đồng doanh nhân trẻ.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#1d6266] hover:shadow-md transition-shadow flex flex-col sm:flex-row items-start">
+              <Scale className="w-10 h-10 text-[#1d6266] shrink-0 mt-1 sm:mr-5 mb-4 sm:mb-0" />
+              <div>
+                <h3 className="text-xl font-bold text-[#1d6266]">Thành viên Đoàn Luật sư</h3>
+                <p className="text-slate-600 mt-2 font-light text-justify">
+                  Thành viên chính thức của Đoàn Luật sư Việt Nam & Đoàn Luật sư TP. Hà Nội. Đề cao tính chính trực, trách nhiệm nghề nghiệp và tính chuyên môn khoa học được thể hiện qua triết lý thương hiệu Paxlaw.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#2eb793] hover:shadow-md transition-shadow flex flex-col sm:flex-row items-start">
+              <GraduationCap className="w-10 h-10 text-[#2eb793] shrink-0 mt-1 sm:mr-5 mb-4 sm:mb-0" />
+              <div>
+                <h3 className="text-xl font-bold text-[#1d6266]">Giảng viên Thỉnh giảng</h3>
+                <p className="text-slate-600 mt-2 font-light text-justify">
+                  Đại học Thành Đông (Từ 2019 - Nay). Chia sẻ kiến thức thực tiễn và tư duy pháp lý chuyên nghiệp tại Bộ môn Luật chung & Tài chính Ngân hàng, góp phần ươm mầm thế hệ chuyên gia tương lai.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. L I Ê N   H Ệ */}
+      <section id="lien-he" className="py-24 bg-[#1d6266] text-center relative border-t-8 border-[#2eb793]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-block bg-[#2eb793]/20 px-4 py-2 rounded-full mb-6">
+            <Scale className="w-6 h-6 text-[#2eb793] inline-block mr-2" />
+            <span className="text-white font-bold tracking-widest text-sm uppercase">Paxlaw | Giải pháp toàn diện</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Kết nối cùng Luật sư Hoa Nguyễn</h2>
+          <p className="text-slate-300 mb-12 font-light text-lg">Đồng hành xây dựng nền tảng pháp lý an tâm cho sự nghiệp kinh doanh của bạn.</p>
+
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            
+            {/* Phone Button */}
+            <ContactIcon 
+              icon={<Phone />} 
+              label="Điện thoại" 
+              value="+84 911 55 3686" 
+              href="tel:+84911553686" 
+            />
+
+            {/* Email Button */}
+            <ContactIcon 
+              icon={<Mail />} 
+              label="Email" 
+              value="hoant@paxlaw.vn" 
+              href="mailto:hoant@paxlaw.vn" 
+            />
+
+            {/* LinkedIn Button with QR */}
+            <ContactIcon 
+              icon={<Linkedin />} 
+              label="LinkedIn" 
+              value="lawyerhoanguyen" 
+              href="https://linkedin.com/in/lawyerhoanguyen" 
+              qrUrl="https://linkedin.com/in/lawyerhoanguyen"
+            />
+
+            {/* Facebook Button with QR */}
+            <ContactIcon 
+              icon={<Facebook />} 
+              label="Facebook" 
+              value="Hoa Nguyen" 
+              href="https://facebook.com" 
+              qrUrl="https://facebook.com"
+            />
+
+          </div>
+        </div>
+      </section>
+
+      {/* F O O T E R */}
+      <footer className="bg-[#144b4e] py-10 text-center border-t border-[#1d6266]">
+        <div className="flex justify-center items-center mb-6">
+            <Scale className="h-8 w-8 text-[#2eb793] mr-2" />
+            <span className="font-extrabold text-2xl text-white tracking-wider">PAXLAW</span>
+        </div>
+        <p className="text-slate-400 text-sm font-light">
+          &copy; {new Date().getFullYear()} PAXLAW. "Be Grace, Build Grand." All rights reserved.
+        </p>
+        <p className="text-slate-400 text-sm mt-2 font-light">
+          Địa chỉ: Tầng 5, số 1 ngõ 30 Nguyễn Thị Định, Trung Hòa, Cầu Giấy, Hà Nội
+        </p>
       </footer>
     </div>
   );
-};
+}
 
-export default App;
+// Component Icon Liên hệ (Có hiệu ứng Hover hiện QR Code)
+function ContactIcon({ icon, label, value, href, qrUrl }) {
+  // Sử dụng API tạo QR Code miễn phí để tự động render mã QR từ link URL
+  const qrImageSource = qrUrl ? `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrUrl)}&color=1d6266` : null;
+
+  return (
+    <div className="relative group flex flex-col items-center cursor-pointer">
+      {/* Nút bấm tròn */}
+      <a 
+        href={href} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="w-16 h-16 rounded-full bg-[#1d6266] border-2 border-[#2eb793] flex items-center justify-center text-[#2eb793] hover:bg-[#2eb793] hover:text-white transition-all hover:scale-110 shadow-lg"
+      >
+        {React.cloneElement(icon, { className: 'w-7 h-7' })}
+      </a>
+      <span className="mt-4 text-sm font-bold text-white uppercase tracking-wider">{label}</span>
+      <span className="text-xs text-[#2eb793] mt-1 font-medium">{value}</span>
+
+      {/* Tooltip QR Code ẩn, hiện khi hover */}
+      {qrImageSource && (
+        <div className="absolute bottom-full mb-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50">
+          <div className="bg-white p-3 rounded-lg shadow-2xl relative border-2 border-[#2eb793]">
+            <img src={qrImageSource} alt={`QR Code for ${label}`} className="w-32 h-32 rounded" />
+            <p className="text-[10px] uppercase tracking-wider text-center text-[#1d6266] mt-2 font-bold">Quét để truy cập</p>
+            {/* Mũi tên trỏ xuống */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-[#2eb793]"></div>
+            <div className="absolute top-[calc(100%-2px)] left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
