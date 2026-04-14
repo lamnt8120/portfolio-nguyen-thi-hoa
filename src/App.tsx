@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
   Briefcase, 
-  Award, 
-  GraduationCap, 
   Quote, 
-  Calendar, 
   ChevronRight, 
   MapPin, 
   Globe, 
@@ -59,7 +56,7 @@ const App = () => {
     }
   ];
 
-  // Component Logo SVG Paxlaw - Vẽ trực tiếp bằng mã để không bao giờ lỗi ảnh
+  // Component Logo SVG Paxlaw - Vẽ bằng mã để đảm bảo hiển thị 100%
   const PaxlawLogo = ({ className = "h-8" }) => (
     <div className={`flex items-center gap-2 ${className}`}>
       <svg viewBox="0 0 40 40" className="h-full w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,8 +119,8 @@ const App = () => {
             src={assets.portrait}
             alt="Luật sư Nguyễn Thị Hoa"
             className="w-full h-full object-cover object-top transition-opacity duration-1000"
-            onLoad={(e) => { e.currentTarget.style.opacity = '1'; }}
-            onError={(e) => { e.currentTarget.src = 'https://paxlaw.vn/wp-content/uploads/2024/05/logo-paxlaw-ngang.png'; }}
+            onLoad={(e) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
+            onError={(e) => { (e.target as HTMLImageElement).src = assets.logoUrl; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/10 to-transparent md:hidden"></div>
         </div>
@@ -142,15 +139,15 @@ const App = () => {
           <div className="grid grid-cols-3 gap-4 mb-12 border-y border-slate-100 py-8 max-w-md text-center md:text-left">
             <div>
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">15+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Kinh nghiệm</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Kinh nghiệm</div>
             </div>
             <div className="border-x border-slate-100 px-2">
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">50+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Quốc gia</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Quốc gia</div>
             </div>
             <div>
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">10k+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Tỷ giao dịch</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Tỷ giao dịch</div>
             </div>
           </div>
 
@@ -304,7 +301,7 @@ const App = () => {
                 <div className="p-1 bg-[#2eb793]/10 rounded-full mt-1 shrink-0">
                   <MapPin size={16} className="text-[#2eb793]" />
                 </div>
-                <p className="text-slate-700 text-[14px] leading-relaxed font-bold">
+                <p className="text-slate-700 text-[14px] leading-relaxed font-bold text-center md:text-left">
                   Tầng 5, số 31A Nguyễn Quốc Trị, <br /> Trung Hoà, Yên Hoà, Cầu Giấy, Hà Nội
                 </p>
               </div>
@@ -343,10 +340,10 @@ const App = () => {
                         <div className="w-full aspect-square bg-slate-50 rounded-xl flex items-center justify-center border border-[#2eb793]/10 overflow-hidden mb-2">
                            <img 
                               src={link.qrImage} 
-                              alt={`QR ${link.name}`} 
+                              alt={`Mã QR truy cập ${link.name}`} 
                               className="w-full h-full object-contain p-1"
                               onError={(e) => { 
-                                e.currentTarget.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
+                                (e.target as HTMLImageElement).src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
                               }}
                            />
                         </div>
