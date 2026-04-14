@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Briefcase, 
   Quote, 
@@ -16,7 +16,7 @@ import {
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+  const [hoveredSocial, setHoveredSocial] = useState(''); // Đã fix lỗi TypeScript
 
   // ==========================================================================
   // 1. QUẢN LÝ HÌNH ẢNH
@@ -56,7 +56,7 @@ const App = () => {
     }
   ];
 
-  // Component Logo SVG Paxlaw - Vẽ bằng mã để đảm bảo hiển thị 100%
+  // Component Logo SVG Paxlaw
   const PaxlawLogo = ({ className = "h-8" }) => (
     <div className={`flex items-center gap-2 ${className}`}>
       <svg viewBox="0 0 40 40" className="h-full w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,9 +118,9 @@ const App = () => {
           <img
             src={assets.portrait}
             alt="Luật sư Nguyễn Thị Hoa"
-            className="w-full h-full object-cover object-top transition-opacity duration-1000"
-            onLoad={(e) => { (e.target as HTMLImageElement).style.opacity = '1'; }}
-            onError={(e) => { (e.target as HTMLImageElement).src = assets.logoUrl; }}
+            className="w-full h-full object-cover object-top transition-opacity duration-1000 opacity-0"
+            onLoad={(e) => { e.currentTarget.style.opacity = '1'; }}
+            onError={(e) => { e.currentTarget.src = assets.logoUrl; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/10 to-transparent md:hidden"></div>
         </div>
@@ -139,15 +139,15 @@ const App = () => {
           <div className="grid grid-cols-3 gap-4 mb-12 border-y border-slate-100 py-8 max-w-md text-center md:text-left">
             <div>
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">15+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Kinh nghiệm</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Kinh nghiệm</div>
             </div>
             <div className="border-x border-slate-100 px-2">
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">50+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Quốc gia</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Quốc gia</div>
             </div>
             <div>
               <div className="text-2xl md:text-3xl font-black text-[#1d6266]">10k+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mt-1">Tỷ giao dịch</div>
+              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Tỷ giao dịch</div>
             </div>
           </div>
 
@@ -322,7 +322,7 @@ const App = () => {
                     key={link.id} 
                     className="relative group"
                     onMouseEnter={() => setHoveredSocial(link.id)}
-                    onMouseLeave={() => setHoveredSocial(null)}
+                    onMouseLeave={() => setHoveredSocial('')}
                   >
                     <a 
                       href={link.url} 
@@ -343,7 +343,7 @@ const App = () => {
                               alt={`Mã QR truy cập ${link.name}`} 
                               className="w-full h-full object-contain p-1"
                               onError={(e) => { 
-                                (e.target as HTMLImageElement).src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
+                                e.currentTarget.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
                               }}
                            />
                         </div>
