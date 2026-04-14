@@ -1,373 +1,456 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Briefcase, 
-  Award, 
-  GraduationCap, 
-  Quote, 
-  Calendar, 
-  ChevronRight, 
-  MapPin, 
-  Globe, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Users, 
-  Flag, 
-  QrCode,
-  Facebook,
-  Linkedin,
-  MessageCircle
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const App = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+// --- CHUẨN HÓA KIỂU DỮ LIỆU (FIX LỖI BUILD GITHUB/VERCEL) ---
+type Language = 'vi' | 'en';
+type TabId = 'about' | 'practice' | 'experience' | 'insights';
 
-  // ==========================================================================
-  // 1. QUẢN LÝ HÌNH ẢNH
-  // ==========================================================================
-  const assets = {
-    portrait: 'https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png',
-    logoUrl: 'https://paxlaw.vn/wp-content/uploads/2024/05/logo-paxlaw-ngang.png'
+interface Case {
+  title: string;
+  result: string;
+}
+
+interface SummaryBullet {
+  title: string;
+  desc: string;
+}
+
+interface Translation {
+  hero: { name: string; role1: string; role2: string };
+  socials: { linkedin: string; facebook: string; email: string; phone: string };
+  tabs: Record<TabId, string>;
+  summary: {
+    hook: string;
+    intro: string;
+    ctaPrimary: string;
+    quotePart1: string;
+    quoteHighlight: string;
+    quotePart2: string;
+    quoteAuthor: string;
+    bullets: SummaryBullet[];
   };
+  stats: {
+    items: Array<{ value: string; label: string }>;
+  };
+  profile: {
+    eduTitle: string;
+    eduItems: string[];
+    assoTitle: string;
+    assoItems: string[];
+    trustTitle: string;
+  };
+  practice: {
+    title: string;
+    items: Array<{ id: string; title: string; desc: string }>;
+  };
+  cases: { title: string; list: Case[] };
+  speaker: {
+    title: string;
+    desc: string;
+    teachingTitle: string;
+    teachingItems: string[];
+    eventTitle: string;
+    eventItems: string[];
+    contactText: string;
+    contactBtn: string;
+  };
+}
 
-  // ==========================================================================
-  // 2. DANH SÁCH LIÊN HỆ & MÃ QR
-  // ==========================================================================
-  const socialLinks = [
-    { 
-      id: 'fb', 
-      label: 'FB', 
-      name: 'Facebook', 
-      icon: <Facebook size={16} />,
-      url: 'https://www.facebook.com/Paxlaw.vn', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-facebook.png' 
+// --- DICTIONARY (NỘI DUNG CHUẨN BỊ CHO BIG LAW) ---
+const dict: Record<Language, Translation> = {
+  vi: {
+    hero: {
+      name: "Nguyễn Thị Hoa",
+      role1: "Chuyên gia Tư vấn Cấu trúc Đầu tư",
+      role2: "Luật sư điều hành Paxlaw",
     },
-    { 
-      id: 'ln', 
-      label: 'LN', 
-      name: 'LinkedIn', 
-      icon: <Linkedin size={16} />,
-      url: 'https://vn.linkedin.com/in/lawyerhoanguyen', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-linkedin.png' 
+    socials: { linkedin: "LinkedIn", facebook: "Facebook", email: "Email", phone: "Hotline" },
+    tabs: { about: "Giới thiệu", practice: "Lĩnh vực", experience: "Thương vụ", insights: "Diễn giả" },
+    summary: {
+      hook: "Đã trực tiếp tư vấn cấu trúc hơn 50 thương vụ M&A với tổng giá trị trên 10.000 tỷ đồng.",
+      intro: "Với hơn 15 năm kinh nghiệm thực chiến trong hệ thống Ngân hàng và các Hãng luật hàng đầu, Luật sư Nguyễn Thị Hoa chuyên sâu thiết lập khung pháp lý rủi ro và cấu trúc đầu tư cho các tập đoàn đa quốc gia.",
+      ctaPrimary: "Đặt lịch tư vấn chuyên sâu",
+      quotePart1: "“Triết lý làm nghề của tôi là đồng hành cùng khách hàng dệt nên ",
+      quoteHighlight: "‘CHIẾC KHIÊN LỤA’",
+      quotePart2: " – mềm mỏng trong đàm phán nhưng vững chãi tuyệt đối trước mọi rủi ro pháp lý.”",
+      quoteAuthor: "Luật sư Hoa Nguyễn",
+      bullets: [
+        { title: "Kinh nghiệm thực chiến", desc: "Từng đảm nhiệm vị trí Giám đốc Pháp chế tại định chế tài chính lớn, trực tiếp xử lý các gói trái phiếu và quản trị ngoại hối." },
+        { title: "Mạng lưới quốc tế", desc: "Kết nối hơn 50 quốc gia qua hệ thống P.A.N, hỗ trợ tối ưu cho nhà đầu tư FDI từ Mỹ, Nhật, Hàn và Singapore." },
+        { title: "Tư duy giải pháp", desc: "Không chỉ nêu rủi ro, chúng tôi dệt nên giải pháp cá nhân hóa, giúp doanh nghiệp tập trung vào tăng trưởng." }
+      ]
     },
-    { 
-      id: 'zl', 
-      label: 'ZL', 
-      name: 'Zalo', 
-      icon: <MessageCircle size={16} />,
-      url: 'https://zalo.me/0396216467', 
-      qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-zalo.png' 
+    stats: {
+      items: [
+        { value: "15+", label: "Năm kinh nghiệm" },
+        { value: "10.000+ Tỷ", label: "Tổng giá trị thương vụ" },
+        { value: "50+", label: "Quốc gia mạng lưới" }
+      ]
+    },
+    profile: {
+      eduTitle: "Học vấn & Chứng chỉ",
+      eduItems: ["Thạc sĩ Luật Thương mại Quốc tế - ĐH Ngoại Thương", "Chứng chỉ Hành nghề Luật sư | Quản tài viên", "Chứng chỉ Đại diện Sở hữu Công nghiệp"],
+      assoTitle: "Vị trí & Hiệp hội",
+      assoItems: ["Phó Chủ tịch Quốc gia JCI Việt Nam (2026)", "Thành viên Đoàn Luật sư TP. Hà Nội", "Ngôn ngữ: Tiếng Việt, Tiếng Anh (Fluent)"],
+      trustTitle: "Đối tác & Chứng nhận uy tín"
+    },
+    practice: {
+      title: "Lĩnh vực chuyên sâu",
+      items: [
+        { id: 'ma', title: "M&A - Tái cấu trúc", desc: "Tư vấn cấu trúc giao dịch, thực hiện thẩm định pháp lý (DD) và đàm phán hợp đồng sáp nhập." },
+        { id: 'finance', title: "Ngân hàng & Tài chính", desc: "Xử lý nợ quá hạn nước ngoài, thiết lập khung quản lý ngoại hối và thanh toán quốc tế." },
+        { id: 'realestate', title: "Bất động sản & Dự án", desc: "Pháp lý dự án nghỉ dưỡng, khu đô thị từ giai đoạn chuẩn bị đầu tư đến vận hành." },
+        { id: 'dispute', title: "Giải quyết tranh chấp", desc: "Đại diện giải quyết tranh chấp thương mại phức tạp và tranh chấp thầu xây dựng." }
+      ]
+    },
+    cases: {
+      title: "Thương vụ tiêu biểu (Highlights)",
+      list: [
+        { title: "M&A Dự án BĐS Thương mại (NĐT Hàn Quốc)", result: "1.500 Tỷ VNĐ" },
+        { title: "Chuyển nhượng Resort Bãi Dài (NĐT Nga)", result: "1.600 Tỷ VNĐ" },
+        { title: "Bán cổ phần Công ty Top EPC (NĐT Nhật Bản)", result: "20 Triệu USD" },
+        { title: "Xử lý khủng hoảng 7 gói Trái phiếu doanh nghiệp", result: "750 Tỷ/Gói" }
+      ]
+    },
+    speaker: {
+      title: "Diễn giả & Đào tạo",
+      desc: "Luật sư Hoa đóng góp tích cực cho cộng đồng doanh nhân trẻ qua các diễn đàn giáo dục và kinh tế quốc tế.",
+      teachingTitle: "Học thuật & Đào tạo",
+      teachingItems: ["Giảng viên thỉnh giảng Luật Ngân hàng tại ĐH Thành Đông", "Chuyên gia đào tạo nội bộ Quản lý ngoại hối tại Techcombank"],
+      eventTitle: "Dấu ấn JCI & Sự kiện",
+      eventItems: ["Đang cập nhật danh sách sự kiện năm 2024-2025..."],
+      contactText: "Để mời Luật sư tham gia diễn thuyết hoặc giảng dạy:",
+      contactBtn: "Gửi Yêu Cầu Hợp Tác"
     }
-  ];
-
-  // Component Logo SVG Paxlaw - Đồng bộ Bold
-  const PaxlawLogo = ({ className = "h-8" }) => (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <svg viewBox="0 0 40 40" className="h-full w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="6" fill="#1d6266"/>
-        <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 19.3137 25.3137 22 22 22H16V30H12V10ZM16 18H22C23.1046 18 24 17.1046 24 16C24 14.8954 23.1046 14 22 14H16V18Z" fill="white"/>
-      </svg>
-      <span className="font-black text-[#1d6266] tracking-tighter text-xl leading-none">PAXLAW</span>
-    </div>
-  );
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const practiceAreas = [
-    {
-      title: "PaxFlow (Pháp chế thuê ngoài)",
-      desc: "Giải pháp thay thế hoàn toàn phòng pháp chế nội bộ, tối ưu chi phí và hiệu quả cho doanh nghiệp.",
-      deal: "Dịch vụ tiên phong"
+  },
+  en: {
+    hero: {
+      name: "Hoa Nguyen",
+      role1: "Investment Structure Specialist",
+      role2: "Managing Attorney at Paxlaw",
     },
-    {
-      title: "M&A & Restructuring",
-      desc: "Tư vấn cấu trúc giao dịch, soát xét pháp lý chuyên sâu cho các thương vụ đa quốc gia.",
-      deal: "Deal tiêu biểu: 1.500 tỷ"
+    socials: { linkedin: "LinkedIn", facebook: "Facebook", email: "Email", phone: "Hotline" },
+    tabs: { about: "About", practice: "Practice", experience: "Experience", insights: "Insights" },
+    summary: {
+      hook: "Advised 50+ M&A deals with a total value exceeding $500 million.",
+      intro: "With 15+ years of practice at major banks and law firms, Attorney Hoa Nguyen specializes in cross-border investment structuring.",
+      ctaPrimary: "Book Consultation",
+      quotePart1: "“My philosophy is to weave a ",
+      quoteHighlight: "‘SILK SHIELD’",
+      quotePart2: " for clients – flexible in negotiation but absolute in protection.”",
+      quoteAuthor: "Attorney Hoa Nguyen",
+      bullets: [
+        { title: "Practical Expertise", desc: "Former Legal Head at top financial institutions, handling complex corporate bond packages." },
+        { title: "Global Reach", desc: "Connected across 50+ countries via P.A.N, supporting FDI from US, EU, and Asia." },
+        { title: "Strategic Vision", desc: "We provide solution-driven legal advice that empowers sustainable business growth." }
+      ]
     },
-    {
-      title: "Investment & Real Estate",
-      desc: "Xử lý rào cản thủ tục đầu tư, dệt nên các chiến lược pháp lý cá nhân hóa cho từng dự án.",
-      deal: "Quy mô: >50ha"
+    stats: {
+      items: [
+        { value: "15+", label: "Years Exp" },
+        { value: "$500M+", label: "Total Transaction Value" },
+        { value: "50+", label: "Partner Countries" }
+      ]
     },
-    {
-      title: "P.A.N (Global Network)",
-      desc: "Kết nối mạng lưới luật sư tại hơn 50 quốc gia, đồng hành cùng doanh nghiệp vươn ra thế giới.",
-      deal: "Mạng lưới toàn cầu"
+    profile: {
+      eduTitle: "Education & Certs",
+      eduItems: ["Master of Int. Policy & Law - FTU", "Lawyer Practicing Certificate | Liquidator", "Industrial Property Representative"],
+      assoTitle: "Roles & Associations",
+      assoItems: ["National VP - JCI Vietnam (2026)", "Member of Hanoi Bar Association", "Languages: Vietnamese, English (Fluent)"],
+      trustTitle: "Trusted Partners & Accreditations"
+    },
+    practice: {
+      title: "Practice Areas",
+      items: [
+        { id: 'ma', title: "M&A & Restructuring", desc: "Transaction structuring, legal due diligence (LDD), and contract negotiation." },
+        { id: 'finance', title: "Banking & Finance", desc: "FX management legal frameworks and international payment compliance." },
+        { id: 'realestate', title: "Real Estate & Projects", desc: "Legal development of hospitality and urban projects from start to operation." },
+        { id: 'dispute', title: "Dispute Resolution", desc: "Representing clients in complex commercial and construction EPC litigations." }
+      ]
+    },
+    cases: {
+      title: "Key Transactions",
+      list: [
+        { title: "Real Estate M&A (Korean Investor)", result: "$60M USD" },
+        { title: "Resort Transfer Project (Russian Investor)", result: "$65M USD" },
+        { title: "Top EPC Share Acquisition (Japanese Investor)", result: "$20M USD" },
+        { title: "Bond Crisis Management (7 Packages)", result: "$30M/Pkg" }
+      ]
+    },
+    speaker: {
+      title: "Speaker & Community",
+      desc: "Contributing to the global business community through academic lecturing and business forums.",
+      teachingTitle: "Academic Lecturing",
+      teachingItems: ["Visiting Lecturer at Thanh Dong University", "Internal FX Trainer at Techcombank"],
+      eventTitle: "JCI Milestones & Events",
+      eventItems: ["Updating event data for 2024-2025..."],
+      contactText: "To invite for speaking or lecturing engagements:",
+      contactBtn: "Send Request"
     }
-  ];
+  }
+};
+
+// --- ICONS ---
+const Icons = {
+  LinkedIn: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>,
+  Facebook: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
+  Mail: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+  Phone: () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1 22 16.92z"/></svg>,
+  Globe: () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+  GraduationCap: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+  Users: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>,
+  ArrowRight: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+  MessageCircle: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>,
+};
+
+const colors = {
+  mint: "#2eb793",
+  deepGreen: "#1d6266",
+  textDark: "#0F172A",
+  textLight: "#64748B"
+};
+
+export default function App() {
+  const [lang, setLang] = useState<Language>('vi');
+  const [activeTab, setActiveTab] = useState<TabId>('about');
+  const t = dict[lang];
 
   return (
-    <div className="font-sans bg-white text-slate-900 selection:bg-[#2eb793]/20">
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <PaxlawLogo className="h-7 md:h-8" />
+    <div className="bg-[#F8F9FA] font-sans text-slate-900 selection:bg-[#2eb793] selection:text-white">
+      
+      {/* CSS: Professional Hierachy & Optimized Performance */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+        .font-sans { font-family: "Inter", sans-serif !important; }
+        .hide-scroll::-webkit-scrollbar { width: 0; height: 0; }
+        .name-shadow { text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+        .pax-silk-overlay {
+          background: linear-gradient(135deg, rgba(46, 183, 147, 0.08) 0%, rgba(29, 98, 102, 0.04) 100%);
+          border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+        }
+        .serious-shadow { box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1); }
+      `}</style>
 
-          <div className="hidden md:flex gap-8 text-[11px] font-black text-[#1d6266] uppercase tracking-[0.2em]">
-            <a href="#about" className="hover:text-[#2eb793] transition-colors py-2">Giới thiệu</a>
-            <a href="#expertise" className="hover:text-[#2eb793] transition-colors py-2">Lĩnh vực</a>
-            <a href="#experience" className="hover:text-[#2eb793] transition-colors py-2">Kinh nghiệm</a>
-            <a href="#contact" className="bg-[#1d6266] text-white px-5 py-2 rounded-full hover:bg-[#2eb793] transition-all shadow-sm">Liên hệ</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* 1. HERO SECTION */}
-      <section className="relative grid md:grid-cols-2 min-h-screen items-stretch overflow-hidden bg-white">
-        <div className="relative h-[50vh] md:h-full overflow-hidden bg-slate-50">
-          <img
-            src={assets.portrait}
-            alt="Luật sư Nguyễn Thị Hoa"
-            className="w-full h-full object-cover object-top opacity-0 transition-opacity duration-700"
-            onLoad={(e) => e.target.classList.remove('opacity-0')}
+      <div className="flex flex-col md:flex-row w-full min-h-screen md:h-[100dvh] overflow-hidden bg-white">
+        
+        {/* === IDENTITY PANEL (Left) - Optimized Visibility === */}
+        <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-full md:w-[40%] lg:w-[45%] shrink-0 overflow-hidden">
+          <img 
+            src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
+            alt="Nguyen Thi Hoa Portrait" 
+            className="w-full h-full object-cover object-top md:object-center"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266]/10 to-transparent md:hidden"></div>
-        </div>
+          
+          {/* ĐÃ BỎ LỚP PHỦ XANH PHÍA TRÊN - CHỈ GIỮ GRADIENT DƯỚI CHÂN ĐỂ TÔN TEXT */}
+          <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0F172A] via-[#1d6266]/40 to-transparent pointer-events-none"></div>
 
-        <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 relative">
-          <div className="inline-block px-3 py-1 bg-[#2eb793]/10 text-[#2eb793] text-[9px] font-black rounded-sm mb-6 w-fit uppercase tracking-[0.3em]">
-            Managing Partner
-          </div>
-          <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-4 text-[#1d6266] leading-[1.1] tracking-tight">
-            Nguyễn Thị Hoa
-          </h1>
-          <p className="text-lg md:text-xl text-[#2eb793] mb-10 font-bold italic opacity-90">
-            Be Grace, Build Grand.
-          </p>
-
-          <div className="grid grid-cols-3 gap-4 mb-12 border-y border-slate-100 py-8 max-w-md">
-            <div>
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">15+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Kinh nghiệm</div>
+          {/* TOP ACTIONS */}
+          <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-40">
+            <div className="flex gap-2">
+              <a href="https://www.linkedin.com/in/lawyerhoanguyen/" target="_blank" rel="noreferrer" className="flex items-center h-10 w-10 bg-black/40 border border-white/10 backdrop-blur-md text-white rounded-full justify-center hover:bg-[#2eb793] transition-colors shadow-lg">
+                <Icons.LinkedIn />
+              </a>
+              <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="flex items-center h-10 w-10 bg-black/40 border border-white/10 backdrop-blur-md text-white rounded-full justify-center hover:bg-[#2eb793] transition-colors shadow-lg">
+                <Icons.Facebook />
+              </a>
             </div>
-            <div className="border-x border-slate-100 px-4">
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">50+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Quốc gia</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-black text-[#1d6266]">10k+</div>
-              <div className="text-[8px] text-slate-400 uppercase tracking-widest font-black mt-1">Tỷ giao dịch</div>
-            </div>
-          </div>
 
-          <p className="text-slate-600 mb-10 leading-relaxed max-w-md font-bold italic border-l-2 border-[#2eb793] pl-6 text-[15px]">
-            "Paxlaw không chỉ bảo vệ mà còn để khơi mở những tiềm năng lớn lao, tạo nền tảng vững chắc cho sự phát triển bền vững."
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-[#1d6266] text-white px-8 py-4 rounded-xl font-black hover:bg-[#2eb793] transition-all shadow-md flex items-center gap-2 uppercase text-[10px] tracking-widest">
-              Đặt lịch tư vấn <ChevronRight size={14} />
-            </button>
-            <button className="border-2 border-[#1d6266]/20 text-[#1d6266] px-8 py-4 rounded-xl font-black hover:bg-slate-50 transition-all uppercase text-[10px] tracking-widest">
-              Profile (.PDF)
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. TRUST BAR */}
-      <section className="py-10 border-y bg-slate-50/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-             <span className="text-sm font-black text-slate-800 tracking-tighter uppercase font-sans">Techcombank</span>
-             <PaxlawLogo className="h-5 md:h-6 grayscale" />
-             <span className="text-base md:text-lg font-black text-[#1d6266] uppercase tracking-tighter">JCI Vietnam</span>
-             <span className="text-sm font-serif font-black text-slate-600 tracking-tighter uppercase">Penfield</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. ABOUT */}
-      <section id="about" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Triết lý hành nghề</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight text-[#1d6266]">
-              "Dệt" nên những chiến lược pháp lý sâu sắc
-            </h3>
-            <p className="text-slate-600 mb-10 leading-relaxed text-[17px] font-bold">
-              Giống như dải lụa ôm lấy từng góc cạnh của một vật thể, chúng tôi bảo vệ doanh nghiệp bằng sự tinh tế và chuyên môn vững vàng.
-            </p>
-
-            <div className="space-y-6">
-              {[
-                { icon: <ShieldCheck size={18} />, text: "Minh bạch - Tinh tế - Sâu sắc" },
-                { icon: <Globe size={18} />, text: "Mạng lưới toàn cầu P.A.N" },
-                { icon: <Users size={18} />, text: "Pháp chế thuê ngoài PaxFlow" }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-4 items-center">
-                  <div className="p-2 bg-[#2eb793]/10 rounded text-[#2eb793]">{item.icon}</div>
-                  <p className="text-slate-800 font-black text-xs tracking-wider uppercase">{item.text}</p>
-                </div>
+            <div className="flex items-center bg-black/40 border border-white/10 backdrop-blur-md p-1 rounded-full">
+              {(['vi', 'en'] as Language[]).map(l => (
+                <button 
+                  key={l}
+                  onClick={() => setLang(l)} 
+                  className={`w-7 h-7 rounded-full text-[9px] font-black uppercase transition-all ${lang === l ? 'bg-[#2eb793] text-white' : 'text-white/40'}`}
+                >
+                  {l}
+                </button>
               ))}
             </div>
           </div>
           
-          <div className="relative group">
-             <div className="bg-[#1d6266] rounded-[2rem] p-10 md:p-12 text-white shadow-2xl relative z-10 overflow-hidden border border-white/5">
-                <Quote size={32} className="text-[#2eb793] opacity-20 mb-6" />
-                <p className="text-xl md:text-2xl font-bold italic leading-relaxed mb-10 relative z-10">
-                  “Pháp lý không chỉ là tuân thủ, mà là nghệ thuật sử dụng luật pháp để bảo vệ tối đa lợi ích thương mại.”
-                </p>
-                <div className="flex items-center gap-3 relative z-10 border-t border-white/10 pt-6">
-                   <div className="w-10 h-10 rounded-full overflow-hidden border border-[#2eb793]/40 shadow-inner">
-                     <img src={assets.portrait} className="object-cover w-full h-full" alt="Mini Profile" />
-                   </div>
-                   <div>
-                     <p className="font-black text-[12px] uppercase tracking-widest">LS. Nguyễn Thị Hoa</p>
-                     <p className="text-[#2eb793] text-[9px] font-black uppercase tracking-tighter">Managing Partner</p>
-                   </div>
-                </div>
-             </div>
-             <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-[#2eb793]/10 rounded-[2rem] -z-0 group-hover:scale-105 transition-transform"></div>
+          {/* BRAND TEXT - One Line, Bold, Shadow */}
+          <div className="absolute bottom-0 left-0 w-full p-8 pb-12 lg:p-14 text-white z-10">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black mb-5 tracking-tighter whitespace-nowrap name-shadow">
+              {t.hero.name}
+            </h1>
+            <div className="flex flex-wrap items-center gap-3 text-[10px] lg:text-[11px] font-black uppercase tracking-[0.2em]">
+              <span className="bg-[#2eb793] text-white px-4 py-2 rounded-sm">{t.hero.role1}</span>
+              <span className="text-white/40 font-light">|</span>
+              <span className="text-white/90 drop-shadow-md">{t.hero.role2}</span>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* 4. PRACTICE AREAS */}
-      <section id="expertise" className="bg-[#1d6266] py-24 md:py-32 text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="mb-20 text-center md:text-left">
-            <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Dịch vụ chuyên môn</h2>
-            <h3 className="text-4xl font-bold tracking-tight">Giải pháp pháp lý toàn diện</h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {practiceAreas.map((item, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#2eb793]/40 transition-all group flex flex-col h-full">
-                <div className="w-10 h-10 bg-[#2eb793] rounded-lg flex items-center justify-center mb-8 shadow-lg group-hover:scale-105 transition-transform">
-                  <CheckCircle2 size={18} className="text-white" />
-                </div>
-                <h3 className="text-lg font-black mb-4 leading-snug tracking-tight">{item.title}</h3>
-                <p className="text-slate-200 text-[13px] mb-8 leading-relaxed font-bold opacity-80 italic">
-                  {item.desc}
-                </p>
-                <div className="pt-6 border-t border-white/5 mt-auto text-right">
-                  <span className="text-[8px] font-black text-[#2eb793] tracking-widest uppercase">
-                    {item.deal}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. KEY DEALS */}
-      <section id="experience" className="max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
-        <h2 className="text-[10px] font-black text-[#2eb793] uppercase tracking-[0.4em] mb-4">Thành tựu</h2>
-        <h3 className="text-3xl font-bold mb-16 text-[#1d6266] font-serif italic">Thương vụ nổi bật</h3>
-
-        <div className="grid gap-3 text-left">
-          {[
-            { label: "M&A Bất động sản", detail: "Thương vụ quy mô 1.500 tỷ đồng (Đối tác Hàn Quốc)", icon: <Briefcase size={16} /> },
-            { label: "Dự án Resort & Golf", detail: "Xây dựng nền tảng pháp lý quy mô 1.600 tỷ đồng (Vốn Nga)", icon: <MapPin size={16} /> },
-            { label: "Hợp đồng EPC Năng lượng", detail: "Dự án trị giá 20 triệu USD (Nhà thầu Nhật Bản)", icon: <Flag size={16} /> },
-            { label: "Tái cấu trúc Tập đoàn", detail: "Tái cấu trúc danh mục tài sản > 1.000 tỷ đồng", icon: <ShieldCheck size={16} /> },
-          ].map((deal, idx) => (
-            <div key={idx} className="flex items-center justify-between p-5 rounded-xl bg-white border border-slate-100 hover:shadow-lg hover:border-[#2eb793]/20 transition-all group cursor-pointer shadow-sm">
-               <div className="flex items-center gap-6">
-                  <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-[#1d6266] group-hover:bg-[#2eb793] group-hover:text-white transition-all">
-                    {deal.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-black text-[14px] text-[#1d6266] uppercase tracking-wide">{deal.label}</h4>
-                    <p className="text-slate-500 text-[12px] mt-1 font-bold">{deal.detail}</p>
-                  </div>
-               </div>
-               <ChevronRight size={18} className="text-slate-200 group-hover:text-[#2eb793]" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-20 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-12 mb-16 items-start">
-            {/* Cột Logo & Slogan */}
-            <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-              <PaxlawLogo className="h-8 mb-8" />
-              <p className="text-slate-500 text-[13px] leading-relaxed max-w-xs italic border-l-2 border-[#2eb793] pl-5 font-bold">
-                "Be Grace, Build Grand. Đơn vị dẫn đầu trong lĩnh vực tư vấn pháp lý và pháp chế thuê ngoài."
-              </p>
-            </div>
-            
-            {/* Cột Văn phòng */}
-            <div className="md:col-span-4 text-center md:text-left">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Văn phòng Hà Nội</h4>
-              <div className="flex gap-4 items-start mb-6">
-                <div className="p-1 bg-[#2eb793]/10 rounded-full mt-1 shrink-0">
-                  <MapPin size={16} className="text-[#2eb793]" />
-                </div>
-                <p className="text-slate-700 text-[14px] leading-relaxed font-bold">
-                  Tầng 5, số 31A Nguyễn Quốc Trị, <br /> Trung Hoà, Yên Hoà, Cầu Giấy, Hà Nội
-                </p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="p-1 bg-[#2eb793]/10 rounded-full shrink-0">
-                  <Globe size={16} className="text-[#2eb793]" />
-                </div>
-                <span className="text-[14px] font-black text-[#1d6266] border-b-2 border-transparent hover:border-[#1d6266] transition-all cursor-pointer">www.paxlaw.vn</span>
-              </div>
-            </div>
-
-            {/* Cột Kết nối trực tiếp & QR */}
-            <div className="md:col-span-3 flex flex-col items-center md:items-end">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Kết nối trực tuyến</h4>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((link) => (
-                  <div 
-                    key={link.id} 
-                    className="relative group"
-                    onMouseEnter={() => setHoveredSocial(link.id)}
-                    onMouseLeave={() => setHoveredSocial(null)}
-                  >
-                    <a 
-                      href={link.url} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#1d6266] hover:bg-[#2eb793] hover:text-white transition-all shadow-sm border border-slate-200 transition-all duration-300"
-                      aria-label={link.name}
-                    >
-                      {link.icon}
-                    </a>
-
-                    {/* QR POPOVER */}
-                    <div className={`hidden md:block absolute bottom-full mb-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 origin-bottom ${hoveredSocial === link.id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
-                      <div className="bg-white p-3 rounded-2xl shadow-2xl border-2 border-[#1d6266]/5 w-40 text-center">
-                        <div className="w-full aspect-square bg-slate-50 rounded-xl flex items-center justify-center border border-[#2eb793]/10 overflow-hidden mb-2">
-                           <img 
-                              src={link.qrImage} 
-                              alt={`QR ${link.name}`} 
-                              className="w-full h-full object-contain p-1"
-                              onError={(e) => { 
-                                e.target.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`; 
-                              }}
-                           />
-                        </div>
-                        <p className="text-[9px] font-black text-[#1d6266] uppercase tracking-widest leading-none">Quét cho {link.name}</p>
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-[8px] border-transparent border-t-white"></div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[10px] text-slate-400 mt-6 italic md:block hidden font-bold tracking-wider">Di chuột để kết nối</p>
-            </div>
-          </div>
+        {/* === CONTENT PANEL (Right) - Simplified UX === */}
+        <div className="flex-1 flex flex-col bg-white md:overflow-hidden relative z-20 shadow-[-15px_0_40px_rgba(0,0,0,0.1)]">
           
-          <div className="pt-10 border-t border-slate-200 text-slate-400 text-[9px] font-black tracking-[0.3em] uppercase text-center">
-             <p>© 2024 PAXLAW LEGAL CONSULTING CO., LTD. ALL RIGHTS RESERVED.</p>
+          {/* NAVIGATION - Reduced Motion */}
+          <nav className="shrink-0 sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 px-8 lg:px-14 pt-8 md:pt-10 flex items-end">
+            <div className="flex gap-8 lg:gap-12 overflow-x-auto hide-scroll flex-1">
+              {(['about', 'practice', 'experience', 'insights'] as TabId[]).map((tab) => (
+                <button 
+                  key={tab} 
+                  onClick={() => setActiveTab(tab)} 
+                  className={`pb-5 text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] transition-all relative whitespace-nowrap shrink-0 ${activeTab === tab ? 'text-[#1d6266]' : 'text-slate-400'}`}
+                >
+                  {t.tabs[tab]}
+                  {activeTab === tab && (
+                    <motion.span layoutId="nav-line" className="absolute bottom-0 left-0 w-full h-[3px] bg-[#2eb793]" transition={{ type: "spring", stiffness: 300, damping: 35 }} />
+                  )}
+                </button>
+              ))}
+            </div>
+          </nav>
+
+          {/* CONTENT SCROLL AREA */}
+          <div className="flex-1 overflow-y-auto hide-scroll p-8 lg:p-14 pb-24">
+            <AnimatePresence mode="wait">
+              {activeTab === 'about' && (
+                <motion.div key="about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-4xl space-y-16">
+                  {/* Hook & Intro (Bolded Hierarchy) */}
+                  <section>
+                    <h2 className="text-3xl lg:text-[2.75rem] font-black text-slate-900 leading-[1.1] mb-8 tracking-tighter">
+                      {t.summary.hook}
+                    </h2>
+                    <p className="text-base lg:text-lg text-slate-500 font-normal leading-relaxed mb-10 max-w-2xl">
+                      {t.summary.intro}
+                    </p>
+                    <a href="https://zalo.me/0911553686" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-[#1d6266] text-white px-10 py-5 rounded-full text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-[#2eb793] transition-all active:scale-95">
+                      <Icons.MessageCircle /> {t.summary.ctaPrimary}
+                    </a>
+                  </section>
+
+                  {/* Trust Stats (Immediate Proof) */}
+                  <section className="grid grid-cols-1 sm:grid-cols-3 gap-8 py-12 border-y border-slate-100">
+                    {t.stats.items.map((item, idx) => (
+                      <div key={idx}>
+                        <h3 className="text-3xl lg:text-5xl font-black text-[#2eb793] mb-2 tracking-tighter">{item.value}</h3>
+                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest leading-snug">{item.label}</p>
+                      </div>
+                    ))}
+                  </section>
+
+                  {/* Competencies */}
+                  <section className="grid gap-12">
+                    {t.summary.bullets.map((bullet, idx) => (
+                      <div key={idx} className="flex gap-8 items-start">
+                        <span className="text-2xl font-black text-slate-200">0{idx+1}</span>
+                        <div>
+                          <h4 className="text-[12px] font-black text-slate-900 uppercase tracking-widest mb-3">{bullet.title}</h4>
+                          <p className="text-sm lg:text-base text-slate-500 leading-relaxed">{bullet.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </section>
+
+                  {/* Credentials & Trust Badges */}
+                  <section className="pt-8">
+                    <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-12 text-center">{t.profile.trustTitle}</h4>
+                    <div className="flex flex-wrap justify-center items-center gap-14 opacity-40 grayscale hover:opacity-80 transition-all duration-700">
+                      {['Paxlaw', 'Techcombank', 'Penfield', 'Green Invest'].map((name, i) => (
+                        <span key={i} className="text-[11px] font-black uppercase tracking-widest">{name}</span>
+                      ))}
+                    </div>
+                  </section>
+
+                  {/* Profile Cards */}
+                  <section className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="p-10 bg-slate-50 rounded-2xl serious-shadow">
+                      <div className="text-[#2eb793] mb-6"><Icons.GraduationCap /></div>
+                      <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-6">{t.profile.eduTitle}</h3>
+                      <ul className="space-y-4 text-[13px] text-slate-500">
+                        {t.profile.eduItems.map((item, i) => <li key={i} className="flex gap-3 leading-relaxed"><span className="text-[#2eb793]">•</span>{item}</li>)}
+                      </ul>
+                    </div>
+                    <div className="p-10 bg-slate-50 rounded-2xl serious-shadow">
+                      <div className="text-[#2eb793] mb-6"><Icons.Users /></div>
+                      <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-6">{t.profile.assoTitle}</h3>
+                      <ul className="space-y-4 text-[13px] text-slate-500">
+                        {t.profile.assoItems.map((item, i) => <li key={i} className="flex gap-3 leading-relaxed"><span className="text-[#2eb793]">•</span>{item}</li>)}
+                      </ul>
+                    </div>
+                  </section>
+
+                  {/* Brand Quote (Branding Finish) */}
+                  <section className="bg-[#1d6266] p-12 lg:p-16 rounded-[2.5rem] border-l-8 border-[#2eb793] text-white shadow-2xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-40 h-40 pax-silk-overlay -mr-16 -mt-16 opacity-20"></div>
+                    <p className="text-xl lg:text-2xl font-light italic leading-relaxed mb-8 opacity-90 relative z-10">
+                      {t.summary.quotePart1}
+                      <span className="font-black text-[#2eb793] not-italic">{t.summary.quoteHighlight}</span>
+                      {t.summary.quotePart2}
+                    </p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-[#2eb793] relative z-10">{t.summary.quoteAuthor}</p>
+                  </section>
+                </motion.div>
+              )}
+
+              {activeTab === 'practice' && (
+                <motion.div key="practice" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="max-w-5xl space-y-12">
+                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter mb-12">{t.practice.title}</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {t.practice.items.map((item) => (
+                      <div key={item.id} className="p-10 border border-slate-100 rounded-3xl hover:border-[#2eb793] transition-all bg-white serious-shadow group">
+                        <h4 className="text-xl font-black text-slate-900 mb-5 group-hover:text-[#2eb793] transition-colors">{item.title}</h4>
+                        <p className="text-sm text-slate-500 leading-loose">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {activeTab === 'experience' && (
+                <motion.div key="experience" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl space-y-12">
+                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter mb-12">{t.cases.title}</h3>
+                  <div className="grid gap-6">
+                    {t.cases.list.map((c, i) => (
+                      <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white transition-all hover:shadow-xl group">
+                        <div className="flex gap-4 items-center mb-4 sm:mb-0">
+                          <Icons.ArrowRight />
+                          <span className="font-bold text-slate-900 text-lg">{c.title}</span>
+                        </div>
+                        <span className="px-6 py-2 bg-[#1d6266] text-[#2eb793] text-[11px] font-black rounded-full shadow-md uppercase tracking-widest">{c.result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {activeTab === 'insights' && (
+                <motion.div key="insights" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl space-y-16">
+                  <section>
+                    <h3 className="text-3xl font-black text-slate-900 mb-8 tracking-tighter">{t.speaker.title}</h3>
+                    <p className="text-slate-500 leading-loose max-w-2xl mb-12">{t.speaker.desc}</p>
+                    
+                    <div className="space-y-6">
+                      <h4 className="text-[12px] font-black text-[#1d6266] uppercase tracking-widest border-b border-slate-100 pb-4">{t.speaker.teachingTitle}</h4>
+                      {t.speaker.teachingItems.map((item, i) => (
+                        <div key={i} className="flex gap-6 p-6 rounded-xl border border-slate-100 items-start bg-slate-50/30">
+                          <Icons.GraduationCap />
+                          <p className="text-sm font-semibold text-slate-600">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                  <a href="mailto:hoant@paxlaw.vn" className="inline-flex px-12 py-5 bg-[#1d6266] text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-2xl hover:bg-[#2eb793] transition-all">
+                    {t.speaker.contactBtn}
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* STICKY CTA (Mobile & All screens) */}
+          <div className="fixed bottom-0 left-0 right-0 p-4 md:static md:p-0 md:bg-transparent z-[60]">
+             <div className="md:hidden flex items-center justify-center p-4 bg-white/80 backdrop-blur-md border-t border-slate-100">
+                <a href="tel:+84911553686" className="w-full flex items-center justify-center gap-3 bg-[#1d6266] text-white py-4 rounded-full text-xs font-black uppercase tracking-widest shadow-2xl active:scale-95 transition-transform">
+                  <Icons.Phone /> {t.socials.phone}: 0911 553 686
+                </a>
+             </div>
           </div>
         </div>
-      </footer>
+
+      </div>
     </div>
   );
-};
-
-export default App;
+}
