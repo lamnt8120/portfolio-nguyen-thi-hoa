@@ -38,6 +38,7 @@ const App = () => {
       id: 'fb', 
       label: 'FB', 
       name: 'Facebook', 
+      icon: <Facebook size={16} />,
       url: 'https://www.facebook.com/Paxlaw.vn', 
       qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-facebook.png' 
     },
@@ -45,6 +46,7 @@ const App = () => {
       id: 'ln', 
       label: 'LN', 
       name: 'LinkedIn', 
+      icon: <Linkedin size={16} />,
       url: 'https://vn.linkedin.com/in/lawyerhoanguyen', 
       qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-linkedin.png' 
     },
@@ -52,6 +54,7 @@ const App = () => {
       id: 'zl', 
       label: 'ZL', 
       name: 'Zalo', 
+      icon: <MessageCircle size={16} />,
       url: 'https://zalo.me/0396216467', 
       qrImage: 'https://paxlaw.vn/wp-content/uploads/qr-zalo.png' 
     }
@@ -99,7 +102,7 @@ const App = () => {
 
   return (
     <div className="font-sans bg-white text-slate-900 selection:bg-[#2eb793]/20">
-      {/* Navigation - Đậm đồng đều */}
+      {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <PaxlawLogo className="h-7 md:h-8" />
@@ -170,7 +173,7 @@ const App = () => {
       <section className="py-10 border-y bg-slate-50/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-             <span className="text-sm font-black text-slate-800 tracking-tighter uppercase">Techcombank</span>
+             <span className="text-sm font-black text-slate-800 tracking-tighter uppercase font-sans">Techcombank</span>
              <PaxlawLogo className="h-5 md:h-6 grayscale" />
              <span className="text-base md:text-lg font-black text-[#1d6266] uppercase tracking-tighter">JCI Vietnam</span>
              <span className="text-sm font-serif font-black text-slate-600 tracking-tighter uppercase">Penfield</span>
@@ -282,7 +285,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Footer - Cập nhật Bold đồng đều theo hình ảnh yêu cầu */}
+      {/* Footer */}
       <footer className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 mb-16 items-start">
@@ -294,9 +297,9 @@ const App = () => {
               </p>
             </div>
             
-            {/* Cột Văn phòng - Thiết kế Đậm đồng nhất theo ảnh image_36e42c */}
+            {/* Cột Văn phòng */}
             <div className="md:col-span-4 text-center md:text-left">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[10px]">Văn phòng Hà Nội</h4>
+              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Văn phòng Hà Nội</h4>
               <div className="flex gap-4 items-start mb-6">
                 <div className="p-1 bg-[#2eb793]/10 rounded-full mt-1 shrink-0">
                   <MapPin size={16} className="text-[#2eb793]" />
@@ -315,7 +318,7 @@ const App = () => {
 
             {/* Cột Kết nối trực tiếp & QR */}
             <div className="md:col-span-3 flex flex-col items-center md:items-end">
-              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[10px]">Kết nối trực tuyến</h4>
+              <h4 className="font-black text-[#1d6266] mb-8 uppercase tracking-[0.3em] text-[9px]">Kết nối trực tuyến</h4>
               <div className="flex items-center gap-4">
                 {socialLinks.map((link) => (
                   <div 
@@ -328,13 +331,14 @@ const App = () => {
                       href={link.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#1d6266] hover:bg-[#2eb793] hover:text-white transition-all font-black text-[10px] shadow-sm border border-slate-200 uppercase"
+                      className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#1d6266] hover:bg-[#2eb793] hover:text-white transition-all shadow-sm border border-slate-200 transition-all duration-300"
+                      aria-label={link.name}
                     >
-                      {link.label}
+                      {link.icon}
                     </a>
 
                     {/* QR POPOVER */}
-                    <div className={`hidden md:block absolute bottom-full mb-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 origin-bottom ${hoveredSocial === link.id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-90 invisible'}`}>
+                    <div className={`hidden md:block absolute bottom-full mb-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 origin-bottom ${hoveredSocial === link.id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
                       <div className="bg-white p-3 rounded-2xl shadow-2xl border-2 border-[#1d6266]/5 w-40 text-center">
                         <div className="w-full aspect-square bg-slate-50 rounded-xl flex items-center justify-center border border-[#2eb793]/10 overflow-hidden mb-2">
                            <img 
@@ -353,7 +357,7 @@ const App = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-[10px] text-slate-400 mt-6 italic md:block hidden font-bold">Di chuột để kết nối</p>
+              <p className="text-[10px] text-slate-400 mt-6 italic md:block hidden font-bold tracking-wider">Di chuột để kết nối</p>
             </div>
           </div>
           
