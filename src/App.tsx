@@ -7,22 +7,22 @@ import {
 } from 'lucide-react';
 
 /* =========================================
-   1. DICTIONARY (DỮ LIỆU ĐA NGỮ)
+   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - ĐÃ CHUẨN HOÁ THUẬT NGỮ)
 ========================================= */
 
 const dict = {
   vi: {
-    nav: ['Hồ sơ', 'Chuyên môn', 'Cộng đồng', 'Đặt Lịch'],
+    nav: ['Hồ sơ', 'Chuyên môn', 'Cộng đồng', 'Liên hệ'],
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Be Grace, Build Grand."`,
-      desc: "Hơn 15 năm kiến tạo màng lọc rủi ro pháp lý bền vững, bảo vệ quyền lợi và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N)."
+      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N)."
     },
     profile: {
-      title: "Chân dung & Tầm nhìn",
+      title: "Tổng quan chuyên môn",
       subtitle: "Hồ sơ chuyên gia",
-      desc1: "Trong thế giới pháp luật mang đậm sắc thái khuôn mẫu, tôi lựa chọn phương pháp tiếp cận <strong>Tinh tế (Graceful)</strong> và <strong>Sâu sắc (Insightful)</strong>. Giải pháp pháp lý tối ưu không chỉ giải quyết tranh chấp, mà còn phải tạo ra bệ phóng vững chắc cho doanh nghiệp.",
-      desc2: "Chuyên môn thực chiến của tôi tập trung vào cấu trúc M&A, tư vấn đầu tư và các giao dịch xuyên biên giới. Thông qua <strong>pháp chế thuê ngoài (PaxFlow)</strong> và <strong>mạng lưới liên kết toàn cầu (P.A.N)</strong>, tôi cam kết bảo vệ lợi ích tối đa cho các đối tác."
+      desc1: "Trong thế giới pháp luật mang đậm sắc thái khuôn mẫu, tôi lựa chọn phương pháp tiếp cận <strong>Tinh tế (Graceful)</strong> và <strong>Sâu sắc (Insightful)</strong>. Giải pháp pháp lý tối ưu không chỉ giải quyết tranh chấp, mà còn phải tạo ra bệ phóng vững chắc cho sự phát triển của doanh nghiệp.",
+      desc2: "Chuyên môn thực chiến của tôi tập trung vào cấu trúc M&A, tư vấn đầu tư và các giao dịch xuyên biên giới. Thông qua <strong>giải pháp pháp chế thuê ngoài (PaxFlow)</strong> và <strong>mạng lưới liên kết toàn cầu (P.A.N)</strong>, tôi cam kết bảo vệ lợi ích tối đa cho các đối tác."
     },
     stats: [
       { value: "15+", label: "Năm Kinh Nghiệm" },
@@ -34,12 +34,12 @@ const dict = {
         icon: GraduationCap,
         items: [
           "Thạc sĩ Chính sách & Luật Thương mại Quốc tế - ĐH Ngoại Thương",
-          "Cử nhân Luật Kinh tế - Đại học Luật Hà Nội",
+          "Cử nhân Luật Thương mại - Đại học Luật Hà Nội",
           "Khóa đào tạo Nghiệp vụ Luật sư - Học viện Tư pháp"
         ]
       },
       {
-        title: "Công tác giảng dạy",
+        title: "Giảng dạy & Đào tạo",
         icon: BookOpen,
         items: [
           "Giảng viên thỉnh giảng Luật Ngân hàng - Đại học Thành Đông",
@@ -50,7 +50,7 @@ const dict = {
         title: "Chứng chỉ hành nghề & Tổ chức",
         icon: Award,
         items: [
-          "Luật sư thuộc Đoàn Luật sư TP. Hà Nội (Liên đoàn LS Việt Nam)",
+          "Thành viên Đoàn Luật sư TP. Hà Nội (Liên đoàn LS Việt Nam)",
           "Chứng chỉ hành nghề Quản tài viên",
           "Chứng chỉ Đại diện Sở hữu Công nghiệp"
         ]
@@ -63,27 +63,27 @@ const dict = {
     timelineData: [
       {
         period: "12/2024 - Nay",
-        role: "CEO / Luật sư Điều hành",
+        role: "Luật sư Sáng lập & Điều hành",
         company: "Paxlaw Law Firm",
-        desc: "Thiết kế chiến lược pháp lý cá nhân hóa, cung cấp giải pháp phòng pháp chế thuê ngoài (PaxFlow) trọn gói về M&A và đầu tư cho khách hàng đa quốc gia.",
+        desc: "Thiết kế chiến lược pháp lý cá nhân hóa, cung cấp giải pháp pháp chế thuê ngoài (PaxFlow) trọn gói về M&A và đầu tư cho khách hàng đa quốc gia.",
       },
       {
         period: "2022 - Nay",
         role: "Giám đốc Pháp chế",
         company: "Green Investment JSC",
-        desc: "Quản trị rủi ro, đảm bảo tuân thủ pháp luật, tạo nền tảng vững chắc cho các dự án đầu tư và liên doanh.",
+        desc: "Quản trị rủi ro, đảm bảo tuân thủ pháp luật, tạo nền tảng quản trị vững chắc cho các dự án đầu tư và liên doanh.",
       },
       {
         period: "2018 - 2024",
-        role: "Phó Giám Đốc / Partner",
+        role: "Phó Giám đốc / Luật sư Thành viên",
         company: "Penfield Law Firm",
-        desc: "Dẫn dắt các thương vụ M&A phức tạp và thiết lập kế hoạch tái cấu trúc tài chính cho các tập đoàn lớn.",
+        desc: "Dẫn dắt các thương vụ M&A phức tạp và thiết lập kế hoạch tái cấu trúc tài chính cho các tập đoàn lớn; điều phối giải quyết tranh chấp đa lĩnh vực.",
       },
       {
         period: "2012 - 2018",
-        role: "Chuyên viên Pháp chế cao cấp",
+        role: "Chuyên viên Pháp chế Cấp cao",
         company: "Techcombank",
-        desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn, và chuẩn hóa quy trình phục vụ hệ thống Khách hàng Doanh nghiệp lớn.",
+        desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn, và chuẩn hóa quy trình phục vụ hệ thống Khách hàng Doanh nghiệp bán buôn.",
       }
     ],
     practice: {
@@ -92,49 +92,49 @@ const dict = {
     },
     practiceAreas: [
       {
-        title: "M&A & Tái Cấu Trúc",
+        title: "M&A & Tái cấu trúc doanh nghiệp",
         icon: Building2,
         cases: [
-          { text: "Tư vấn thâu tóm công ty sản xuất thép (Miền Bắc) giá trị", highlight: "1.000 tỷ VNĐ." },
-          { text: "Chuyển nhượng dự án BĐS nghỉ dưỡng Bãi Dài (Khánh Hòa) trị giá", highlight: "1.600 tỷ VNĐ." },
-          { text: "Tái cấu trúc tài chính tập đoàn khoáng sản Thái Nguyên (Vốn", highlight: "1.000+ tỷ VNĐ)." },
-          { text: "Tư vấn bán cổ phần EPC top đầu VN cho đối tác Nhật Bản giá trị", highlight: "20 triệu USD." },
+          { text: "Tư vấn bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) giá trị", highlight: "1.000 tỷ VNĐ." },
+          { text: "Tư vấn chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Khánh Hòa) trị giá", highlight: "1.600 tỷ VNĐ." },
+          { text: "Tư vấn tái cấu trúc tài chính tập đoàn khoáng sản Thái Nguyên (Tổng vốn", highlight: "1.000+ tỷ VNĐ)." },
+          { text: "Tư vấn bán cổ phần của công ty EPC top đầu VN cho đối tác Nhật Bản giá trị", highlight: "20 triệu USD." },
         ]
       },
       {
-        title: "Tài Chính - Ngân Hàng",
+        title: "Tài chính - Ngân hàng",
         icon: Landmark,
         cases: [
-          { text: "Tư vấn phát hành trái phiếu riêng lẻ dự án tại Bà Rịa - Vũng Tàu trị giá", highlight: "800 tỷ VNĐ." },
+          { text: "Tư vấn phát hành trái phiếu doanh nghiệp riêng lẻ dự án tại Bà Rịa - Vũng Tàu trị giá", highlight: "800 tỷ VNĐ." },
           { text: "Quản trị rủi ro, xử lý khủng hoảng cho 07 gói trái phiếu với giá trị", highlight: "500 - 850 tỷ VNĐ", suffix: " mỗi gói." },
-          { text: "Thiết kế cấu trúc các khoản vay và trả nợ quá hạn (", highlight: "3.5 triệu USD", suffix: ") cho Tập đoàn tài chính Hà Lan." },
+          { text: "Thiết kế cấu trúc các khoản vay và trả nợ nước ngoài (", highlight: "3.5 triệu USD", suffix: ") cho Tập đoàn tài chính Hà Lan." },
         ]
       },
       {
-        title: "Đầu Tư Xuyên Biên Giới & BĐS",
+        title: "Đầu tư xuyên biên giới & Bất động sản",
         icon: Globe2,
         cases: [
-          { text: "Cố vấn toàn diện dự án nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
-          { text: "Cố vấn pháp lý phát triển dự án khu đô thị quy mô", highlight: "37.4ha", suffix: " tại Bà Rịa - Vũng Tàu." },
-          { text: "Xây dựng và cập nhật Báo cáo chính sách PPP tại Việt Nam cho Bộ Kế hoạch & Đầu tư Hàn Quốc.", highlight: "" },
+          { text: "Cố vấn pháp lý toàn diện dự án nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
+          { text: "Cố vấn pháp lý phát triển dự án Khu đô thị quy mô", highlight: "37.4ha", suffix: " tại Bà Rịa - Vũng Tàu." },
+          { text: "Xây dựng và cập nhật Báo cáo chính sách PPP tại Việt Nam theo đặt hàng của Bộ KH&ĐT Hàn Quốc.", highlight: "" },
           { text: "Thiết lập pháp nhân, tư vấn vận hành cho nhà đầu tư FDI từ Mỹ, Nhật Bản, Hong Kong.", highlight: "" },
         ]
       },
       {
-        title: "Hợp Đồng & Giải Quyết Tranh Chấp",
+        title: "Hợp đồng thương mại & Tranh chấp",
         icon: ShieldCheck,
         cases: [
-          { text: "Soạn thảo chuẩn hóa bộ mẫu hợp đồng dịch vụ trên nền tảng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
-          { text: "Đại diện giải quyết tranh chấp hợp đồng EPC của Tập đoàn Xây dựng VN (Trị giá", highlight: "250 tỷ VNĐ)." },
+          { text: "Soạn thảo chuẩn hóa bộ mẫu hợp đồng cung ứng dịch vụ trên nền tảng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
+          { text: "Đại diện bảo vệ quyền lợi Tập đoàn Xây dựng VN trong tranh chấp hợp đồng EPC (Trị giá", highlight: "250 tỷ VNĐ)." },
           { text: "Bảo vệ quyền lợi Chủ đầu tư trong tranh chấp thầu xây dựng tại Khánh Hòa (Trị giá", highlight: "350 tỷ VNĐ)." },
         ]
       }
     ],
     community: {
       title: "Dấu ấn cộng đồng",
-      subtitle: "Trách nhiệm & Lan tỏa",
+      subtitle: "Trách nhiệm xã hội",
       topicTitle: "Chủ đề trọng tâm",
-      topicDesc: "Nội dung chia sẻ tại các diễn đàn khởi nghiệp và hướng nghiệp chuyên sâu.",
+      topicDesc: "Nội dung chia sẻ thường xuyên tại các diễn đàn pháp lý và khởi nghiệp uy tín.",
       jciTitle: "Lãnh đạo & Tổ chức (JCI)",
       speakerTitle: "Cố vấn & Diễn giả chuyên môn"
     },
@@ -144,7 +144,7 @@ const dict = {
     ],
     jciEvents: [
       { year: "2026", title: "Phó Chủ tịch JCI Vietnam", desc: "Phụ trách mảng phát triển kinh doanh và khởi nghiệp, định hướng và dẫn dắt các dự án doanh nhân trẻ.", img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg" },
-      { year: "2025", title: "Chủ tịch sáng lập JCI Grace", desc: "Kiến tạo và lãnh đạo chapter JCI Grace, mang đến các giá trị tích cực và bền vững cho cộng đồng.", img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
+      { year: "2025", title: "Chủ tịch sáng lập JCI Grace", desc: "Kiến tạo và lãnh đạo chapter JCI Grace, mang đến các giá trị tích cực và bền vững cho cộng đồng.", img: "https://i.i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
       { year: "2025", title: "Hội nghị JCI ASPAC Mông Cổ", desc: "Đại diện JCI Grace và Đoàn Việt Nam tham gia Hội nghị Châu Á Thái Bình Dương (ASPAC).", img: "https://jci.vn/wp-content/uploads/2025/09/493888640_1116355330518984_4354365979132898970_n.jpg" },
       { year: "2025", title: "Let’s meet up VN", desc: "Đại diện tổ chức và triển khai chương trình kết nối với các cố vấn cấp cao và doanh nghiệp khu vực ASEAN.", img: "https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg" },
       { year: "2025 - 2026", title: "Họp BĐH JCI ASEAN Senator", desc: "Thành viên Đoàn VN tham gia cuộc họp BĐH thường quý tại Tô Châu (Trung Quốc) và Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
@@ -159,7 +159,7 @@ const dict = {
       { year: "Workshop", title: "Pháp Lý Thông Minh – Lý Tình Hợp Tác", desc: "Tham gia với vai trò diễn giả chính, phân tích các rủi ro pháp lý và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
     ],
     contact: {
-      title: "Đồng hành xây dựng nền tảng pháp lý an tâm cho doanh nghiệp của bạn.",
+      title: "Đồng hành xây dựng nền tảng pháp lý vững chắc cho doanh nghiệp của bạn.",
       subtitle: "Kết nối chuyên gia",
       scanToConnect: "Quét để kết nối",
       address: "Tầng 5, số 31A Nguyễn Quốc Trị, Trung Hoà, Yên Hoà, Hà Nội"
@@ -170,13 +170,13 @@ const dict = {
     hero: {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
       quote: `"Be Grace, Build Grand."`,
-      desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. <br class='hidden md:block' /> Providing strategic legal guidance and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients."
+      desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. Providing strategic legal guidance <br class='hidden md:block' /> and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients."
     },
     profile: {
       title: "Professional Summary",
       subtitle: "Expert Profile",
       desc1: "In a legal world characterized by rigid frameworks, I adopt a <strong>Graceful</strong> and <strong>Insightful</strong> approach. The optimal legal solution should not merely resolve disputes but serve as a solid foundation for business growth.",
-      desc2: "My expertise centers on M&A structuring, investment advisory, and cross-border transactions. Through our <strong>outsourced legal department solutions (PaxFlow)</strong> and <strong>global partner network (P.A.N)</strong>, I am committed to safeguarding and maximizing the interests of our partners."
+      desc2: "My expertise centers on M&A structuring, investment advisory, and cross-border transactions. Through our <strong>outsourced legal department solutions (PaxFlow)</strong> and <strong>global partner network (P.A.N)</strong>, I am committed to safeguarding and maximizing the interests of our clients."
     },
     stats: [
       { value: "15+", label: "Years of Experience" },
@@ -187,7 +187,7 @@ const dict = {
         title: "Education",
         icon: GraduationCap,
         items: [
-          "Master of International Policy and Commercial Law (MIPL4) - Foreign Trade University",
+          "Master of International Policy and Law (MIPL) - Foreign Trade University",
           "Bachelor of Commercial Law - Hanoi Law University",
           "Legal Practice Course - Judicial Academy"
         ]
@@ -231,7 +231,7 @@ const dict = {
         period: "2018 - 2024",
         role: "Deputy Director / Partner",
         company: "Penfield Law Firm",
-        desc: "Advised high-profile and complex M&A transactions and supported financial restructuring for mining conglomerates; coordinated multi-sector dispute resolution.",
+        desc: "Advised on high-profile and complex M&A transactions and supported financial restructuring for mining conglomerates; coordinated multi-sector dispute resolution.",
       },
       {
         period: "2012 - 2018",
@@ -249,10 +249,10 @@ const dict = {
         title: "M&A & Corporate Restructuring",
         icon: Building2,
         cases: [
-          { text: "Advised acquisition of a steel factory in Northern Vietnam valued at", highlight: "VND 1,000 billion." },
-          { text: "Advised transfer of a resort project in Bai Dai, Khanh Hoa valued at", highlight: "VND 1,600 billion." },
-          { text: "Financial restructuring for a mining conglomerate in Thai Nguyen with total capital exceeding", highlight: "VND 1,000 billion." },
-          { text: "Advised the sale of shares in a top-tier Vietnamese EPC company to a Japanese investor for", highlight: "USD 20 million." },
+          { text: "Advised on the acquisition of a steel factory in Northern Vietnam valued at", highlight: "VND 1,000 billion." },
+          { text: "Advised on the transfer of a resort project in Bai Dai, Khanh Hoa valued at", highlight: "VND 1,600 billion." },
+          { text: "Advised on financial restructuring for a mining conglomerate in Thai Nguyen with total capital exceeding", highlight: "VND 1,000 billion." },
+          { text: "Advised on the sale of shares in a top-tier Vietnamese EPC company to a Japanese investor for", highlight: "USD 20 million." },
         ]
       },
       {
@@ -271,7 +271,7 @@ const dict = {
           { text: "Comprehensive legal counsel for a", highlight: "1000+ 5-star condotel", suffix: " resort project in Nha Trang." },
           { text: "Legal advisory for the development of a", highlight: "37.4ha", suffix: " urban project in Ba Ria - Vung Tau." },
           { text: "Drafted and updated the Vietnam PPP Policy Report for the Ministry of Economy and Finance of South Korea.", highlight: "" },
-          { text: "Established legal entities and advised operations for FDI investors from the US, Japan, and Hong Kong.", highlight: "" },
+          { text: "Established legal entities and advised on operations for FDI investors from the US, Japan, and Hong Kong.", highlight: "" },
         ]
       },
       {
@@ -550,9 +550,9 @@ export default function App() {
           {t.hero.quote}
         </p>
         
-        {/* Đã mở rộng max-w và dùng dangerouslySetInnerHTML để ép xuống 2 dòng cân đối */}
+        {/* Đã mở rộng max-w lên 6xl để chữ có đủ không gian dàn thành 2 dòng */}
         <p 
-          className="text-[15px] md:text-[17px] text-white/90 leading-relaxed max-w-4xl lg:max-w-5xl mx-auto font-light text-center"
+          className="text-[15px] md:text-[17px] text-white/90 leading-relaxed max-w-5xl lg:max-w-6xl mx-auto font-light text-center px-4"
           dangerouslySetInnerHTML={{ __html: t.hero.desc }}
         />
       </section>
