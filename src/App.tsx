@@ -156,7 +156,9 @@ const dict = {
       { year: "2024", title: "Triển lãm Trade Expo, Mumbai", desc: "Tham gia đoàn làm việc đại diện cho doanh nghiệp VN phối hợp với Lãnh sự quán VN tại triển lãm dịch vụ quốc tế.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" },
       { year: "2024", title: "Diễn giả tại TT Khởi nghiệp CSK", desc: "Sự kiện pháp lý do TT Hỗ trợ khởi nghiệp & CGTT ĐH Quốc gia tổ chức. Chia sẻ về quan hệ Cổ đông trong doanh nghiệp.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop" },
       { year: "2023-2025", title: "Dự án Shape Your Future", desc: "Thường xuyên góp mặt với vai trò diễn giả hướng nghiệp nghề luật cho sinh viên và thế hệ trẻ.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "Workshop", title: "Pháp Lý Thông Minh – Lý Tình Hợp Tác", desc: "Tham gia với vai trò diễn giả chính, phân tích các rủi ro pháp lý và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      { year: "2024", title: "Pháp Lý Thông Minh – Lý Tình Hợp Tác", desc: "Tham gia với vai trò diễn giả chính, phân tích các rủi ro pháp lý và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      // THẺ MỚI ĐƯỢC THÊM VÀO ĐÂY (BẢN TIẾNG VIỆT)
+      { year: "2024", title: "Giám khảo SIL ĐH Đại Nam", desc: "Cố vấn pháp lý, Giám khảo trong cuộc thi SIL (Social Innovation Launch) Đại học Đại Nam.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" }
     ],
     contact: {
       title: "Đồng hành xây dựng nền tảng pháp lý vững chắc cho doanh nghiệp của bạn.",
@@ -311,6 +313,8 @@ const dict = {
       { year: "2024", title: "Speaker at CSK Startup Center", desc: "Legal event organized by the Startup Support Center, National University. Shared insights on shareholder relations.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop" },
       { year: "2023-2025", title: "Shape Your Future Project", desc: "Frequently participated as a speaker providing legal career guidance for students and the younger generation.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
       { year: "Workshop", title: "Smart Legal - Collaborative Reasoning", desc: "Participated as the main speaker, analyzing legal risks and solutions for businesses.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      // THẺ MỚI ĐƯỢC THÊM VÀO ĐÂY (BẢN TIẾNG ANH)
+      { year: "Contest", title: "SIL Judge, Dai Nam Univ.", desc: "Legal Advisor and Judge at the SIL (Social Innovation Launch) competition, Dai Nam University.", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" }
     ],
     contact: {
       title: "Partnering to build a secure legal foundation for your business operations.",
