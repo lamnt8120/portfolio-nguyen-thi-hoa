@@ -144,7 +144,7 @@ const dict = {
     ],
     jciEvents: [
       { year: "2026", title: "Phó Chủ tịch JCI Vietnam", desc: "Phụ trách mảng phát triển kinh doanh và khởi nghiệp, định hướng và dẫn dắt các dự án doanh nhân trẻ.", img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg" },
-      { year: "2025", title: "Chủ tịch sáng lập JCI Grace", desc: "Kiến tạo và lãnh đạo chapter JCI Grace, mang đến các giá trị tích cực và bền vững cho cộng đồng.", img: "https://i.i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
+      { year: "2025", title: "Chủ tịch sáng lập JCI Grace", desc: "Kiến tạo và lãnh đạo chapter JCI Grace, mang đến các giá trị tích cực và bền vững cho cộng đồng.", img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
       { year: "2025", title: "Hội nghị JCI ASPAC Mông Cổ", desc: "Đại diện JCI Grace và Đoàn Việt Nam tham gia Hội nghị Châu Á Thái Bình Dương (ASPAC).", img: "https://jci.vn/wp-content/uploads/2025/09/493888640_1116355330518984_4354365979132898970_n.jpg" },
       { year: "2025", title: "Let’s meet up VN", desc: "Đại diện tổ chức và triển khai chương trình kết nối với các cố vấn cấp cao và doanh nghiệp khu vực ASEAN.", img: "https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg" },
       { year: "2025 - 2026", title: "Họp BĐH JCI ASEAN Senator", desc: "Thành viên Đoàn VN tham gia cuộc họp BĐH thường quý tại Tô Châu (Trung Quốc) và Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
