@@ -152,14 +152,16 @@ const TimelineItem = ({ data, isLast }) => (
 
 const EventCard = ({ event }) => (
   <div className="bg-white rounded-xl shadow-sm hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col group border border-slate-100 overflow-hidden h-full">
-    <div className="aspect-[4/3] relative overflow-hidden bg-slate-50 p-2">
+    {/* aspect-square tạo khung vuông, bg-white tạo nền trắng, p-2 tạo padding */}
+    <div className="aspect-square relative overflow-hidden bg-white p-2 border-b border-slate-50">
       {event.img2 ? (
         <div className="flex w-full h-full gap-2">
-          <img src={event.img} alt={event.title} className="w-1/2 h-full object-cover rounded group-hover:scale-[1.03] transition-transform duration-700" />
-          <img src={event.img2} alt={event.title} className="w-1/2 h-full object-cover rounded group-hover:scale-[1.03] transition-transform duration-700" />
+          {/* object-contain đảm bảo ảnh không bị cắt xén (crop) */}
+          <img src={event.img} alt={event.title} className="w-1/2 h-full object-contain rounded group-hover:scale-[1.03] transition-transform duration-700" />
+          <img src={event.img2} alt={event.title} className="w-1/2 h-full object-contain rounded group-hover:scale-[1.03] transition-transform duration-700" />
         </div>
       ) : (
-        <img src={event.img} alt={event.title} className="w-full h-full object-cover rounded group-hover:scale-[1.03] transition-transform duration-700" />
+        <img src={event.img} alt={event.title} className="w-full h-full object-contain rounded group-hover:scale-[1.03] transition-transform duration-700" />
       )}
     </div>
     <div className="p-6 flex flex-col flex-1">
@@ -299,7 +301,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* H E R O   S E C T I O N (Cập nhật tên và font chữ đồng đều) */}
+      {/* H E R O   S E C T I O N */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-[#1d6266] px-6 text-center z-10 pt-16">
         <div className="inline-flex items-center space-x-3 mb-10">
           <div className="h-[1px] w-10 bg-[#2eb793]"></div>
@@ -319,11 +321,10 @@ export default function App() {
         </p>
       </section>
 
-      {/* 1. A B O U T   &   E X P E R I E N C E (Bố cục Editorial + Chân dung Luật sư) */}
+      {/* 1. A B O U T   &   E X P E R I E N C E */}
       <section id="gioi-thieu" className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-16 items-center">
           
-          {/* Cột Trái: Ảnh Chân Dung chuyên nghiệp */}
           <div className="lg:w-5/12 w-full">
             <div className="relative p-2 bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-sm">
               <img 
@@ -334,7 +335,6 @@ export default function App() {
             </div>
           </div>
           
-          {/* Cột Phải: Nội dung & Stats (Chuẩn xác theo image_d23c43.png) */}
           <div className="lg:w-7/12 w-full lg:pl-8">
             <div className="mb-10 text-left">
               <div className="flex items-center space-x-3 mb-4">
@@ -378,7 +378,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. P R A C T I C E   A R E A S (Thiết kế chuẩn xác 100% theo image_609f8d.png) */}
+      {/* 3. P R A C T I C E   A R E A S */}
       <section id="linh-vuc" className="py-24 md:py-32 bg-[#0d3a3c]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
