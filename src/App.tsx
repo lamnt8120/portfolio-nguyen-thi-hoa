@@ -150,14 +150,13 @@ const dict = {
       { year: "2025 - 2026", title: "Họp BĐH JCI ASEAN Senator", desc: "Thành viên Đoàn VN tham gia cuộc họp BĐH thường quý tại Tô Châu (Trung Quốc) và Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
       { year: "2024", title: "JCI World Congress Đài Loan", desc: "Đại diện Đoàn JCI Việt Nam tham gia hội nghị toàn cầu World Congress cùng hàng ngàn đại biểu quốc tế.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
       { year: "2024", title: "Dự án Launch to Leader", desc: "Giám đốc sáng lập dự án của JCI Thăng Long. Vinh dự đạt giải thưởng The Most Social Impact JCI VN 2024.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      { year: "Worldwide", title: "JCI Lawyer Council", desc: "Thành viên sáng lập mạng lưới hội đồng luật sư toàn cầu thuộc hệ thống JCI toàn thế giới.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
+      // Đã cập nhật trạng thái Dự án đang kiến tạo
+      { year: "Dự án", title: "JCI Lawyer Council", desc: "Đồng khởi xướng và kiến tạo nền tảng mạng lưới hội đồng luật sư toàn cầu thuộc hệ thống JCI.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
     ],
     speakerEvents: [
       { year: "2024", title: "Triển lãm Trade Expo, Mumbai", desc: "Tham gia đoàn làm việc đại diện cho doanh nghiệp VN phối hợp với Lãnh sự quán VN tại triển lãm dịch vụ quốc tế.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" },
-      { year: "2024", title: "Diễn giả tại TT Khởi nghiệp CSK", desc: "Sự kiện pháp lý do TT Hỗ trợ khởi nghiệp & CGTT ĐH Quốc gia tổ chức. Chia sẻ về quan hệ Cổ đông trong doanh nghiệp.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop" },
+      { year: "2024", title: "Workshop Pháp Lý Thông Minh (CSK)", desc: "Tham gia với vai trò diễn giả chính tại sự kiện do TT Khởi nghiệp CSK (ĐH Quốc gia) tổ chức. Phân tích rủi ro pháp lý, quan hệ cổ đông và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
       { year: "2023-2025", title: "Dự án Shape Your Future", desc: "Thường xuyên góp mặt với vai trò diễn giả hướng nghiệp nghề luật cho sinh viên và thế hệ trẻ.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "2024", title: "Pháp Lý Thông Minh – Lý Tình Hợp Tác", desc: "Tham gia với vai trò diễn giả chính, phân tích các rủi ro pháp lý và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      // THẺ MỚI ĐƯỢC THÊM VÀO ĐÂY (BẢN TIẾNG VIỆT)
       { year: "2024", title: "Giám khảo SIL ĐH Đại Nam", desc: "Cố vấn pháp lý, Giám khảo trong cuộc thi SIL (Social Innovation Launch) Đại học Đại Nam.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" }
     ],
     contact: {
@@ -306,15 +305,14 @@ const dict = {
       { year: "2025 - 2026", title: "JCI ASEAN Senate Board Meeting", desc: "Member of the Vietnam Delegation attending the quarterly Board Meeting in Suzhou (China) and Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
       { year: "2024", title: "JCI World Congress, Taiwan", desc: "Represented the JCI Vietnam Delegation at the global World Congress with thousands of international delegates.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
       { year: "2024", title: "Launch to Leader Project", desc: "Founding Director of the JCI Thang Long project. Honored to receive The Most Social Impact JCI VN 2024 award.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      { year: "Worldwide", title: "JCI Lawyer Council", desc: "Founding member of the global lawyer council network within the worldwide JCI system.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
+      // Đã cập nhật trạng thái Dự án đang kiến tạo bản Tiếng Anh
+      { year: "Upcoming", title: "JCI Lawyer Council", desc: "Co-initiating and architecting the foundation for a global lawyer council network within the JCI system.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
     ],
     speakerEvents: [
       { year: "2024", title: "Trade Expo, Mumbai", desc: "Participated in a working delegation representing Vietnamese enterprises in coordination with the Vietnamese Consulate.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" },
-      { year: "2024", title: "Speaker at CSK Startup Center", desc: "Legal event organized by the Startup Support Center, National University. Shared insights on shareholder relations.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop" },
+      { year: "2024", title: "Keynote Speaker: Smart Legal Workshop", desc: "Main speaker at the legal event organized by CSK Startup Center (National University). Analyzed legal risks, shareholder relations, and strategic business solutions.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
       { year: "2023-2025", title: "Shape Your Future Project", desc: "Frequently participated as a speaker providing legal career guidance for students and the younger generation.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "Workshop", title: "Smart Legal - Collaborative Reasoning", desc: "Participated as the main speaker, analyzing legal risks and solutions for businesses.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      // THẺ MỚI ĐƯỢC THÊM VÀO ĐÂY (BẢN TIẾNG ANH)
-      { year: "Contest", title: "SIL Judge, Dai Nam Univ.", desc: "Legal Advisor and Judge at the SIL (Social Innovation Launch) competition, Dai Nam University.", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" }
+      { year: "2024", title: "SIL Judge, Dai Nam Univ.", desc: "Legal Advisor and Judge at the SIL (Social Innovation Launch) competition, Dai Nam University.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" }
     ],
     contact: {
       title: "Partnering to build a secure legal foundation for your business operations.",
