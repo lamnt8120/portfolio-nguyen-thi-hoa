@@ -16,7 +16,8 @@ const dict = {
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Be Grace, Build Grand."`,
-      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N)."
+      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N).",
+      scroll: "Khám phá"
     },
     profile: {
       title: "Tổng quan chuyên môn",
@@ -150,7 +151,6 @@ const dict = {
       { year: "2025 - 2026", title: "Họp BĐH JCI ASEAN Senator", desc: "Thành viên Đoàn VN tham gia cuộc họp BĐH thường quý tại Tô Châu (Trung Quốc) và Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
       { year: "2024", title: "JCI World Congress Đài Loan", desc: "Đại diện Đoàn JCI Việt Nam tham gia hội nghị toàn cầu World Congress cùng hàng ngàn đại biểu quốc tế.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
       { year: "2024", title: "Dự án Launch to Leader", desc: "Giám đốc sáng lập dự án của JCI Thăng Long. Vinh dự đạt giải thưởng The Most Social Impact JCI VN 2024.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      // Đã cập nhật trạng thái Dự án đang kiến tạo
       { year: "Dự án", title: "JCI Lawyer Council", desc: "Đồng khởi xướng và kiến tạo nền tảng mạng lưới hội đồng luật sư toàn cầu thuộc hệ thống JCI.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
     ],
     speakerEvents: [
@@ -171,7 +171,8 @@ const dict = {
     hero: {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
       quote: `"Be Grace, Build Grand."`,
-      desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. Providing strategic legal guidance <br class='hidden md:block' /> and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients."
+      desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. Providing strategic legal guidance <br class='hidden md:block' /> and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients.",
+      scroll: "Explore"
     },
     profile: {
       title: "Professional Summary",
@@ -305,7 +306,6 @@ const dict = {
       { year: "2025 - 2026", title: "JCI ASEAN Senate Board Meeting", desc: "Member of the Vietnam Delegation attending the quarterly Board Meeting in Suzhou (China) and Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
       { year: "2024", title: "JCI World Congress, Taiwan", desc: "Represented the JCI Vietnam Delegation at the global World Congress with thousands of international delegates.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
       { year: "2024", title: "Launch to Leader Project", desc: "Founding Director of the JCI Thang Long project. Honored to receive The Most Social Impact JCI VN 2024 award.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      // Đã cập nhật trạng thái Dự án đang kiến tạo bản Tiếng Anh
       { year: "Upcoming", title: "JCI Lawyer Council", desc: "Co-initiating and architecting the foundation for a global lawyer council network within the JCI system.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
     ],
     speakerEvents: [
@@ -538,25 +538,52 @@ export default function App() {
       </nav>
 
       {/* H E R O   S E C T I O N */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-[#1d6266] px-6 text-center z-10 pt-16">
-        <div className="inline-flex items-center space-x-3 mb-10">
-          <div className="h-[1px] w-10 bg-[#2eb793]"></div>
-          <span className="text-[#2eb793] font-semibold tracking-[0.15em] uppercase text-[10px] md:text-sm">{t.hero.subtitle}</span>
+      <section className="relative min-h-[100vh] flex flex-col items-center justify-center bg-gradient-to-b from-[#113a3c] via-[#164e50] to-[#1d6266] px-6 text-center z-10 pt-24 overflow-hidden">
+        
+        {/* HỌA TIẾT DẢI LỤA PAXLAW - BACKGROUND MOTIFS */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-end">
+          {/* Lớp lụa Xanh thẫm mờ ảo */}
+          <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full min-w-[1440px] opacity-40 mix-blend-multiply">
+            <path d="M-100,600 C300,600 400,200 900,300 C1300,400 1500,200 1600,200 L1600,800 L-100,800 Z" fill="#0d2b2c" />
+          </svg>
+          {/* Lớp lụa Xanh ngọc phát sáng nhẹ */}
+          <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full min-w-[1440px] opacity-30 mix-blend-screen">
+            <path d="M-100,600 C200,600 400,300 900,400 C1200,500 1400,300 1600,400 L1600,800 L-100,800 Z" fill="#2eb793" />
+          </svg>
         </div>
-        
-        <h1 className="text-5xl md:text-7xl lg:text-[90px] font-bold text-white mb-8 tracking-tight leading-tight md:leading-none">
-          {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
-        </h1>
-        
-        <p className="text-2xl md:text-3xl text-white font-light italic mb-12">
-          {t.hero.quote}
-        </p>
-        
-        {/* Đã mở rộng max-w lên 6xl để chữ có đủ không gian dàn thành 2 dòng */}
-        <p 
-          className="text-[15px] md:text-[17px] text-white/90 leading-relaxed max-w-5xl lg:max-w-6xl mx-auto font-light text-center px-4"
-          dangerouslySetInnerHTML={{ __html: t.hero.desc }}
-        />
+
+        <div className="relative z-10 flex flex-col items-center w-full max-w-6xl">
+          {/* Subtitle cách điệu */}
+          <div className="inline-flex items-center space-x-4 mb-8">
+            <div className="h-[1px] w-12 md:w-20 bg-gradient-to-r from-transparent to-[#2eb793]"></div>
+            <span className="text-[#2eb793] font-bold tracking-[0.25em] uppercase text-[10px] md:text-sm whitespace-nowrap">
+              {t.hero.subtitle}
+            </span>
+            <div className="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent to-[#2eb793]"></div>
+          </div>
+          
+          {/* Tên Luật Sư */}
+          <h1 className="text-5xl md:text-7xl lg:text-[100px] font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-md">
+            {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
+          </h1>
+          
+          {/* Câu Quote */}
+          <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-12 tracking-wide font-serif">
+            {t.hero.quote}
+          </p>
+          
+          {/* Đoạn mô tả */}
+          <p 
+            className="text-[15px] md:text-[18px] text-white/80 leading-relaxed max-w-4xl mx-auto font-light text-center px-4"
+            dangerouslySetInnerHTML={{ __html: t.hero.desc }}
+          />
+
+          {/* Scroll Indicator */}
+          <div className="mt-20 flex flex-col items-center animate-bounce cursor-pointer" onClick={() => scrollTo('ho-so')}>
+            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/50 mb-4">{t.hero.scroll}</span>
+            <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+          </div>
+        </div>
       </section>
 
       {/* SECTION: HỒ SƠ & HÀNH TRÌNH SỰ NGHIỆP */}
