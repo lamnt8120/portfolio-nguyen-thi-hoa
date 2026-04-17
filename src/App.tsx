@@ -15,7 +15,7 @@ const dict = {
     nav: ['Hồ sơ', 'Chuyên môn', 'Cộng đồng', 'Liên hệ'],
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
-      quote: `"Be Grace, Build Grand."`,
+      quote: `"Global Mind, Silk Touch."`,
       desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N).",
       scroll: "Khám phá"
     },
@@ -170,7 +170,7 @@ const dict = {
     nav: ['Profile', 'Expertise', 'Community', 'Contact'],
     hero: {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
-      quote: `"Be Grace, Build Grand."`,
+      quote: `"Global Mind, Silk Touch."`,
       desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. Providing strategic legal guidance <br class='hidden md:block' /> and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients.",
       scroll: "Explore"
     },
@@ -440,8 +440,38 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-[#1d6266] selection:text-white">
-      
+    <div 
+      className="min-h-screen bg-white text-slate-800 selection:bg-[#1d6266] selection:text-white"
+      style={{ fontFamily: '"AvertaStdCY", "Averta", Arial, sans-serif' }}
+    >
+      {/* KHAI BÁO FONT CHỮ GLOBAL ĐƯỢC LOAD TỪ THƯ MỤC PUBLIC/FONTS TRÊN VERCEL */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @font-face {
+          font-family: 'AvertaStdCY';
+          src: url('/fonts/AvertaStdCY-Regular.otf') format('opentype');
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: 'AvertaStdCY';
+          src: url('/fonts/AvertaStdCY-Bold.otf') format('opentype');
+          font-weight: 700;
+          font-style: normal;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: 'AvertaStdCY';
+          src: url('/fonts/AvertaStdCY-Black.otf') format('opentype');
+          font-weight: 900;
+          font-style: normal;
+          font-display: swap;
+        }
+        * {
+          font-family: 'AvertaStdCY', 'Averta', Arial, sans-serif !important;
+        }
+      `}} />
+
       {/* N A V B A R */}
       <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-white/95 backdrop-blur-md border-slate-100 py-4' : 'bg-transparent border-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -567,8 +597,8 @@ export default function App() {
             {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
           </h1>
           
-          {/* Câu Quote */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-12 tracking-wide font-serif">
+          {/* Câu Quote - Đã gỡ bỏ font-serif để đồng bộ 100% Averta */}
+          <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-12 tracking-wide">
             {t.hero.quote}
           </p>
           
@@ -804,7 +834,7 @@ export default function App() {
           </div>
           <div className="text-center md:text-right">
             <p className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-2"> 
-              &copy; {new Date().getFullYear()} PAXLAW. "Be Grace, Build Grand." All rights reserved. 
+              &copy; {new Date().getFullYear()} PAXLAW. "Global Mind, Silk Touch." All rights reserved. 
             </p>
             <p className="text-white/50 text-[12px] font-light tracking-wide"> 
               {t.contact.address}
