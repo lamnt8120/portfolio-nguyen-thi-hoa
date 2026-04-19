@@ -16,7 +16,8 @@ const dict = {
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Global Mind, Silk Touch."`,
-      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở tiềm năng phát triển <br class='hidden md:block' /> cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N).",
+      // Đã dịch chuyển vị trí <br> để cân bằng 2 dòng
+      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở <br class='hidden md:block' /> tiềm năng phát triển cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N).",
       scroll: "Khám phá"
     },
     profile: {
