@@ -17,14 +17,14 @@ const dict = {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Global Mind, Silk Touch."`,
       // Đã dịch chuyển vị trí <br> để cân bằng 2 dòng
-      desc: "Hơn 15 năm kinh nghiệm kiến tạo màng lọc rủi ro pháp lý vững chắc, bảo vệ lợi ích hợp pháp và khơi mở <br class='hidden md:block' /> tiềm năng phát triển cho doanh nghiệp thông qua mạng lưới chuyên gia pháp lý toàn cầu (Pax Alliance Network - P.A.N).",
+      desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp",
       scroll: "Khám phá"
     },
     profile: {
       title: "Tổng quan chuyên môn",
       subtitle: "Hồ sơ chuyên gia",
-      desc1: "Trong thế giới pháp luật mang đậm sắc thái khuôn mẫu, tôi lựa chọn phương pháp tiếp cận <strong>Tinh tế (Graceful)</strong> và <strong>Sâu sắc (Insightful)</strong>. Giải pháp pháp lý tối ưu không chỉ giải quyết tranh chấp, mà còn phải tạo ra bệ phóng vững chắc cho sự phát triển của doanh nghiệp.",
-      desc2: "Chuyên môn thực chiến của tôi tập trung vào cấu trúc M&A, tư vấn đầu tư và các giao dịch xuyên biên giới. Thông qua <strong>giải pháp pháp chế thuê ngoài (PaxFlow)</strong> và <strong>mạng lưới liên kết toàn cầu (P.A.N)</strong>, tôi cam kết bảo vệ lợi ích tối đa cho các đối tác."
+      desc1: "Giữa thương trường đầy biến động, nhiều người vẫn thường e ngại pháp luật như những rào cản khô khan, những vạch kẻ giới hạn sự tự do sáng tạo. Nhưng dưới lăng kính của một người gắn bó với nhịp đập kinh doanh, tôi lại nhìn thấy một bức tranh khác.",
+      desc2: "Khi được thấu hiểu sâu sắc và vận dụng tinh tế, những hành lang pháp lý không hề trói buộc. Ngược lại, chúng trở thành bệ phóng vững chắc, là tấm khiên bảo vệ và là la bàn dẫn lối. Sứ mệnh của tôi không đơn thuần là gỡ rối những vướng mắc, mà là đồng hành cùng bạn giải mã không gian ấy, biến những quy định tưởng chừng cứng nhắc thành lợi thế cạnh tranh độc bản và sự tăng trưởng bền vững."
     },
     stats: [
       { value: "15+", label: "Năm Kinh Nghiệm" },
