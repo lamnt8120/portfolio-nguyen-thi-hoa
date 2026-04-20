@@ -625,8 +625,9 @@ export default function App() {
       {/* H E R O   S E C T I O N */}
       <section className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 text-center z-10 pt-24 overflow-hidden">
         
+        {/* Đã đổi bg-top thành bg-left-bottom để ưu tiên giữ góc chân trái */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat"
+          className="absolute inset-0 z-0 bg-cover bg-left-bottom bg-no-repeat"
           style={{ 
             backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" 
           }}
@@ -645,14 +646,17 @@ export default function App() {
             {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
           </h1>
           
-          <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-12 tracking-wide">
+          <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-10 tracking-wide drop-shadow-md">
             {t.hero.quote}
           </p>
           
-          <p 
-            className="text-[16px] md:text-[20px] text-white/90 leading-relaxed max-w-4xl mx-auto font-light text-center px-4"
-            dangerouslySetInnerHTML={{ __html: t.hero.desc }}
-          />
+          {/* Đoạn mô tả: Được bọc trong khối Glassmorphism để luôn dễ đọc trên mọi nền ảnh */}
+          <div className="backdrop-blur-md bg-[#0d3a3c]/60 border border-[#2eb793]/30 px-6 md:px-10 py-3.5 md:py-4 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
+            <p 
+              className="text-[15px] md:text-[19px] text-white font-medium tracking-wide leading-relaxed max-w-4xl mx-auto text-center"
+              dangerouslySetInnerHTML={{ __html: t.hero.desc }}
+            />
+          </div>
 
           <div className="mt-20 flex flex-col items-center animate-bounce cursor-pointer" onClick={() => scrollTo('ho-so')}>
             <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/50 mb-4">{t.hero.scroll}</span>
