@@ -628,7 +628,7 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat"
           style={{ 
-            backgroundImage: "url('https://i.postimg.cc/59Y8BZzR/Paxlaw-template.png')" 
+            backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" 
           }}
         ></div>
 
