@@ -3,58 +3,59 @@ import {
   Menu, X, Scale, Briefcase, GraduationCap, 
   Landmark, Building2, Globe2, 
   Mail, Phone, Linkedin, Facebook, ChevronRight, 
-  Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe
+  Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe,
+  MapPin, Flag, Navigation,
+  Rocket, Crown, Network
 } from 'lucide-react';
 
 /* =========================================
-   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - ĐÃ CHUẨN HOÁ THUẬT NGỮ)
+   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - KHÔI PHỤC 100% THEO LAYOUT GỐC)
 ========================================= */
 
 const dict = {
   vi: {
-    nav: ['Hồ sơ', 'Chuyên môn', 'Cộng đồng', 'Liên hệ'],
+    nav: ['Tổng quan', 'Chuyên môn', 'Dấu ấn', 'Kết nối'],
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Global Mind, Silk Touch."`,
-      // Đã dịch chuyển vị trí <br> để cân bằng 2 dòng
       desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp",
       scroll: "Khám phá"
     },
     profile: {
       title: "Tổng quan chuyên môn",
       subtitle: "Hồ sơ chuyên gia",
-      desc1: "Giữa thương trường đầy biến động, nhiều người vẫn thường e ngại pháp luật như những rào cản khô khan, những vạch kẻ giới hạn sự tự do sáng tạo. Nhưng dưới lăng kính của một người gắn bó với nhịp đập kinh doanh, tôi lại nhìn thấy một bức tranh khác.",
-      desc2: "Khi được thấu hiểu sâu sắc và vận dụng tinh tế, những hành lang pháp lý không hề trói buộc. Ngược lại, chúng trở thành bệ phóng vững chắc, là tấm khiên bảo vệ và là la bàn dẫn lối. Sứ mệnh của tôi không đơn thuần là gỡ rối những vướng mắc, mà là đồng hành cùng bạn giải mã không gian ấy, biến những quy định tưởng chừng cứng nhắc thành lợi thế cạnh tranh độc bản và sự tăng trưởng bền vững."
+      desc1: "Trong thế giới pháp luật mang đậm sắc thái khuôn mẫu, tôi lựa chọn phương pháp tiếp cận <strong>Tinh tế (Graceful)</strong> và <strong>Sâu sắc (Insightful)</strong>. Giải pháp pháp lý tối ưu không chỉ giải quyết tranh chấp, mà còn phải tạo ra bệ phóng vững chắc cho sự phát triển của doanh nghiệp.",
+      desc2: "Chuyên môn thực chiến của tôi tập trung vào cấu trúc M&A, tư vấn đầu tư và các giao dịch xuyên biên giới. Thông qua <strong>giải pháp pháp chế thuê ngoài (PaxFlow)</strong> và <strong>mạng lưới liên kết toàn cầu (P.A.N)</strong>, tôi cam kết bảo vệ lợi ích tối đa cho các đối tác."
     },
     stats: [
       { value: "15+", label: "Năm Kinh Nghiệm" },
-      { value: "50+", label: "Quốc Gia (Mạng lưới P.A.N)" }
+      { value: "50+", label: "Quốc Gia Đối Tác" }
     ],
     highlights: [
       {
         title: "Học vấn & Đào tạo",
         icon: GraduationCap,
         items: [
-          "Thạc sĩ Chính sách & Luật Thương mại Quốc tế - ĐH Ngoại Thương",
-          "Cử nhân Luật Thương mại - Đại học Luật Hà Nội",
-          "Khóa đào tạo Nghiệp vụ Luật sư - Học viện Tư pháp"
+          "Thạc sĩ Chính sách & Luật Thương mại Quốc tế (Đại học Ngoại Thương)",
+          "Cử nhân Luật Thương mại (Đại học Luật Hà Nội)",
+          "Khóa đào tạo Nghiệp vụ Luật sư – Học viện Tư pháp"
         ]
       },
       {
         title: "Giảng dạy & Đào tạo",
         icon: BookOpen,
         items: [
-          "Giảng viên thỉnh giảng Luật Ngân hàng - Đại học Thành Đông",
-          "Chuyên gia đào tạo nội bộ Quản lý ngoại hối - Techcombank"
+          "Giảng viên thỉnh giảng Luật Ngân hàng – Đại học Thành Đông",
+          "Chuyên gia đào tạo nội bộ Quản lý ngoại hối tại Ngân hàng Techcombank"
         ]
       },
       {
         title: "Chứng chỉ hành nghề & Tổ chức",
         icon: Award,
         items: [
-          "Thành viên Đoàn Luật sư TP. Hà Nội (Liên đoàn LS Việt Nam)",
+          "Thành viên Đoàn Luật sư TP Hà Nội (Liên đoàn LS Việt Nam)",
           "Chứng chỉ hành nghề Quản tài viên",
-          "Chứng chỉ Đại diện Sở hữu Công nghiệp"
+          "Chứng chỉ Sở hữu Công nghiệp"
         ]
       }
     ],
@@ -66,13 +67,13 @@ const dict = {
       {
         period: "12/2024 - Nay",
         role: "Luật sư Sáng lập & Điều hành",
-        company: "Paxlaw Law Firm",
-        desc: "Thiết kế chiến lược pháp lý cá nhân hóa, cung cấp giải pháp pháp chế thuê ngoài (PaxFlow) trọn gói về M&A và đầu tư cho khách hàng đa quốc gia.",
+        company: "Paxlaw",
+        desc: "Thiết kế chiến lược pháp lý cá nhân hoá, cung cấp giải pháp pháp chế thuê ngoài (Paxflow) trọn gói về M&A và đầu tư cho khách hàng đa quốc gia.",
       },
       {
         period: "2022 - Nay",
         role: "Giám đốc Pháp chế",
-        company: "Green Investment JSC",
+        company: "Green Investment Joint Stock Company",
         desc: "Quản trị rủi ro, đảm bảo tuân thủ pháp luật, tạo nền tảng quản trị vững chắc cho các dự án đầu tư và liên doanh.",
       },
       {
@@ -82,84 +83,110 @@ const dict = {
         desc: "Dẫn dắt các thương vụ M&A phức tạp và thiết lập kế hoạch tái cấu trúc tài chính cho các tập đoàn lớn; điều phối giải quyết tranh chấp đa lĩnh vực.",
       },
       {
-        period: "2012 - 2018",
+        period: "2013 - 2018",
         role: "Chuyên viên Pháp chế Cấp cao",
         company: "Techcombank",
-        desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn, và chuẩn hóa quy trình phục vụ hệ thống Khách hàng Doanh nghiệp bán buôn.",
+        desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn và chuẩn hoá quy trình phục vụ hệ thống Khách hàng Doanh nghiệp bán buôn.",
       }
     ],
     practice: {
       title: "Lĩnh vực hành nghề",
-      subtitle: "Thực tiễn & Giải pháp"
+      subtitle: "Chuyên môn Luật sư",
+      speakerTitle: "Hoạt động & Sự kiện chuyên môn"
     },
     practiceAreas: [
       {
         title: "M&A & Tái cấu trúc doanh nghiệp",
         icon: Building2,
         cases: [
-          { text: "Tư vấn bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) giá trị", highlight: "1.000 tỷ VNĐ." },
-          { text: "Tư vấn chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Khánh Hòa) trị giá", highlight: "1.600 tỷ VNĐ." },
-          { text: "Tư vấn tái cấu trúc tài chính tập đoàn khoáng sản Thái Nguyên (Tổng vốn", highlight: "1.000+ tỷ VNĐ)." },
-          { text: "Tư vấn bán cổ phần của công ty EPC top đầu VN cho đối tác Nhật Bản giá trị", highlight: "20 triệu USD." },
+          { text: "Đại diện pháp lý bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) quy mô", highlight: "1.000 tỷ VNĐ." },
+          { text: "Cố vấn chiến lược M&A chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Khánh Hòa) trị giá", highlight: "1.600 tỷ VNĐ." },
+          { text: "Hoạch định & thực thi tái cấu trúc tài chính toàn diện cho Tập đoàn Khoáng sản Thái Nguyên (Tổng vốn", highlight: ">1.000 tỷ VNĐ)." },
+          { text: "Thiết kế cấu trúc giao dịch bán cổ phần của doanh nghiệp EPC top đầu Việt Nam cho đối tác Nhật Bản, định giá", highlight: "20 triệu USD." },
         ]
       },
       {
         title: "Tài chính - Ngân hàng",
         icon: Landmark,
         cases: [
-          { text: "Tư vấn phát hành trái phiếu doanh nghiệp riêng lẻ dự án tại Bà Rịa - Vũng Tàu trị giá", highlight: "800 tỷ VNĐ." },
-          { text: "Quản trị rủi ro, xử lý khủng hoảng cho 07 gói trái phiếu với giá trị", highlight: "500 - 850 tỷ VNĐ", suffix: " mỗi gói." },
-          { text: "Thiết kế cấu trúc các khoản vay và trả nợ nước ngoài (", highlight: "3.5 triệu USD", suffix: ") cho Tập đoàn tài chính Hà Lan." },
+          { text: "Bảo trợ pháp lý đợt phát hành trái phiếu doanh nghiệp riêng lẻ cho dự án tại Bà Rịa - Vũng Tàu, quy mô", highlight: "800 tỷ VNĐ." },
+          { text: "Trực tiếp quản trị rủi ro & xử lý khủng hoảng cho 07 gói trái phiếu doanh nghiệp, giá trị", highlight: "500 - 850 tỷ VNĐ/gói." },
+          { text: "Thiết kế cấu trúc pháp lý cho các khoản vay và nghĩa vụ trả nợ nước ngoài", highlight: "(3.5 triệu USD)", suffix: " của Tập đoàn Tài chính Hà Lan." },
         ]
       },
       {
         title: "Đầu tư xuyên biên giới & Bất động sản",
         icon: Globe2,
         cases: [
-          { text: "Cố vấn pháp lý toàn diện dự án nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
-          { text: "Cố vấn pháp lý phát triển dự án Khu đô thị quy mô", highlight: "37.4ha", suffix: " tại Bà Rịa - Vũng Tàu." },
-          { text: "Xây dựng và cập nhật Báo cáo chính sách PPP tại Việt Nam theo đặt hàng của Bộ KH&ĐT Hàn Quốc.", highlight: "" },
-          { text: "Thiết lập pháp nhân, tư vấn vận hành cho nhà đầu tư FDI từ Mỹ, Nhật Bản, Hong Kong.", highlight: "" },
+          { text: "Bảo trợ pháp lý toàn diện dự án tổ hợp nghỉ dưỡng quy mô", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
+          { text: "Thiết kế cấu trúc pháp lý & Thẩm định dự án Khu đô thị quy mô", highlight: "37.4ha", suffix: " tại Bà Rịa - Vũng Tàu." },
+          { text: "Nghiên cứu & Cố vấn chuyên sâu Báo cáo chính sách PPP tại Việt Nam, đối tác chiến lược: Bộ KH&ĐT Hàn Quốc.", highlight: "" },
+          { text: "Thiết lập cấu trúc đầu tư & Pháp nhân, cố vấn vận hành chiến lược cho các tập đoàn FDI từ Mỹ, Nhật Bản, Hong Kong.", highlight: "" },
         ]
       },
       {
         title: "Hợp đồng thương mại & Tranh chấp",
         icon: ShieldCheck,
         cases: [
-          { text: "Soạn thảo chuẩn hóa bộ mẫu hợp đồng cung ứng dịch vụ trên nền tảng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
-          { text: "Đại diện bảo vệ quyền lợi Tập đoàn Xây dựng VN trong tranh chấp hợp đồng EPC (Trị giá", highlight: "250 tỷ VNĐ)." },
-          { text: "Bảo vệ quyền lợi Chủ đầu tư trong tranh chấp thầu xây dựng tại Khánh Hòa (Trị giá", highlight: "350 tỷ VNĐ)." },
+          { text: "Kiến tạo & Chuẩn hóa hệ thống hợp đồng thương mại cho mạng lưới cung ứng dịch vụ trên các sàn E-commerce top đầu (Shopee, Lazada, Tiki).", highlight: "" },
+          { text: "Đại diện pháp lý giải quyết tranh chấp, bảo vệ thành công quyền lợi Tập đoàn Xây dựng VN trong dự án EPC (Quy mô", highlight: "250 tỷ VNĐ)." },
+          { text: "Luật sư đại diện bảo vệ quyền lợi Chủ đầu tư trong tranh chấp thầu xây dựng tại Khánh Hòa (Quy mô", highlight: "350 tỷ VNĐ)." },
         ]
       }
     ],
     community: {
       title: "Dấu ấn cộng đồng",
-      subtitle: "Trách nhiệm xã hội",
-      topicTitle: "Chủ đề trọng tâm",
-      topicDesc: "Nội dung chia sẻ thường xuyên tại các diễn đàn pháp lý và khởi nghiệp uy tín.",
-      jciTitle: "Lãnh đạo & Tổ chức (JCI)",
-      speakerTitle: "Cố vấn & Diễn giả chuyên môn"
+      subtitle: "Hoạt động & Sự kiện tiêu biểu",
+      jciQuote: "HÀNH TRÌNH KIẾN TẠO GIÁ TRỊ CÙNG JCI",
+      jciDesc: "(Junior Chamber International)",
+      leadershipTitle: "Lộ trình lãnh đạo",
+      activityTitle: "Sự kiện & Hoạt động tiêu biểu"
     },
-    keynoteTopics: [
-      "Các vấn đề pháp lý chuyên sâu dành cho Chủ đầu tư và các Start-up.",
-      "Định hướng lộ trình phát triển năng lực trong ngành Luật."
-    ],
-    jciEvents: [
-      { year: "2026", title: "Phó Chủ tịch JCI Vietnam", desc: "Phụ trách mảng phát triển kinh doanh và khởi nghiệp, định hướng và dẫn dắt các dự án doanh nhân trẻ.", img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg" },
-      { year: "2025", title: "Chủ tịch sáng lập JCI Grace", desc: "Kiến tạo và lãnh đạo chapter JCI Grace, mang đến các giá trị tích cực và bền vững cho cộng đồng.", img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
-      { year: "2025", title: "Hội nghị JCI ASPAC Mông Cổ", desc: "Đại diện JCI Grace và Đoàn Việt Nam tham gia Hội nghị Châu Á Thái Bình Dương (ASPAC).", img: "https://jci.vn/wp-content/uploads/2025/09/493888640_1116355330518984_4354365979132898970_n.jpg" },
-      { year: "2025", title: "Let’s meet up VN", desc: "Đại diện tổ chức và triển khai chương trình kết nối với các cố vấn cấp cao và doanh nghiệp khu vực ASEAN.", img: "https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg" },
-      { year: "2025 - 2026", title: "Họp BĐH JCI ASEAN Senator", desc: "Thành viên Đoàn VN tham gia cuộc họp BĐH thường quý tại Tô Châu (Trung Quốc) và Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
-      { year: "2024", title: "JCI World Congress Đài Loan", desc: "Đại diện Đoàn JCI Việt Nam tham gia hội nghị toàn cầu World Congress cùng hàng ngàn đại biểu quốc tế.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
-      { year: "2024", title: "Dự án Launch to Leader", desc: "Giám đốc sáng lập dự án của JCI Thăng Long. Vinh dự đạt giải thưởng The Most Social Impact JCI VN 2024.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      { year: "Dự án", title: "JCI Lawyer Council", desc: "Đồng khởi xướng và kiến tạo nền tảng mạng lưới hội đồng luật sư toàn cầu thuộc hệ thống JCI.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
-    ],
     speakerEvents: [
-      { year: "2024", title: "Triển lãm Trade Expo, Mumbai", desc: "Tham gia đoàn làm việc đại diện cho doanh nghiệp VN phối hợp với Lãnh sự quán VN tại triển lãm dịch vụ quốc tế.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" },
-      { year: "2024", title: "Workshop Pháp Lý Thông Minh (CSK)", desc: "Tham gia với vai trò diễn giả chính tại sự kiện do TT Khởi nghiệp CSK (ĐH Quốc gia) tổ chức. Phân tích rủi ro pháp lý, quan hệ cổ đông và giải pháp cho doanh nghiệp.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      { year: "2023-2025", title: "Dự án Shape Your Future", desc: "Thường xuyên góp mặt với vai trò diễn giả hướng nghiệp nghề luật cho sinh viên và thế hệ trẻ.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "2024", title: "Giám khảo SIL ĐH Đại Nam", desc: "Cố vấn pháp lý, Giám khảo trong cuộc thi SIL (Social Innovation Launch) Đại học Đại Nam.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" }
+      { year: "2024", title: "Diễn giả Workshop \"Pháp lý thông minh\"", desc: "Khách mời chuyên gia tại Trung tâm Khởi nghiệp CSK (Đại học Quốc gia). Trực tiếp cố vấn chuyên sâu về nhận diện rủi ro, cấu trúc quan hệ cổ đông và hoạch định giải pháp pháp lý an toàn cho các startup.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      { year: "2023 - 2025", title: "Diễn giả Dự án \"Shape Your Future\"", desc: "Đồng hành chiến lược cùng chuỗi dự án hướng nghiệp. Trực tiếp truyền cảm hứng, chia sẻ kinh nghiệm thực chiến và định hướng lộ trình phát triển nghề luật cho thế hệ sinh viên.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
+      { year: "2024", title: "Cố vấn Pháp lý & Giám khảo SIL", desc: "Đồng hành cùng Đại học Đại Nam trong vai trò Hội đồng chuyên môn. Trực tiếp đánh giá, định hướng chiến lược và xây dựng nền tảng pháp lý vững chắc cho các dự án đổi mới sáng tạo xã hội.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
+      { year: "2024", title: "Đại biểu Trade Expo, Mumbai", desc: "Phối hợp cùng Tổng Lãnh sự quán Việt Nam tại Ấn Độ. Đại diện phái đoàn doanh nghiệp trong nước xúc tiến quan hệ đối tác, mở rộng giao thương và dịch vụ xuyên biên giới.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
     ],
+    jciLeadership: [
+      { year: "2024", title: "Bứt phá & Ghi dấu: Giám đốc Sáng lập Dự án \"Launch To Leaders\"", desc: "Đóng vai trò kiến trúc sư trưởng, trực tiếp thiết kế và vận hành dự án trọng điểm của JCI Thanglong. Dẫn dắt dự án vinh dự xác lập kỷ lục với giải thưởng danh giá \"The Most Social Impact JCI Vietnam 2024\" - minh chứng cho tầm ảnh hưởng xã hội sâu rộng.", icon: Rocket, img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
+      { year: "2025", title: "Tiên phong Kiến tạo: Chủ tịch Sáng lập JCI Grace", desc: "Đặt viên gạch nền móng và dẫn dắt JCI Grace từ giai đoạn sơ khởi trở thành một mảnh ghép vững chắc trong hệ sinh thái 15 chi hội chính thức của JCI Vietnam. Định vị một cộng đồng lãnh đạo trẻ chuẩn mực, lấy phát triển bền vững và phụng sự cộng đồng làm kim chỉ nam chiến lược.", icon: Crown, img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
+      { year: "2026", title: "Tầm vóc Quốc gia: Phó Chủ tịch JCI Vietnam", desc: "Đảm nhận trọng trách lãnh đạo cấp cao tại mạng lưới hơn 500 hội viên trên toàn quốc (tổ chức hoạt động dưới sự bảo trợ của Hội Doanh nhân trẻ TP.HCM - YBA). Trực tiếp điều hành Trụ cột Phát triển Kinh doanh & Khởi nghiệp, vận dụng tư duy pháp lý sắc bén để thiết lập hành lang an toàn, cố vấn chiến lược và dẫn dắt các dự án đổi mới sáng tạo.", icon: Network, img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg", imgClass: "w-full h-[300px] md:h-[400px] object-cover object-bottom" },
+      { year: "Tầm nhìn Tương lai", title: "Hội nhập Toàn cầu: Đồng Sáng lập JCI Lawyer Council", desc: "Khởi xướng và xây dựng mạng lưới chuyên gia pháp lý vươn tầm quốc tế, kết nối sâu rộng với Junior Chamber International (JCI) – mạng lưới lãnh đạo trẻ toàn cầu lớn nhất thế giới. Kiến tạo nền tảng đối thoại cấp cao, hợp tác chiến lược và chia sẻ tri thức xuyên biên giới đặc quyền dành cho giới luật sư.", icon: Scale, img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop" },
+    ],
+    jciActivities: {
+      local: {
+        title: "Hoạt động cấp chi hội",
+        items: [
+          { name: "Sự kiện Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" },
+          { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500&auto=format&fit=crop" },
+          { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống.", img: "" },
+          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân).", img: "" },
+          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào.", img: "" },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội.", img: "" }
+        ]
+      },
+      national: {
+        title: "Hoạt động cấp quốc gia",
+        items: [
+          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội Quốc gia (National Convention) trong các năm 2024 và 2025.", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=500&auto=format&fit=crop" },
+          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024.", img: "" },
+          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao.", img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=500&auto=format&fit=crop" },
+          { name: "Sự kiện \"Rise To Shine 2025\"", desc: "Tham gia với vai trò Ban Tổ Chức.", img: "" },
+          { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025).", img: "" },
+          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025.", img: "" }
+        ]
+      },
+      international: {
+        title: "Hoạt động cấp quốc tế",
+        items: [
+          { name: "Đại hội Thế giới", desc: "Đại diện đoàn JCI Việt Nam tham dự JCI World Congress 2024 (Đài Loan). Trực tiếp giao lưu chiến lược và xúc tiến quan hệ đối tác đa quốc gia.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=500&auto=format&fit=crop" },
+          { name: "Đại hội Châu Á - Thái Bình Dương", desc: "Đại biểu tham dự JCI ASPAC 2024 và JCI ASPAC 2025 (Mông Cổ). Góp phần lan tỏa hình ảnh lãnh đạo trẻ Việt Nam và kết nối chiến lược với cộng đồng doanh nhân khu vực.", img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=500&auto=format&fit=crop" },
+          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia), đóng góp chiến lược vào các quyết sách mạng lưới lãnh đạo khu vực.", img: "" },
+          { name: "Giao lưu Quốc tế", desc: "Tham gia chương trình kết nối song phương giữa JCI Marine Lines India và JCI Thanglong.", img: "" }
+        ]
+      }
+    },
     contact: {
       title: "Đồng hành xây dựng nền tảng pháp lý vững chắc cho doanh nghiệp của bạn.",
       subtitle: "Kết nối chuyên gia",
@@ -168,39 +195,39 @@ const dict = {
     }
   },
   en: {
-    nav: ['Profile', 'Expertise', 'Community', 'Contact'],
+    nav: ['Overview', 'Expertise', 'Impact', 'Connect'],
     hero: {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
       quote: `"Global Mind, Silk Touch."`,
-      desc: "Over 15 years of experience in corporate advisory, M&A, financial restructuring, and regulatory compliance. Providing strategic legal guidance <br class='hidden md:block' /> and building global partner networks (Pax Alliance Network - P.A.N) to maximize capital efficiency for multinational clients.",
+      desc: "Law is the space to create competitive advantages for businesses.",
       scroll: "Explore"
     },
     profile: {
       title: "Professional Summary",
       subtitle: "Expert Profile",
       desc1: "In a legal world characterized by rigid frameworks, I adopt a <strong>Graceful</strong> and <strong>Insightful</strong> approach. The optimal legal solution should not merely resolve disputes but serve as a solid foundation for business growth.",
-      desc2: "My expertise centers on M&A structuring, investment advisory, and cross-border transactions. Through our <strong>outsourced legal department solutions (PaxFlow)</strong> and <strong>global partner network (P.A.N)</strong>, I am committed to safeguarding and maximizing the interests of our clients."
+      desc2: "My practical expertise centers on M&A structuring, investment advisory, and cross-border transactions. Through our <strong>outsourced legal department solutions (PaxFlow)</strong> and <strong>global partner network (P.A.N)</strong>, I am committed to safeguarding and maximizing the interests of our partners."
     },
     stats: [
       { value: "15+", label: "Years of Experience" },
-      { value: "50+", label: "Countries (P.A.N Network)" }
+      { value: "50+", label: "Partner Countries" }
     ],
     highlights: [
       {
-        title: "Education",
+        title: "Education & Training",
         icon: GraduationCap,
         items: [
-          "Master of International Policy and Law (MIPL) - Foreign Trade University",
-          "Bachelor of Commercial Law - Hanoi Law University",
-          "Legal Practice Course - Judicial Academy"
+          "Master of International Policy and Commercial Law (Foreign Trade University)",
+          "Bachelor of Commercial Law (Hanoi Law University)",
+          "Lawyer Professional Training Course – Judicial Academy"
         ]
       },
       {
-        title: "Teaching & Training",
+        title: "Teaching & Coaching",
         icon: BookOpen,
         items: [
-          "Visiting Lecturer of Banking Law - Thanh Dong University",
-          "Internal Trainer for FX Management - Techcombank"
+          "Visiting Lecturer of Banking Law – Thanh Dong University",
+          "Internal Trainer for FX Management at Techcombank"
         ]
       },
       {
@@ -220,106 +247,132 @@ const dict = {
     timelineData: [
       {
         period: "12/2024 - Present",
-        role: "Founder / Managing Attorney",
-        company: "Paxlaw Law Firm",
-        desc: "Led end-to-end legal services for complex M&A, real estate, investment, and compliance for multinational clients; built a global partner network.",
+        role: "Founder & Managing Attorney",
+        company: "Paxlaw",
+        desc: "Designing personalized legal strategies, providing comprehensive outsourced legal solutions (PaxFlow) in M&A and investment for multinational clients.",
       },
       {
         period: "2022 - Present",
         role: "Head of Legal",
-        company: "Green Investment JSC",
-        desc: "Oversaw legal compliance and risk governance for investment projects; established foundation for project rollout and operations.",
+        company: "Green Investment Joint Stock Company",
+        desc: "Managing risks, ensuring legal compliance, and establishing a solid governance foundation for investment projects and joint ventures.",
       },
       {
         period: "2018 - 2024",
         role: "Deputy Director / Partner",
         company: "Penfield Law Firm",
-        desc: "Advised on high-profile and complex M&A transactions and supported financial restructuring for mining conglomerates; coordinated multi-sector dispute resolution.",
+        desc: "Led complex M&A transactions and established financial restructuring plans for large conglomerates; coordinated multi-sector dispute resolution.",
       },
       {
-        period: "2012 - 2018",
+        period: "2013 - 2018",
         role: "Senior Legal Counsel",
         company: "Techcombank",
-        desc: "Delivered legal and compliance support for FX activities and capital management; standardized internal procedures for wholesale banking customers.",
+        desc: "Provided legal support for foreign exchange, capital management, and standardized service procedures for the wholesale corporate banking system.",
       }
     ],
     practice: {
       title: "Core Competencies",
-      subtitle: "Practice Areas"
+      subtitle: "Practice Areas",
+      speakerTitle: "Professional Events & Activities"
     },
     practiceAreas: [
       {
         title: "M&A & Corporate Restructuring",
         icon: Building2,
         cases: [
-          { text: "Advised on the acquisition of a steel factory in Northern Vietnam valued at", highlight: "VND 1,000 billion." },
-          { text: "Advised on the transfer of a resort project in Bai Dai, Khanh Hoa valued at", highlight: "VND 1,600 billion." },
-          { text: "Advised on financial restructuring for a mining conglomerate in Thai Nguyen with total capital exceeding", highlight: "VND 1,000 billion." },
-          { text: "Advised on the sale of shares in a top-tier Vietnamese EPC company to a Japanese investor for", highlight: "USD 20 million." },
+          { text: "Acted as legal counsel for the buyer in the acquisition of a steel manufacturing plant (Northern Vietnam) valued at", highlight: "VND 1,000 billion." },
+          { text: "Strategic M&A advisor for the transfer of Bai Dai Resort Real Estate project (Khanh Hoa) valued at", highlight: "VND 1,600 billion." },
+          { text: "Planned and executed comprehensive financial restructuring for Thai Nguyen Mineral Group (Total capital", highlight: ">VND 1,000 billion)." },
+          { text: "Structured the share sale transaction of a top-tier Vietnamese EPC enterprise to a Japanese partner, valued at", highlight: "USD 20 million." },
         ]
       },
       {
         title: "Banking & Finance",
         icon: Landmark,
         cases: [
-          { text: "Advised on private bond issuance for a project in Ba Ria - Vung Tau valued at", highlight: "VND 800 billion." },
-          { text: "Risk management and crisis resolution for 07 bond packages valued between", highlight: "VND 500 - 850 billion", suffix: " each." },
-          { text: "Structured overdue foreign loans (", highlight: "USD 3.5 million", suffix: ") for a financial group from the Netherlands." },
+          { text: "Provided legal backing for a private corporate bond issuance for a project in Ba Ria - Vung Tau, sized at", highlight: "VND 800 billion." },
+          { text: "Directly managed risks & handled crises for 07 corporate bond packages, valued at", highlight: "VND 500 - 850 billion/package." },
+          { text: "Designed legal structures for foreign loans and debt repayment obligations", highlight: "(USD 3.5 million)", suffix: " of a Dutch Financial Group." },
         ]
       },
       {
         title: "Cross-Border Investment & Real Estate",
         icon: Globe2,
         cases: [
-          { text: "Comprehensive legal counsel for a", highlight: "1000+ 5-star condotel", suffix: " resort project in Nha Trang." },
-          { text: "Legal advisory for the development of a", highlight: "37.4ha", suffix: " urban project in Ba Ria - Vung Tau." },
-          { text: "Drafted and updated the Vietnam PPP Policy Report for the Ministry of Economy and Finance of South Korea.", highlight: "" },
-          { text: "Established legal entities and advised on operations for FDI investors from the US, Japan, and Hong Kong.", highlight: "" },
+          { text: "Comprehensive legal backing for a resort complex project with", highlight: "1000+ 5-star Condotels", suffix: " in Nha Trang." },
+          { text: "Legal structuring & appraisal for a 37.4ha Urban Area project in Ba Ria - Vung Tau.", highlight: "" },
+          { text: "In-depth research & advisory on the Vietnam PPP Policy Report, strategic partner: Ministry of Economy and Finance of South Korea.", highlight: "" },
+          { text: "Established investment structures & legal entities, advised on operational strategies for FDI corporations from the US, Japan, Hong Kong.", highlight: "" },
         ]
       },
       {
         title: "Commercial Contracts & Dispute Resolution",
         icon: ShieldCheck,
         cases: [
-          { text: "Drafted standard service contract templates for e-commerce platforms (Shopee, Lazada, Tiki).", highlight: "" },
-          { text: "Represented a Vietnamese Construction Corporation in resolving an EPC contract dispute valued at", highlight: "VND 250 billion." },
-          { text: "Protected the Project Owner's rights in a construction bidding dispute in Khanh Hoa valued at", highlight: "VND 350 billion." },
+          { text: "Created & standardized the commercial contract system for the service supply network on top E-commerce platforms (Shopee, Lazada, Tiki).", highlight: "" },
+          { text: "Acted as legal representative in dispute resolution, successfully protecting the rights of a Vietnam Construction Group in an EPC project (Valued at", highlight: "VND 250 billion)." },
+          { text: "Representing Attorney protecting the Project Owner's rights in a construction bidding dispute in Khanh Hoa (Valued at", highlight: "VND 350 billion)." },
         ]
       }
     ],
     community: {
       title: "Community Associations",
-      subtitle: "Social Responsibility",
-      topicTitle: "Keynote Topics",
-      topicDesc: "Frequently requested topics at prestigious legal and startup forums.",
-      jciTitle: "Leadership & JCI Network",
-      speakerTitle: "Startup Advisor & Speaker"
+      subtitle: "Highlight Events & Activities",
+      jciQuote: "VALUE CREATION JOURNEY WITH JCI",
+      jciDesc: "(Junior Chamber International)",
+      leadershipTitle: "Leadership Roadmap",
+      activityTitle: "Highlight Events & Activities"
     },
-    keynoteTopics: [
-      "In-depth legal issues for Project Owners and Start-ups.",
-      "Career path orientation and capacity development in the legal profession."
-    ],
-    jciEvents: [
-      { year: "2026", title: "National Vice President, JCI Vietnam", desc: "In charge of business development and entrepreneurship, guiding projects for young entrepreneurs.", img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg" },
-      { year: "2025", title: "Founding President, JCI Grace", desc: "Founded and led the JCI Grace chapter, bringing positive and sustainable values to the community.", img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
-      { year: "2025", title: "JCI ASPAC Conference, Mongolia", desc: "Represented JCI Grace and the Vietnam Delegation at the Asia-Pacific Conference (ASPAC).", img: "https://jci.vn/wp-content/uploads/2025/09/493888640_1116355330518984_4354365979132898970_n.jpg" },
-      { year: "2025", title: "Let’s meet up VN", desc: "Represented the organization of networking programs with senior advisors and businesses in the ASEAN region.", img: "https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg" },
-      { year: "2025 - 2026", title: "JCI ASEAN Senate Board Meeting", desc: "Member of the Vietnam Delegation attending the quarterly Board Meeting in Suzhou (China) and Sabah (Malaysia).", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" },
-      { year: "2024", title: "JCI World Congress, Taiwan", desc: "Represented the JCI Vietnam Delegation at the global World Congress with thousands of international delegates.", img: "https://i.postimg.cc/4d0BV0Xp/congress.jpg" },
-      { year: "2024", title: "Launch to Leader Project", desc: "Founding Director of the JCI Thang Long project. Honored to receive The Most Social Impact JCI VN 2024 award.", img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
-      { year: "Upcoming", title: "JCI Lawyer Council", desc: "Co-initiating and architecting the foundation for a global lawyer council network within the JCI system.", img: "https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" },
-    ],
     speakerEvents: [
-      { year: "2024", title: "Trade Expo, Mumbai", desc: "Participated in a working delegation representing Vietnamese enterprises in coordination with the Vietnamese Consulate.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" },
-      { year: "2024", title: "Keynote Speaker: Smart Legal Workshop", desc: "Main speaker at the legal event organized by CSK Startup Center (National University). Analyzed legal risks, shareholder relations, and strategic business solutions.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      { year: "2023-2025", title: "Shape Your Future Project", desc: "Frequently participated as a speaker providing legal career guidance for students and the younger generation.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "2024", title: "SIL Judge, Dai Nam Univ.", desc: "Legal Advisor and Judge at the SIL (Social Innovation Launch) competition, Dai Nam University.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" }
+      { year: "2024", title: "Speaker at Smart Legal Workshop", desc: "Expert Guest at CSK Startup Center (National University). Provided in-depth advisory on risk identification, shareholder structures, and safe legal solutions for startups.", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      { year: "2023 - 2025", title: "Speaker for \"Shape Your Future\" Project", desc: "Strategic companion for a series of career orientation projects. Inspired, shared practical experiences, and guided the legal career path for students.", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
+      { year: "2024", title: "Legal Advisor & Judge for SIL Competition", desc: "Accompanied Dai Nam University as a Professional Council member. Directly evaluated, provided strategic direction, and built a solid legal foundation for social innovation projects.", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
+      { year: "2024", title: "Delegate at Trade Expo, Mumbai", desc: "Coordinated with the Consulate General of Vietnam in India. Represented the domestic business delegation to promote partnerships, expand trade, and cross-border services.", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
     ],
+    jciLeadership: [
+      { year: "2024", title: "Breakthrough & Milestone: Founding Director of \"Launch To Leaders\"", desc: "Acting as the chief architect, directly designing and operating the key project of JCI Thanglong. Led the project to honorably set a record with the prestigious award \"The Most Social Impact JCI Vietnam 2024\" - a testament to its profound social influence.", icon: Rocket, img: "https://i.postimg.cc/NFTSMtRk/launch-to-leader.jpg" },
+      { year: "2025", title: "Pioneering Creation: Founding President of JCI Grace", desc: "Laid the foundation and led JCI Grace from its infancy to become a solid piece in the ecosystem of 15 official chapters of JCI Vietnam. Positioned a standard young leadership community, taking sustainable development and community service as strategic guidelines.", icon: Crown, img: "https://i.postimg.cc/Qdn98ZSD/Chu-ti-ch-JCI-Grace.jpg" },
+      { year: "2026", title: "National Stature: Vice President of JCI Vietnam", desc: "Assumed senior leadership responsibilities in a network of over 500 members nationwide (operating under the sponsorship of the Young Business Association of HCMC - YBA). Directly managed the Business Development & Entrepreneurship Pillar, applying sharp legal thinking to establish safe corridors, advise on strategy, and lead innovation projects.", icon: Network, img: "https://i.postimg.cc/Zqr7kHFk/Pho-chu-ti-ch-JCI.jpg", imgClass: "w-full h-[300px] md:h-[400px] object-cover object-bottom" },
+      { year: "Future Vision", title: "Global Integration: Co-Founder of JCI Lawyer Council", desc: "Initiated and built an international network of legal experts, deeply connected with Junior Chamber International (JCI) - the world's largest global young leadership network. Created a platform for high-level dialogue, strategic cooperation, and cross-border knowledge sharing exclusively for lawyers.", icon: Scale, img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop" },
+    ],
+    jciActivities: {
+      local: {
+        title: "Local Chapter Activities",
+        items: [
+          { name: "Legal Training Event \"Think Solid, Step Steady\"", desc: "In collaboration with Vietnam National University, Hanoi.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" },
+          { name: "Event \"Turning the Waves, Welcoming the Dawn\"", desc: "A business networking program involving 200 entrepreneurs.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500&auto=format&fit=crop" },
+          { name: "Event \"Flow of Success\"", desc: "Field visit and practical networking at Duong River Surface Water Plant.", img: "" },
+          { name: "International Trade (JCI Grace)", desc: "Exchange between Suzhou Business Association (China) and Southeast Asia (100 merchants).", img: "" },
+          { name: "Social Responsibility \"Uniting through the 2024 Storm Season\"", desc: "(Northern JCI Alliance): Participated in the campaign to support compatriots.", img: "" },
+          { name: "Northern Open Pickleball Tournament", desc: "Co-host (representing JCI Thang Long & JCI Grace) alongside JCI Hai Phong (Host) and JCI Hanoi.", img: "" }
+        ]
+      },
+      national: {
+        title: "National Activities",
+        items: [
+          { name: "National Convention (NATCON)", desc: "Attended the National Conventions in 2024 and 2025.", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=500&auto=format&fit=crop" },
+          { name: "National Mid-Year Convention (NYC)", desc: "Attended the Mid-Year Convention in 2024.", img: "" },
+          { name: "Forum \"Let's meet up Vietnam\" (2025)", desc: "Organizing Committee Representative, directly managing and promoting cooperation. Building a direct trade bridge between ASEAN businesses and a network of senior strategic advisors.", img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=500&auto=format&fit=crop" },
+          { name: "Event \"Rise To Shine 2025\"", desc: "Participated as an Organizing Committee member.", img: "" },
+          { name: "Academic & Training", desc: "Graduated from JCI Vietnam Academy (2024, 2025).", img: "" },
+          { name: "Skill Elevation", desc: "Achieved 2-Star Trainer certification at the Train The Trainer 2025 program.", img: "" }
+        ]
+      },
+      international: {
+        title: "International Activities",
+        items: [
+          { name: "World Congress", desc: "Represented the JCI Vietnam delegation at the JCI World Congress 2024 (Taiwan). Directly engaged in strategic exchanges and promoted multinational partnerships.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=500&auto=format&fit=crop" },
+          { name: "Asia-Pacific Conference", desc: "Delegate attending JCI ASPAC 2024 and JCI ASPAC 2025 (Mongolia). Contributed to spreading the image of young Vietnamese leaders and connected strategically with the regional business community.", img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=500&auto=format&fit=crop" },
+          { name: "JCI ASEAN Senate Board (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies.", img: "" },
+          { name: "International Exchange", desc: "Participated in the bilateral connection program between JCI Marine Lines India and JCI Thanglong.", img: "" }
+        ]
+      }
+    },
     contact: {
-      title: "Partnering to build a secure legal foundation for your business operations.",
-      subtitle: "Connect with us",
-      scanToConnect: "Scan to connect",
-      address: "5th floor, No. 31A Nguyen Quoc Tri Street, Trung Hoa Ward, Cau Giay Dist, Hanoi"
+      title: "Đồng hành xây dựng nền tảng pháp lý vững chắc cho doanh nghiệp của bạn.",
+      subtitle: "Kết nối chuyên gia",
+      scanToConnect: "Quét để kết nối",
+      address: "Tầng 5, số 31A Nguyễn Quốc Trị, Trung Hoà, Yên Hoà, Hà Nội"
     }
   }
 };
@@ -365,14 +418,14 @@ const TimelineItem = ({ data, isLast }) => (
 const EventCard = ({ event }) => (
   <div className="bg-white rounded-xl shadow-sm hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col group border border-slate-100 overflow-hidden h-full">
     <div className="aspect-square relative overflow-hidden bg-white p-2 border-b border-slate-50">
-      <img src={event.img} alt={event.title} className="w-full h-full object-contain rounded group-hover:scale-[1.03] transition-transform duration-700" />
+      <img src={event.img} alt={event.title} className="w-full h-full object-cover rounded group-hover:scale-[1.03] transition-transform duration-700" />
     </div>
     <div className="p-6 flex flex-col flex-1">
       <span className="text-[#1d6266] text-[10px] font-bold uppercase tracking-widest mb-2 block">{event.year}</span>
       <h4 className="text-base font-bold tracking-wide text-slate-900 mb-2 leading-snug">
         {event.title}
       </h4>
-      <p className="text-slate-600 font-light leading-relaxed text-[13px] line-clamp-4">
+      <p className="text-slate-600 font-light leading-relaxed text-[13px] line-clamp-none">
         {event.desc}
       </p>
     </div>
@@ -417,11 +470,10 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  // STATE NGÔN NGỮ: Mặc định là Tiếng Việt ('vi')
+  // STATE NGÔN NGỮ
   const [lang, setLang] = useState('vi');
-  const t = dict[lang]; // Lấy dictionary tương ứng
+  const t = dict[lang]; 
 
-  // Hàm chuyển đổi ngôn ngữ
   const toggleLanguage = () => {
     setLang(lang === 'vi' ? 'en' : 'vi');
   };
@@ -445,7 +497,6 @@ export default function App() {
       className="min-h-screen bg-white text-slate-800 selection:bg-[#1d6266] selection:text-white"
       style={{ fontFamily: '"AvertaStdCY", "Averta", Arial, sans-serif' }}
     >
-      {/* KHAI BÁO FONT CHỮ GLOBAL ĐƯỢC LOAD TỪ THƯ MỤC PUBLIC/FONTS TRÊN VERCEL */}
       <style dangerouslySetInnerHTML={{__html: `
         @font-face {
           font-family: 'AvertaStdCY';
@@ -500,48 +551,51 @@ export default function App() {
               </div>
             </div>
             
-            <div className="hidden md:flex space-x-10 items-center">
+            <div className="hidden md:flex space-x-12 items-center">
               {t.nav.slice(0, 3).map((item, index) => {
                 const ids = ['ho-so', 'chuyen-mon', 'cong-dong'];
                 return (
                   <button 
                     key={item}
                     onClick={() => scrollTo(ids[index])}
-                    className={`text-xs font-bold uppercase tracking-widest transition-colors duration-300 hover:text-[#2eb793] ${isScrolled ? 'text-slate-600' : 'text-white/90'}`}
+                    className={`relative text-[13px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 py-1 ${isScrolled ? 'text-slate-700 hover:text-[#1d6266]' : 'text-white/80 hover:text-white'} after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-full after:h-[2px] after:bg-[#2eb793] after:transition-all after:duration-300`}
                   >
                     {item}
                   </button>
                 )
               })}
 
-              <div className="flex items-center space-x-4 ml-4">
-                {/* NÚT CHUYỂN ĐỔI NGÔN NGỮ */}
+              <div className="flex items-center space-x-6 ml-4">
                 <button 
                   onClick={toggleLanguage}
-                  className={`flex items-center space-x-1.5 text-xs font-bold uppercase tracking-widest transition-colors duration-300 hover:text-[#2eb793] ${isScrolled ? 'text-slate-600' : 'text-white/90'}`}
+                  className={`flex items-center text-[12px] font-bold uppercase tracking-widest transition-colors duration-300 ${isScrolled ? 'text-slate-600' : 'text-white/90'}`}
                   title="Change Language"
                 >
-                  <Globe className="w-4 h-4" />
-                  <span>{lang === 'vi' ? 'EN' : 'VI'}</span>
+                  <Globe className="w-4 h-4 mr-2" />
+                  <span className={`transition-colors ${lang === 'vi' ? (isScrolled ? 'text-[#1d6266]' : 'text-[#2eb793]') : 'opacity-50 hover:opacity-100'}`}>VI</span>
+                  <span className="opacity-30 mx-1">/</span>
+                  <span className={`transition-colors ${lang === 'en' ? (isScrolled ? 'text-[#1d6266]' : 'text-[#2eb793]') : 'opacity-50 hover:opacity-100'}`}>EN</span>
                 </button>
 
                 <button 
                   onClick={() => scrollTo('lien-he')}
-                  className={`text-xs font-bold uppercase tracking-widest px-6 py-3 border transition-all duration-300 ${isScrolled ? 'border-[#1d6266] text-[#1d6266] hover:bg-[#1d6266] hover:text-white' : 'border-white text-white hover:bg-white hover:text-[#1d6266]'}`}
+                  className={`relative text-[12px] font-bold uppercase tracking-[0.15em] px-7 py-3 border transition-all duration-500 overflow-hidden group ${isScrolled ? 'border-[#1d6266] text-[#1d6266]' : 'border-white/80 text-white hover:border-white'}`}
                 >
-                  {t.nav[3]}
+                  <span className={`relative z-10 transition-colors duration-500 ${isScrolled ? 'group-hover:text-white' : 'group-hover:text-[#1d6266]'}`}>{t.nav[3]}</span>
+                  <div className={`absolute inset-0 h-full w-0 transition-all duration-500 ease-out group-hover:w-full z-0 ${isScrolled ? 'bg-[#1d6266]' : 'bg-white'}`}></div>
                 </button>
               </div>
             </div>
 
             <div className="md:hidden flex items-center space-x-4">
-              {/* NÚT CHUYỂN NGÔN NGỮ BẢN MOBILE */}
               <button 
                 onClick={toggleLanguage}
                 className={`flex items-center text-xs font-bold transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'}`}
               >
-                <Globe className="w-4 h-4 mr-1" />
-                {lang === 'vi' ? 'EN' : 'VI'}
+                <Globe className="w-4 h-4 mr-1.5" />
+                <span className={lang === 'vi' ? (isScrolled ? 'text-[#1d6266]' : 'text-[#2eb793]') : 'opacity-50'}>VI</span>
+                <span className="opacity-30 mx-1">/</span>
+                <span className={lang === 'en' ? (isScrolled ? 'text-[#1d6266]' : 'text-[#2eb793]') : 'opacity-50'}>EN</span>
               </button>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
                 {mobileMenuOpen ? <X className="h-6 w-6 stroke-[1.5]" /> : <Menu className="h-6 w-6 stroke-[1.5]" />}
@@ -569,22 +623,16 @@ export default function App() {
       </nav>
 
       {/* H E R O   S E C T I O N */}
-      <section className="relative min-h-[100vh] flex flex-col items-center justify-center bg-gradient-to-b from-[#113a3c] via-[#164e50] to-[#1d6266] px-6 text-center z-10 pt-24 overflow-hidden">
+      <section className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 text-center z-10 pt-24 overflow-hidden">
         
-        {/* HỌA TIẾT DẢI LỤA PAXLAW - BACKGROUND MOTIFS */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-end">
-          {/* Lớp lụa Xanh thẫm mờ ảo */}
-          <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full min-w-[1440px] opacity-40 mix-blend-multiply">
-            <path d="M-100,600 C300,600 400,200 900,300 C1300,400 1500,200 1600,200 L1600,800 L-100,800 Z" fill="#0d2b2c" />
-          </svg>
-          {/* Lớp lụa Xanh ngọc phát sáng nhẹ */}
-          <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full min-w-[1440px] opacity-30 mix-blend-screen">
-            <path d="M-100,600 C200,600 400,300 900,400 C1200,500 1400,300 1600,400 L1600,800 L-100,800 Z" fill="#2eb793" />
-          </svg>
-        </div>
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('https://i.postimg.cc/59Y8BZzR/Paxlaw-template.png')" 
+          }}
+        ></div>
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-6xl">
-          {/* Subtitle cách điệu */}
           <div className="inline-flex items-center space-x-4 mb-8">
             <div className="h-[1px] w-12 md:w-20 bg-gradient-to-r from-transparent to-[#2eb793]"></div>
             <span className="text-[#2eb793] font-bold tracking-[0.25em] uppercase text-[10px] md:text-sm whitespace-nowrap">
@@ -593,23 +641,19 @@ export default function App() {
             <div className="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent to-[#2eb793]"></div>
           </div>
           
-          {/* Tên Luật Sư */}
           <h1 className="text-5xl md:text-7xl lg:text-[100px] font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-md">
             {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
           </h1>
           
-          {/* Câu Quote - Đã gỡ bỏ font-serif để đồng bộ 100% Averta */}
           <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light italic mb-12 tracking-wide">
             {t.hero.quote}
           </p>
           
-          {/* Đoạn mô tả */}
           <p 
-            className="text-[15px] md:text-[18px] text-white/80 leading-relaxed max-w-4xl mx-auto font-light text-center px-4"
+            className="text-[16px] md:text-[20px] text-white/90 leading-relaxed max-w-4xl mx-auto font-light text-center px-4"
             dangerouslySetInnerHTML={{ __html: t.hero.desc }}
           />
 
-          {/* Scroll Indicator */}
           <div className="mt-20 flex flex-col items-center animate-bounce cursor-pointer" onClick={() => scrollTo('ho-so')}>
             <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/50 mb-4">{t.hero.scroll}</span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
@@ -622,7 +666,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
             
-            {/* CỘT TRÁI: GIỚI THIỆU CHÂN DUNG & PROFILE HIGHLIGHTS */}
+            {/* CỘT TRÁI */}
             <div className="flex flex-col">
               <SectionHeading title={t.profile.title} subtitle={t.profile.subtitle} align="left" />
               
@@ -634,7 +678,7 @@ export default function App() {
                 />
               </div>
 
-              <div className="prose prose-slate text-slate-600 font-light leading-relaxed text-justify mb-10">
+              <div className="flex flex-col space-y-4 mb-10 text-[14px] text-slate-500 font-light leading-relaxed text-justify">
                 <p dangerouslySetInnerHTML={{ __html: t.profile.desc1 }}></p>
                 <p dangerouslySetInnerHTML={{ __html: t.profile.desc2 }}></p>
               </div>
@@ -649,7 +693,7 @@ export default function App() {
                 ))}
               </div>
 
-              {/* HỌC VẤN, CHỨNG CHỈ, GIẢNG DẠY */}
+              {/* HỌC VẤN */}
               <div className="flex flex-col space-y-6 pt-8 border-t border-slate-100">
                 {t.highlights.map((highlight, idx) => (
                   <div key={idx} className="flex items-start">
@@ -673,7 +717,7 @@ export default function App() {
 
             </div>
 
-            {/* CỘT PHẢI: HÀNH TRÌNH CHUYÊN MÔN */}
+            {/* CỘT PHẢI */}
             <div className="flex flex-col bg-slate-50/50 p-8 lg:p-12 rounded-2xl border border-slate-100 h-fit lg:sticky lg:top-24">
               <SectionHeading title={t.career.title} subtitle={t.career.subtitle} align="left" />
               <div className="mt-4">
@@ -723,51 +767,12 @@ export default function App() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* SECTION: CỘNG ĐỒNG & SỰ KIỆN */}
-      <section id="cong-dong" className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          
-          <SectionHeading title={t.community.title} subtitle={t.community.subtitle} />
-
-          {/* KHỐI CHỦ ĐỀ ĐINH */}
-          <div className="mb-20 bg-slate-50 rounded-xl border border-slate-100 p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start md:items-center hover:border-[#2eb793]/30 transition-colors duration-300">
-            <div className="md:w-1/3 shrink-0">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-[#1d6266] mb-2 flex items-center">
-                <Sparkles className="w-4 h-4 mr-2 text-[#2eb793]" />
-                {t.community.topicTitle}
-              </h3>
-              <p className="text-slate-500 font-light text-sm">{t.community.topicDesc}</p>
-            </div>
-            <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {t.keynoteTopics.map((topic, idx) => (
-                <div key={idx} className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                  <p className="text-[14px] font-bold tracking-wide text-[#1d6266] leading-relaxed">{topic}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* NHÓM 1: JCI */}
-          <div className="mb-20">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-8">
-              <h3 className="text-xl font-light text-slate-900">{t.community.jciTitle}</h3>
-              <Award className="w-5 h-5 text-slate-300" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {t.jciEvents.map((event, idx) => (
-                <EventCard key={idx} event={event} />
-              ))}
-            </div>
-          </div>
-
-          {/* NHÓM 2: SPEAKER */}
-          <div>
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-8">
-              <h3 className="text-xl font-light text-slate-900">{t.community.speakerTitle}</h3>
-              <Mic className="w-5 h-5 text-slate-300" />
+          {/* NHÓM: DIỄN GIẢ & CỐ VẤN CHUYÊN MÔN */}
+          <div className="mt-24">
+            <div className="flex items-center justify-between border-b border-[#1a5b5e] pb-4 mb-8">
+              <h3 className="text-xl font-bold text-white">{t.practice.speakerTitle}</h3>
+              <Mic className="w-5 h-5 text-[#2eb793]" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {t.speakerEvents.map((event, idx) => (
@@ -779,10 +784,212 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECTION: CỘNG ĐỒNG & SỰ KIỆN */}
+      <section id="cong-dong" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <SectionHeading title={t.community.title} subtitle={t.community.subtitle} />
+
+          {/* NHÓM 1: JCI LỘ TRÌNH LÃNH ĐẠO (ZIC-ZAC TIMELINE) */}
+          <div className="mb-32">
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-1 bg-[#1d6266]/10 rounded-full mb-4">
+                <span className="text-sm font-bold text-[#1d6266] uppercase tracking-widest">{t.community.jciQuote}</span>
+              </div>
+              <p className="text-slate-500 font-light">{t.community.jciDesc}</p>
+            </div>
+
+            <div className="flex items-center justify-center md:justify-between border-b border-slate-100 pb-4 mb-20">
+              <h3 className="text-2xl font-bold text-slate-900 text-center md:text-left w-full md:w-auto">{t.community.leadershipTitle}</h3>
+              <Award className="w-6 h-6 text-[#1d6266] hidden md:block" />
+            </div>
+            
+            {/* TIMELINE TRỤC GIỮA (NEW ZIC-ZAC LAYOUT) */}
+            <div className="relative max-w-6xl mx-auto px-4 md:px-0">
+              {/* Trục giữa (Chỉ hiện trên Desktop) */}
+              <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#2eb793]/10 via-[#2eb793]/40 to-[#2eb793]/10 transform -translate-x-1/2"></div>
+
+              {/* Trục trái (Chỉ hiện trên Mobile) */}
+              <div className="md:hidden absolute left-[31px] top-4 bottom-4 w-[2px] bg-[#2eb793]/30"></div>
+
+              {t.jciLeadership.map((item, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <div key={idx} className="relative flex flex-col md:flex-row items-center justify-between mb-20 md:mb-32 group">
+
+                    {/* --- ICON TRUNG TÂM --- */}
+                    {/* Desktop Icon */}
+                    <div className="hidden md:flex absolute left-1/2 w-16 h-16 rounded-full bg-white border-[3px] border-[#1d6266] items-center justify-center transform -translate-x-1/2 z-10 shadow-[0_0_20px_rgba(29,98,102,0.15)] group-hover:bg-[#1d6266] group-hover:scale-110 transition-all duration-500">
+                      <item.icon className="w-7 h-7 text-[#2eb793] group-hover:text-white transition-colors duration-300" />
+                    </div>
+
+                    {/* Mobile Icon */}
+                    <div className="md:hidden absolute left-[15px] top-0 w-9 h-9 rounded-full bg-white border-2 border-[#1d6266] flex items-center justify-center z-10 shadow-md">
+                      <item.icon className="w-4 h-4 text-[#2eb793]" />
+                    </div>
+
+                    {/* --- NỘI DUNG MOBILE --- */}
+                    <div className="md:hidden w-full pl-16 pt-0">
+                       <span className="inline-block px-3 py-1 bg-[#1d6266] text-white text-[11px] font-bold uppercase tracking-widest rounded mb-3">
+                          {item.year}
+                       </span>
+                       <h4 className="text-xl font-bold text-slate-900 mb-3 leading-snug">{item.title}</h4>
+                       <p className="text-[14.5px] font-light text-slate-600 leading-relaxed mb-6">
+                          {item.desc}
+                       </p>
+                       {item.img && (
+                         <div className="w-full rounded-2xl overflow-hidden shadow-lg border-[4px] border-white bg-slate-50">
+                            <img src={item.img} alt={item.title} className={item.imgClass || "w-full h-auto object-contain"} />
+                         </div>
+                       )}
+                    </div>
+
+                    {/* --- NỘI DUNG DESKTOP (ZIC ZAC) --- */}
+                    {/* CỘT TRÁI */}
+                    <div className={`hidden md:flex w-[45%] ${isEven ? 'justify-end text-right' : 'justify-start'}`}>
+                      {isEven ? (
+                        // Lẻ (Even index) -> Chữ bên trái
+                        <div className="w-full xl:w-5/6 pr-8">
+                           <span className="inline-block px-4 py-1.5 bg-[#1d6266] text-white text-[12px] font-bold uppercase tracking-widest rounded-full mb-6 shadow-md">
+                             {item.year}
+                           </span>
+                           <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-5 leading-tight">{item.title}</h4>
+                           <p className="text-[16px] font-light text-slate-600 leading-relaxed">
+                             {item.desc}
+                           </p>
+                        </div>
+                      ) : (
+                        // Chẵn (Odd index) -> Ảnh bên trái
+                        item.img && (
+                          <div className="w-full xl:w-5/6 rounded-2xl overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] border-[8px] border-white group-hover:border-[#2eb793]/20 transition-all duration-500 transform group-hover:-translate-y-2 bg-slate-50 flex">
+                            <img src={item.img} alt={item.title} className={item.imgClass || "w-full h-auto object-contain"} />
+                          </div>
+                        )
+                      )}
+                    </div>
+
+                    {/* CỘT PHẢI */}
+                    <div className={`hidden md:flex w-[45%] ${isEven ? 'justify-start' : 'justify-start text-left'}`}>
+                      {isEven ? (
+                        // Lẻ (Even index) -> Ảnh bên phải
+                        item.img && (
+                          <div className="w-full xl:w-5/6 rounded-2xl overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] border-[8px] border-white group-hover:border-[#2eb793]/20 transition-all duration-500 transform group-hover:-translate-y-2 bg-slate-50 flex">
+                            <img src={item.img} alt={item.title} className={item.imgClass || "w-full h-auto object-contain"} />
+                          </div>
+                        )
+                      ) : (
+                        // Chẵn (Odd index) -> Chữ bên phải
+                        <div className="w-full xl:w-5/6 pl-8">
+                           <span className="inline-block px-4 py-1.5 bg-[#1d6266] text-white text-[12px] font-bold uppercase tracking-widest rounded-full mb-6 shadow-md">
+                             {item.year}
+                           </span>
+                           <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-5 leading-tight">{item.title}</h4>
+                           <p className="text-[16px] font-light text-slate-600 leading-relaxed">
+                             {item.desc}
+                           </p>
+                        </div>
+                      )}
+                    </div>
+
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* NHÓM 2: JCI HOẠT ĐỘNG TIÊU BIỂU (DANH SÁCH PHÂN LOẠI) */}
+          <div>
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-8">
+              <h3 className="text-xl font-bold text-slate-900">{t.community.activityTitle}</h3>
+              <Sparkles className="w-5 h-5 text-slate-300" />
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Local */}
+              <div className="bg-slate-50/50 rounded-2xl p-6 lg:p-8 border border-slate-100">
+                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4 shrink-0">
+                    <MapPin className="w-5 h-5 text-[#1d6266]" />
+                  </div>
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-[#1d6266]">{t.jciActivities.local.title}</h4>
+                </div>
+                <div className="space-y-5">
+                  {t.jciActivities.local.items.map((item, idx) => (
+                    <div key={idx} className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+                      {item.img && (
+                        <div className="h-32 w-full overflow-hidden border-b border-slate-100">
+                           <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h5 className="text-[13px] font-bold text-slate-800 mb-1.5">{item.name}</h5>
+                        <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* National */}
+              <div className="bg-slate-50/50 rounded-2xl p-6 lg:p-8 border border-slate-100">
+                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4 shrink-0">
+                    <Flag className="w-5 h-5 text-[#1d6266]" />
+                  </div>
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-[#1d6266]">{t.jciActivities.national.title}</h4>
+                </div>
+                <div className="space-y-5">
+                  {t.jciActivities.national.items.map((item, idx) => (
+                    <div key={idx} className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+                      {item.img && (
+                        <div className="h-32 w-full overflow-hidden border-b border-slate-100">
+                           <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h5 className="text-[13px] font-bold text-slate-800 mb-1.5">{item.name}</h5>
+                        <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* International */}
+              <div className="bg-gradient-to-b from-[#164e50] to-[#1d6266] rounded-2xl p-6 lg:p-8 shadow-lg">
+                <div className="flex items-center mb-8 pb-4 border-b border-white/20">
+                  <div className="w-10 h-10 rounded-full bg-[#113a3c] flex items-center justify-center mr-4 shrink-0">
+                    <Globe className="w-5 h-5 text-[#2eb793]" />
+                  </div>
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-white">{t.jciActivities.international.title}</h4>
+                </div>
+                <div className="space-y-5">
+                  {t.jciActivities.international.items.map((item, idx) => (
+                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 transition-colors overflow-hidden flex flex-col">
+                      {item.img && (
+                        <div className="h-32 w-full overflow-hidden opacity-90 hover:opacity-100 transition-opacity border-b border-white/10">
+                           <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <h5 className="text-[13px] font-bold text-white mb-1.5">{item.name}</h5>
+                        <p className="text-[12.5px] font-light leading-relaxed text-white/80">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION: LIÊN HỆ */}
       <section id="lien-he" className="relative py-24 md:py-32 bg-[#1d6266] overflow-hidden">
         
-        {/* Họa tiết Dải lụa góc */}
         <div className="absolute top-0 right-0 w-64 md:w-96 h-auto pointer-events-none z-0 opacity-20 rotate-180 transform translate-x-1/4 -translate-y-1/4">
           <svg viewBox="-20 -20 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <g transform="translate(15, -15)">
@@ -812,7 +1019,6 @@ export default function App() {
       {/* FOOTER */}
       <footer className="bg-[#113a3c] py-12 md:py-16 relative overflow-hidden z-20">
         
-        {/* Họa tiết Dải lụa góc trái */}
         <div className="absolute bottom-0 left-0 w-56 md:w-72 h-auto pointer-events-none z-0 opacity-25 transform -translate-x-1/4 translate-y-1/4">
           <svg viewBox="-20 -20 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <g transform="translate(15, -15)">
@@ -835,7 +1041,7 @@ export default function App() {
           </div>
           <div className="text-center md:text-right">
             <p className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-2"> 
-              &copy; {new Date().getFullYear()} PAXLAW. "Global Mind, Silk Touch." All rights reserved. 
+              &copy; {new Date().getFullYear()} PAXLAW. "Global Mind, Silk Touch." {lang === 'vi' ? 'Mọi bản quyền được bảo lưu.' : 'All rights reserved.'} 
             </p>
             <p className="text-white/50 text-[12px] font-light tracking-wide"> 
               {t.contact.address}
