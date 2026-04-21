@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 
 /* =========================================
-   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - CẬP NHẬT THEO EXCEL)
+   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - CẬP NHẬT CHUẨN FILE EXCEL)
 ========================================= */
 
 const dict = {
@@ -156,34 +156,37 @@ const dict = {
     ],
     jciActivities: {
       local: {
-        title: "Hoạt động cấp chi hội",
+        title: "Cấp Chi Hội",
+        icon: MapPin,
         items: [
-          { name: "Sự kiện Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" },
-          { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500&auto=format&fit=crop" },
-          { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống.", img: "" },
-          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân).", img: "" },
-          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào.", img: "" },
-          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội.", img: "" }
+          { name: "Sự kiện Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội." },
+          { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân." },
+          { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống." },
+          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân)." },
+          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào vùng lũ." },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội." }
         ]
       },
       national: {
-        title: "Hoạt động cấp quốc gia",
+        title: "Cấp Quốc Gia",
+        icon: Flag,
         items: [
-          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội cấp cao. Chính thức đắc cử Phó Chủ tịch JCI Vietnam 2026 tại NATCON 2025 (Đà Lạt).", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=500&auto=format&fit=crop" },
-          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao.", img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=500&auto=format&fit=crop" },
-          { name: "Sự kiện Rise To Shine 2025", desc: "Đánh dấu 8 tháng đồng hành cùng 29 dự án cộng đồng qua chuỗi mentoring chuyên sâu. Sự kiện vinh danh Top 5 dự án xuất sắc đã lan tỏa sâu rộng thông điệp JCI RISE về khát vọng phụng sự của lãnh đạo trẻ.", img: "" },
-          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024.", img: "" },
-          { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025).", img: "" },
-          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025.", img: "" }
+          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội cấp cao. Chính thức đắc cử Phó Chủ tịch JCI Vietnam 2026 tại NATCON 2025 (Đà Lạt)." },
+          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao." },
+          { name: "Sự kiện Rise To Shine 2025", desc: "Đánh dấu 8 tháng đồng hành cùng 29 dự án cộng đồng qua chuỗi mentoring chuyên sâu. Sự kiện vinh danh Top 5 dự án xuất sắc đã lan tỏa sâu rộng thông điệp JCI RISE về khát vọng phụng sự của lãnh đạo trẻ." },
+          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024." },
+          { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025)." },
+          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025." }
         ]
       },
       international: {
-        title: "Hoạt động cấp quốc tế",
+        title: "Cấp Quốc Tế",
+        icon: Globe,
         items: [
-          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, nơi trực tiếp tiếp cận những khóa đào tạo chất lượng cao và kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=500&auto=format&fit=crop" },
-          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU) và khẳng định vị thế tiên phong của lãnh đạo trẻ Việt Nam trên bản đồ doanh nhân Á Châu.", img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=500&auto=format&fit=crop" },
-          { name: "Giao lưu Quốc tế JCI Marine Lines India & JCI Thanglong", desc: "Nhịp cầu kết nối song phương đặc quyền, thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo những cơ hội hợp tác kinh tế - xã hội bền vững giữa hai cộng đồng doanh nhân trẻ Việt Nam và Ấn Độ.", img: "" },
-          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia), đóng góp chiến lược vào các quyết sách mạng lưới lãnh đạo khu vực.", img: "" }
+          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, nơi trực tiếp tiếp cận những khóa đào tạo chất lượng cao và kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
+          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU) và khẳng định vị thế tiên phong của lãnh đạo trẻ Việt Nam trên bản đồ doanh nhân Á Châu." },
+          { name: "Giao lưu Quốc tế JCI Marine Lines India & JCI Thanglong", desc: "Nhịp cầu kết nối song phương đặc quyền, thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo những cơ hội hợp tác kinh tế - xã hội bền vững giữa hai cộng đồng doanh nhân trẻ Việt Nam và Ấn Độ." },
+          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia), đóng góp chiến lược vào các quyết sách mạng lưới lãnh đạo khu vực." }
         ]
       }
     },
@@ -337,34 +340,37 @@ const dict = {
     ],
     jciActivities: {
       local: {
-        title: "Local Chapter Activities",
+        title: "Local Level",
+        icon: MapPin,
         items: [
-          { name: "Legal Training Event \"Think Solid, Step Steady\"", desc: "In collaboration with Vietnam National University, Hanoi.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" },
-          { name: "Event \"Turning the Waves, Welcoming the Dawn\"", desc: "A business networking program involving 200 entrepreneurs.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500&auto=format&fit=crop" },
-          { name: "Event \"Flow of Success\"", desc: "Field visit and practical networking at Duong River Surface Water Plant.", img: "" },
-          { name: "International Trade (JCI Grace)", desc: "Exchange between Suzhou Business Association (China) and Southeast Asia (100 merchants).", img: "" },
-          { name: "Social Responsibility \"Uniting through the 2024 Storm Season\"", desc: "(Northern JCI Alliance): Participated in the campaign to support compatriots.", img: "" },
-          { name: "Northern Open Pickleball Tournament", desc: "Co-host (representing JCI Thang Long & JCI Grace) alongside JCI Hai Phong (Host) and JCI Hanoi.", img: "" }
+          { name: "Legal Training Event \"Think Solid, Step Steady\"", desc: "Co-organized with Vietnam National University, Hanoi." },
+          { name: "Event \"Turning the Waves, Welcoming the Dawn\"", desc: "A business networking program involving 200 entrepreneurs." },
+          { name: "Event \"Flow of Success\"", desc: "Field visit and practical networking at Duong River Surface Water Plant." },
+          { name: "International Trade (JCI Grace)", desc: "Exchange between Suzhou Business Association (China) and Southeast Asia (100 merchants)." },
+          { name: "Social Responsibility \"Uniting through the 2024 Storm Season\"", desc: "(Northern JCI Alliance): Participated in the campaign to support flood victims." },
+          { name: "Northern Open Pickleball Tournament", desc: "Co-host (representing JCI Thang Long & JCI Grace) alongside JCI Hai Phong (Host) and JCI Hanoi." }
         ]
       },
       national: {
-        title: "National Activities",
+        title: "National Level",
+        icon: Flag,
         items: [
-          { name: "National Convention (NATCON)", desc: "Attended high-level congresses. Officially elected as Vice President of JCI Vietnam 2026 at NATCON 2025 (Da Lat).", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=500&auto=format&fit=crop" },
-          { name: "Forum \"Let's meet up Vietnam\" (2025)", desc: "Organizing Committee Representative, directing and promoting partnerships. Built a direct trade bridge between ASEAN businesses and a high-level strategic advisor network.", img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=500&auto=format&fit=crop" },
-          { name: "Event \"Rise To Shine 2025\"", desc: "Marked 8 months of accompanying 29 community projects through an intensive mentoring series. The event honoring the Top 5 outstanding projects widely spread the JCI RISE message about the service aspiration of young leaders.", img: "" },
-          { name: "National Mid-Year Convention (NYC)", desc: "Attended the Mid-Year Convention in 2024.", img: "" },
-          { name: "Academic & Training", desc: "Graduated from JCI Vietnam Academy (2024, 2025).", img: "" },
-          { name: "Skill Elevation", desc: "Achieved 2-Star Trainer certification at the Train The Trainer 2025 program.", img: "" }
+          { name: "National Convention (NATCON)", desc: "Attended high-level congresses. Officially elected as Vice President of JCI Vietnam 2026 at NATCON 2025 (Da Lat)." },
+          { name: "Forum \"Let's meet up Vietnam\" (2025)", desc: "Organizing Committee Representative, directing and promoting partnerships. Built a direct trade bridge between ASEAN businesses and a high-level strategic advisor network." },
+          { name: "Event \"Rise To Shine 2025\"", desc: "Marked 8 months of accompanying 29 community projects through an intensive mentoring series. The event honoring the Top 5 outstanding projects widely spread the JCI RISE message about the service aspiration of young leaders." },
+          { name: "National Mid-Year Convention (NYC)", desc: "Attended the Mid-Year Convention in 2024." },
+          { name: "Academic & Training", desc: "Graduated from JCI Vietnam Academy (2024, 2025)." },
+          { name: "Skill Elevation", desc: "Achieved 2-Star Trainer certification at the Train The Trainer 2025 program." }
         ]
       },
       international: {
-        title: "International Activities",
+        title: "International Level",
+        icon: Globe,
         items: [
-          { name: "JCI World Congress 2024 (Taiwan)", desc: "A touchpoint of the global young leaders network, offering direct access to high-quality training and trade connections with over 4,000 elite members from 100 countries.", img: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=500&auto=format&fit=crop" },
-          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map.", img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=500&auto=format&fit=crop" },
-          { name: "International Exchange JCI Marine Lines & JCI Thanglong", desc: "An exclusive bilateral bridge, promoting a cross-cultural learning spirit and creating sustainable socio-economic cooperation opportunities between the young entrepreneur communities of Vietnam and India.", img: "" },
-          { name: "JCI ASEAN Senate Board (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies.", img: "" }
+          { name: "JCI World Congress 2024 (Taiwan)", desc: "A touchpoint of the global young leaders network, offering direct access to high-quality training and trade connections with over 4,000 elite members from 100 countries." },
+          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map." },
+          { name: "International Exchange JCI Marine Lines India & JCI Thanglong", desc: "An exclusive bilateral bridge, promoting a cross-cultural learning spirit and creating sustainable socio-economic cooperation opportunities between the young entrepreneur communities of Vietnam and India." },
+          { name: "JCI ASEAN Senate Board (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies." }
         ]
       }
     },
@@ -469,6 +475,7 @@ const ContactIcon = ({ icon, label, value, href, qrUrl, scanText }) => {
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeActivityTab, setActiveActivityTab] = useState('local');
   
   // STATE NGÔN NGỮ
   const [lang, setLang] = useState('vi');
@@ -491,6 +498,12 @@ export default function App() {
       setMobileMenuOpen(false);
     }
   };
+
+  const activityTabs = [
+    { id: 'local', data: t.jciActivities.local },
+    { id: 'national', data: t.jciActivities.national },
+    { id: 'international', data: t.jciActivities.international }
+  ];
 
   return (
     <div 
@@ -628,9 +641,11 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-left-bottom bg-no-repeat"
           style={{ 
-            backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" 
+            backgroundImage: "url('https://i.postimg.cc/59Y8BZzR/Paxlaw-template.png')" 
           }}
         ></div>
+        
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0d3a3c]/80 via-[#0d3a3c]/80 to-[#0d3a3c]"></div>
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-6xl">
           <div className="inline-flex items-center space-x-4 mb-8">
@@ -740,7 +755,6 @@ export default function App() {
       {/* SECTION: LĨNH VỰC CHUYÊN MÔN */}
       <section id="chuyen-mon" className="relative py-24 md:py-32 bg-[#0d3a3c] overflow-hidden">
         
-        {/* ẢNH NỀN SECTION CHUYÊN MÔN (THAY LINK ẢNH CỦA BẠN VÀO ĐÂY) */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
           style={{ 
@@ -748,7 +762,6 @@ export default function App() {
           }}
         ></div>
         
-        {/* LỚP PHỦ TỐI MÀU (Giúp ảnh hòa quyện vào màu nền xanh thẫm và không làm chìm chữ) */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0d3a3c]/80 via-[#0d3a3c]/80 to-[#0d3a3c]"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
@@ -924,127 +937,51 @@ export default function App() {
             </div>
           </div>
 
-          {/* NHÓM 2: JCI HOẠT ĐỘNG TIÊU BIỂU (THẺ & DANH SÁCH KẾT HỢP) */}
+          {/* NHÓM 2: JCI HOẠT ĐỘNG TIÊU BIỂU (TABBED INTERFACE MỚI) */}
           <div>
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-8">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-10">
               <h3 className="text-xl font-bold text-slate-900">{t.community.activityTitle}</h3>
               <Sparkles className="w-5 h-5 text-slate-300" />
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
-              {/* Local */}
-              <div className="bg-slate-50/50 rounded-2xl p-6 lg:p-8 border border-slate-100">
-                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4 shrink-0">
-                    <MapPin className="w-5 h-5 text-[#1d6266]" />
-                  </div>
-                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-[#1d6266]">{t.jciActivities.local.title}</h4>
-                </div>
-                <div className="space-y-5">
-                  {t.jciActivities.local.items.filter(i => i.img).map((item, idx) => (
-                    <div key={idx} className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-                      <div className="h-32 w-full overflow-hidden border-b border-slate-100">
-                         <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                      </div>
-                      <div className="p-4">
-                        <h5 className="text-[13px] font-bold text-slate-800 mb-1.5">{item.name}</h5>
-                        <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {t.jciActivities.local.items.filter(i => !i.img).length > 0 && (
-                    <ul className="space-y-3 pt-2">
-                      {t.jciActivities.local.items.filter(i => !i.img).map((item, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#2eb793] mt-1.5 mr-3 shrink-0"></div>
-                          <div>
-                            <h5 className="text-[13px] font-bold text-slate-800 mb-0.5">{item.name}</h5>
-                            <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-
-              {/* National */}
-              <div className="bg-slate-50/50 rounded-2xl p-6 lg:p-8 border border-slate-100">
-                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4 shrink-0">
-                    <Flag className="w-5 h-5 text-[#1d6266]" />
-                  </div>
-                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-[#1d6266]">{t.jciActivities.national.title}</h4>
-                </div>
-                <div className="space-y-5">
-                  {t.jciActivities.national.items.filter(i => i.img).map((item, idx) => (
-                    <div key={idx} className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-                      <div className="h-32 w-full overflow-hidden border-b border-slate-100">
-                         <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                      </div>
-                      <div className="p-4">
-                        <h5 className="text-[13px] font-bold text-slate-800 mb-1.5">{item.name}</h5>
-                        <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-
-                  {t.jciActivities.national.items.filter(i => !i.img).length > 0 && (
-                    <ul className="space-y-3 pt-2">
-                      {t.jciActivities.national.items.filter(i => !i.img).map((item, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#2eb793] mt-1.5 mr-3 shrink-0"></div>
-                          <div>
-                            <h5 className="text-[13px] font-bold text-slate-800 mb-0.5">{item.name}</h5>
-                            <p className="text-[12.5px] font-light leading-relaxed text-slate-600">{item.desc}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-
-              {/* International */}
-              <div className="bg-gradient-to-b from-[#164e50] to-[#1d6266] rounded-2xl p-6 lg:p-8 shadow-lg">
-                <div className="flex items-center mb-8 pb-4 border-b border-white/20">
-                  <div className="w-10 h-10 rounded-full bg-[#113a3c] flex items-center justify-center mr-4 shrink-0">
-                    <Globe className="w-5 h-5 text-[#2eb793]" />
-                  </div>
-                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-white">{t.jciActivities.international.title}</h4>
-                </div>
-                <div className="space-y-5">
-                  {t.jciActivities.international.items.filter(i => i.img).map((item, idx) => (
-                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 transition-colors overflow-hidden flex flex-col">
-                      <div className="h-32 w-full overflow-hidden opacity-90 hover:opacity-100 transition-opacity border-b border-white/10">
-                         <img src={item.img} alt={item.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                      </div>
-                      <div className="p-4">
-                        <h5 className="text-[13px] font-bold text-white mb-1.5">{item.name}</h5>
-                        <p className="text-[12.5px] font-light leading-relaxed text-white/80">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-
-                  {t.jciActivities.international.items.filter(i => !i.img).length > 0 && (
-                    <ul className="space-y-3 pt-2">
-                      {t.jciActivities.international.items.filter(i => !i.img).map((item, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#2eb793] mt-1.5 mr-3 shrink-0"></div>
-                          <div>
-                            <h5 className="text-[13px] font-bold text-white mb-0.5">{item.name}</h5>
-                            <p className="text-[12.5px] font-light leading-relaxed text-white/80">{item.desc}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-
+            {/* Thanh điều hướng Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {activityTabs.map((tab) => {
+                const isActive = activeActivityTab === tab.id;
+                const Icon = tab.data.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveActivityTab(tab.id)}
+                    className={`flex items-center px-6 py-3 rounded-full text-[13px] font-bold uppercase tracking-widest transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-[#1d6266] text-white shadow-md transform scale-105' 
+                        : 'bg-slate-50 text-slate-500 hover:bg-slate-100 border border-slate-200'
+                    }`}
+                  >
+                    <Icon className={`w-4 h-4 mr-2 ${isActive ? 'text-[#2eb793]' : 'text-slate-400'}`} />
+                    {tab.data.title}
+                  </button>
+                )
+              })}
             </div>
+
+            {/* Nội dung Tab */}
+            <div className="bg-slate-50/50 rounded-3xl p-6 md:p-10 border border-slate-100">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {activityTabs.find(t => t.id === activeActivityTab)?.data.items.map((item, idx) => (
+                  <div 
+                    key={idx} 
+                    className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col relative overflow-hidden group"
+                  >
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-slate-200 group-hover:bg-[#2eb793] transition-colors duration-300"></div>
+                    <h5 className="text-[15px] font-bold text-slate-900 mb-3 leading-snug">{item.name}</h5>
+                    <p className="text-[14px] font-light leading-relaxed text-slate-600">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
 
         </div>
