@@ -1074,7 +1074,7 @@ export default function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6">
           <div className="flex items-center justify-center md:justify-start md:pl-16 lg:pl-28">
             <img 
-              src="https://i.postimg.cc/QCRQ3LTz/PAXLAW-logo-file-goc-02.png" 
+              src="https://i.postimg.cc/yYtjqxNv/PAXLAW-logo-file-goc-02-removebg-preview.png" 
               alt="Paxlaw Logo" 
               className="h-20 md:h-24 lg:h-28 w-auto object-contain" 
               onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }} 
