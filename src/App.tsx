@@ -22,8 +22,8 @@ const dict = {
       scroll: "Khám phá"
     },
     profile: {
-      title: "Tổng quan chuyên môn",
-      subtitle: "Hồ sơ chuyên gia",
+      title: "Tổng quan",
+      subtitle: "Luật sư Nguyễn Thị Hoa",
       desc1: "Dưới lăng kính của một người trực tiếp gắn bó với nhịp đập kinh doanh, tôi chưa bao giờ coi hành lang pháp lý là những rào cản khô khan hay sợi dây trói buộc sự phát triển. Đi qua nhiều thăng trầm cùng các nhà sáng lập, chứng kiến không ít doanh nghiệp chao đảo chỉ vì một lỗ hổng nhỏ, tôi càng thấm thía giá trị của sự bảo vệ từ sớm.",
       desc2: "Với tôi, khi pháp luật được thấu hiểu tận cùng và vận dụng linh hoạt, chúng không chỉ dừng lại ở ranh giới đúng - sai. Hơn thế nữa, chúng thực sự chuyển mình thành một bệ phóng vững chắc, một tấm khiên bảo vệ kiên cố và là chiếc la bàn dẫn lối cho mọi chiến lược tăng trưởng bền vững của doanh nghiệp."
     },
