@@ -5,11 +5,11 @@ import {
   Mail, Phone, Linkedin, Facebook, ChevronRight, 
   Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe,
   MapPin, Flag, Navigation,
-  Rocket, Crown, Network, Users, HeartHandshake
+  Rocket, Crown, Network, Users, HeartHandshake, CheckCircle, User, Lightbulb, HandHeart
 } from 'lucide-react';
 
 /* =========================================
-   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - CẬP NHẬT CHUẨN FILE EXCEL)
+   1. DICTIONARY (DỮ LIỆU ĐA NGỮ - CẬP NHẬT CHUẨN FILE EXCEL & HÌNH ẢNH MỚI)
 ========================================= */
 
 const dict = {
@@ -138,16 +138,17 @@ const dict = {
       title: "Dấu ấn cộng đồng",
       subtitle: "Hoạt động & Sự kiện tiêu biểu",
       jciIntro: {
-        title: "JCI Vietnam",
+        title: "JCI VIETNAM",
         subtitle: "Liên đoàn Lãnh đạo và Doanh nhân trẻ Thế giới",
         desc: [
-          "JCI (Junior Chamber International) là mạng lưới toàn cầu lớn nhất dành cho các công dân trẻ tích cực từ 18 đến 40 tuổi, quy tụ gần 200.000 hội viên tại hơn 100 quốc gia. JCI chia sẻ niềm tin rằng để tạo ra những thay đổi tích cực, chúng ta phải chung tay cải thiện bản thân và thế giới xung quanh.",
+          "JCI (Junior Chamber International) là một tổ chức phi lợi nhuận toàn cầu, quy tụ các công dân trẻ tích cực từ 18 đến 40 tuổi. Với gần 200.000 hội viên tại hơn 100 quốc gia, JCI chia sẻ niềm tin rằng để tạo ra những thay đổi tích cực, chúng ta phải chung tay cải thiện bản thân và thế giới xung quanh.",
           "Tại Việt Nam, JCI chính thức hoạt động từ năm 2008 và hiện là tổ chức thành viên trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA). Mạng lưới JCI Vietnam đã phát triển mạnh mẽ với 15 chi hội trên toàn quốc, lan tỏa tinh thần phụng sự và năng lực lãnh đạo đến hàng ngàn doanh nhân và trí thức trẻ."
         ],
         pillars: [
-          { title: "Mạng lưới Toàn cầu", icon: Globe },
-          { title: "Lãnh đạo Trẻ", icon: Users },
-          { title: "Phụng sự Xã hội", icon: HeartHandshake }
+          { title: "Mạng lưới Toàn cầu", icon: Globe, desc: "Kết nối với hàng ngàn lãnh đạo trẻ và doanh nhân trên khắp thế giới, mở rộng cơ hội hợp tác và giao thương quốc tế." },
+          { title: "Phát triển Cá nhân & Kỹ năng Lãnh đạo", icon: User, desc: "Tham gia các chương trình đào tạo chuyên sâu, nâng cao năng lực lãnh đạo, kỹ năng mềm và phát triển bản thân toàn diện." },
+          { title: "Kinh doanh & Khởi nghiệp", icon: Briefcase, desc: "Học hỏi kinh nghiệm từ các doanh nhân thành đạt, tiếp cận nguồn lực và cơ hội đầu tư, thúc đẩy tinh thần khởi nghiệp và đổi mới sáng tạo." },
+          { title: "Phụng sự Cộng đồng", icon: HandHeart, desc: "Thực hiện các dự án cộng đồng ý nghĩa, đóng góp vào sự phát triển bền vững của xã hội và lan tỏa những giá trị tốt đẹp." }
         ]
       },
       jciQuote: "HÀNH TRÌNH KIẾN TẠO GIÁ TRỊ CÙNG JCI",
@@ -199,7 +200,7 @@ const dict = {
           { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, nơi trực tiếp tiếp cận những khóa đào tạo chất lượng cao và kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
           { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU) và khẳng định vị thế tiên phong của lãnh đạo trẻ Việt Nam trên bản đồ doanh nhân Á Châu." },
           { name: "Giao lưu Quốc tế JCI Marine Lines India & JCI Thanglong", desc: "Nhịp cầu kết nối song phương đặc quyền, thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo những cơ hội hợp tác kinh tế - xã hội bền vững giữa hai cộng đồng doanh nhân trẻ Việt Nam và Ấn Độ." },
-          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia), đóng góp chiến lược vào các quyết sách mạng lưới lãnh đạo khu vực." }
+          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies." }
         ]
       }
     },
@@ -335,16 +336,17 @@ const dict = {
       title: "Community Associations",
       subtitle: "Highlight Events & Activities",
       jciIntro: {
-        title: "JCI Vietnam",
+        title: "JCI VIETNAM",
         subtitle: "Worldwide Federation of Young Leaders and Entrepreneurs",
         desc: [
           "JCI (Junior Chamber International) is the largest global network of active young citizens aged 18 to 40, bringing together nearly 200,000 members in over 100 countries. JCI shares the belief that in order to create positive change, we must take collective action to improve ourselves and the world around us.",
           "In Vietnam, JCI has been officially operating since 2008 and is currently a member organization under the Vietnam Young Entrepreneurs Association (VYEA). The JCI Vietnam network has grown strongly with 15 chapters nationwide, spreading the spirit of service and leadership to thousands of young entrepreneurs and intellectuals."
         ],
         pillars: [
-          { title: "Global Network", icon: Globe },
-          { title: "Young Leaders", icon: Users },
-          { title: "Social Service", icon: HeartHandshake }
+          { title: "Global Network", icon: Globe, desc: "Connect with thousands of young leaders and entrepreneurs worldwide, expanding opportunities for international cooperation and trade." },
+          { title: "Personal Development & Leadership Skills", icon: User, desc: "Participate in in-depth training programs to enhance leadership capabilities, soft skills, and comprehensive personal development." },
+          { title: "Business & Entrepreneurship", icon: Briefcase, desc: "Learn from successful entrepreneurs, access resources and investment opportunities, and foster entrepreneurship and innovation." },
+          { title: "Community Service", icon: HandHeart, desc: "Implement meaningful community projects, contributing to the sustainable development of society and spreading positive values." }
         ]
       },
       jciQuote: "VALUE CREATION JOURNEY WITH JCI",
@@ -394,7 +396,7 @@ const dict = {
         icon: Globe,
         items: [
           { name: "JCI World Congress 2024 (Taiwan)", desc: "A touchpoint of the global young leaders network, offering direct access to high-quality training and trade connections with over 4,000 elite members from 100 countries." },
-          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map." },
+          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map." },
           { name: "International Exchange JCI Marine Lines India & JCI Thanglong", desc: "An exclusive bilateral bridge, promoting a cross-cultural learning spirit and creating sustainable socio-economic cooperation opportunities between the young entrepreneur communities of Vietnam and India." },
           { name: "JCI ASEAN Senate Board (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies." }
         ]
@@ -833,42 +835,53 @@ export default function App() {
           <SectionHeading title={t.community.title} subtitle={t.community.subtitle} />
 
           {/* KHỐI GIỚI THIỆU JCI VIETNAM */}
-          <div className="bg-slate-50/80 rounded-3xl border border-slate-100 p-8 md:p-12 mb-24 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-500">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1d6266]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
-
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+          <div className="bg-gradient-to-br from-[#0d3a3c] to-[#1d6266] rounded-3xl mb-24 relative overflow-hidden shadow-xl flex flex-col lg:flex-row group text-white">
+            
+            {/* Cột trái: Banner trực quan */}
+            <div className="w-full lg:w-5/12 p-10 md:p-12 flex flex-col justify-center items-start relative overflow-hidden border-r border-white/10">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1d6266]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
               
-              {/* Logo & Hình ảnh trực quan */}
-              <div className="w-full lg:w-5/12 flex flex-col items-center justify-center">
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6 w-full flex items-center justify-center">
-                  <img src="image_92d5e4.png" alt="JCI Logos" className="w-full max-w-[280px] h-auto object-contain" />
+              <div className="relative z-10">
+                <div className="mb-8">
+                  <img 
+                    src="https://i.postimg.cc/hG5kQBX4/JCI-Vietnam-logo.png" 
+                    alt="JCI Logo" 
+                    className="h-16 md:h-20 object-contain brightness-0 invert" 
+                  />
                 </div>
-                <img src="image_92d620.png" alt="JCI Shield" className="w-24 h-auto opacity-80" />
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-wide drop-shadow-lg">{t.community.jciIntro.title}</h3>
+                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0">
+                  {t.community.jciIntro.subtitle}
+                </p>
               </div>
+            </div>
 
-              {/* Nội dung giới thiệu */}
-              <div className="w-full lg:w-7/12">
-                 <h3 className="text-3xl font-bold text-slate-900 mb-2">{t.community.jciIntro.title}</h3>
-                 <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#1d6266] mb-6">{t.community.jciIntro.subtitle}</h4>
-                 {t.community.jciIntro.desc.map((para, idx) => (
-                   <p key={idx} className={`text-slate-600 font-light leading-relaxed text-[15px] md:text-[16px] text-justify ${idx === t.community.jciIntro.desc.length - 1 ? 'mb-10' : 'mb-4'}`}>
-                     {para}
-                   </p>
-                 ))}
+            {/* Cột phải: Nội dung văn bản */}
+            <div className="w-full lg:w-7/12 p-8 md:p-12 flex flex-col justify-center relative backdrop-blur-sm bg-white/5">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+              <div className="relative z-10">
+                {t.community.jciIntro.desc.map((para, idx) => (
+                  <p key={idx} className={`text-white/90 font-light leading-relaxed text-[15px] md:text-[16px] text-justify ${idx === t.community.jciIntro.desc.length - 1 ? 'mb-10' : 'mb-5'}`}>
+                    {para}
+                  </p>
+                ))}
 
-                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                   {t.community.jciIntro.pillars.map((pillar, idx) => (
-                     <div key={idx} className="flex flex-col items-center text-center p-5 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_10px_30px_-10px_rgba(46,183,147,0.2)] transition-all duration-300 group">
-                       <div className="w-12 h-12 rounded-full bg-[#1d6266]/5 flex items-center justify-center mb-4 text-[#1d6266] group-hover:bg-[#1d6266] group-hover:text-white transition-colors duration-300">
-                          <pillar.icon className="w-5 h-5" />
-                       </div>
-                       <span className="text-[13px] font-bold text-slate-800 leading-snug">{pillar.title}</span>
-                     </div>
-                   ))}
-                 </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {t.community.jciIntro.pillars.map((pillar, idx) => (
+                    <div key={idx} className="flex flex-col p-5 bg-white/5 rounded-2xl shadow-sm border border-white/10 hover:border-[#2eb793]/40 hover:shadow-[0_10px_30px_-10px_rgba(46,183,147,0.2)] transition-all duration-300 group/pillar">
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 rounded-full bg-[#2eb793]/10 flex items-center justify-center mr-3 shrink-0 group-hover/pillar:bg-[#2eb793]/20 transition-colors duration-300">
+                            <pillar.icon className="w-5 h-5 text-[#2eb793] group-hover/pillar:text-[#2eb793]" />
+                        </div>
+                        <span className="text-[15px] font-bold text-white leading-snug flex-1">{pillar.title}</span>
+                        <CheckCircle className="w-5 h-5 text-[#2eb793] ml-2 shrink-0 opacity-0 group-hover/pillar:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <p className="text-[13px] font-light leading-relaxed text-white/70 pl-[52px]">{pillar.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-
             </div>
           </div>
 
