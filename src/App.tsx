@@ -139,7 +139,7 @@ const dict = {
       subtitle: "Hoạt động & Sự kiện tiêu biểu",
       jciIntro: {
         title: "JCI VIETNAM",
-        subtitle: "Liên đoàn Lãnh đạo và Doanh nhân trẻ Thế giới",
+        subtitle: "Liên đoàn Lãnh đạo và\nDoanh nhân trẻ Thế giới",
         desc: [
           "JCI (Junior Chamber International) là một tổ chức phi lợi nhuận toàn cầu, quy tụ các công dân trẻ tích cực từ 18 đến 40 tuổi. Với gần 200.000 hội viên tại hơn 100 quốc gia, JCI chia sẻ niềm tin rằng để tạo ra những thay đổi tích cực, chúng ta phải chung tay cải thiện bản thân và thế giới xung quanh.",
           "Tại Việt Nam, JCI chính thức hoạt động từ năm 2008 và hiện là tổ chức thành viên trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA). Mạng lưới JCI Vietnam đã phát triển mạnh mẽ với 15 chi hội trên toàn quốc, lan tỏa tinh thần phụng sự và năng lực lãnh đạo đến hàng ngàn doanh nhân và trí thức trẻ."
@@ -337,7 +337,7 @@ const dict = {
       subtitle: "Highlight Events & Activities",
       jciIntro: {
         title: "JCI VIETNAM",
-        subtitle: "Worldwide Federation of Young Leaders and Entrepreneurs",
+        subtitle: "Worldwide Federation of\nYoung Leaders and Entrepreneurs",
         desc: [
           "JCI (Junior Chamber International) is the largest global network of active young citizens aged 18 to 40, bringing together nearly 200,000 members in over 100 countries. JCI shares the belief that in order to create positive change, we must take collective action to improve ourselves and the world around us.",
           "In Vietnam, JCI has been officially operating since 2008 and is currently a member organization under the Vietnam Young Entrepreneurs Association (VYEA). The JCI Vietnam network has grown strongly with 15 chapters nationwide, spreading the spirit of service and leadership to thousands of young entrepreneurs and intellectuals."
@@ -842,6 +842,10 @@ export default function App() {
               <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1d6266]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
               
+              <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none transform group-hover:scale-110 transition-transform duration-1000">
+                <Globe className="w-96 h-96 text-white" strokeWidth={0.5} />
+              </div>
+              
               <div className="relative z-10 flex flex-col items-center w-full">
                 <div className="mb-8 flex justify-center w-full">
                   <img 
@@ -850,7 +854,7 @@ export default function App() {
                     className="h-24 md:h-32 object-contain brightness-0 invert" 
                   />
                 </div>
-                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0 text-center leading-relaxed">
+                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0 text-center leading-relaxed whitespace-pre-line">
                   {t.community.jciIntro.subtitle}
                 </p>
               </div>
