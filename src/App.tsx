@@ -5,7 +5,7 @@ import {
   Mail, Phone, Linkedin, Facebook, ChevronRight, 
   Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe,
   MapPin, Flag, Navigation,
-  Rocket, Crown, Network
+  Rocket, Crown, Network, Users, HeartHandshake
 } from 'lucide-react';
 
 /* =========================================
@@ -137,6 +137,16 @@ const dict = {
     community: {
       title: "Dấu ấn cộng đồng",
       subtitle: "Hoạt động & Sự kiện tiêu biểu",
+      jciIntro: {
+        title: "JCI Vietnam",
+        subtitle: "Liên đoàn Lãnh đạo & Doanh nhân trẻ Thế giới",
+        desc: "JCI (Junior Chamber International) là mạng lưới toàn cầu dành cho các công dân trẻ tích cực từ 18 đến 40 tuổi. Tại Việt Nam, JCI hoạt động với sứ mệnh trao quyền cho người trẻ tạo ra những thay đổi tích cực thông qua các dự án phát triển bản thân, kinh doanh, quốc tế và cộng đồng.",
+        pillars: [
+          { title: "Mạng lưới Toàn cầu", icon: Globe },
+          { title: "Lãnh đạo Trẻ", icon: Users },
+          { title: "Phụng sự Xã hội", icon: HeartHandshake }
+        ]
+      },
       jciQuote: "HÀNH TRÌNH KIẾN TẠO GIÁ TRỊ CÙNG JCI",
       jciDesc: "(Junior Chamber International)",
       leadershipTitle: "Lộ trình lãnh đạo",
@@ -321,6 +331,16 @@ const dict = {
     community: {
       title: "Community Associations",
       subtitle: "Highlight Events & Activities",
+      jciIntro: {
+        title: "JCI Vietnam",
+        subtitle: "Worldwide Federation of Young Leaders and Entrepreneurs",
+        desc: "JCI (Junior Chamber International) is a global network of active young citizens aged 18 to 40. In Vietnam, JCI operates with the mission to empower young people to create positive change through personal, business, international, and community development projects.",
+        pillars: [
+          { title: "Global Network", icon: Globe },
+          { title: "Young Leaders", icon: Users },
+          { title: "Social Service", icon: HeartHandshake }
+        ]
+      },
       jciQuote: "VALUE CREATION JOURNEY WITH JCI",
       jciDesc: "(Junior Chamber International)",
       leadershipTitle: "Leadership Roadmap",
@@ -421,23 +441,6 @@ const TimelineItem = ({ data, isLast }) => (
   </div>
 );
 
-const EventCard = ({ event }) => (
-  <div className="bg-white rounded-xl shadow-sm hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col group border border-slate-100 overflow-hidden h-full">
-    <div className="aspect-square relative overflow-hidden bg-white p-2 border-b border-slate-50">
-      <img src={event.img} alt={event.title} className="w-full h-full object-cover rounded group-hover:scale-[1.03] transition-transform duration-700" />
-    </div>
-    <div className="p-6 flex flex-col flex-1">
-      <span className="text-[#1d6266] text-[10px] font-bold uppercase tracking-widest mb-2 block">{event.year}</span>
-      <h4 className="text-base font-bold tracking-wide text-slate-900 mb-2 leading-snug">
-        {event.title}
-      </h4>
-      <p className="text-slate-600 font-light leading-relaxed text-[13px] line-clamp-none">
-        {event.desc}
-      </p>
-    </div>
-  </div>
-);
-
 const ContactIcon = ({ icon, label, value, href, qrUrl, scanText }) => {
   const qrImageSource = qrUrl ? `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrUrl)}&color=1d6266` : null;
 
@@ -475,7 +478,6 @@ const ContactIcon = ({ icon, label, value, href, qrUrl, scanText }) => {
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeActivityTab, setActiveActivityTab] = useState('local');
   
   // STATE NGÔN NGỮ
   const [lang, setLang] = useState('vi');
@@ -498,12 +500,6 @@ export default function App() {
       setMobileMenuOpen(false);
     }
   };
-
-  const activityTabs = [
-    { id: 'local', data: t.jciActivities.local },
-    { id: 'national', data: t.jciActivities.national },
-    { id: 'international', data: t.jciActivities.international }
-  ];
 
   return (
     <div 
@@ -641,7 +637,7 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-left-bottom bg-no-repeat"
           style={{ 
-            backgroundImage: "url('https://i.postimg.cc/59Y8BZzR/Paxlaw-template.png')" 
+            backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" 
           }}
         ></div>
         
@@ -756,7 +752,7 @@ export default function App() {
       <section id="chuyen-mon" className="relative py-24 md:py-32 bg-[#0d3a3c] overflow-hidden">
         
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
+          className="absolute inset-0 z-0 bg-cover bg-left-bottom bg-no-repeat opacity-30"
           style={{ 
             backgroundImage: "url('https://i.postimg.cc/59Y8BZzR/Paxlaw-template.png')" 
           }}
@@ -829,6 +825,46 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <SectionHeading title={t.community.title} subtitle={t.community.subtitle} />
+
+          {/* KHỐI GIỚI THIỆU JCI VIETNAM */}
+          <div className="bg-slate-50/80 rounded-3xl border border-slate-100 p-8 md:p-12 mb-24 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-500">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1d6266]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+              
+              {/* Logo & Hình ảnh trực quan */}
+              <div className="w-full lg:w-5/12 flex flex-col items-center justify-center">
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6 w-full flex items-center justify-center">
+                  {/* Chú ý: Cần đảm bảo file image_92d5e4.png nằm trong thư mục public của bạn */}
+                  <img src="image_92d5e4.png" alt="JCI Logos" className="w-full max-w-[280px] h-auto object-contain" />
+                </div>
+                {/* Chú ý: Cần đảm bảo file image_92d620.png nằm trong thư mục public của bạn */}
+                <img src="image_92d620.png" alt="JCI Shield" className="w-24 h-auto opacity-80" />
+              </div>
+
+              {/* Nội dung giới thiệu */}
+              <div className="w-full lg:w-7/12">
+                 <h3 className="text-3xl font-bold text-slate-900 mb-2">{t.community.jciIntro.title}</h3>
+                 <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#1d6266] mb-6">{t.community.jciIntro.subtitle}</h4>
+                 <p className="text-slate-600 font-light leading-relaxed mb-10 text-[15px] md:text-[16px] text-justify">
+                   {t.community.jciIntro.desc}
+                 </p>
+
+                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                   {t.community.jciIntro.pillars.map((pillar, idx) => (
+                     <div key={idx} className="flex flex-col items-center text-center p-5 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_10px_30px_-10px_rgba(46,183,147,0.2)] transition-all duration-300 group">
+                       <div className="w-12 h-12 rounded-full bg-[#1d6266]/5 flex items-center justify-center mb-4 text-[#1d6266] group-hover:bg-[#1d6266] group-hover:text-white transition-colors duration-300">
+                          <pillar.icon className="w-5 h-5" />
+                       </div>
+                       <span className="text-[13px] font-bold text-slate-800 leading-snug">{pillar.title}</span>
+                     </div>
+                   ))}
+                 </div>
+              </div>
+
+            </div>
+          </div>
 
           {/* NHÓM 1: JCI LỘ TRÌNH LÃNH ĐẠO (ZIC-ZAC TIMELINE) */}
           <div className="mb-32">
@@ -937,51 +973,79 @@ export default function App() {
             </div>
           </div>
 
-          {/* NHÓM 2: JCI HOẠT ĐỘNG TIÊU BIỂU (TABBED INTERFACE MỚI) */}
+          {/* NHÓM 2: JCI HOẠT ĐỘNG TIÊU BIỂU */}
           <div>
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-10">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-8">
               <h3 className="text-xl font-bold text-slate-900">{t.community.activityTitle}</h3>
               <Sparkles className="w-5 h-5 text-slate-300" />
             </div>
             
-            {/* Thanh điều hướng Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {activityTabs.map((tab) => {
-                const isActive = activeActivityTab === tab.id;
-                const Icon = tab.data.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveActivityTab(tab.id)}
-                    className={`flex items-center px-6 py-3 rounded-full text-[13px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-[#1d6266] text-white shadow-md transform scale-105' 
-                        : 'bg-slate-50 text-slate-500 hover:bg-slate-100 border border-slate-200'
-                    }`}
-                  >
-                    <Icon className={`w-4 h-4 mr-2 ${isActive ? 'text-[#2eb793]' : 'text-slate-400'}`} />
-                    {tab.data.title}
-                  </button>
-                )
-              })}
-            </div>
-
-            {/* Nội dung Tab */}
-            <div className="bg-slate-50/50 rounded-3xl p-6 md:p-10 border border-slate-100">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {activityTabs.find(t => t.id === activeActivityTab)?.data.items.map((item, idx) => (
-                  <div 
-                    key={idx} 
-                    className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col relative overflow-hidden group"
-                  >
-                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-slate-200 group-hover:bg-[#2eb793] transition-colors duration-300"></div>
-                    <h5 className="text-[15px] font-bold text-slate-900 mb-3 leading-snug">{item.name}</h5>
-                    <p className="text-[14px] font-light leading-relaxed text-slate-600">{item.desc}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Local */}
+              <div className="bg-gradient-to-b from-[#164e50] to-[#1d6266] rounded-2xl p-6 lg:p-8 shadow-lg h-fit">
+                <div className="flex items-center mb-8 pb-4 border-b border-white/20">
+                  <div className="w-10 h-10 rounded-full bg-[#113a3c] flex items-center justify-center mr-4 shrink-0">
+                    <MapPin className="w-5 h-5 text-[#2eb793]" />
                   </div>
-                ))}
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-white">{t.jciActivities.local.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {t.jciActivities.local.items.map((item, idx) => (
+                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300 overflow-hidden flex flex-col group relative">
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#2eb793] to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="p-5 pt-6">
+                        <h5 className="text-[13.5px] font-bold text-white mb-2 leading-snug">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-white/80">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
+              {/* National */}
+              <div className="bg-gradient-to-b from-[#164e50] to-[#1d6266] rounded-2xl p-6 lg:p-8 shadow-lg h-fit">
+                <div className="flex items-center mb-8 pb-4 border-b border-white/20">
+                  <div className="w-10 h-10 rounded-full bg-[#113a3c] flex items-center justify-center mr-4 shrink-0">
+                    <Flag className="w-5 h-5 text-[#2eb793]" />
+                  </div>
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-white">{t.jciActivities.national.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {t.jciActivities.national.items.map((item, idx) => (
+                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300 overflow-hidden flex flex-col group relative">
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#2eb793] to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="p-5 pt-6">
+                        <h5 className="text-[13.5px] font-bold text-white mb-2 leading-snug">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-white/80">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* International */}
+              <div className="bg-gradient-to-b from-[#164e50] to-[#1d6266] rounded-2xl p-6 lg:p-8 shadow-lg h-fit">
+                <div className="flex items-center mb-8 pb-4 border-b border-white/20">
+                  <div className="w-10 h-10 rounded-full bg-[#113a3c] flex items-center justify-center mr-4 shrink-0">
+                    <Globe className="w-5 h-5 text-[#2eb793]" />
+                  </div>
+                  <h4 className="text-[15px] font-bold uppercase tracking-wider text-white">{t.jciActivities.international.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {t.jciActivities.international.items.map((item, idx) => (
+                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300 overflow-hidden flex flex-col group relative">
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#2eb793] to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="p-5 pt-6">
+                        <h5 className="text-[13.5px] font-bold text-white mb-2 leading-snug">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-white/80">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
@@ -989,7 +1053,6 @@ export default function App() {
 
       {/* SECTION: LIÊN HỆ */}
       <section id="lien-he" className="relative py-24 md:py-32 bg-[#1d6266] overflow-hidden">
-        
         <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center z-20">
           <SectionHeading 
             title={t.contact.title} 
@@ -1007,7 +1070,6 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="bg-[#113a3c] py-12 md:py-16 relative overflow-hidden z-20">
-        
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6">
           <div className="flex items-center justify-center md:justify-start md:pl-16 lg:pl-28">
             <img 
