@@ -834,6 +834,14 @@ export default function App() {
           
           <SectionHeading title={t.community.title} subtitle={t.community.subtitle} />
 
+          {/* TIÊU ĐỀ PHỤ: HÀNH TRÌNH KIẾN TẠO GIÁ TRỊ CÙNG JCI */}
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1 bg-[#1d6266]/10 rounded-full mb-4">
+              <span className="text-sm font-bold text-[#1d6266] uppercase tracking-widest">{t.community.jciQuote}</span>
+            </div>
+            <p className="text-slate-500 font-light">{t.community.jciDesc}</p>
+          </div>
+
           {/* KHỐI GIỚI THIỆU JCI VIETNAM */}
           <div className="bg-gradient-to-br from-[#0d3a3c] to-[#1d6266] rounded-3xl mb-24 relative overflow-hidden shadow-xl flex flex-col lg:flex-row group text-white">
             
@@ -847,10 +855,7 @@ export default function App() {
               </div>
               
               <div className="relative z-10 flex flex-col items-center w-full h-full">
-                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mt-4 mb-10 text-center leading-relaxed whitespace-pre-line w-full">
-                  {t.community.jciIntro.subtitle}
-                </p>
-                <div className="flex-1 flex justify-center items-center w-full pb-8">
+                <div className="flex-1 flex justify-center items-center w-full">
                   <img 
                     src="https://i.postimg.cc/hG5kQBX4/JCI-Vietnam-logo.png" 
                     alt="JCI Logo" 
@@ -890,13 +895,6 @@ export default function App() {
 
           {/* NHÓM 1: JCI LỘ TRÌNH LÃNH ĐẠO (ZIC-ZAC TIMELINE) */}
           <div className="mb-32">
-            <div className="text-center mb-20">
-              <div className="inline-block px-4 py-1 bg-[#1d6266]/10 rounded-full mb-4">
-                <span className="text-sm font-bold text-[#1d6266] uppercase tracking-widest">{t.community.jciQuote}</span>
-              </div>
-              <p className="text-slate-500 font-light">{t.community.jciDesc}</p>
-            </div>
-
             <div className="flex items-center justify-center md:justify-between border-b border-slate-100 pb-4 mb-20">
               <h3 className="text-2xl font-bold text-slate-900 text-center md:text-left w-full md:w-auto">{t.community.leadershipTitle}</h3>
               <Award className="w-6 h-6 text-[#1d6266] hidden md:block" />
