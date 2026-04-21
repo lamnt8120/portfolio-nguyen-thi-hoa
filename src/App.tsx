@@ -846,17 +846,17 @@ export default function App() {
                 <Globe className="w-96 h-96 text-white" strokeWidth={0.5} />
               </div>
               
-              <div className="relative z-10 flex flex-col items-center w-full">
-                <div className="mb-8 flex justify-center w-full">
+              <div className="relative z-10 flex flex-col items-center w-full h-full">
+                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mt-4 mb-10 text-center leading-relaxed whitespace-pre-line w-full">
+                  {t.community.jciIntro.subtitle}
+                </p>
+                <div className="flex-1 flex justify-center items-center w-full pb-8">
                   <img 
                     src="https://i.postimg.cc/hG5kQBX4/JCI-Vietnam-logo.png" 
                     alt="JCI Logo" 
-                    className="h-24 md:h-32 object-contain brightness-0 invert" 
+                    className="h-24 md:h-32 lg:h-36 object-contain brightness-0 invert drop-shadow-md hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
-                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0 text-center leading-relaxed whitespace-pre-line">
-                  {t.community.jciIntro.subtitle}
-                </p>
               </div>
             </div>
 
