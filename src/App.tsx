@@ -139,8 +139,11 @@ const dict = {
       subtitle: "Hoạt động & Sự kiện tiêu biểu",
       jciIntro: {
         title: "JCI Vietnam",
-        subtitle: "Liên đoàn Lãnh đạo & Doanh nhân trẻ Thế giới",
-        desc: "JCI (Junior Chamber International) là mạng lưới toàn cầu dành cho các công dân trẻ tích cực từ 18 đến 40 tuổi. Tại Việt Nam, JCI hoạt động với sứ mệnh trao quyền cho người trẻ tạo ra những thay đổi tích cực thông qua các dự án phát triển bản thân, kinh doanh, quốc tế và cộng đồng.",
+        subtitle: "Liên đoàn Lãnh đạo và Doanh nhân trẻ Thế giới",
+        desc: [
+          "JCI (Junior Chamber International) là mạng lưới toàn cầu lớn nhất dành cho các công dân trẻ tích cực từ 18 đến 40 tuổi, quy tụ gần 200.000 hội viên tại hơn 100 quốc gia. JCI chia sẻ niềm tin rằng để tạo ra những thay đổi tích cực, chúng ta phải chung tay cải thiện bản thân và thế giới xung quanh.",
+          "Tại Việt Nam, JCI chính thức hoạt động từ năm 2008 và hiện là tổ chức thành viên trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA). Mạng lưới JCI Vietnam đã phát triển mạnh mẽ với 15 chi hội trên toàn quốc, lan tỏa tinh thần phụng sự và năng lực lãnh đạo đến hàng ngàn doanh nhân và trí thức trẻ."
+        ],
         pillars: [
           { title: "Mạng lưới Toàn cầu", icon: Globe },
           { title: "Lãnh đạo Trẻ", icon: Users },
@@ -334,7 +337,10 @@ const dict = {
       jciIntro: {
         title: "JCI Vietnam",
         subtitle: "Worldwide Federation of Young Leaders and Entrepreneurs",
-        desc: "JCI (Junior Chamber International) is a global network of active young citizens aged 18 to 40. In Vietnam, JCI operates with the mission to empower young people to create positive change through personal, business, international, and community development projects.",
+        desc: [
+          "JCI (Junior Chamber International) is the largest global network of active young citizens aged 18 to 40, bringing together nearly 200,000 members in over 100 countries. JCI shares the belief that in order to create positive change, we must take collective action to improve ourselves and the world around us.",
+          "In Vietnam, JCI has been officially operating since 2008 and is currently a member organization under the Vietnam Young Entrepreneurs Association (VYEA). The JCI Vietnam network has grown strongly with 15 chapters nationwide, spreading the spirit of service and leadership to thousands of young entrepreneurs and intellectuals."
+        ],
         pillars: [
           { title: "Global Network", icon: Globe },
           { title: "Young Leaders", icon: Users },
@@ -836,10 +842,8 @@ export default function App() {
               {/* Logo & Hình ảnh trực quan */}
               <div className="w-full lg:w-5/12 flex flex-col items-center justify-center">
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6 w-full flex items-center justify-center">
-                  {/* Chú ý: Cần đảm bảo file image_92d5e4.png nằm trong thư mục public của bạn */}
                   <img src="image_92d5e4.png" alt="JCI Logos" className="w-full max-w-[280px] h-auto object-contain" />
                 </div>
-                {/* Chú ý: Cần đảm bảo file image_92d620.png nằm trong thư mục public của bạn */}
                 <img src="image_92d620.png" alt="JCI Shield" className="w-24 h-auto opacity-80" />
               </div>
 
@@ -847,9 +851,11 @@ export default function App() {
               <div className="w-full lg:w-7/12">
                  <h3 className="text-3xl font-bold text-slate-900 mb-2">{t.community.jciIntro.title}</h3>
                  <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#1d6266] mb-6">{t.community.jciIntro.subtitle}</h4>
-                 <p className="text-slate-600 font-light leading-relaxed mb-10 text-[15px] md:text-[16px] text-justify">
-                   {t.community.jciIntro.desc}
-                 </p>
+                 {t.community.jciIntro.desc.map((para, idx) => (
+                   <p key={idx} className={`text-slate-600 font-light leading-relaxed text-[15px] md:text-[16px] text-justify ${idx === t.community.jciIntro.desc.length - 1 ? 'mb-10' : 'mb-4'}`}>
+                     {para}
+                   </p>
+                 ))}
 
                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                    {t.community.jciIntro.pillars.map((pillar, idx) => (
