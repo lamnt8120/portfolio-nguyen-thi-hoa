@@ -200,7 +200,7 @@ const dict = {
           { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, nơi trực tiếp tiếp cận những khóa đào tạo chất lượng cao và kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
           { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU) và khẳng định vị thế tiên phong của lãnh đạo trẻ Việt Nam trên bản đồ doanh nhân Á Châu." },
           { name: "Giao lưu Quốc tế JCI Marine Lines India & JCI Thanglong", desc: "Nhịp cầu kết nối song phương đặc quyền, thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo những cơ hội hợp tác kinh tế - xã hội bền vững giữa hai cộng đồng doanh nhân trẻ Việt Nam và Ấn Độ." },
-          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies." }
+          { name: "Ban điều hành JCI ASEAN Senator (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia), đóng góp chiến lược vào các quyết sách mạng lưới lãnh đạo khu vực." }
         ]
       }
     },
@@ -396,7 +396,7 @@ const dict = {
         icon: Globe,
         items: [
           { name: "JCI World Congress 2024 (Taiwan)", desc: "A touchpoint of the global young leaders network, offering direct access to high-quality training and trade connections with over 4,000 elite members from 100 countries." },
-          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map." },
+          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "A space for cultural exchange and regional strategy, opening up opportunities for international cooperation agreements (MOU) and affirming the pioneering position of young Vietnamese leaders on the Asian business map." },
           { name: "International Exchange JCI Marine Lines India & JCI Thanglong", desc: "An exclusive bilateral bridge, promoting a cross-cultural learning spirit and creating sustainable socio-economic cooperation opportunities between the young entrepreneur communities of Vietnam and India." },
           { name: "JCI ASEAN Senate Board (2025 - 2026)", desc: "Official delegate of the Vietnam team participating in the meeting series in Suzhou (China) and Sabah (Malaysia), contributing strategically to regional leadership network policies." }
         ]
@@ -838,20 +838,19 @@ export default function App() {
           <div className="bg-gradient-to-br from-[#0d3a3c] to-[#1d6266] rounded-3xl mb-24 relative overflow-hidden shadow-xl flex flex-col lg:flex-row group text-white">
             
             {/* Cột trái: Banner trực quan */}
-            <div className="w-full lg:w-5/12 p-10 md:p-12 flex flex-col justify-center items-start relative overflow-hidden border-r border-white/10">
+            <div className="w-full lg:w-5/12 p-10 md:p-12 flex flex-col justify-center items-center text-center relative overflow-hidden border-r border-white/10">
               <div className="absolute top-0 right-0 w-72 h-72 bg-[#2eb793]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1d6266]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
               
-              <div className="relative z-10">
-                <div className="mb-8">
+              <div className="relative z-10 flex flex-col items-center w-full">
+                <div className="mb-8 flex justify-center w-full">
                   <img 
                     src="https://i.postimg.cc/hG5kQBX4/JCI-Vietnam-logo.png" 
                     alt="JCI Logo" 
-                    className="h-16 md:h-20 object-contain brightness-0 invert" 
+                    className="h-24 md:h-32 object-contain brightness-0 invert" 
                   />
                 </div>
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-wide drop-shadow-lg">{t.community.jciIntro.title}</h3>
-                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0">
+                <p className="text-[14px] md:text-[15px] font-bold text-[#2eb793] uppercase tracking-[0.2em] mb-0 text-center leading-relaxed">
                   {t.community.jciIntro.subtitle}
                 </p>
               </div>
