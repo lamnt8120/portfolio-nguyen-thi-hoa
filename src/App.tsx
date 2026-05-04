@@ -4,7 +4,7 @@ import {
   Landmark, Building2, Globe2, 
   Mail, Phone, Linkedin, Facebook, ChevronRight, 
   Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe,
-  MapPin, Flag, Rocket, Crown, Network, User, HandHeart, CheckCircle, ArrowRight
+  MapPin, Flag, Rocket, Crown, Network, User, HandHeart, CheckCircle
 } from 'lucide-react';
 
 /* =========================================
@@ -17,12 +17,12 @@ const dict = {
     hero: {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Global Mind, Silk Touch."`,
-      desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp",
+      desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp.",
       contactBtn: "Liên hệ ngay",
       scanToConnect: "Quét để kết nối"
     },
     profile: {
-      title: "Tổng quan & Hành trình",
+      title: "Tổng Quan & Hành Trình",
       subtitle: "Luật sư Nguyễn Thị Hoa",
       desc1: "Dưới lăng kính của một người trực tiếp gắn bó với nhịp đập kinh doanh, tôi chưa bao giờ coi hành lang pháp lý là những rào cản khô khan. Đi qua nhiều thăng trầm cùng các nhà sáng lập, tôi càng thấm thía giá trị của sự bảo vệ từ sớm.",
       desc2: "Khi pháp luật được thấu hiểu và vận dụng linh hoạt, chúng không chỉ là ranh giới đúng - sai, mà là bệ phóng vững chắc, chiếc la bàn dẫn lối cho mọi chiến lược tăng trưởng bền vững."
@@ -69,13 +69,13 @@ const dict = {
       { period: "2013 - 2018", role: "Chuyên viên Pháp chế Cấp cao", company: "Techcombank", desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn phục vụ KHDN bán buôn." }
     ],
     practice: {
-      title: "Lĩnh vực hành nghề",
+      title: "Thương vụ & Dự án tiêu biểu",
       subtitle: "Chuyên môn Luật sư",
       speakerTitle: "Hoạt động diễn giả"
     },
     practiceAreas: [
       {
-        title: "M&A & Tái cấu trúc",
+        title: "M&A & Tái Cấu Trúc",
         icon: Building2,
         cases: [
           { text: "Đại diện mua nhà máy sản xuất thép (Miền Bắc) quy mô", highlight: "1.000 tỷ VNĐ." },
@@ -84,7 +84,7 @@ const dict = {
         ]
       },
       {
-        title: "Tài chính - Ngân hàng",
+        title: "Tài Chính - Ngân Hàng",
         icon: Landmark,
         cases: [
           { text: "Bảo trợ phát hành trái phiếu dự án tại BR-VT, quy mô", highlight: "800 tỷ VNĐ." },
@@ -93,7 +93,7 @@ const dict = {
         ]
       },
       {
-        title: "Đầu tư quốc tế & BĐS",
+        title: "Đầu Tư Quốc Tế & BĐS",
         icon: Globe2,
         cases: [
           { text: "Bảo trợ dự án tổ hợp nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
@@ -102,7 +102,7 @@ const dict = {
         ]
       },
       {
-        title: "Hợp đồng & Tranh chấp",
+        title: "Hợp Đồng & Tranh Chấp",
         icon: ShieldCheck,
         cases: [
           { text: "Chuẩn hóa hợp đồng cung ứng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
@@ -112,10 +112,10 @@ const dict = {
       }
     ],
     community: {
-      title: "Dấu ấn cộng đồng",
+      title: "Dấu Ấn Cộng Đồng",
       subtitle: "JCI Vietnam",
       jciIntro: "JCI (Junior Chamber International) là mạng lưới toàn cầu quy tụ gần 200.000 nhà lãnh đạo trẻ tại hơn 100 quốc gia. Tại Việt Nam, mạng lưới đã phát triển mạnh mẽ với 15 chi hội trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA), không ngừng lan tỏa tinh thần phụng sự và năng lực kiến tạo giá trị bền vững.",
-      leadershipTitle: "Lộ trình kiến tạo giá trị (Roadmap)",
+      leadershipTitle: "Lộ trình kiến tạo giá trị",
       activityTitle: "Hoạt động tiêu biểu"
     },
     speakerEvents: [
@@ -137,33 +137,38 @@ const dict = {
           { name: "Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội." },
           { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân." },
           { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống." },
-          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân)." },
-          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào vùng lũ." },
-          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội." }
+          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội DN Tô Châu (TQ) và khu vực Đông Nam Á." },
+          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "Tham gia chiến dịch hỗ trợ đồng bào vùng lũ." },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đồng tổ chức cùng JCI Hải Phòng và JCI Hà Nội." }
         ]
       },
       national: {
         title: "Cấp Quốc Gia",
         items: [
-          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội cấp cao. Chính thức đắc cử Phó Chủ tịch JCI Vietnam 2026 tại NATCON 2025 (Đà Lạt)." },
-          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao." },
-          { name: "Sự kiện Rise To Shine 2025", desc: "Đánh dấu 8 tháng đồng hành cùng 29 dự án cộng đồng qua chuỗi mentoring chuyên sâu. Sự kiện vinh danh Top 5 dự án xuất sắc đã lan tỏa sâu rộng thông điệp JCI RISE về khát vọng phụng sự của lãnh đạo trẻ." },
-          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024." },
+          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự kỳ Đại hội cấp cao. Đắc cử Phó Chủ tịch JCI Vietnam 2026." },
+          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN." },
+          { name: "Sự kiện Rise To Shine 2025", desc: "Vinh danh Top 5 dự án xuất sắc lan tỏa thông điệp JCI RISE." },
+          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention)." },
           { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025)." },
-          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025." }
+          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại Train The Trainer 2025." }
         ]
       },
       international: {
         title: "Cấp Quốc Tế",
         items: [
-          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, trực tiếp kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
-          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU)." },
-          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế - xã hội bền vững." },
-          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia)." }
+          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm mạng lưới toàn cầu, kết nối với hơn 4.000 hội viên." },
+          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa, mở ra các cơ hội hợp tác quốc tế." },
+          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy học hỏi đa văn hóa và hợp tác kinh tế - xã hội." },
+          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu đoàn Việt Nam tham gia nghị sự tại Tô Châu và Sabah." }
         ]
       }
     },
-    contactInfo: { address: "Tầng 5, số 31A Nguyễn Quốc Trị, Trung Hoà, Cầu Giấy, Hà Nội" }
+    contactInfo: { address: "Tầng 5, số 31A Nguyễn Quốc Trị, Trung Hoà, Cầu Giấy, Hà Nội" },
+    footer: {
+      desc: "Đồng hành chiến lược, kiến tạo hành lang pháp lý an toàn và lợi thế cạnh tranh bền vững cho doanh nghiệp.",
+      linksTitle: "Lĩnh vực chuyên môn",
+      contactTitle: "Thông tin liên hệ"
+    }
   },
   en: {
     nav: ['Overview', 'Expertise', 'Impact'],
@@ -222,7 +227,7 @@ const dict = {
       { period: "2013 - 2018", role: "Senior Legal Counsel", company: "Techcombank", desc: "Legal support for FX and capital management." }
     ],
     practice: {
-      title: "Core Competencies",
+      title: "Key Transactions & Projects",
       subtitle: "Practice Areas",
       speakerTitle: "Speaking Events"
     },
@@ -316,7 +321,12 @@ const dict = {
         ]
       }
     },
-    contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri St, Cau Giay, Hanoi" }
+    contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri St, Cau Giay, Hanoi" },
+    footer: {
+      desc: "Strategic partnership, creating a safe legal corridor and sustainable competitive advantage for businesses.",
+      linksTitle: "Practice Areas",
+      contactTitle: "Contact Info"
+    }
   }
 };
 
@@ -325,22 +335,35 @@ const dict = {
 ========================================= */
 
 const TooltipQR = ({ children, qrUrl, scanText }) => {
-  const qrImageSource = qrUrl ? `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrUrl)}&color=1d6266` : null;
+  const qrImageSource = qrUrl ? `https://quickchart.io/qr?text=${encodeURIComponent(qrUrl)}&size=200&dark=022020` : null;
   return (
     <div className="relative group flex flex-col items-center justify-center">
       {children}
       {qrImageSource && (
-        <div className="absolute bottom-full mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50 w-max flex flex-col items-center pointer-events-none">
-          <div className="bg-white p-3 shadow-2xl rounded-xl border border-slate-100 flex flex-col items-center">
-            <img src={qrImageSource} alt={`QR Code`} className="w-28 h-28 object-contain rounded-lg" />
-            <p className="text-[9px] uppercase tracking-widest text-slate-500 mt-2 font-bold">{scanText}</p>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white"></div>
+        <div className="absolute bottom-full mb-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50 w-max flex flex-col items-center pointer-events-none">
+          <div className="bg-white/95 backdrop-blur-md p-3 shadow-[0_10px_40px_rgba(0,0,0,0.2)] rounded-2xl border border-white/40 flex flex-col items-center">
+            <img src={qrImageSource} alt={`QR Code`} className="w-32 h-32 object-contain rounded-xl mix-blend-multiply" />
+            <p className="text-[9px] uppercase tracking-widest text-[#052b2b] mt-2 font-bold">{scanText}</p>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white/95"></div>
           </div>
         </div>
       )}
     </div>
   )
 };
+
+const Heading = ({ title, subtitle, light = false }) => (
+  <div className="mb-16 flex flex-col items-center text-center">
+    <div className="inline-flex items-center space-x-4 mb-5">
+      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-r from-transparent to-[#00d084]' : 'bg-gradient-to-r from-transparent to-[#0d5959]'}`}></div>
+      <span className={`text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] ${light ? 'text-[#00d084]' : 'text-[#0d5959]'}`}>{subtitle}</span>
+      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-l from-transparent to-[#00d084]' : 'bg-gradient-to-l from-transparent to-[#0d5959]'}`}></div>
+    </div>
+    <h2 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight ${light ? 'text-white' : 'text-[#051c1d]'}`}>
+      {title}
+    </h2>
+  </div>
+);
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -357,128 +380,157 @@ export default function App() {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 70;
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: 'smooth' });
       setMobileMenuOpen(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-[#1d6266] selection:text-white"
-         style={{ fontFamily: '"AvertaStdCY", "Montserrat", sans-serif' }}>
+    <div className="min-h-screen bg-[#F4F7F6] text-slate-800 selection:bg-[#00d084] selection:text-[#021213]"
+         style={{ fontFamily: '"Montserrat", sans-serif' }}>
       
       <style dangerouslySetInnerHTML={{__html: `
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        * { font-family: 'Montserrat', sans-serif !important; }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+        
+        .font-serif { font-family: 'Playfair Display', serif !important; }
         html { scroll-behavior: smooth; }
-        /* Ẩn scrollbar cho timeline nằm ngang */
-        .hide-scroll::-webkit-scrollbar { display: none; }
-        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Hiệu ứng gradient chữ */
+        .text-gradient-gold {
+          background: linear-gradient(to right, #D4AF37, #F3E5AB);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-mint {
+          background: linear-gradient(to right, #00d084, #8ae6c3);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       `}} />
 
       {/* --- NAVBAR --- */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm' : 'bg-transparent py-5'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/50 py-3 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
           
-          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo(0,0)}>
-             <img src="https://i.postimg.cc/KzSNJM6K/A-nh-chu-p-Ma-n-hi-nh-2026-04-15-lu-c-10-16-13-SA-removebg-preview.png" alt="Logo" className={`h-10 w-10 mr-3 ${isScrolled ? '' : 'brightness-0 invert'}`} />
-             <div>
-                <div className={`font-bold text-xl tracking-[0.15em] leading-none ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`}>PAXLAW</div>
-                <div className={`text-[9px] font-bold tracking-widest uppercase mt-1 ${isScrolled ? 'text-slate-500' : 'text-white/80'}`}>Atty. Hoa Nguyen</div>
+          <div className="flex items-center cursor-pointer group" onClick={() => window.scrollTo(0,0)}>
+             <div className="flex items-center">
+                <img 
+                  src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" 
+                  alt="PAXLAW Logo" 
+                  className={`h-10 md:h-12 object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 opacity-85' : 'drop-shadow-md'}`} 
+                />
+                <div className={`ml-3 md:ml-4 pl-3 md:pl-4 border-l h-8 md:h-10 flex flex-col justify-center transition-colors duration-500 ${isScrolled ? 'border-slate-300' : 'border-white/30'}`}>
+                  <span className={`text-[8.5px] md:text-[9.5px] font-bold tracking-[0.25em] uppercase leading-none mb-1.5 transition-colors ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}>
+                    {lang === 'vi' ? 'Luật sư' : 'Atty.'}
+                  </span>
+                  <span className={`text-[13px] md:text-[15px] font-bold tracking-widest uppercase leading-none transition-colors ${isScrolled ? 'text-[#022020]' : 'text-white'}`}>
+                    Nguyễn Hoa
+                  </span>
+                </div>
              </div>
           </div>
 
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-10 items-center">
             {t.nav.map((item, idx) => (
               <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])}
-                className={`text-[12px] font-bold uppercase tracking-widest hover:text-[#2eb793] transition-colors ${isScrolled ? 'text-slate-700' : 'text-white'}`}>
+                className={`text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-0.5 ${isScrolled ? 'text-slate-600 hover:text-[#00d084]' : 'text-white/80 hover:text-white'}`}>
                 {item}
               </button>
             ))}
-            <div className="flex items-center space-x-4 border-l pl-6 border-slate-400/30">
-              <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className={`flex items-center text-xs font-bold uppercase tracking-widest hover:opacity-80 ${isScrolled ? 'text-slate-700' : 'text-white'}`}>
-                <Globe className="w-4 h-4 mr-1" /> {lang === 'vi' ? 'VI' : 'EN'}
+            <div className="flex items-center space-x-5 border-l pl-8 border-slate-400/30">
+              <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className={`flex items-center text-[10px] font-bold uppercase tracking-widest transition-opacity hover:opacity-70 ${isScrolled ? 'text-slate-600' : 'text-white'}`}>
+                <Globe className="w-3.5 h-3.5 mr-1.5" /> {lang === 'vi' ? 'VI' : 'EN'}
               </button>
             </div>
           </div>
 
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-slate-800">
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className={`h-6 w-6 ${isScrolled ? 'text-slate-800' : 'text-white'}`} />}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className={`h-6 w-6 transition-colors ${isScrolled ? 'text-[#022020]' : 'text-white'}`} />}
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 flex flex-col items-center space-y-4 border-t">
+          <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl py-6 flex flex-col items-center space-y-6 border-t border-slate-100">
             {t.nav.map((item, idx) => (
-              <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])} className="text-sm font-bold text-slate-700 uppercase tracking-widest w-full py-2">{item}</button>
+              <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])} className="text-[12px] font-bold text-slate-700 uppercase tracking-[0.2em] w-full">{item}</button>
             ))}
-             <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="text-sm font-bold text-[#1d6266] uppercase py-2 flex items-center">
-                <Globe className="w-4 h-4 mr-2" /> Ngôn ngữ: {lang === 'vi' ? 'VI' : 'EN'}
+             <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="text-[12px] font-bold text-[#0da37f] uppercase pt-4 border-t border-slate-100 w-1/2 flex items-center justify-center">
+                <Globe className="w-4 h-4 mr-2" /> {lang === 'vi' ? 'English' : 'Tiếng Việt'}
              </button>
           </div>
         )}
       </nav>
 
-      {/* --- HERO SECTION (COMPRESSED: Info + Photo + Contacts) --- */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#0a2f30] via-[#0d3a3c] to-[#113a3c] overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-center bg-cover mix-blend-overlay" style={{ backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" }}></div>
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-[#021213] overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 z-0">
+           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0f4a45]/40 via-[#021213] to-[#021213]"></div>
+           <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#00d084]/10 via-transparent to-transparent"></div>
+           <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+        </div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            {/* Cột trái: Thông tin */}
+            {/* Content */}
             <div className="lg:col-span-7 flex flex-col text-center lg:text-left order-2 lg:order-1 mt-8 lg:mt-0">
-               <div className="inline-flex items-center justify-center lg:justify-start space-x-3 mb-6">
-                 <div className="h-[2px] w-8 bg-[#2eb793]"></div>
-                 <span className="text-[#2eb793] font-bold tracking-[0.2em] uppercase text-xs">{t.hero.subtitle}</span>
+               <div className="inline-flex items-center justify-center lg:justify-start space-x-4 mb-8">
+                 <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+                 <span className="text-gradient-gold font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                   {t.hero.subtitle}
+                 </span>
                </div>
                
-               <h1 className="text-5xl md:text-6xl lg:text-[80px] font-extrabold text-white mb-4 tracking-tight leading-none drop-shadow-lg">
+               <h1 className="font-serif text-6xl md:text-7xl lg:text-[90px] text-white mb-6 tracking-tight leading-[1.1]">
                  {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
                </h1>
                
-               <p className="text-xl lg:text-2xl text-[#2eb793] font-light italic mb-8">
+               <p className="font-serif text-2xl lg:text-3xl text-white/60 italic mb-10 font-light">
                  {t.hero.quote}
                </p>
                
-               <p className="text-base lg:text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-10">
+               <p className="text-[15px] lg:text-[17px] text-white/50 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-12">
                  {t.hero.desc}
                </p>
 
-               {/* Nút Contact Icon Ngang */}
-               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+               {/* Elegant Contact Icons */}
+               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5">
                   <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-                    <a href="tel:+84911553686" className="flex items-center px-5 py-3 bg-[#2eb793] text-[#0a2f30] rounded-full font-bold text-sm hover:bg-white transition-colors">
-                      <Phone className="w-4 h-4 mr-2" /> +84 911 55 3686
+                    <a href="tel:+84911553686" className="w-12 h-12 flex items-center justify-center rounded-full bg-[#00d084] text-[#021213] hover:bg-white transition-all duration-500 shadow-[0_0_20px_rgba(0,208,132,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1">
+                      <Phone className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                      <Mail className="w-5 h-5" />
+                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                      <Mail className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                      <Linkedin className="w-5 h-5" />
+                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                      <Linkedin className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
-                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                      <Facebook className="w-5 h-5" />
+                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                      <Facebook className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                </div>
             </div>
 
-            {/* Cột phải: Ảnh chân dung */}
+            {/* Photo / Portrait */}
             <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
-               <div className="relative w-[280px] h-[350px] md:w-[350px] md:h-[420px] lg:w-[400px] lg:h-[480px]">
-                 <div className="absolute inset-0 bg-[#2eb793] rounded-3xl transform translate-x-4 translate-y-4 opacity-50 blur-sm"></div>
+               <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[480px]">
+                 {/* Decorative Frame */}
+                 <div className="absolute -inset-4 border border-[#00d084]/30 rounded-t-full rounded-b-xl transform rotate-3 transition-transform duration-1000 hover:rotate-0"></div>
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#021213] to-transparent z-10 h-full w-full opacity-60"></div>
                  <img 
                    src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
                    alt="LS Hoa Nguyen" 
-                   className="absolute inset-0 w-full h-full object-cover rounded-3xl border-4 border-white/10 shadow-2xl"
+                   className="absolute inset-0 w-full h-full object-cover rounded-t-full rounded-b-xl grayscale-[20%] contrast-125"
                  />
                </div>
             </div>
@@ -487,69 +539,71 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- SECTION 2: HỒ SƠ & SỰ NGHIỆP --- */}
-      <section id="ho-so" className="py-16 lg:py-24 bg-white">
+      {/* --- SECTION 2: HỒ SƠ --- */}
+      <section id="ho-so" className="py-24 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-12 text-center lg:text-left">
-             <div className="inline-flex items-center space-x-3 mb-3">
-                 <div className="h-[2px] w-8 bg-[#1d6266]"></div>
-                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.profile.subtitle}</span>
-             </div>
-             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">{t.profile.title}</h2>
-          </div>
+          
+          <Heading title={t.profile.title} subtitle={t.profile.subtitle} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            {/* Trái: Giới thiệu, Stats, Học vấn */}
-            <div className="lg:col-span-6 flex flex-col space-y-8">
-              <div className="text-[15px] text-slate-600 font-light leading-relaxed space-y-4 text-justify">
-                <p>{t.profile.desc1}</p>
-                <p className="border-l-4 border-[#2eb793] pl-4 font-medium text-slate-800">{t.profile.desc2}</p>
+            {/* Left Column: Story & Stats */}
+            <div className="lg:col-span-5 flex flex-col space-y-10">
+              <div className="text-[15px] text-slate-500 font-light leading-[1.8] space-y-6 text-justify">
+                <p className="first-letter:text-6xl first-letter:font-serif first-letter:text-[#0d5959] first-letter:mr-2 first-letter:float-left">{t.profile.desc1}</p>
+                <p className="pl-5 border-l-[3px] border-[#00d084] font-medium text-slate-800 italic">{t.profile.desc2}</p>
               </div>
 
-              {/* Stats nhỏ gọn */}
-              <div className="flex gap-8 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              <div className="flex gap-10 pt-6 border-t border-slate-200/60">
                 {t.stats.map((stat, idx) => (
                   <div key={idx}>
-                    <div className="text-3xl font-extrabold text-[#1d6266] mb-1">{stat.value}</div>
-                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Accordion học vấn (giả lập) / List siêu gọn */}
-              <div className="space-y-6">
-                {t.highlights.map((item, idx) => (
-                  <div key={idx} className="flex items-start">
-                    <item.icon className="w-5 h-5 text-[#2eb793] mr-4 mt-1 shrink-0" />
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2">{item.title}</h4>
-                      <ul className="space-y-1.5">
-                        {item.items.map((li, i) => (
-                          <li key={i} className="text-[13.5px] text-slate-600 font-light">• {li}</li>
-                        ))}
-                      </ul>
-                    </div>
+                    <div className="font-serif text-4xl lg:text-5xl text-[#0d5959] mb-2">{stat.value}</div>
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Phải: Timeline sự nghiệp */}
-            <div className="lg:col-span-6">
-              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-8 flex items-center"><Briefcase className="w-5 h-5 mr-2 text-[#2eb793]"/> {t.career.title}</h3>
-                <div className="space-y-6">
-                  {t.timelineData.map((item, idx) => (
-                    <div key={idx} className="relative pl-6 pb-2 border-l-2 border-slate-200 last:border-0 last:pb-0">
-                      <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-[#2eb793]"></div>
-                      <span className="text-[11px] font-bold text-[#1d6266] uppercase tracking-wider block mb-1">{item.period}</span>
-                      <h4 className="text-[15px] font-bold text-slate-900">{item.role}</h4>
-                      <h5 className="text-[12px] font-medium text-slate-500 uppercase mb-2">{item.company}</h5>
-                      <p className="text-[13px] text-slate-600 font-light leading-relaxed">{item.desc}</p>
+            {/* Right Column: Timeline & Highlights (Editorial Style) */}
+            <div className="lg:col-span-7">
+              <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-slate-100">
+                
+                {/* Career Timeline */}
+                <div className="mb-14">
+                  <h3 className="font-serif text-2xl text-[#051c1d] mb-8">{t.career.title}</h3>
+                  <div className="space-y-8">
+                    {t.timelineData.map((item, idx) => (
+                      <div key={idx} className="relative pl-6 border-l border-slate-200 group">
+                        <div className="absolute left-[-4px] top-1.5 w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#00d084] transition-colors duration-300"></div>
+                        <span className="text-[10px] font-bold text-[#0da37f] uppercase tracking-widest block mb-1.5">{item.period}</span>
+                        <h4 className="text-[15px] font-bold text-slate-800 mb-0.5">{item.role}</h4>
+                        <h5 className="text-[12px] text-slate-500 uppercase tracking-wider mb-2 font-medium">{item.company}</h5>
+                        <p className="text-[13px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Highlights List */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-slate-100">
+                  {t.highlights.slice(0, 2).map((item, idx) => (
+                    <div key={idx}>
+                      <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center">
+                        <item.icon className="w-3.5 h-3.5 mr-2 text-[#0da37f]" />
+                        {item.title}
+                      </h4>
+                      <ul className="space-y-3">
+                        {item.items.map((li, i) => (
+                          <li key={i} className="text-[13px] text-slate-600 font-light leading-relaxed flex items-start">
+                            <span className="text-[#00d084] mr-2 mt-0.5">✦</span>
+                            <span>{li}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
                 </div>
+                
               </div>
             </div>
 
@@ -557,31 +611,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- SECTION 3: LĨNH VỰC CHUYÊN MÔN --- */}
-      <section id="chuyen-mon" className="py-16 lg:py-24 bg-[#0d3a3c] relative overflow-hidden">
+      {/* --- SECTION 3: LĨNH VỰC CHUYÊN MÔN (DARK/PREMIUM THEME) --- */}
+      <section id="chuyen-mon" className="py-24 lg:py-32 bg-[#041516] relative">
+        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+        
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           
-          <div className="mb-12 text-center">
-             <div className="inline-flex items-center space-x-3 mb-3">
-                <div className="h-[2px] w-8 bg-[#2eb793]"></div>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#2eb793]">{t.practice.subtitle}</span>
-             </div>
-             <h2 className="text-3xl md:text-4xl font-bold text-white">{t.practice.title}</h2>
-          </div>
+          <Heading title={t.practice.title} subtitle={t.practice.subtitle} light={true} />
 
-          {/* Grid Chuyên môn (Nhỏ gọn hơn) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-20">
             {t.practiceAreas.map((area, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-                <div className="flex items-center mb-4 border-b border-white/10 pb-4">
-                  <area.icon className="w-6 h-6 text-[#2eb793] mr-3" />
-                  <h3 className="text-[16px] font-bold text-white tracking-wide">{area.title}</h3>
+              <div key={idx} className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-[#00d084]/30 transition-all duration-500 group">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mr-4 group-hover:bg-[#00d084]/20 transition-colors">
+                     <area.icon className="w-5 h-5 text-[#00d084]" />
+                  </div>
+                  <h3 className="font-serif text-[20px] text-white tracking-wide">{area.title}</h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {area.cases.map((c, i) => (
-                    <li key={i} className="flex items-start text-[13.5px] font-light text-slate-300">
-                      <ChevronRight className="w-4 h-4 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
-                      <span>{c.text} <span className="font-semibold text-white">{c.highlight}</span> {c.suffix}</span>
+                    <li key={i} className="flex items-start text-[14px] font-light text-white/60 leading-relaxed">
+                      <ChevronRight className="w-4 h-4 text-[#00d084] shrink-0 mr-2 mt-0.5 opacity-50" />
+                      <span>{c.text} <span className="font-medium text-white">{c.highlight}</span> {c.suffix}</span>
                     </li>
                   ))}
                 </ul>
@@ -589,149 +640,117 @@ export default function App() {
             ))}
           </div>
 
-          {/* Speaker Events (Dạng Grid có ảnh) */}
-          <h3 className="text-xl font-bold text-white flex items-center mb-8"><Mic className="w-5 h-5 text-[#2eb793] mr-3" /> {t.practice.speakerTitle}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-             {t.speakerEvents.map((event, idx) => (
-               <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-500 flex flex-col group border border-white/10 overflow-hidden h-full hover:-translate-y-1">
-                 <div className="aspect-square relative overflow-hidden bg-black/40 border-b border-white/10">
-                   <img src={event.img} alt={event.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d3a3c] to-transparent opacity-80"></div>
-                   <div className="absolute bottom-4 left-4 right-4">
-                      <span className="inline-block px-3 py-1 bg-[#2eb793] text-[#0d3a3c] text-[10px] font-bold uppercase tracking-widest rounded mb-2 shadow-md">{event.year}</span>
-                      <h4 className="text-[15px] font-bold tracking-wide text-white leading-snug drop-shadow-md">{event.title}</h4>
+          {/* Speaker Events (Magazine Cards) */}
+          <div className="flex flex-col items-center">
+            <h3 className="font-serif text-2xl lg:text-3xl text-white mb-10 flex items-center">
+              {t.practice.speakerTitle}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+               {t.speakerEvents.map((event, idx) => (
+                 <div key={idx} className="group cursor-pointer">
+                   <div className="aspect-[4/5] relative overflow-hidden rounded-2xl mb-4">
+                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                     <img src={event.img} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale-[30%] group-hover:grayscale-0" />
+                     <div className="absolute top-4 left-4 z-20">
+                        <span className="backdrop-blur-md bg-black/40 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/20">
+                          {event.year}
+                        </span>
+                     </div>
                    </div>
+                   <h4 className="text-[15px] font-bold text-white mb-1.5 group-hover:text-[#00d084] transition-colors">{event.title}</h4>
+                   <p className="text-[13px] text-white/50 font-light line-clamp-2">{event.desc}</p>
                  </div>
-                 <div className="p-5 flex flex-col flex-1 bg-[#113a3c]/30">
-                   <p className="text-slate-300 font-light leading-relaxed text-[13px]">{event.desc}</p>
-                 </div>
-               </div>
-             ))}
+               ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* --- SECTION 4: CỘNG ĐỒNG JCI --- */}
-      <section id="cong-dong" className="py-16 lg:py-24 bg-slate-50">
+      {/* --- SECTION 4: CỘNG ĐỒNG JCI (LIGHT EDITORIAL) --- */}
+      <section id="cong-dong" className="py-24 lg:py-32 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
-          <div className="mb-12 text-center">
-             <div className="inline-flex items-center space-x-3 mb-3">
-                <div className="h-[2px] w-8 bg-[#1d6266]"></div>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.community.subtitle}</span>
-             </div>
-             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.community.title}</h2>
-             <p className="text-[14px] md:text-[15px] text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">{t.community.jciIntro}</p>
+          <Heading title={t.community.title} subtitle={t.community.subtitle} />
+          
+          <div className="max-w-4xl mx-auto text-center mb-24">
+             <p className="text-[15px] lg:text-[16px] text-slate-500 font-light leading-relaxed">
+               {t.community.jciIntro}
+             </p>
           </div>
 
-          {/* --- TIMELINE NẰM NGANG (Không hình ảnh) --- */}
-          <div className="mb-20">
-            <h3 className="text-xl font-bold text-slate-900 mb-10 text-center">{t.community.leadershipTitle}</h3>
+          {/* Timeline Nodes */}
+          <div className="mb-32">
+            <h3 className="font-serif text-2xl lg:text-3xl text-[#051c1d] mb-16 text-center">{t.community.leadershipTitle}</h3>
             
-            {/* Grid container cho Roadmap ngang */}
-            <div className="relative">
-               {/* Đường kẻ ngang (Desktop) */}
-               <div className="hidden lg:block absolute top-[24px] left-8 right-8 h-[2px] bg-slate-200 z-0"></div>
+            <div className="relative group/timeline max-w-5xl mx-auto">
+               <div className="hidden lg:block absolute top-[20px] left-[10%] right-[10%] h-[1px] bg-slate-300 z-0">
+                  <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-[#00d084] transition-all duration-1000 ease-in-out"></div>
+               </div>
                
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative z-10">
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
                  {t.jciLeadership.map((item, idx) => (
-                   <div key={idx} className="flex flex-col items-center lg:items-start bg-white lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none border border-slate-100 lg:border-none text-center lg:text-left">
-                      {/* Node tròn */}
-                      <div className="w-12 h-12 rounded-full bg-white border-4 border-[#1d6266] flex items-center justify-center mb-4 z-10 lg:mx-0 mx-auto">
-                        <item.icon className="w-5 h-5 text-[#2eb793]" />
+                   <div key={idx} className="flex flex-col items-center text-center group/item">
+                      <div className="w-10 h-10 rounded-full bg-[#F8FAFC] border border-slate-300 flex items-center justify-center mb-6 z-10 group-hover/item:border-[#00d084] group-hover/item:bg-[#00d084] transition-all duration-500">
+                        <div className="w-2 h-2 rounded-full bg-[#0d5959] group-hover/item:bg-white transition-colors"></div>
                       </div>
-                      <span className="inline-block px-3 py-1 bg-[#1d6266]/10 text-[#1d6266] rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
-                        {item.year}
-                      </span>
-                      <h4 className="text-[15px] font-bold text-slate-900 mb-2 h-auto lg:h-[45px]">{item.title}</h4>
-                      <p className="text-[13px] text-slate-600 font-light leading-relaxed">{item.desc}</p>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#0da37f] mb-3">{item.year}</span>
+                      <h4 className="font-serif text-[17px] text-slate-900 mb-3 leading-snug">{item.title}</h4>
+                      <p className="text-[13px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
                    </div>
                  ))}
                </div>
             </div>
           </div>
 
-          {/* --- HOẠT ĐỘNG TIÊU BIỂU (Dạng thẻ chi tiết 3 cột) --- */}
+          {/* Activities List (Clean Minimalist) */}
           <div>
-            <div className="flex items-center justify-center border-b border-slate-200 pb-6 mb-12">
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h3>
-            </div>
+            <h3 className="font-serif text-2xl lg:text-3xl text-[#051c1d] mb-16 text-center">{t.community.activityTitle}</h3>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
               
               {/* Local */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <MapPin className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.local.title}</h4>
+              <div>
+                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
+                  <MapPin className="w-5 h-5 text-[#00d084] mr-3" />
+                  <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.local.title}</h4>
                 </div>
-
-                <div className="space-y-6 relative z-10">
+                <div className="space-y-6">
                   {t.jciActivities.local.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
+                    <div key={idx}>
+                      <h5 className="text-[14px] font-semibold text-slate-800 mb-1.5">{item.name}</h5>
+                      <p className="text-[13px] font-light text-slate-500">{item.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* National */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <Flag className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.national.title}</h4>
+              <div>
+                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
+                  <Flag className="w-5 h-5 text-[#00d084] mr-3" />
+                  <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.national.title}</h4>
                 </div>
-
-                <div className="space-y-6 relative z-10">
+                <div className="space-y-6">
                   {t.jciActivities.national.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
+                    <div key={idx}>
+                      <h5 className="text-[14px] font-semibold text-slate-800 mb-1.5">{item.name}</h5>
+                      <p className="text-[13px] font-light text-slate-500">{item.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* International */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <Globe className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.international.title}</h4>
+              <div>
+                <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
+                  <Globe className="w-5 h-5 text-[#00d084] mr-3" />
+                  <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.international.title}</h4>
                 </div>
-
-                <div className="space-y-6 relative z-10">
+                <div className="space-y-6">
                   {t.jciActivities.international.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
+                    <div key={idx}>
+                      <h5 className="text-[14px] font-semibold text-slate-800 mb-1.5">{item.name}</h5>
+                      <p className="text-[13px] font-light text-slate-500">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -743,21 +762,57 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- FOOTER TỐI GIẢN --- */}
-      <footer className="bg-[#0a2f30] py-10 relative overflow-hidden z-20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div className="flex items-center">
-             <img src="https://i.postimg.cc/KzSNJM6K/A-nh-chu-p-Ma-n-hi-nh-2026-04-15-lu-c-10-16-13-SA-removebg-preview.png" alt="Logo" className="w-10 h-10 mr-4 brightness-0 invert opacity-50" />
-             <div>
-                <p className="text-[#2eb793] text-[12px] font-bold tracking-[0.1em] uppercase mb-1">PAXLAW &copy; {new Date().getFullYear()}</p>
-                <p className="text-white/50 text-[12px] font-light">{t.contactInfo.address}</p>
-             </div>
+      {/* --- FOOTER (LUXURY CORPORATE) --- */}
+      <footer className="bg-[#021213] pt-16 pb-8 relative z-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
+            
+            {/* Left: Branding */}
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+               <img 
+                 src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" 
+                 alt="Paxlaw Logo" 
+                 className="h-12 object-contain opacity-90"
+               />
+               <div className="hidden md:block h-10 border-l border-white/20"></div>
+               <div className="flex flex-col">
+                  <span className="text-[9px] font-bold tracking-[0.2em] uppercase mb-1 text-white/50">
+                    {lang === 'vi' ? 'Luật sư Điều hành' : 'Managing Attorney'}
+                  </span>
+                  <span className="font-serif text-[20px] text-white tracking-wide">
+                    Nguyễn Thị Hoa
+                  </span>
+               </div>
+            </div>
+
+            {/* Right: Connect */}
+            <div className="flex flex-col items-start lg:items-end">
+               <span className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-white/50">
+                 {t.footer.contactTitle}
+               </span>
+               <div className="flex gap-3">
+                 <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
+                   <a href="tel:+84911553686" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Phone className="w-4 h-4"/></a>
+                 </TooltipQR>
+                 <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
+                   <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Mail className="w-4 h-4"/></a>
+                 </TooltipQR>
+                 <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
+                   <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Linkedin className="w-4 h-4"/></a>
+                 </TooltipQR>
+                 <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
+                   <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Facebook className="w-4 h-4"/></a>
+                 </TooltipQR>
+               </div>
+            </div>
           </div>
-          <div className="flex gap-4">
-             <a href="tel:+84911553686" className="text-white/50 hover:text-white transition-colors"><Phone className="w-5 h-5"/></a>
-             <a href="mailto:hoant@paxlaw.vn" className="text-white/50 hover:text-white transition-colors"><Mail className="w-5 h-5"/></a>
-             <a href="https://linkedin.com/in/lawyerhoanguyen" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-5 h-5"/></a>
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-white/10">
+             <p className="text-[#00d084]/80 text-[11px] font-bold tracking-[0.2em] uppercase">PAXLAW &copy; {new Date().getFullYear()}</p>
+             <p className="text-white/40 text-[12px] font-light">{t.contactInfo.address}</p>
           </div>
+          
         </div>
       </footer>
       
