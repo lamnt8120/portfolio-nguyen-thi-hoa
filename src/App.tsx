@@ -119,10 +119,10 @@ const dict = {
       activityTitle: "Hoạt động tiêu biểu"
     },
     speakerEvents: [
-      { year: "2024", title: "Workshop \"Pháp lý thông minh\"", desc: "Trung tâm Khởi nghiệp CSK (ĐHQG)" },
-      { year: "2023 - 2025", title: "Dự án \"Shape Your Future\"", desc: "Định hướng nghề luật cho sinh viên" },
-      { year: "2024", title: "Cố vấn & Giám khảo SIL", desc: "ĐH Đại Nam - Đổi mới sáng tạo" },
-      { year: "2024", title: "Đại biểu Trade Expo, Mumbai", desc: "Xúc tiến giao thương VN - Ấn Độ" }
+      { year: "2024", title: "Workshop \"Pháp lý thông minh\"", desc: "Trung tâm Khởi nghiệp CSK (ĐHQG)", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      { year: "2023 - 2025", title: "Dự án \"Shape Your Future\"", desc: "Định hướng nghề luật cho sinh viên", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
+      { year: "2024", title: "Cố vấn & Giám khảo SIL", desc: "ĐH Đại Nam - Đổi mới sáng tạo", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
+      { year: "2024", title: "Đại biểu Trade Expo, Mumbai", desc: "Xúc tiến giao thương VN - Ấn Độ", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
     ],
     jciLeadership: [
       { year: "2024", title: "GĐ Dự án \"Launch To Leaders\"", desc: "Thiết kế dự án trọng điểm JCI Thanglong. Đạt giải 'The Most Social Impact 2024'.", icon: Rocket },
@@ -272,10 +272,10 @@ const dict = {
       activityTitle: "Featured Activities"
     },
     speakerEvents: [
-      { year: "2024", title: "Smart Legal Workshop", desc: "CSK Startup Center (VNU)" },
-      { year: "2023 - 2025", title: "Shape Your Future", desc: "Career orientation for students" },
-      { year: "2024", title: "Judge for SIL", desc: "Dai Nam University Innovation" },
-      { year: "2024", title: "Trade Expo, Mumbai", desc: "Cross-border trade partnerships" }
+      { year: "2024", title: "Smart Legal Workshop", desc: "CSK Startup Center (VNU)", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
+      { year: "2023 - 2025", title: "Shape Your Future", desc: "Career orientation for students", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
+      { year: "2024", title: "Judge for SIL", desc: "Dai Nam University Innovation", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
+      { year: "2024", title: "Trade Expo, Mumbai", desc: "Cross-border trade partnerships", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
     ],
     jciLeadership: [
       { year: "2024", title: "Dir. of 'Launch To Leaders'", desc: "Led the initiative to win 'The Most Social Impact JCI Vietnam 2024'.", icon: Rocket },
@@ -653,74 +653,85 @@ export default function App() {
 
           {/* --- HOẠT ĐỘNG TIÊU BIỂU (Dạng thẻ chi tiết 3 cột) --- */}
           <div>
-            <div className="flex items-center justify-center lg:justify-between border-b-2 border-slate-200 pb-5 mb-10">
-              <h3 className="text-2xl font-bold text-slate-900">{t.community.activityTitle}</h3>
-              <Sparkles className="w-6 h-6 text-[#2eb793] hidden lg:block" />
+            <div className="flex items-center justify-center border-b border-slate-200 pb-6 mb-12">
+              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h3>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               
               {/* Local */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
-                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
-                <div className="flex items-center mb-8 pb-5 border-b border-slate-100">
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/10 transition-colors">
-                    <MapPin className="w-6 h-6 text-[#1d6266]" />
+              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
+                    <MapPin className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-slate-900">{t.jciActivities.local.title}</h4>
+                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.local.title}</h4>
                 </div>
-                <div className="space-y-4">
+
+                <div className="space-y-6 relative z-10">
                   {t.jciActivities.local.items.map((item, idx) => (
-                    <div key={idx} className="bg-slate-50 rounded-xl p-5 border border-slate-100 hover:border-[#2eb793]/30 hover:shadow-md transition-all duration-300">
-                      <h5 className="text-[14px] font-bold text-slate-800 mb-2 leading-snug flex items-start">
-                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
-                        {item.name}
-                      </h5>
-                      <p className="text-[13px] font-light leading-relaxed text-slate-500 pl-6">{item.desc}</p>
+                    <div key={idx} className="flex items-start group/item">
+                      <div className="mt-1.5 mr-4 shrink-0">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
+                      </div>
+                      <div>
+                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* National */}
-              <div className="bg-[#1d6266] rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
-                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
-                <div className="flex items-center mb-8 pb-5 border-b border-white/20">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/20 transition-colors">
-                    <Flag className="w-6 h-6 text-[#2eb793]" />
+              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
+                    <Flag className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-white">{t.jciActivities.national.title}</h4>
+                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.national.title}</h4>
                 </div>
-                <div className="space-y-4">
+
+                <div className="space-y-6 relative z-10">
                   {t.jciActivities.national.items.map((item, idx) => (
-                    <div key={idx} className="bg-white/10 rounded-xl p-5 border border-white/5 hover:border-white/20 hover:bg-white/15 transition-all duration-300">
-                      <h5 className="text-[14px] font-bold text-white mb-2 leading-snug flex items-start">
-                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
-                        {item.name}
-                      </h5>
-                      <p className="text-[13px] font-light leading-relaxed text-slate-300 pl-6">{item.desc}</p>
+                    <div key={idx} className="flex items-start group/item">
+                      <div className="mt-1.5 mr-4 shrink-0">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
+                      </div>
+                      <div>
+                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* International */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
-                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
-                <div className="flex items-center mb-8 pb-5 border-b border-slate-100">
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/10 transition-colors">
-                    <Globe className="w-6 h-6 text-[#1d6266]" />
+              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
+                    <Globe className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-slate-900">{t.jciActivities.international.title}</h4>
+                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.international.title}</h4>
                 </div>
-                <div className="space-y-4">
+
+                <div className="space-y-6 relative z-10">
                   {t.jciActivities.international.items.map((item, idx) => (
-                    <div key={idx} className="bg-slate-50 rounded-xl p-5 border border-slate-100 hover:border-[#2eb793]/30 hover:shadow-md transition-all duration-300">
-                      <h5 className="text-[14px] font-bold text-slate-800 mb-2 leading-snug flex items-start">
-                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
-                        {item.name}
-                      </h5>
-                      <p className="text-[13px] font-light leading-relaxed text-slate-500 pl-6">{item.desc}</p>
+                    <div key={idx} className="flex items-start group/item">
+                      <div className="mt-1.5 mr-4 shrink-0">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
+                      </div>
+                      <div>
+                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
