@@ -114,7 +114,7 @@ const dict = {
     community: {
       title: "Dấu ấn cộng đồng",
       subtitle: "JCI Vietnam",
-      jciIntro: "JCI (Junior Chamber International) là tổ chức phi lợi nhuận toàn cầu quy tụ công dân trẻ (18-40). Tại Việt Nam, mạng lưới có 15 chi hội lan tỏa tinh thần phụng sự.",
+      jciIntro: "JCI (Junior Chamber International) là mạng lưới toàn cầu quy tụ gần 200.000 nhà lãnh đạo trẻ tại hơn 100 quốc gia. Tại Việt Nam, mạng lưới đã phát triển mạnh mẽ với 15 chi hội trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA), không ngừng lan tỏa tinh thần phụng sự và năng lực kiến tạo giá trị bền vững.",
       leadershipTitle: "Lộ trình kiến tạo giá trị (Roadmap)",
       activityTitle: "Hoạt động tiêu biểu"
     },
@@ -267,7 +267,7 @@ const dict = {
     community: {
       title: "Community Impact",
       subtitle: "JCI Vietnam",
-      jciIntro: "JCI is a global non-profit organization of active young citizens. In Vietnam, it has grown with 15 chapters instilling a commitment to service.",
+      jciIntro: "JCI (Junior Chamber International) is a global network of nearly 200,000 young leaders across 100+ countries. In Vietnam, the network has grown robustly with 15 chapters under the Vietnam Young Entrepreneurs Association (VYEA), continuously spreading the spirit of service and sustainable value creation.",
       leadershipTitle: "Leadership Roadmap",
       activityTitle: "Featured Activities"
     },
@@ -621,7 +621,7 @@ export default function App() {
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.community.subtitle}</span>
              </div>
              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.community.title}</h2>
-             <p className="text-[14px] text-slate-600 max-w-3xl mx-auto font-light">{t.community.jciIntro}</p>
+             <p className="text-[14px] md:text-[15px] text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">{t.community.jciIntro}</p>
           </div>
 
           {/* --- TIMELINE NẰM NGANG (Không hình ảnh) --- */}
