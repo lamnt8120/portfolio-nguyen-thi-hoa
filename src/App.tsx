@@ -335,7 +335,7 @@ const dict = {
 ========================================= */
 
 const TooltipQR = ({ children, qrUrl, scanText }) => {
-  const qrImageSource = qrUrl ? `https://quickchart.io/qr?text=${encodeURIComponent(qrUrl)}&size=200&dark=022020` : null;
+  const qrImageSource = qrUrl ? `https://quickchart.io/qr?text=${encodeURIComponent(qrUrl)}&size=200&dark=1d6266` : null;
   return (
     <div className="relative group flex flex-col items-center justify-center">
       {children}
@@ -343,7 +343,7 @@ const TooltipQR = ({ children, qrUrl, scanText }) => {
         <div className="absolute bottom-full mb-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50 w-max flex flex-col items-center pointer-events-none">
           <div className="bg-white/95 backdrop-blur-md p-3 shadow-[0_10px_40px_rgba(0,0,0,0.2)] rounded-2xl border border-white/40 flex flex-col items-center">
             <img src={qrImageSource} alt={`QR Code`} className="w-32 h-32 object-contain rounded-xl mix-blend-multiply" />
-            <p className="text-[9px] uppercase tracking-widest text-[#052b2b] mt-2 font-bold">{scanText}</p>
+            <p className="text-[9px] uppercase tracking-widest text-[#1d6266] mt-2 font-bold">{scanText}</p>
             <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white/95"></div>
           </div>
         </div>
@@ -355,11 +355,11 @@ const TooltipQR = ({ children, qrUrl, scanText }) => {
 const Heading = ({ title, subtitle, light = false }) => (
   <div className="mb-16 flex flex-col items-center text-center">
     <div className="inline-flex items-center space-x-4 mb-5">
-      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-r from-transparent to-[#00d084]' : 'bg-gradient-to-r from-transparent to-[#0d5959]'}`}></div>
-      <span className={`text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] ${light ? 'text-[#00d084]' : 'text-[#0d5959]'}`}>{subtitle}</span>
-      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-l from-transparent to-[#00d084]' : 'bg-gradient-to-l from-transparent to-[#0d5959]'}`}></div>
+      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-r from-transparent to-[#2eb793]' : 'bg-gradient-to-r from-transparent to-[#1d6266]'}`}></div>
+      <span className={`text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] ${light ? 'text-[#2eb793]' : 'text-[#1d6266]'}`}>{subtitle}</span>
+      <div className={`h-[1px] w-12 ${light ? 'bg-gradient-to-l from-transparent to-[#2eb793]' : 'bg-gradient-to-l from-transparent to-[#1d6266]'}`}></div>
     </div>
-    <h2 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight ${light ? 'text-white' : 'text-[#051c1d]'}`}>
+    <h2 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight ${light ? 'text-white' : 'text-[#1d6266]'}`}>
       {title}
     </h2>
   </div>
@@ -387,7 +387,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F7F6] text-slate-800 selection:bg-[#00d084] selection:text-[#021213]"
+    <div className="min-h-screen bg-[#F4F7F6] text-slate-800 selection:bg-[#2eb793] selection:text-[#ffffff]"
          style={{ fontFamily: '"Montserrat", sans-serif' }}>
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -395,18 +395,6 @@ export default function App() {
         
         .font-serif { font-family: 'Playfair Display', serif !important; }
         html { scroll-behavior: smooth; }
-        
-        /* Hiệu ứng gradient chữ */
-        .text-gradient-gold {
-          background: linear-gradient(to right, #D4AF37, #F3E5AB);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        .text-gradient-mint {
-          background: linear-gradient(to right, #00d084, #8ae6c3);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
       `}} />
 
       {/* --- NAVBAR --- */}
@@ -424,7 +412,7 @@ export default function App() {
                   <span className={`text-[8.5px] md:text-[9.5px] font-bold tracking-[0.25em] uppercase leading-none mb-1.5 transition-colors ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}>
                     {lang === 'vi' ? 'Luật sư' : 'Atty.'}
                   </span>
-                  <span className={`text-[13px] md:text-[15px] font-bold tracking-widest uppercase leading-none transition-colors ${isScrolled ? 'text-[#022020]' : 'text-white'}`}>
+                  <span className={`text-[13px] md:text-[15px] font-bold tracking-widest uppercase leading-none transition-colors ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`}>
                     Nguyễn Hoa
                   </span>
                 </div>
@@ -434,7 +422,7 @@ export default function App() {
           <div className="hidden md:flex space-x-10 items-center">
             {t.nav.map((item, idx) => (
               <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])}
-                className={`text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-0.5 ${isScrolled ? 'text-slate-600 hover:text-[#00d084]' : 'text-white/80 hover:text-white'}`}>
+                className={`text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-0.5 ${isScrolled ? 'text-slate-600 hover:text-[#2eb793]' : 'text-white/80 hover:text-white'}`}>
                 {item}
               </button>
             ))}
@@ -446,7 +434,7 @@ export default function App() {
           </div>
 
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-slate-800">
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className={`h-6 w-6 transition-colors ${isScrolled ? 'text-[#022020]' : 'text-white'}`} />}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className={`h-6 w-6 transition-colors ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`} />}
           </button>
         </div>
 
@@ -456,7 +444,7 @@ export default function App() {
             {t.nav.map((item, idx) => (
               <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])} className="text-[12px] font-bold text-slate-700 uppercase tracking-[0.2em] w-full">{item}</button>
             ))}
-             <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="text-[12px] font-bold text-[#0da37f] uppercase pt-4 border-t border-slate-100 w-1/2 flex items-center justify-center">
+             <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="text-[12px] font-bold text-[#2eb793] uppercase pt-4 border-t border-slate-100 w-1/2 flex items-center justify-center">
                 <Globe className="w-4 h-4 mr-2" /> {lang === 'vi' ? 'English' : 'Tiếng Việt'}
              </button>
           </div>
@@ -464,11 +452,11 @@ export default function App() {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-[#021213] overflow-hidden">
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-[#1d6266] overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0">
-           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0f4a45]/40 via-[#021213] to-[#021213]"></div>
-           <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#00d084]/10 via-transparent to-transparent"></div>
+           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1d6266]/40 via-[#1d6266] to-[#1d6266]"></div>
+           <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#2eb793]/10 via-transparent to-transparent"></div>
            <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
         </div>
         
@@ -478,8 +466,8 @@ export default function App() {
             {/* Content */}
             <div className="lg:col-span-7 flex flex-col text-center lg:text-left order-2 lg:order-1 mt-8 lg:mt-0">
                <div className="inline-flex items-center justify-center lg:justify-start space-x-4 mb-8">
-                 <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
-                 <span className="text-gradient-gold font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                 <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#2eb793]"></div>
+                 <span className="text-[#2eb793] font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
                    {t.hero.subtitle}
                  </span>
                </div>
@@ -488,33 +476,33 @@ export default function App() {
                  {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
                </h1>
                
-               <p className="font-serif text-2xl lg:text-3xl text-white/60 italic mb-10 font-light">
+               <p className="font-serif text-2xl lg:text-3xl text-[#2eb793] italic mb-10 font-light">
                  {t.hero.quote}
                </p>
                
-               <p className="text-[15px] lg:text-[17px] text-white/50 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-12">
+               <p className="text-[15px] lg:text-[17px] text-white/70 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-12">
                  {t.hero.desc}
                </p>
 
                {/* Elegant Contact Icons */}
                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5">
                   <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-                    <a href="tel:+84911553686" className="w-12 h-12 flex items-center justify-center rounded-full bg-[#00d084] text-[#021213] hover:bg-white transition-all duration-500 shadow-[0_0_20px_rgba(0,208,132,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1">
+                    <a href="tel:+84911553686" className="w-12 h-12 flex items-center justify-center rounded-full bg-[#2eb793] text-[#1d6266] hover:bg-white transition-all duration-500 shadow-[0_0_20px_rgba(46,183,147,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1">
                       <Phone className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/20 text-white hover:bg-white hover:text-[#1d6266] transition-all duration-500 hover:-translate-y-1">
                       <Mail className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/20 text-white hover:bg-white hover:text-[#1d6266] transition-all duration-500 hover:-translate-y-1">
                       <Linkedin className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
-                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-[#021213] transition-all duration-500 hover:-translate-y-1">
+                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/20 text-white hover:bg-white hover:text-[#1d6266] transition-all duration-500 hover:-translate-y-1">
                       <Facebook className="w-[18px] h-[18px]" />
                     </a>
                   </TooltipQR>
@@ -525,8 +513,8 @@ export default function App() {
             <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
                <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[480px]">
                  {/* Decorative Frame */}
-                 <div className="absolute -inset-4 border border-[#00d084]/30 rounded-t-full rounded-b-xl transform rotate-3 transition-transform duration-1000 hover:rotate-0"></div>
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#021213] to-transparent z-10 h-full w-full opacity-60"></div>
+                 <div className="absolute -inset-4 border border-[#2eb793]/30 rounded-t-full rounded-b-xl transform rotate-3 transition-transform duration-1000 hover:rotate-0"></div>
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#1d6266] to-transparent z-10 h-full w-full opacity-60"></div>
                  <img 
                    src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
                    alt="LS Hoa Nguyen" 
@@ -550,31 +538,31 @@ export default function App() {
             {/* Left Column: Story, Stats & Highlights */}
             <div className="lg:col-span-5 flex flex-col">
               <div className="text-[15px] text-slate-500 font-light leading-[1.8] space-y-6 text-justify">
-                <p className="first-letter:text-6xl first-letter:font-serif first-letter:text-[#0d5959] first-letter:mr-2 first-letter:float-left">{t.profile.desc1}</p>
-                <p className="pl-5 border-l-[3px] border-[#00d084] font-medium text-slate-800 italic">{t.profile.desc2}</p>
+                <p className="first-letter:text-6xl first-letter:font-serif first-letter:text-[#1d6266] first-letter:mr-2 first-letter:float-left">{t.profile.desc1}</p>
+                <p className="pl-5 border-l-[3px] border-[#2eb793] font-medium text-slate-800 italic">{t.profile.desc2}</p>
               </div>
 
               <div className="flex gap-10 py-8 border-y border-slate-200/60 my-8">
                 {t.stats.map((stat, idx) => (
                   <div key={idx}>
-                    <div className="font-serif text-4xl lg:text-5xl text-[#0d5959] mb-2">{stat.value}</div>
+                    <div className="font-serif text-4xl lg:text-5xl text-[#1d6266] mb-2">{stat.value}</div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Moved Highlights here to balance the height */}
+              {/* Highlights */}
               <div className="space-y-8">
                 {t.highlights.map((item, idx) => (
                   <div key={idx}>
-                    <h4 className="text-[12px] font-bold text-[#0d5959] uppercase tracking-widest mb-4 flex items-center">
-                      <item.icon className="w-4 h-4 mr-2 text-[#00d084]" />
+                    <h4 className="text-[12px] font-bold text-[#1d6266] uppercase tracking-widest mb-4 flex items-center">
+                      <item.icon className="w-4 h-4 mr-2 text-[#2eb793]" />
                       {item.title}
                     </h4>
                     <ul className="space-y-3">
                       {item.items.map((li, i) => (
                         <li key={i} className="text-[13.5px] text-slate-600 font-light leading-relaxed flex items-start">
-                          <span className="text-[#00d084] mr-2.5 mt-0.5">✦</span>
+                          <span className="text-[#2eb793] mr-2.5 mt-0.5">✦</span>
                           <span>{li}</span>
                         </li>
                       ))}
@@ -587,12 +575,12 @@ export default function App() {
             {/* Right Column: Timeline (Editorial Style) */}
             <div className="lg:col-span-7">
               <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-slate-100 h-full">
-                <h3 className="font-serif text-2xl text-[#051c1d] mb-10">{t.career.title}</h3>
+                <h3 className="font-serif text-2xl text-[#1d6266] mb-10">{t.career.title}</h3>
                 <div className="space-y-10">
                   {t.timelineData.map((item, idx) => (
                     <div key={idx} className="relative pl-8 border-l border-slate-200 group">
-                      <div className="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#00d084] transition-colors duration-300 shadow-[0_0_0_4px_white]"></div>
-                      <span className="text-[10px] font-bold text-[#0da37f] uppercase tracking-widest block mb-2">{item.period}</span>
+                      <div className="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#2eb793] transition-colors duration-300 shadow-[0_0_0_4px_white]"></div>
+                      <span className="text-[10px] font-bold text-[#2eb793] uppercase tracking-widest block mb-2">{item.period}</span>
                       <h4 className="text-[16px] font-bold text-slate-800 mb-1">{item.role}</h4>
                       <h5 className="text-[12px] text-slate-500 uppercase tracking-wider mb-3 font-medium">{item.company}</h5>
                       <p className="text-[13.5px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
@@ -607,7 +595,7 @@ export default function App() {
       </section>
 
       {/* --- SECTION 3: LĨNH VỰC CHUYÊN MÔN (DARK/PREMIUM THEME) --- */}
-      <section id="chuyen-mon" className="py-24 lg:py-32 bg-[#041516] relative">
+      <section id="chuyen-mon" className="py-24 lg:py-32 bg-[#174e52] relative">
         <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -616,17 +604,17 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-20">
             {t.practiceAreas.map((area, idx) => (
-              <div key={idx} className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-[#00d084]/30 transition-all duration-500 group">
+              <div key={idx} className="bg-white/[0.04] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.08] hover:border-[#2eb793]/50 transition-all duration-500 group">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mr-4 group-hover:bg-[#00d084]/20 transition-colors">
-                     <area.icon className="w-5 h-5 text-[#00d084]" />
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mr-4 group-hover:bg-[#2eb793]/20 transition-colors">
+                     <area.icon className="w-5 h-5 text-[#2eb793]" />
                   </div>
                   <h3 className="font-serif text-[20px] text-white tracking-wide">{area.title}</h3>
                 </div>
                 <ul className="space-y-4">
                   {area.cases.map((c, i) => (
-                    <li key={i} className="flex items-start text-[14px] font-light text-white/60 leading-relaxed">
-                      <ChevronRight className="w-4 h-4 text-[#00d084] shrink-0 mr-2 mt-0.5 opacity-50" />
+                    <li key={i} className="flex items-start text-[14px] font-light text-white/70 leading-relaxed">
+                      <ChevronRight className="w-4 h-4 text-[#2eb793] shrink-0 mr-2 mt-0.5 opacity-70" />
                       <span>{c.text} <span className="font-medium text-white">{c.highlight}</span> {c.suffix}</span>
                     </li>
                   ))}
@@ -652,8 +640,8 @@ export default function App() {
                         </span>
                      </div>
                    </div>
-                   <h4 className="text-[15px] font-bold text-white mb-1.5 group-hover:text-[#00d084] transition-colors">{event.title}</h4>
-                   <p className="text-[13px] text-white/50 font-light line-clamp-2">{event.desc}</p>
+                   <h4 className="text-[15px] font-bold text-white mb-1.5 group-hover:text-[#2eb793] transition-colors">{event.title}</h4>
+                   <p className="text-[13px] text-white/60 font-light line-clamp-2">{event.desc}</p>
                  </div>
                ))}
             </div>
@@ -662,7 +650,7 @@ export default function App() {
       </section>
 
       {/* --- SECTION 4: CỘNG ĐỒNG JCI (LIGHT EDITORIAL) --- */}
-      <section id="cong-dong" className="py-24 lg:py-32 bg-[#F8FAFC]">
+      <section id="cong-dong" className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           <Heading title={t.community.title} subtitle={t.community.subtitle} />
@@ -675,20 +663,20 @@ export default function App() {
 
           {/* Timeline Nodes */}
           <div className="mb-32">
-            <h3 className="font-serif text-2xl lg:text-3xl text-[#051c1d] mb-16 text-center">{t.community.leadershipTitle}</h3>
+            <h3 className="font-serif text-2xl lg:text-3xl text-[#1d6266] mb-16 text-center">{t.community.leadershipTitle}</h3>
             
             <div className="relative group/timeline max-w-5xl mx-auto">
                <div className="hidden lg:block absolute top-[20px] left-[10%] right-[10%] h-[1px] bg-slate-300 z-0">
-                  <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-[#00d084] transition-all duration-1000 ease-in-out"></div>
+                  <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-[#2eb793] transition-all duration-1000 ease-in-out"></div>
                </div>
                
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
                  {t.jciLeadership.map((item, idx) => (
                    <div key={idx} className="flex flex-col items-center text-center group/item">
-                      <div className="w-10 h-10 rounded-full bg-[#F8FAFC] border border-slate-300 flex items-center justify-center mb-6 z-10 group-hover/item:border-[#00d084] group-hover/item:bg-[#00d084] transition-all duration-500">
-                        <div className="w-2 h-2 rounded-full bg-[#0d5959] group-hover/item:bg-white transition-colors"></div>
+                      <div className="w-10 h-10 rounded-full bg-white border border-slate-300 flex items-center justify-center mb-6 z-10 group-hover/item:border-[#2eb793] group-hover/item:bg-[#2eb793] transition-all duration-500">
+                        <div className="w-2 h-2 rounded-full bg-[#1d6266] group-hover/item:bg-white transition-colors"></div>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#0da37f] mb-3">{item.year}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#2eb793] mb-3">{item.year}</span>
                       <h4 className="font-serif text-[17px] text-slate-900 mb-3 leading-snug">{item.title}</h4>
                       <p className="text-[13px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
                    </div>
@@ -699,14 +687,14 @@ export default function App() {
 
           {/* Activities List (Clean Minimalist) */}
           <div>
-            <h3 className="font-serif text-2xl lg:text-3xl text-[#051c1d] mb-16 text-center">{t.community.activityTitle}</h3>
+            <h3 className="font-serif text-2xl lg:text-3xl text-[#1d6266] mb-16 text-center">{t.community.activityTitle}</h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
               
               {/* Local */}
               <div>
                 <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
-                  <MapPin className="w-5 h-5 text-[#00d084] mr-3" />
+                  <MapPin className="w-5 h-5 text-[#2eb793] mr-3" />
                   <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.local.title}</h4>
                 </div>
                 <div className="space-y-6">
@@ -722,7 +710,7 @@ export default function App() {
               {/* National */}
               <div>
                 <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
-                  <Flag className="w-5 h-5 text-[#00d084] mr-3" />
+                  <Flag className="w-5 h-5 text-[#2eb793] mr-3" />
                   <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.national.title}</h4>
                 </div>
                 <div className="space-y-6">
@@ -738,7 +726,7 @@ export default function App() {
               {/* International */}
               <div>
                 <div className="flex items-center mb-8 pb-4 border-b border-slate-200">
-                  <Globe className="w-5 h-5 text-[#00d084] mr-3" />
+                  <Globe className="w-5 h-5 text-[#2eb793] mr-3" />
                   <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-900">{t.jciActivities.international.title}</h4>
                 </div>
                 <div className="space-y-6">
@@ -758,7 +746,7 @@ export default function App() {
       </section>
 
       {/* --- FOOTER (LUXURY CORPORATE) --- */}
-      <footer className="bg-[#021213] pt-16 pb-8 relative z-20">
+      <footer className="bg-[#123d40] pt-16 pb-8 relative z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
@@ -788,24 +776,24 @@ export default function App() {
                </span>
                <div className="flex gap-3">
                  <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-                   <a href="tel:+84911553686" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Phone className="w-4 h-4"/></a>
+                   <a href="tel:+84911553686" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#2eb793] hover:text-[#1d6266] hover:border-[#2eb793] transition-all duration-300"><Phone className="w-4 h-4"/></a>
                  </TooltipQR>
                  <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-                   <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Mail className="w-4 h-4"/></a>
+                   <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#2eb793] hover:text-[#1d6266] hover:border-[#2eb793] transition-all duration-300"><Mail className="w-4 h-4"/></a>
                  </TooltipQR>
                  <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-                   <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Linkedin className="w-4 h-4"/></a>
+                   <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#2eb793] hover:text-[#1d6266] hover:border-[#2eb793] transition-all duration-300"><Linkedin className="w-4 h-4"/></a>
                  </TooltipQR>
                  <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
-                   <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#00d084] hover:text-[#021213] hover:border-[#00d084] transition-all duration-300"><Facebook className="w-4 h-4"/></a>
+                   <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#2eb793] hover:text-[#1d6266] hover:border-[#2eb793] transition-all duration-300"><Facebook className="w-4 h-4"/></a>
                  </TooltipQR>
                </div>
             </div>
           </div>
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-white/10">
-             <p className="text-[#00d084]/80 text-[11px] font-bold tracking-[0.2em] uppercase">PAXLAW &copy; {new Date().getFullYear()}</p>
-             <p className="text-white/40 text-[12px] font-light">{t.contactInfo.address}</p>
+             <p className="text-[#2eb793]/90 text-[11px] font-bold tracking-[0.2em] uppercase">PAXLAW &copy; {new Date().getFullYear()}</p>
+             <p className="text-white/50 text-[12px] font-light">{t.contactInfo.address}</p>
           </div>
           
         </div>
