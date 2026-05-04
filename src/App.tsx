@@ -18,7 +18,8 @@ const dict = {
       subtitle: "LUẬT SƯ ĐIỀU HÀNH & CỐ VẤN CẤP CAO",
       quote: `"Global Mind, Silk Touch."`,
       desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp",
-      contactBtn: "Liên hệ ngay"
+      contactBtn: "Liên hệ ngay",
+      scanToConnect: "Quét để kết nối"
     },
     profile: {
       title: "Tổng quan & Hành trình",
@@ -130,14 +131,37 @@ const dict = {
       { year: "Tương lai", title: "Đồng Sáng lập JCI Lawyer", desc: "Khởi xướng mạng lưới chuyên gia pháp lý vươn tầm quốc tế.", icon: Scale },
     ],
     jciActivities: {
-      items: [
-        { level: "Cấp Chi hội", name: "Đào tạo Pháp lý", desc: "Nghĩ Vững Bước Bền (cùng ĐHQG HN)." },
-        { level: "Cấp Chi hội", name: "Giao thương QT", desc: "Hiệp hội DN Tô Châu & Đông Nam Á." },
-        { level: "Cấp Quốc gia", name: "NATCON & Let's Meet Up", desc: "Đại hội QG và kết nối DN ASEAN." },
-        { level: "Cấp Quốc gia", name: "Rise To Shine 2025", desc: "Vinh danh Top 5 dự án cộng đồng." },
-        { level: "Quốc tế", name: "World Congress (Đài Loan)", desc: "Kết nối 4.000+ hội viên tinh hoa." },
-        { level: "Quốc tế", name: "ASPAC (Mông Cổ)", desc: "Cơ hội ký kết hợp tác quốc tế (MOU)." }
-      ]
+      local: {
+        title: "Cấp Chi Hội",
+        items: [
+          { name: "Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội." },
+          { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân." },
+          { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống." },
+          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân)." },
+          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào vùng lũ." },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội." }
+        ]
+      },
+      national: {
+        title: "Cấp Quốc Gia",
+        items: [
+          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội cấp cao. Chính thức đắc cử Phó Chủ tịch JCI Vietnam 2026 tại NATCON 2025 (Đà Lạt)." },
+          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao." },
+          { name: "Sự kiện Rise To Shine 2025", desc: "Đánh dấu 8 tháng đồng hành cùng 29 dự án cộng đồng qua chuỗi mentoring chuyên sâu. Sự kiện vinh danh Top 5 dự án xuất sắc đã lan tỏa sâu rộng thông điệp JCI RISE về khát vọng phụng sự của lãnh đạo trẻ." },
+          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024." },
+          { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025)." },
+          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025." }
+        ]
+      },
+      international: {
+        title: "Cấp Quốc Tế",
+        items: [
+          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, trực tiếp kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
+          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU)." },
+          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế - xã hội bền vững." },
+          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia)." }
+        ]
+      }
     },
     contactInfo: { address: "Tầng 5, số 31A Nguyễn Quốc Trị, Trung Hoà, Cầu Giấy, Hà Nội" }
   },
@@ -147,7 +171,8 @@ const dict = {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
       quote: `"Global Mind, Silk Touch."`,
       desc: "The law is a framework for creating competitive advantages for businesses.",
-      contactBtn: "Contact Me"
+      contactBtn: "Contact Me",
+      scanToConnect: "Scan to connect"
     },
     profile: {
       title: "Summary & Journey",
@@ -259,14 +284,37 @@ const dict = {
       { year: "Future", title: "JCI Lawyer Council", desc: "Initiated an international network of legal experts.", icon: Scale },
     ],
     jciActivities: {
-      items: [
-        { level: "Local", name: "Legal Training", desc: "Co-organized with VNU." },
-        { level: "Local", name: "Int. Trade", desc: "Suzhou Assoc. (China) & SE Asia." },
-        { level: "National", name: "NATCON Forum", desc: "Trade bridge between ASEAN businesses." },
-        { level: "National", name: "Rise To Shine", desc: "Honored Top 5 community projects." },
-        { level: "Intl", name: "World Congress", desc: "Global trade with 4,000+ members." },
-        { level: "Intl", name: "ASPAC", desc: "Cultural exchange and MOU signings." }
-      ]
+      local: {
+        title: "Local Chapter Level",
+        items: [
+          { name: "Legal Training \"Think Solid, Step Steady\"", desc: "Co-organized with Vietnam National University." },
+          { name: "\"Turning Waves, Welcoming Dawn\" Event", desc: "Business networking program for 200 entrepreneurs." },
+          { name: "\"Flow of Success\" Event", desc: "Field visit and practical networking at Duong River Surface Water Plant." },
+          { name: "International Trade (JCI Grace)", desc: "Business exchange: Suzhou Assoc. (China) & SE Asia." },
+          { name: "Social Responsibility \"Uniting through the 2024 Storm Season\"", desc: "(Northern JCI Alliance): Participated in the campaign to support flood victims." },
+          { name: "Northern Open Pickleball Tournament", desc: "Co-host representative for JCI Thang Long & Grace." }
+        ]
+      },
+      national: {
+        title: "National Level",
+        items: [
+          { name: "National Convention (NATCON)", desc: "Elected as Vice President of JCI Vietnam 2026." },
+          { name: "\"Let's meet up Vietnam\" Forum", desc: "Trade bridge between ASEAN businesses & advisors." },
+          { name: "\"Rise To Shine 2025\" Gala", desc: "Honored Top 5 outstanding community projects." },
+          { name: "National Mid-Year Convention (NYC)", desc: "Attended the Mid-Year Convention in 2024." },
+          { name: "Academic & Training", desc: "Graduated from JCI Vietnam Academy (2024, 2025)." },
+          { name: "Trainer Certification", desc: "Achieved 2-Star Trainer (Train The Trainer 2025)." }
+        ]
+      },
+      international: {
+        title: "International Level",
+        items: [
+          { name: "JCI World Congress 2024 (Taiwan)", desc: "Global trade connections with 4,000+ elite members." },
+          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "Cultural exchange and international MOU signings." },
+          { name: "Vietnam - India JCI Exchange", desc: "Bilateral bridge promoting socio-economic cooperation." },
+          { name: "JCI ASEAN Senate Board", desc: "Vietnam delegate contributing to regional strategy." }
+        ]
+      }
     },
     contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri St, Cau Giay, Hanoi" }
   }
@@ -275,6 +323,24 @@ const dict = {
 /* =========================================
    2. MAIN COMPONENT
 ========================================= */
+
+const TooltipQR = ({ children, qrUrl, scanText }) => {
+  const qrImageSource = qrUrl ? `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrUrl)}&color=1d6266` : null;
+  return (
+    <div className="relative group flex flex-col items-center justify-center">
+      {children}
+      {qrImageSource && (
+        <div className="absolute bottom-full mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50 w-max flex flex-col items-center pointer-events-none">
+          <div className="bg-white p-3 shadow-2xl rounded-xl border border-slate-100 flex flex-col items-center">
+            <img src={qrImageSource} alt={`QR Code`} className="w-28 h-28 object-contain rounded-lg" />
+            <p className="text-[9px] uppercase tracking-widest text-slate-500 mt-2 font-bold">{scanText}</p>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+};
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -382,18 +448,26 @@ export default function App() {
 
                {/* Nút Contact Icon Ngang */}
                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                  <a href="tel:+84911553686" className="flex items-center px-5 py-3 bg-[#2eb793] text-[#0a2f30] rounded-full font-bold text-sm hover:bg-white transition-colors">
-                    <Phone className="w-4 h-4 mr-2" /> +84 911 55 3686
-                  </a>
-                  <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                    <Mail className="w-5 h-5" />
-                  </a>
-                  <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
-                    <Facebook className="w-5 h-5" />
-                  </a>
+                  <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
+                    <a href="tel:+84911553686" className="flex items-center px-5 py-3 bg-[#2eb793] text-[#0a2f30] rounded-full font-bold text-sm hover:bg-white transition-colors">
+                      <Phone className="w-4 h-4 mr-2" /> +84 911 55 3686
+                    </a>
+                  </TooltipQR>
+                  <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
+                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  </TooltipQR>
+                  <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
+                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </TooltipQR>
+                  <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
+                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#0a2f30] transition-colors border border-white/20">
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                  </TooltipQR>
                </div>
             </div>
 
@@ -418,8 +492,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-12 text-center lg:text-left">
              <div className="inline-flex items-center space-x-3 mb-3">
-                <div className="h-[2px] w-8 bg-[#1d6266]"></div>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.profile.subtitle}</span>
+                 <div className="h-[2px] w-8 bg-[#1d6266]"></div>
+                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.profile.subtitle}</span>
              </div>
              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">{t.profile.title}</h2>
           </div>
@@ -515,21 +589,29 @@ export default function App() {
             ))}
           </div>
 
-          {/* Speaker Events (Dạng Grid mỏng) */}
-          <h3 className="text-xl font-bold text-white flex items-center mb-6"><Mic className="w-5 h-5 text-[#2eb793] mr-2" /> {t.practice.speakerTitle}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Speaker Events (Dạng Grid có ảnh) */}
+          <h3 className="text-xl font-bold text-white flex items-center mb-8"><Mic className="w-5 h-5 text-[#2eb793] mr-3" /> {t.practice.speakerTitle}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {t.speakerEvents.map((event, idx) => (
-               <div key={idx} className="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col">
-                  <span className="text-[#2eb793] text-[10px] font-bold uppercase mb-1">{event.year}</span>
-                  <h4 className="text-[14px] font-bold text-white mb-1.5">{event.title}</h4>
-                  <p className="text-[12px] text-slate-400 font-light">{event.desc}</p>
+               <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-500 flex flex-col group border border-white/10 overflow-hidden h-full hover:-translate-y-1">
+                 <div className="aspect-square relative overflow-hidden bg-black/40 border-b border-white/10">
+                   <img src={event.img} alt={event.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d3a3c] to-transparent opacity-80"></div>
+                   <div className="absolute bottom-4 left-4 right-4">
+                      <span className="inline-block px-3 py-1 bg-[#2eb793] text-[#0d3a3c] text-[10px] font-bold uppercase tracking-widest rounded mb-2 shadow-md">{event.year}</span>
+                      <h4 className="text-[15px] font-bold tracking-wide text-white leading-snug drop-shadow-md">{event.title}</h4>
+                   </div>
+                 </div>
+                 <div className="p-5 flex flex-col flex-1 bg-[#113a3c]/30">
+                   <p className="text-slate-300 font-light leading-relaxed text-[13px]">{event.desc}</p>
+                 </div>
                </div>
              ))}
           </div>
         </div>
       </section>
 
-      {/* --- SECTION 4: CỘNG ĐỒNG JCI (NẰM NGANG & GỌN GÀNG) --- */}
+      {/* --- SECTION 4: CỘNG ĐỒNG JCI --- */}
       <section id="cong-dong" className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
@@ -569,22 +651,81 @@ export default function App() {
             </div>
           </div>
 
-          {/* --- HOẠT ĐỘNG TIÊU BIỂU (Dạng thẻ gọn) --- */}
+          {/* --- HOẠT ĐỘNG TIÊU BIỂU (Dạng thẻ chi tiết 3 cột) --- */}
           <div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">{t.community.activityTitle}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {t.jciActivities.items.map((act, idx) => (
-                <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 hover:border-[#2eb793] transition-colors flex items-start">
-                   <CheckCircle className="w-4 h-4 text-[#2eb793] mr-3 mt-1 shrink-0" />
-                   <div>
-                     <div className="flex items-center gap-2 mb-1">
-                       <span className="text-[10px] font-bold bg-slate-100 px-2 py-0.5 rounded text-slate-500 uppercase">{act.level}</span>
-                       <h5 className="text-[14px] font-bold text-slate-800">{act.name}</h5>
-                     </div>
-                     <p className="text-[12.5px] text-slate-500 font-light">{act.desc}</p>
-                   </div>
+            <div className="flex items-center justify-center lg:justify-between border-b-2 border-slate-200 pb-5 mb-10">
+              <h3 className="text-2xl font-bold text-slate-900">{t.community.activityTitle}</h3>
+              <Sparkles className="w-6 h-6 text-[#2eb793] hidden lg:block" />
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Local */}
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
+                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
+                <div className="flex items-center mb-8 pb-5 border-b border-slate-100">
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/10 transition-colors">
+                    <MapPin className="w-6 h-6 text-[#1d6266]" />
+                  </div>
+                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-slate-900">{t.jciActivities.local.title}</h4>
                 </div>
-              ))}
+                <div className="space-y-4">
+                  {t.jciActivities.local.items.map((item, idx) => (
+                    <div key={idx} className="bg-slate-50 rounded-xl p-5 border border-slate-100 hover:border-[#2eb793]/30 hover:shadow-md transition-all duration-300">
+                      <h5 className="text-[14px] font-bold text-slate-800 mb-2 leading-snug flex items-start">
+                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
+                        {item.name}
+                      </h5>
+                      <p className="text-[13px] font-light leading-relaxed text-slate-500 pl-6">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* National */}
+              <div className="bg-[#1d6266] rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
+                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
+                <div className="flex items-center mb-8 pb-5 border-b border-white/20">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/20 transition-colors">
+                    <Flag className="w-6 h-6 text-[#2eb793]" />
+                  </div>
+                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-white">{t.jciActivities.national.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {t.jciActivities.national.items.map((item, idx) => (
+                    <div key={idx} className="bg-white/10 rounded-xl p-5 border border-white/5 hover:border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <h5 className="text-[14px] font-bold text-white mb-2 leading-snug flex items-start">
+                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
+                        {item.name}
+                      </h5>
+                      <p className="text-[13px] font-light leading-relaxed text-slate-300 pl-6">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* International */}
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group h-fit">
+                <div className="absolute top-0 left-0 w-full h-2 bg-[#2eb793]"></div>
+                <div className="flex items-center mb-8 pb-5 border-b border-slate-100">
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2eb793]/10 transition-colors">
+                    <Globe className="w-6 h-6 text-[#1d6266]" />
+                  </div>
+                  <h4 className="text-[16px] font-bold uppercase tracking-wider text-slate-900">{t.jciActivities.international.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {t.jciActivities.international.items.map((item, idx) => (
+                    <div key={idx} className="bg-slate-50 rounded-xl p-5 border border-slate-100 hover:border-[#2eb793]/30 hover:shadow-md transition-all duration-300">
+                      <h5 className="text-[14px] font-bold text-slate-800 mb-2 leading-snug flex items-start">
+                        <CheckCircle className="w-4 h-4 text-[#2eb793] mr-2 mt-0.5 shrink-0" />
+                        {item.name}
+                      </h5>
+                      <p className="text-[13px] font-light leading-relaxed text-slate-500 pl-6">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
 
