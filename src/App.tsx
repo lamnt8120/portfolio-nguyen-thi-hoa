@@ -418,9 +418,9 @@ export default function App() {
                 <img 
                   src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" 
                   alt="PAXLAW Logo" 
-                  className={`h-10 md:h-12 object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 opacity-85' : 'drop-shadow-md'}`} 
+                  className={`h-14 md:h-16 lg:h-20 object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 opacity-85' : 'drop-shadow-md'}`} 
                 />
-                <div className={`ml-3 md:ml-4 pl-3 md:pl-4 border-l h-8 md:h-10 flex flex-col justify-center transition-colors duration-500 ${isScrolled ? 'border-slate-300' : 'border-white/30'}`}>
+                <div className={`ml-3 md:ml-4 pl-3 md:pl-4 border-l h-10 md:h-14 flex flex-col justify-center transition-colors duration-500 ${isScrolled ? 'border-slate-300' : 'border-white/30'}`}>
                   <span className={`text-[8.5px] md:text-[9.5px] font-bold tracking-[0.25em] uppercase leading-none mb-1.5 transition-colors ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}>
                     {lang === 'vi' ? 'Luật sư' : 'Atty.'}
                   </span>
@@ -545,16 +545,16 @@ export default function App() {
           
           <Heading title={t.profile.title} subtitle={t.profile.subtitle} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
-            {/* Left Column: Story & Stats */}
-            <div className="lg:col-span-5 flex flex-col space-y-10">
+            {/* Left Column: Story, Stats & Highlights */}
+            <div className="lg:col-span-5 flex flex-col">
               <div className="text-[15px] text-slate-500 font-light leading-[1.8] space-y-6 text-justify">
                 <p className="first-letter:text-6xl first-letter:font-serif first-letter:text-[#0d5959] first-letter:mr-2 first-letter:float-left">{t.profile.desc1}</p>
                 <p className="pl-5 border-l-[3px] border-[#00d084] font-medium text-slate-800 italic">{t.profile.desc2}</p>
               </div>
 
-              <div className="flex gap-10 pt-6 border-t border-slate-200/60">
+              <div className="flex gap-10 py-8 border-y border-slate-200/60 my-8">
                 {t.stats.map((stat, idx) => (
                   <div key={idx}>
                     <div className="font-serif text-4xl lg:text-5xl text-[#0d5959] mb-2">{stat.value}</div>
@@ -562,48 +562,43 @@ export default function App() {
                   </div>
                 ))}
               </div>
+
+              {/* Moved Highlights here to balance the height */}
+              <div className="space-y-8">
+                {t.highlights.map((item, idx) => (
+                  <div key={idx}>
+                    <h4 className="text-[12px] font-bold text-[#0d5959] uppercase tracking-widest mb-4 flex items-center">
+                      <item.icon className="w-4 h-4 mr-2 text-[#00d084]" />
+                      {item.title}
+                    </h4>
+                    <ul className="space-y-3">
+                      {item.items.map((li, i) => (
+                        <li key={i} className="text-[13.5px] text-slate-600 font-light leading-relaxed flex items-start">
+                          <span className="text-[#00d084] mr-2.5 mt-0.5">✦</span>
+                          <span>{li}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Right Column: Timeline & Highlights (Editorial Style) */}
+            {/* Right Column: Timeline (Editorial Style) */}
             <div className="lg:col-span-7">
-              <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-slate-100">
-                
-                {/* Career Timeline */}
-                <div className="mb-14">
-                  <h3 className="font-serif text-2xl text-[#051c1d] mb-8">{t.career.title}</h3>
-                  <div className="space-y-8">
-                    {t.timelineData.map((item, idx) => (
-                      <div key={idx} className="relative pl-6 border-l border-slate-200 group">
-                        <div className="absolute left-[-4px] top-1.5 w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#00d084] transition-colors duration-300"></div>
-                        <span className="text-[10px] font-bold text-[#0da37f] uppercase tracking-widest block mb-1.5">{item.period}</span>
-                        <h4 className="text-[15px] font-bold text-slate-800 mb-0.5">{item.role}</h4>
-                        <h5 className="text-[12px] text-slate-500 uppercase tracking-wider mb-2 font-medium">{item.company}</h5>
-                        <p className="text-[13px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Highlights List */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-slate-100">
-                  {t.highlights.slice(0, 2).map((item, idx) => (
-                    <div key={idx}>
-                      <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center">
-                        <item.icon className="w-3.5 h-3.5 mr-2 text-[#0da37f]" />
-                        {item.title}
-                      </h4>
-                      <ul className="space-y-3">
-                        {item.items.map((li, i) => (
-                          <li key={i} className="text-[13px] text-slate-600 font-light leading-relaxed flex items-start">
-                            <span className="text-[#00d084] mr-2 mt-0.5">✦</span>
-                            <span>{li}</span>
-                          </li>
-                        ))}
-                      </ul>
+              <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-slate-100 h-full">
+                <h3 className="font-serif text-2xl text-[#051c1d] mb-10">{t.career.title}</h3>
+                <div className="space-y-10">
+                  {t.timelineData.map((item, idx) => (
+                    <div key={idx} className="relative pl-8 border-l border-slate-200 group">
+                      <div className="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#00d084] transition-colors duration-300 shadow-[0_0_0_4px_white]"></div>
+                      <span className="text-[10px] font-bold text-[#0da37f] uppercase tracking-widest block mb-2">{item.period}</span>
+                      <h4 className="text-[16px] font-bold text-slate-800 mb-1">{item.role}</h4>
+                      <h5 className="text-[12px] text-slate-500 uppercase tracking-wider mb-3 font-medium">{item.company}</h5>
+                      <p className="text-[13.5px] text-slate-500 font-light leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
                 </div>
-                
               </div>
             </div>
 
@@ -773,9 +768,9 @@ export default function App() {
                <img 
                  src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" 
                  alt="Paxlaw Logo" 
-                 className="h-12 object-contain opacity-90"
+                 className="h-16 md:h-20 lg:h-24 object-contain opacity-90"
                />
-               <div className="hidden md:block h-10 border-l border-white/20"></div>
+               <div className="hidden md:block h-12 md:h-16 border-l border-white/20"></div>
                <div className="flex flex-col">
                   <span className="text-[9px] font-bold tracking-[0.2em] uppercase mb-1 text-white/50">
                     {lang === 'vi' ? 'Luật sư Điều hành' : 'Managing Attorney'}
