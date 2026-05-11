@@ -37,7 +37,7 @@ const dict = {
         icon: GraduationCap,
         items: [
           "Thạc sĩ Chính sách & Luật Thương mại Quốc tế (ĐH Ngoại Thương)",
-          "Cử nhân Luật Thương mại (ĐH Luật Hà Nội)",
+          "Cử nhân Luật Thương mại (Đại học Luật Hà Nội)",
           "Khóa đào tạo Nghiệp vụ Luật sư – Học viện Tư pháp"
         ]
       },
@@ -46,14 +46,14 @@ const dict = {
         icon: BookOpen,
         items: [
           "Giảng viên thỉnh giảng Luật Ngân hàng – Đại học Thành Đông",
-          "Chuyên gia đào tạo nội bộ Quản lý ngoại hối tại Techcombank"
+          "Chuyên gia đào tạo nội bộ Quản lý ngoại hối tại Ngân hàng Techcombank"
         ]
       },
       {
-        title: "Chứng chỉ & Tổ chức",
+        title: "Chứng chỉ hành nghề & Tổ chức",
         icon: Award,
         items: [
-          "Thành viên Đoàn Luật sư TP Hà Nội (LĐLS Việt Nam)",
+          "Thành viên Đoàn Luật sư TP. Hà Nội (Liên đoàn Luật sư Việt Nam)",
           "Chứng chỉ hành nghề Quản tài viên",
           "Chứng chỉ Đại diện Sở hữu Công nghiệp"
         ]
@@ -65,13 +65,15 @@ const dict = {
     timelineData: [
       { period: "12/2024 - Nay", role: "Luật sư Sáng lập & Điều hành", company: "Paxlaw", desc: "Cung cấp giải pháp pháp chế thuê ngoài (Paxflow) trọn gói về M&A và đầu tư." },
       { period: "2022 - Nay", role: "Giám đốc Pháp chế", company: "Green Investment JSC", desc: "Quản trị rủi ro, đảm bảo tuân thủ pháp luật dự án đầu tư và liên doanh." },
-      { period: "2018 - 2024", role: "Phó Giám đốc / LS Thành viên", company: "Penfield Law Firm", desc: "Dẫn dắt các thương vụ M&A phức tạp và tái cấu trúc tài chính." },
+      { period: "2018 - 2024", role: "Phó Giám đốc / Luật sư thành viên", company: "Penfield Law Firm", desc: "Dẫn dắt các thương vụ M&A phức tạp và tái cấu trúc tài chính." },
       { period: "2013 - 2018", role: "Chuyên viên Pháp chế Cấp cao", company: "Techcombank", desc: "Hỗ trợ pháp lý ngoại hối, quản lý vốn phục vụ KHDN bán buôn." }
     ],
     practice: {
       title: "Thương vụ & Dự án tiêu biểu",
       subtitle: "Chuyên môn Luật sư",
-      speakerTitle: "Hoạt động diễn giả"
+      speakerTitle: "Hoạt động diễn giả / Kết nối",
+      domestic: "Trong nước",
+      international: "Quốc tế"
     },
     practiceAreas: [
       {
@@ -115,51 +117,48 @@ const dict = {
       title: "Dấu ấn cộng đồng",
       subtitle: "JCI Vietnam",
       jciIntro: "JCI (Junior Chamber International) là mạng lưới toàn cầu quy tụ gần 200.000 nhà lãnh đạo trẻ tại hơn 100 quốc gia. Tại Việt Nam, mạng lưới đã phát triển mạnh mẽ với 15 chi hội trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA), không ngừng lan tỏa tinh thần phụng sự và năng lực kiến tạo giá trị bền vững.",
-      leadershipTitle: "Lộ trình kiến tạo giá trị",
-      activityTitle: "Hoạt động tiêu biểu"
+      leadershipTitle: "Lộ trình lãnh đạo",
+      activityTitle: "Giá trị kiến tạo"
     },
-    speakerEvents: [
-      { year: "2024", title: "Workshop \"Pháp lý thông minh\"", desc: "Trung tâm Khởi nghiệp CSK (ĐHQG)", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      { year: "2023 - 2025", title: "Dự án \"Shape Your Future\"", desc: "Định hướng nghề luật cho sinh viên", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "2024", title: "Cố vấn & Giám khảo SIL", desc: "ĐH Đại Nam - Đổi mới sáng tạo", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
-      { year: "2024", title: "Đại biểu Trade Expo, Mumbai", desc: "Xúc tiến giao thương VN - Ấn Độ", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
-    ],
+    networking: {
+      domestic: [
+        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic },
+        { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User },
+        { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award },
+        { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart }
+      ],
+      international: [
+        { title: 'Đại biểu đoàn Việt Nam Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag },
+        { title: 'Giao lưu luật sư JCI toàn cầu với đoàn luật sư tại Đào Viên', icon: Globe },
+        { title: 'Thăm và giao lưu đối tác tại Đài Loan - Braintrust (Anh Hung Ou Yang)', icon: MapPin },
+        { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - Luật sư Yoshio', icon: HandHeart }
+      ]
+    },
     jciLeadership: [
-      { year: "2024", title: "GĐ Dự án \"Launch To Leaders\"", desc: "Thiết kế dự án trọng điểm JCI Thanglong. Đạt giải 'The Most Social Impact 2024'.", icon: Rocket },
-      { year: "2025", title: "Chủ tịch Sáng lập JCI Grace", desc: "Định vị cộng đồng lãnh đạo trẻ chuẩn mực, lấy phát triển bền vững làm kim chỉ nam.", icon: Crown },
-      { year: "2026", title: "Phó Chủ tịch JCI Vietnam", desc: "Điều hành Trụ cột Phát triển Kinh doanh & Khởi nghiệp, thiết lập hành lang an toàn.", icon: Network },
-      { year: "Tương lai", title: "Đồng Sáng lập JCI Lawyer", desc: "Khởi xướng mạng lưới chuyên gia pháp lý vươn tầm quốc tế.", icon: Scale },
+      { year: "2024", title: "Giám đốc Dự án đầu tiên", desc: 'Dự án "Launch To Leaders".', icon: Rocket },
+      { year: "2025", title: "Chủ tịch Sáng lập", desc: "JCI Grace.", icon: Crown },
+      { year: "2026", title: "Phó Chủ tịch", desc: "JCI Vietnam.", icon: Network },
+      { year: "2024 - Nay", title: "Thành viên Nòng cốt Sáng lập", desc: "Hội đồng Luật gia JCI toàn cầu.", icon: Scale },
     ],
     jciActivities: {
       local: {
-        title: "Cấp Chi Hội",
+        title: "Hoạt động cấp chi hội",
         items: [
-          { name: "Đào tạo Pháp lý \"Nghĩ Vững Bước Bền\"", desc: "Kết hợp cùng Đại học Quốc Gia Hà Nội." },
-          { name: "Sự kiện \"Rẽ Sóng Đón Bình Minh\"", desc: "Chương trình kết nối kinh doanh quy mô 200 doanh nhân." },
-          { name: "Sự kiện \"Dòng Chảy Thành Công\"", desc: "Thăm và kết nối thực tế tại Công ty nước mặt sông Đuống." },
-          { name: "Giao thương Quốc tế (JCI Grace)", desc: "Giao lưu giữa Hiệp hội doanh nghiệp Tô Châu (Trung Quốc) và khu vực Đông Nam Á (100 thương nhân)." },
-          { name: "Trách nhiệm Xã hội \"Chung lòng mùa bão 2024\"", desc: "(Liên quân JCI Miền Bắc): Tham gia chiến dịch hỗ trợ đồng bào vùng lũ." },
-          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đóng vai trò Đồng tổ chức (Co-host đại diện JCI Thăng Long & JCI Grace) cùng JCI Hải Phòng (Host) và JCI Hà Nội." }
+          { name: "GUC - Launch To Leader", desc: "Chương trình phát triển năng lực lãnh đạo." },
+          { name: "Dòng Chảy Thành Công", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp." },
+          { name: "Sự kiện giao lưu Hiệp hội DN Tô Châu", desc: "Kết nối doanh nghiệp Trung Quốc với khu vực Đông Nam Á." }
         ]
       },
       national: {
-        title: "Cấp Quốc Gia",
+        title: "Hoạt động cấp quốc gia",
         items: [
-          { name: "Đại hội Quốc gia (NATCON)", desc: "Tham dự các kỳ Đại hội cấp cao. Chính thức đắc cử Phó Chủ tịch JCI Vietnam 2026 tại NATCON 2025 (Đà Lạt)." },
-          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện Ban tổ chức, trực tiếp điều hành và xúc tiến quan hệ hợp tác. Xây dựng cầu nối giao thương trực tiếp giữa doanh nghiệp ASEAN với mạng lưới cố vấn chiến lược cấp cao." },
-          { name: "Sự kiện Rise To Shine 2025", desc: "Đánh dấu 8 tháng đồng hành cùng 29 dự án cộng đồng qua chuỗi mentoring chuyên sâu. Sự kiện vinh danh Top 5 dự án xuất sắc đã lan tỏa sâu rộng thông điệp JCI RISE về khát vọng phụng sự của lãnh đạo trẻ." },
-          { name: "Đại hội Giữa năm (NYC)", desc: "Tham dự Đại hội Giữa năm (National Mid-Year Convention) năm 2024." },
-          { name: "Học thuật & Đào tạo", desc: "Tốt nghiệp JCI Vietnam Academy (2024, 2025)." },
-          { name: "Nâng tầm Kỹ năng", desc: "Đạt chứng nhận Trainer 2 sao tại chương trình Train The Trainer 2025." }
+          { name: "Nghị sự NATCON & NYC (2024 - 2025)", desc: "Tham gia các kỳ họp cấp cao và hoạch định chiến lược." }
         ]
       },
       international: {
-        title: "Cấp Quốc Tế",
+        title: "Hoạt động cấp quốc tế",
         items: [
-          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm của mạng lưới lãnh đạo trẻ toàn cầu, trực tiếp kết nối giao thương với hơn 4.000 hội viên tinh hoa từ 100 quốc gia." },
-          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra các cơ hội ký kết hợp tác quốc tế (MOU)." },
-          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế - xã hội bền vững." },
-          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Tô Châu (Trung Quốc) và Sabah (Malaysia)." }
+          { name: "Đại biểu JCI Quốc tế", desc: "Tích cực tham gia các kỳ họp và giao thương tại khu vực." }
         ]
       }
     },
@@ -208,7 +207,7 @@ const dict = {
         ]
       },
       {
-        title: "Certifications",
+        title: "Certifications & Organizations",
         icon: Award,
         items: [
           "Member of Hanoi Bar Association",
@@ -229,7 +228,9 @@ const dict = {
     practice: {
       title: "Key Transactions & Projects",
       subtitle: "Practice Areas",
-      speakerTitle: "Speaking Events"
+      speakerTitle: "Speaking & Networking",
+      domestic: "Domestic",
+      international: "International"
     },
     practiceAreas: [
       {
@@ -276,48 +277,45 @@ const dict = {
       leadershipTitle: "Leadership Roadmap",
       activityTitle: "Featured Activities"
     },
-    speakerEvents: [
-      { year: "2024", title: "Smart Legal Workshop", desc: "CSK Startup Center (VNU)", img: "https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg" },
-      { year: "2023 - 2025", title: "Shape Your Future", desc: "Career orientation for students", img: "https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg" },
-      { year: "2024", title: "Judge for SIL", desc: "Dai Nam University Innovation", img: "https://i.postimg.cc/15g13P4d/SIL.jpg" },
-      { year: "2024", title: "Trade Expo, Mumbai", desc: "Cross-border trade partnerships", img: "https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg" }
-    ],
+    networking: {
+      domestic: [
+        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic },
+        { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User },
+        { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award },
+        { title: 'Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart }
+      ],
+      international: [
+        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag },
+        { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc.', icon: Globe },
+        { title: 'Partner Visit in Taiwan - Braintrust (Mr. Hung Ou Yang)', icon: MapPin },
+        { title: 'Partnership with Japan Partner - Lawyer Yoshio', icon: HandHeart }
+      ]
+    },
     jciLeadership: [
-      { year: "2024", title: "Dir. of 'Launch To Leaders'", desc: "Led the initiative to win 'The Most Social Impact JCI Vietnam 2024'.", icon: Rocket },
-      { year: "2025", title: "President of JCI Grace", desc: "Fostered a community focused on sustainable development.", icon: Crown },
-      { year: "2026", title: "VP of JCI Vietnam", desc: "Managed Business Pillar, applying legal acumen to guide projects.", icon: Network },
-      { year: "Future", title: "JCI Lawyer Council", desc: "Initiated an international network of legal experts.", icon: Scale },
+      { year: "2024", title: "First Project Director", desc: "\"Launch To Leaders\" Initiative.", icon: Rocket },
+      { year: "2025", title: "Founding President", desc: "JCI Grace.", icon: Crown },
+      { year: "2026", title: "Vice President", desc: "JCI Vietnam.", icon: Network },
+      { year: "2024 - Present", title: "Core Founding Member", desc: "JCI Global Lawyers Council.", icon: Scale },
     ],
     jciActivities: {
       local: {
         title: "Local Chapter Level",
         items: [
-          { name: "Legal Training \"Think Solid, Step Steady\"", desc: "Co-organized with Vietnam National University." },
-          { name: "\"Turning Waves, Welcoming Dawn\" Event", desc: "Business networking program for 200 entrepreneurs." },
-          { name: "\"Flow of Success\" Event", desc: "Field visit and practical networking at Duong River Surface Water Plant." },
-          { name: "International Trade (JCI Grace)", desc: "Business exchange: Suzhou Assoc. (China) & SE Asia." },
-          { name: "Social Responsibility \"Uniting through the 2024 Storm Season\"", desc: "(Northern JCI Alliance): Participated in the campaign to support flood victims." },
-          { name: "Northern Open Pickleball Tournament", desc: "Co-host representative for JCI Thang Long & Grace." }
+          { name: "GUC - Launch To Leader", desc: "Leadership capacity development program." },
+          { name: "Flow of Success", desc: "Practical business networking event series." },
+          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese enterprises with SE Asia." }
         ]
       },
       national: {
         title: "National Level",
         items: [
-          { name: "National Convention (NATCON)", desc: "Elected as Vice President of JCI Vietnam 2026." },
-          { name: "\"Let's meet up Vietnam\" Forum", desc: "Trade bridge between ASEAN businesses & advisors." },
-          { name: "\"Rise To Shine 2025\" Gala", desc: "Honored Top 5 outstanding community projects." },
-          { name: "National Mid-Year Convention (NYC)", desc: "Attended the Mid-Year Convention in 2024." },
-          { name: "Academic & Training", desc: "Graduated from JCI Vietnam Academy (2024, 2025)." },
-          { name: "Trainer Certification", desc: "Achieved 2-Star Trainer (Train The Trainer 2025)." }
+          { name: "NATCON & NYC Agendas", desc: "Participated in JCI Vietnam high-level meetings (2024 - 2025)." }
         ]
       },
       international: {
         title: "International Level",
         items: [
-          { name: "JCI World Congress 2024 (Taiwan)", desc: "Global trade connections with 4,000+ elite members." },
-          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "Cultural exchange and international MOU signings." },
-          { name: "Vietnam - India JCI Exchange", desc: "Bilateral bridge promoting socio-economic cooperation." },
-          { name: "JCI ASEAN Senate Board", desc: "Vietnam delegate contributing to regional strategy." }
+          { name: "JCI International Delegate", desc: "Actively engaged in regional meetings and trade." }
         ]
       }
     },
@@ -601,22 +599,38 @@ export default function App() {
             ))}
           </div>
 
-          <h3 className="text-xl font-bold text-white flex items-center mb-8"><Mic className="w-5 h-5 text-[#2eb793] mr-3" /> {t.practice.speakerTitle}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-             {t.speakerEvents.map((event, idx) => (
-               <div key={idx} className="bg-white rounded-2xl shadow-xl hover:shadow-[0_20px_40px_rgba(46,183,147,0.2)] transition-all duration-500 flex flex-col group overflow-hidden h-full hover:-translate-y-2">
-                 <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
-                   <img src={event.img} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                      <span className="text-[#1d6266] text-[10px] font-bold uppercase tracking-widest">{event.year}</span>
-                   </div>
-                 </div>
-                 <div className="p-6 flex flex-col flex-1 bg-white border-t border-slate-100">
-                   <h4 className="text-[15px] font-bold text-slate-900 leading-snug mb-3 group-hover:text-[#2eb793] transition-colors">{event.title}</h4>
-                   <p className="text-slate-500 font-light leading-relaxed text-[13px]">{event.desc}</p>
-                 </div>
-               </div>
-             ))}
+          <div className="border-t border-white/10 pt-16">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-white inline-flex items-center"><Mic className="w-6 h-6 text-[#2eb793] mr-3" /> {t.practice.speakerTitle}</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Trong nước */}
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
+                <h4 className="text-lg font-bold text-[#2eb793] flex items-center mb-6 uppercase tracking-wide"><MapPin className="w-5 h-5 mr-2" /> {t.practice.domestic}</h4>
+                <div className="space-y-4">
+                  {t.networking.domestic.map((item, idx) => (
+                    <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-[#2eb793]/10 hover:border-[#2eb793]/30 transition-all flex items-start group">
+                      <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
+                      <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors">{item.title}</h5>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quốc tế */}
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
+                <h4 className="text-lg font-bold text-[#2eb793] flex items-center mb-6 uppercase tracking-wide"><Globe className="w-5 h-5 mr-2" /> {t.practice.international}</h4>
+                <div className="space-y-4">
+                  {t.networking.international.map((item, idx) => (
+                    <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-[#2eb793]/10 hover:border-[#2eb793]/30 transition-all flex items-start group">
+                      <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
+                      <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors">{item.title}</h5>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
