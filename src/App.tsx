@@ -4,7 +4,8 @@ import {
   Landmark, Building2, Globe2, 
   Mail, Phone, Linkedin, Facebook, ChevronRight, 
   Award, Mic, Sparkles, ShieldCheck, BookOpen, Globe,
-  MapPin, Flag, Rocket, Crown, Network, User, HandHeart, CheckCircle
+  MapPin, Flag, Rocket, Crown, Network, User, HandHeart, CheckCircle,
+  ChevronDown
 } from 'lucide-react';
 
 /* =========================================
@@ -20,6 +21,10 @@ const dict = {
       desc: "Pháp luật là không gian kiến tạo lợi thế cho doanh nghiệp.",
       contactBtn: "Liên hệ ngay",
       scanToConnect: "Quét để kết nối"
+    },
+    ui: {
+      viewDetails: "Xem chi tiết",
+      hideDetails: "Thu gọn"
     },
     profile: {
       title: "Tổng quan & Hành trình",
@@ -79,6 +84,7 @@ const dict = {
       {
         title: "M&A & Tái cấu trúc",
         icon: Building2,
+        image: "https://placehold.co/800x400/1d6266/ffffff?text=M&A+&+Tai+Cau+Truc", // Link ảnh placeholder
         cases: [
           { text: "Đại diện mua nhà máy sản xuất thép (Miền Bắc) quy mô", highlight: "1.000 tỷ VNĐ." },
           { text: "Cố vấn chuyển nhượng dự án BĐS nghỉ dưỡng Bãi Dài trị giá", highlight: "1.600 tỷ VNĐ." },
@@ -88,6 +94,7 @@ const dict = {
       {
         title: "Tài chính - Ngân hàng",
         icon: Landmark,
+        image: "https://placehold.co/800x400/2eb793/ffffff?text=Tai+Chinh+Ngan+Hang",
         cases: [
           { text: "Bảo trợ phát hành trái phiếu dự án tại BR-VT, quy mô", highlight: "800 tỷ VNĐ." },
           { text: "Xử lý khủng hoảng cho 07 gói trái phiếu DN, giá trị", highlight: "500 - 850 tỷ VNĐ/gói." },
@@ -97,6 +104,7 @@ const dict = {
       {
         title: "Đầu tư quốc tế & BĐS",
         icon: Globe2,
+        image: "https://placehold.co/800x400/1d6266/ffffff?text=Dau+Tu+Quoc+Te+&+BDS",
         cases: [
           { text: "Bảo trợ dự án tổ hợp nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
           { text: "Cố vấn chính sách PPP tại Việt Nam cho Bộ KH&ĐT Hàn Quốc.", highlight: "" },
@@ -106,6 +114,7 @@ const dict = {
       {
         title: "Hợp đồng & Tranh chấp",
         icon: ShieldCheck,
+        image: "https://placehold.co/800x400/2eb793/ffffff?text=Hop+Dong+&+Tranh+Chap",
         cases: [
           { text: "Chuẩn hóa hợp đồng cung ứng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
           { text: "Bảo vệ quyền lợi Tập đoàn Xây dựng VN dự án EPC", highlight: "(250 tỷ VNĐ)." },
@@ -115,23 +124,38 @@ const dict = {
     ],
     community: {
       title: "Dấu ấn cộng đồng",
-      subtitle: "JCI Vietnam",
+      subtitle: "Mạng lưới kết nối",
+      jciTitle: "1. JCI - Liên đoàn lãnh đạo trẻ và doanh nhân thế giới",
       jciIntro: "JCI (Junior Chamber International) là mạng lưới toàn cầu quy tụ gần 200.000 nhà lãnh đạo trẻ tại hơn 100 quốc gia. Tại Việt Nam, mạng lưới đã phát triển mạnh mẽ với 15 chi hội trực thuộc Hội Doanh nhân trẻ Việt Nam (VYEA), không ngừng lan tỏa tinh thần phụng sự và năng lực kiến tạo giá trị bền vững.",
       leadershipTitle: "Lộ trình lãnh đạo",
-      activityTitle: "Giá trị kiến tạo"
+      activityTitle: "Giá trị kiến tạo",
+      otherCommunities: [
+        {
+          index: "2.",
+          name: "Hội doanh nghiệp Việt Nam tại Benelux",
+          role: "Thành viên đại diện khu vực phía Bắc Việt Nam",
+          icon: Globe
+        },
+        {
+          index: "3.",
+          name: "Hội đồng kinh doanh Việt Nam - Saudi",
+          role: "Thành viên sáng lập",
+          icon: HandHeart
+        }
+      ]
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic },
-        { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User },
-        { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award },
-        { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart }
+        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Workshop+2024' },
+        { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User, desc: 'Dự án định hướng nghề nghiệp, truyền cảm hứng và chia sẻ kinh nghiệm thực chiến cho sinh viên ngành luật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Shape+Your+Future' },
+        { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award, desc: 'Đồng hành cùng các dự án đổi mới sáng tạo của sinh viên trong vai trò Cố vấn chuyên môn và Ban giám khảo.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=SIL+Dai+Nam' },
+        { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart, desc: 'Thiết lập quan hệ đối tác chiến lược nhằm mở rộng hệ sinh thái dịch vụ pháp lý trọn gói.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
-        { title: 'Đại biểu đoàn Việt Nam Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag },
-        { title: 'Giao lưu luật sư JCI toàn cầu với đoàn luật sư tại Đào Viên', icon: Globe },
-        { title: 'Thăm và giao lưu đối tác tại Đài Loan - Braintrust (Anh Hung Ou Yang)', icon: MapPin },
-        { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - Luật sư Yoshio', icon: HandHeart }
+        { title: 'Đại biểu đoàn VN Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Trade+Expo+Mumbai' },
+        { title: 'Giao lưu LS JCI toàn cầu với đoàn LS tại Đào Viên', icon: Globe, desc: 'Tham gia mạng lưới kết nối chuyên gia pháp lý quốc tế, trao đổi kinh nghiệm hành nghề xuyên biên giới.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
+        { title: 'Thăm & giao lưu đối tác tại Đài Loan - Braintrust', icon: MapPin, desc: 'Mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Á (cùng Luật sư Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
+        { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - LS Yoshio', icon: HandHeart, desc: 'Ký kết thỏa thuận hợp tác, tạo kênh hỗ trợ pháp lý trực tiếp cho các luồng đầu tư Việt - Nhật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
       ]
     },
     jciLeadership: [
@@ -142,7 +166,9 @@ const dict = {
     ],
     jciActivities: {
       local: {
+        id: 'local',
         title: "Hoạt động cấp chi hội",
+        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Cap+Chi+Hoi',
         items: [
           { name: "GUC - Launch To Leader", desc: "Chương trình phát triển năng lực lãnh đạo." },
           { name: "Dòng Chảy Thành Công", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp." },
@@ -150,15 +176,28 @@ const dict = {
         ]
       },
       national: {
+        id: 'national',
         title: "Hoạt động cấp quốc gia",
+        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Cap+Quoc+Gia',
         items: [
           { name: "Nghị sự NATCON & NYC (2024 - 2025)", desc: "Tham gia các kỳ họp cấp cao và hoạch định chiến lược." }
         ]
       },
       international: {
+        id: 'international',
         title: "Hoạt động cấp quốc tế",
+        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Cap+Quoc+Te',
         items: [
           { name: "Đại biểu JCI Quốc tế", desc: "Tích cực tham gia các kỳ họp và giao thương tại khu vực." }
+        ]
+      },
+      social: {
+        id: 'social',
+        title: "Trách nhiệm Xã hội",
+        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Trach+Nhiem+Xa+Hoi',
+        items: [
+          { name: "Chiến dịch \"Chung lòng mùa bão 2024\"", desc: "Liên quân JCI Miền Bắc hỗ trợ đồng bào vùng lũ." },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đồng tổ chức (Co-host) cùng JCI Hải Phòng và JCI Hà Nội." }
         ]
       }
     },
@@ -177,6 +216,10 @@ const dict = {
       desc: "The law is a framework for creating competitive advantages for businesses.",
       contactBtn: "Contact Me",
       scanToConnect: "Scan to connect"
+    },
+    ui: {
+      viewDetails: "View Details",
+      hideDetails: "Show Less"
     },
     profile: {
       title: "Summary & Journey",
@@ -236,6 +279,7 @@ const dict = {
       {
         title: "M&A & Restructuring",
         icon: Building2,
+        image: "https://placehold.co/800x400/1d6266/ffffff?text=M&A+&+Restructuring",
         cases: [
           { text: "Acquisition of a major steel plant valued at", highlight: "VND 1,000 billion." },
           { text: "Transfer of Bai Dai Resort project valued at", highlight: "VND 1,600 billion." },
@@ -245,6 +289,7 @@ const dict = {
       {
         title: "Banking & Finance",
         icon: Landmark,
+        image: "https://placehold.co/800x400/2eb793/ffffff?text=Banking+&+Finance",
         cases: [
           { text: "Corporate bond issuance for a real estate project, sized at", highlight: "VND 800 billion." },
           { text: "Crisis resolution for 7 corporate bond issuances", highlight: "(VND 500-850B each)." },
@@ -254,6 +299,7 @@ const dict = {
       {
         title: "Investment & Real Estate",
         icon: Globe2,
+        image: "https://placehold.co/800x400/1d6266/ffffff?text=Investment+&+Real+Estate",
         cases: [
           { text: "Legal backing for a luxury resort featuring", highlight: "1,000+ Condotels." },
           { text: "PPP Policy Report advisor for Ministry of Finance (South Korea).", highlight: "" },
@@ -263,6 +309,7 @@ const dict = {
       {
         title: "Contracts & Disputes",
         icon: ShieldCheck,
+        image: "https://placehold.co/800x400/2eb793/ffffff?text=Contracts+&+Disputes",
         cases: [
           { text: "Standardized contracts for E-commerce platforms (Shopee, Lazada).", highlight: "" },
           { text: "Represented Construction Group in an EPC dispute", highlight: "(VND 250 billion)." },
@@ -272,23 +319,38 @@ const dict = {
     ],
     community: {
       title: "Community Impact",
-      subtitle: "JCI Vietnam",
-      jciIntro: "JCI (Junior Chamber International) is a global network of nearly 200,000 young leaders across 100+ countries. In Vietnam, the network has grown robustly with 15 chapters under the Vietnam Young Entrepreneurs Association (VYEA), continuously spreading the spirit of service and sustainable value creation.",
+      subtitle: "Networking",
+      jciTitle: "1. JCI - Junior Chamber International",
+      jciIntro: "JCI is a global network of nearly 200,000 young leaders across 100+ countries. In Vietnam, the network has grown robustly with 15 chapters under the Vietnam Young Entrepreneurs Association (VYEA), continuously spreading the spirit of service and sustainable value creation.",
       leadershipTitle: "Leadership Roadmap",
-      activityTitle: "Featured Activities"
+      activityTitle: "Featured Activities",
+      otherCommunities: [
+        {
+          index: "2.",
+          name: "Vietnam Business Association in Benelux",
+          role: "Representative Member for Northern Vietnam",
+          icon: Globe
+        },
+        {
+          index: "3.",
+          name: "Vietnam - Saudi Business Council",
+          role: "Founding Member",
+          icon: HandHeart
+        }
+      ]
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic },
-        { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User },
-        { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award },
-        { title: 'Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart }
+        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Workshop+2024' },
+        { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User, desc: 'Career orientation, inspiring and sharing practical experience for law students.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Shape+Your+Future' },
+        { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award, desc: 'Accompanying student innovation projects as an Expert Advisor and Judge.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=SIL+Dai+Nam' },
+        { title: 'Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart, desc: 'Establishing a strategic partnership to expand the comprehensive legal service ecosystem.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
-        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag },
-        { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc.', icon: Globe },
-        { title: 'Partner Visit in Taiwan - Braintrust (Mr. Hung Ou Yang)', icon: MapPin },
-        { title: 'Partnership with Japan Partner - Lawyer Yoshio', icon: HandHeart }
+        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Promoting trade, connecting investment and legal cooperation opportunities between VN and India.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Trade+Expo+Mumbai' },
+        { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc.', icon: Globe, desc: 'Participating in the international legal expert network, exchanging cross-border practice experience.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
+        { title: 'Partner Visit in Taiwan - Braintrust', icon: MapPin, desc: 'Expanding the strategic partner network in East Asia (with Lawyer Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
+        { title: 'Partnership with Japan Partner - Lawyer Yoshio', icon: HandHeart, desc: 'Signing cooperation agreements, creating a direct legal support channel for Vietnam - Japan investments.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
       ]
     },
     jciLeadership: [
@@ -299,7 +361,9 @@ const dict = {
     ],
     jciActivities: {
       local: {
+        id: 'local',
         title: "Local Chapter Level",
+        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Local+Chapter',
         items: [
           { name: "GUC - Launch To Leader", desc: "Leadership capacity development program." },
           { name: "Flow of Success", desc: "Practical business networking event series." },
@@ -307,15 +371,28 @@ const dict = {
         ]
       },
       national: {
+        id: 'national',
         title: "National Level",
+        image: 'https://placehold.co/800x400/2eb793/ffffff?text=National+Level',
         items: [
           { name: "NATCON & NYC Agendas", desc: "Participated in JCI Vietnam high-level meetings (2024 - 2025)." }
         ]
       },
       international: {
+        id: 'international',
         title: "International Level",
+        image: 'https://placehold.co/800x400/1d6266/ffffff?text=International+Level',
         items: [
           { name: "JCI International Delegate", desc: "Actively engaged in regional meetings and trade." }
+        ]
+      },
+      social: {
+        id: 'social',
+        title: "Social Responsibility",
+        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Social+Responsibility',
+        items: [
+          { name: "\"Uniting through the 2024 Storm Season\"", desc: "Joined Northern JCI Alliance to support flood victims." },
+          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hanoi." }
         ]
       }
     },
@@ -355,6 +432,12 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState('vi');
   const t = dict[lang]; 
+
+  // States cho các thẻ mở rộng (Accordion)
+  const [activePractice, setActivePractice] = useState(null);
+  const [activeDomNetwork, setActiveDomNetwork] = useState(null);
+  const [activeIntNetwork, setActiveIntNetwork] = useState(null);
+  const [activeJciActivity, setActiveJciActivity] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -581,22 +664,45 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
-            {t.practiceAreas.map((area, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-                <div className="flex items-center mb-4 border-b border-white/10 pb-4">
-                  <area.icon className="w-6 h-6 text-[#2eb793] mr-3" />
-                  <h3 className="text-[16px] font-bold text-white tracking-wide">{area.title}</h3>
+            {t.practiceAreas.map((area, idx) => {
+              const isActive = activePractice === idx;
+              return (
+                <div key={idx} 
+                     onClick={() => setActivePractice(isActive ? null : idx)}
+                     className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer group">
+                  
+                  <div className="flex items-center justify-between pb-2">
+                    <div className="flex items-center">
+                      <area.icon className="w-6 h-6 text-[#2eb793] mr-3" />
+                      <h3 className="text-[16px] font-bold text-white tracking-wide">{area.title}</h3>
+                    </div>
+                    <div className="flex items-center text-[#2eb793] text-xs font-semibold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+                      {isActive ? t.ui.hideDetails : t.ui.viewDetails} 
+                      <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
+                    </div>
+                  </div>
+
+                  {/* Nội dung chi tiết xổ xuống */}
+                  <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                    <div className="overflow-hidden">
+                      {/* Khung ảnh cho từng lĩnh vực */}
+                      <div className="w-full h-40 md:h-48 rounded-xl overflow-hidden mb-5 border border-white/10 bg-black/20">
+                         <img src={area.image} alt={area.title} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
+                      </div>
+                      <ul className="space-y-3 pb-2">
+                        {area.cases.map((c, i) => (
+                          <li key={i} className="flex items-start text-[13.5px] font-light text-slate-300">
+                            <ChevronRight className="w-4 h-4 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
+                            <span>{c.text} <span className="font-semibold text-white">{c.highlight}</span> {c.suffix}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
                 </div>
-                <ul className="space-y-3">
-                  {area.cases.map((c, i) => (
-                    <li key={i} className="flex items-start text-[13.5px] font-light text-slate-300">
-                      <ChevronRight className="w-4 h-4 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
-                      <span>{c.text} <span className="font-semibold text-white">{c.highlight}</span> {c.suffix}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="border-t border-white/10 pt-16">
@@ -605,29 +711,67 @@ export default function App() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Trong nước */}
+              {/* Trong nước (Accordions) */}
               <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
                 <h4 className="text-lg font-bold text-[#2eb793] flex items-center mb-6 uppercase tracking-wide"><MapPin className="w-5 h-5 mr-2" /> {t.practice.domestic}</h4>
                 <div className="space-y-4">
-                  {t.networking.domestic.map((item, idx) => (
-                    <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-[#2eb793]/10 hover:border-[#2eb793]/30 transition-all flex items-start group">
-                      <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
-                      <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors">{item.title}</h5>
-                    </div>
-                  ))}
+                  {t.networking.domestic.map((item, idx) => {
+                    const isActive = activeDomNetwork === idx;
+                    return (
+                      <div key={idx} 
+                           onClick={() => setActiveDomNetwork(isActive ? null : idx)}
+                           className={`bg-white/5 border rounded-2xl p-4 transition-all cursor-pointer group ${isActive ? 'border-[#2eb793]/40 bg-white/10' : 'border-white/10 hover:bg-[#2eb793]/5 hover:border-[#2eb793]/20'}`}>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-start">
+                             <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
+                             <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors pr-4">{item.title}</h5>
+                          </div>
+                          <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2eb793]' : ''}`} />
+                        </div>
+                        {/* Chi tiết xổ xuống */}
+                        <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                          <div className="overflow-hidden">
+                             <div className="w-full h-40 rounded-xl overflow-hidden mb-4 bg-black/20">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                             </div>
+                             <p className="text-[13px] text-slate-300 font-light leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 
-              {/* Quốc tế */}
+              {/* Quốc tế (Accordions) */}
               <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
                 <h4 className="text-lg font-bold text-[#2eb793] flex items-center mb-6 uppercase tracking-wide"><Globe className="w-5 h-5 mr-2" /> {t.practice.international}</h4>
                 <div className="space-y-4">
-                  {t.networking.international.map((item, idx) => (
-                    <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-[#2eb793]/10 hover:border-[#2eb793]/30 transition-all flex items-start group">
-                      <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
-                      <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors">{item.title}</h5>
-                    </div>
-                  ))}
+                  {t.networking.international.map((item, idx) => {
+                    const isActive = activeIntNetwork === idx;
+                    return (
+                      <div key={idx} 
+                           onClick={() => setActiveIntNetwork(isActive ? null : idx)}
+                           className={`bg-white/5 border rounded-2xl p-4 transition-all cursor-pointer group ${isActive ? 'border-[#2eb793]/40 bg-white/10' : 'border-white/10 hover:bg-[#2eb793]/5 hover:border-[#2eb793]/20'}`}>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-start">
+                             <item.icon className="w-10 h-10 text-[#2eb793] mr-4 shrink-0 p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
+                             <h5 className="text-[14.5px] font-medium text-slate-200 leading-snug mt-1 group-hover:text-white transition-colors pr-4">{item.title}</h5>
+                          </div>
+                          <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2eb793]' : ''}`} />
+                        </div>
+                        {/* Chi tiết xổ xuống */}
+                        <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                          <div className="overflow-hidden">
+                             <div className="w-full h-40 rounded-xl overflow-hidden mb-4 bg-black/20">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                             </div>
+                             <p className="text-[13px] text-slate-300 font-light leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
@@ -644,128 +788,136 @@ export default function App() {
                 <div className="h-[2px] w-8 bg-[#1d6266]"></div>
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.community.subtitle}</span>
              </div>
-             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.community.title}</h2>
-             <p className="text-[14px] md:text-[15px] text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">{t.community.jciIntro}</p>
+             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">{t.community.title}</h2>
           </div>
 
-          {/* --- TIMELINE NẰM NGANG --- */}
-          <div className="mb-24 pt-8">
-            <h3 className="text-xl font-bold text-slate-900 mb-14 text-center">{t.community.leadershipTitle}</h3>
-            
-            <div className="relative group/timeline">
-               <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[4px] bg-slate-200 rounded-full z-0">
-                  <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-gradient-to-r from-[#1d6266] to-[#2eb793] transition-all duration-1000 ease-in-out rounded-full shadow-[0_0_10px_rgba(46,183,147,0.5)]"></div>
+          {/* --- 1. JCI --- */}
+          <div className="mb-20">
+             <div className="flex items-center justify-center mb-6">
+                <h3 className="text-2xl lg:text-3xl font-extrabold text-[#1d6266] text-center">{t.community.jciTitle}</h3>
+             </div>
+             <p className="text-[14px] md:text-[15px] text-slate-600 max-w-4xl mx-auto font-light leading-relaxed text-center mb-12">{t.community.jciIntro}</p>
+
+             {/* --- TIMELINE NẰM NGANG --- */}
+             <div className="mb-24 pt-8">
+               <h4 className="text-xl font-bold text-slate-900 mb-14 text-center">{t.community.leadershipTitle}</h4>
+               
+               <div className="relative group/timeline">
+                  <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[4px] bg-slate-200 rounded-full z-0">
+                     <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-gradient-to-r from-[#1d6266] to-[#2eb793] transition-all duration-1000 ease-in-out rounded-full shadow-[0_0_10px_rgba(46,183,147,0.5)]"></div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
+                    {t.jciLeadership.map((item, idx) => (
+                      <div key={idx} className="flex flex-col items-center group/item relative">
+                         <div className="w-14 h-14 rounded-full bg-white border-[4px] border-slate-100 flex items-center justify-center mb-6 z-10 shadow-sm group-hover/item:border-[#2eb793] group-hover/item:shadow-[0_0_20px_rgba(46,183,147,0.4)] group-hover/item:-translate-y-1 transition-all duration-300">
+                           <item.icon className="w-6 h-6 text-[#1d6266] group-hover/item:text-[#2eb793] transition-colors" />
+                         </div>
+                         
+                         <div className="bg-white w-full p-6 rounded-2xl border border-slate-100 shadow-sm group-hover/item:shadow-lg group-hover/item:border-[#2eb793]/30 transition-all duration-300 text-center flex-1 relative overflow-hidden group-hover/item:-translate-y-1">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d6266] to-[#2eb793] transform origin-left scale-x-0 group-hover/item:scale-x-100 transition-transform duration-500"></div>
+                            
+                            <span className="inline-block px-3 py-1 bg-[#1d6266]/5 text-[#1d6266] rounded-md text-[11px] font-bold uppercase tracking-widest mb-3">
+                              {item.year}
+                            </span>
+                            <h4 className="text-[15px] font-bold text-slate-900 mb-2 leading-snug">{item.title}</h4>
+                            <p className="text-[13px] text-slate-600 font-light leading-relaxed">{item.desc}</p>
+                         </div>
+                      </div>
+                    ))}
+                  </div>
+               </div>
+             </div>
+
+             {/* --- HOẠT ĐỘNG TIÊU BIỂU (Expandable Cards) --- */}
+             <div>
+               <div className="flex items-center justify-center border-b border-slate-200 pb-6 mb-12">
+                 <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h4>
                </div>
                
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
-                 {t.jciLeadership.map((item, idx) => (
-                   <div key={idx} className="flex flex-col items-center group/item relative">
-                      <div className="w-14 h-14 rounded-full bg-white border-[4px] border-slate-100 flex items-center justify-center mb-6 z-10 shadow-sm group-hover/item:border-[#2eb793] group-hover/item:shadow-[0_0_20px_rgba(46,183,147,0.4)] group-hover/item:-translate-y-1 transition-all duration-300">
-                        <item.icon className="w-6 h-6 text-[#1d6266] group-hover/item:text-[#2eb793] transition-colors" />
-                      </div>
-                      
-                      <div className="bg-white w-full p-6 rounded-2xl border border-slate-100 shadow-sm group-hover/item:shadow-lg group-hover/item:border-[#2eb793]/30 transition-all duration-300 text-center flex-1 relative overflow-hidden group-hover/item:-translate-y-1">
-                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d6266] to-[#2eb793] transform origin-left scale-x-0 group-hover/item:scale-x-100 transition-transform duration-500"></div>
-                         
-                         <span className="inline-block px-3 py-1 bg-[#1d6266]/5 text-[#1d6266] rounded-md text-[11px] font-bold uppercase tracking-widest mb-3">
-                           {item.year}
-                         </span>
-                         <h4 className="text-[15px] font-bold text-slate-900 mb-2 leading-snug">{item.title}</h4>
-                         <p className="text-[13px] text-slate-600 font-light leading-relaxed">{item.desc}</p>
-                      </div>
-                   </div>
-                 ))}
+               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+                 
+                 {Object.values(t.jciActivities).map((category, idx) => {
+                   // Lấy icon tương ứng
+                   let IconMap = MapPin;
+                   if(category.id === 'national') IconMap = Flag;
+                   if(category.id === 'international') IconMap = Globe;
+                   if(category.id === 'social') IconMap = HandHeart;
+
+                   const isActive = activeJciActivity === category.id;
+
+                   return (
+                     <div key={idx} 
+                          className="bg-white rounded-[2rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
+                       
+                       {/* Header luôn hiển thị */}
+                       <div 
+                         onClick={() => setActiveJciActivity(isActive ? null : category.id)}
+                         className="p-8 pb-6 cursor-pointer hover:bg-slate-50 transition-colors flex flex-col items-center relative z-10"
+                       >
+                         <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
+                           <IconMap className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
+                         </div>
+                         <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center mb-3">{category.title}</h4>
+                         <div className="flex items-center text-[#2eb793] text-[11px] font-bold tracking-widest uppercase mt-2">
+                           {isActive ? t.ui.hideDetails : t.ui.viewDetails}
+                           <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
+                         </div>
+                       </div>
+
+                       {/* Chi tiết xổ xuống */}
+                       <div className={`grid transition-all duration-500 ease-in-out bg-slate-50 ${isActive ? 'grid-rows-[1fr] opacity-100 border-t border-slate-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                         <div className="overflow-hidden">
+                           <div className="p-8 pt-6">
+                             {/* Khung ảnh */}
+                             <div className="w-full h-36 rounded-xl overflow-hidden mb-6 bg-slate-200 shadow-inner">
+                                <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
+                             </div>
+                             
+                             <div className="space-y-5 relative z-10">
+                               {category.items.map((item, i) => (
+                                 <div key={i} className="flex items-start group/item">
+                                   <div className="mt-1.5 mr-4 shrink-0">
+                                     <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
+                                   </div>
+                                   <div>
+                                     <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                                     <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
+                                   </div>
+                                 </div>
+                               ))}
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+
+                     </div>
+                   )
+                 })}
+
                </div>
-            </div>
+             </div>
           </div>
 
-          {/* --- HOẠT ĐỘNG TIÊU BIỂU --- */}
-          <div>
-            <div className="flex items-center justify-center border-b border-slate-200 pb-6 mb-12">
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
-              {/* Local */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
+          {/* --- 2 & 3. OTHER COMMUNITIES --- */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {t.community.otherCommunities.map((org, idx) => (
+              <div key={idx} className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <MapPin className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.local.title}</h4>
+                
+                <div className="w-20 h-20 rounded-full bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3 relative z-10">
+                  <org.icon className="w-10 h-10 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
                 </div>
-
-                <div className="space-y-6 relative z-10">
-                  {t.jciActivities.local.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                
+                <h4 className="text-[18px] font-bold text-slate-900 mb-4 leading-snug group-hover:text-[#1d6266] transition-colors relative z-10">
+                  <span className="text-[#1d6266] mr-2">{org.index}</span> 
+                  {org.name}
+                </h4>
+                <div className="bg-[#2eb793]/10 text-[#1d6266] px-4 py-2 rounded-xl text-[14px] font-semibold border border-[#2eb793]/20 relative z-10">
+                  {org.role}
                 </div>
               </div>
-
-              {/* National */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <Flag className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.national.title}</h4>
-                </div>
-
-                <div className="space-y-6 relative z-10">
-                  {t.jciActivities.national.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* International */}
-              <div className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-[#2eb793]/40 hover:shadow-[0_20px_50px_-15px_rgba(29,98,102,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col relative overflow-hidden group h-fit">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#2eb793]/10 to-transparent rounded-tr-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                <div className="flex flex-col items-center mb-8 border-b border-slate-100 pb-8 relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                    <Globe className="w-7 h-7 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <h4 className="text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center">{t.jciActivities.international.title}</h4>
-                </div>
-
-                <div className="space-y-6 relative z-10">
-                  {t.jciActivities.international.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start group/item">
-                      <div className="mt-1.5 mr-4 shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
-                      </div>
-                      <div>
-                        <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                        <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-            </div>
+            ))}
           </div>
 
         </div>
@@ -779,9 +931,9 @@ export default function App() {
                <img 
                  src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" 
                  alt="Paxlaw Logo" 
-                 className="h-10 md:h-12 object-contain opacity-90"
+                 className="h-20 md:h-24 object-contain opacity-90"
                />
-               <div className="ml-4 pl-4 border-l border-white/30 h-10 flex flex-col justify-center text-left">
+               <div className="ml-4 pl-4 border-l border-white/30 h-16 flex flex-col justify-center text-left">
                   <span className="text-[9px] font-bold tracking-[0.2em] uppercase leading-none mb-1 text-white/60">
                     {lang === 'vi' ? 'Luật sư' : 'Atty.'}
                   </span>
