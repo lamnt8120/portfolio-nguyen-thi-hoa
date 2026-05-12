@@ -84,7 +84,6 @@ const dict = {
       {
         title: "M&A & Tái cấu trúc",
         icon: Building2,
-        image: "https://placehold.co/800x400/1d6266/ffffff?text=M&A+&+Tai+Cau+Truc", // Link ảnh placeholder
         cases: [
           { text: "Đại diện mua nhà máy sản xuất thép (Miền Bắc) quy mô", highlight: "1.000 tỷ VNĐ." },
           { text: "Cố vấn chuyển nhượng dự án BĐS nghỉ dưỡng Bãi Dài trị giá", highlight: "1.600 tỷ VNĐ." },
@@ -94,7 +93,6 @@ const dict = {
       {
         title: "Tài chính - Ngân hàng",
         icon: Landmark,
-        image: "https://placehold.co/800x400/2eb793/ffffff?text=Tai+Chinh+Ngan+Hang",
         cases: [
           { text: "Bảo trợ phát hành trái phiếu dự án tại BR-VT, quy mô", highlight: "800 tỷ VNĐ." },
           { text: "Xử lý khủng hoảng cho 07 gói trái phiếu DN, giá trị", highlight: "500 - 850 tỷ VNĐ/gói." },
@@ -104,7 +102,6 @@ const dict = {
       {
         title: "Đầu tư quốc tế & BĐS",
         icon: Globe2,
-        image: "https://placehold.co/800x400/1d6266/ffffff?text=Dau+Tu+Quoc+Te+&+BDS",
         cases: [
           { text: "Bảo trợ dự án tổ hợp nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
           { text: "Cố vấn chính sách PPP tại Việt Nam cho Bộ KH&ĐT Hàn Quốc.", highlight: "" },
@@ -114,7 +111,6 @@ const dict = {
       {
         title: "Hợp đồng & Tranh chấp",
         icon: ShieldCheck,
-        image: "https://placehold.co/800x400/2eb793/ffffff?text=Hop+Dong+&+Tranh+Chap",
         cases: [
           { text: "Chuẩn hóa hợp đồng cung ứng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
           { text: "Bảo vệ quyền lợi Tập đoàn Xây dựng VN dự án EPC", highlight: "(250 tỷ VNĐ)." },
@@ -146,13 +142,13 @@ const dict = {
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Workshop+2024' },
-        { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User, desc: 'Dự án định hướng nghề nghiệp, truyền cảm hứng và chia sẻ kinh nghiệm thực chiến cho sinh viên ngành luật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Shape+Your+Future' },
-        { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award, desc: 'Đồng hành cùng các dự án đổi mới sáng tạo của sinh viên trong vai trò Cố vấn chuyên môn và Ban giám khảo.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=SIL+Dai+Nam' },
+        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
+        { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User, desc: 'Dự án định hướng nghề nghiệp, truyền cảm hứng và chia sẻ kinh nghiệm thực chiến cho sinh viên ngành luật.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
+        { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award, desc: 'Đồng hành cùng các dự án đổi mới sáng tạo của sinh viên trong vai trò Cố vấn chuyên môn và Ban giám khảo.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
         { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart, desc: 'Thiết lập quan hệ đối tác chiến lược nhằm mở rộng hệ sinh thái dịch vụ pháp lý trọn gói.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
-        { title: 'Đại biểu đoàn VN Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Trade+Expo+Mumbai' },
+        { title: 'Đại biểu đoàn VN Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
         { title: 'Giao lưu LS JCI toàn cầu với đoàn LS tại Đào Viên', icon: Globe, desc: 'Tham gia mạng lưới kết nối chuyên gia pháp lý quốc tế, trao đổi kinh nghiệm hành nghề xuyên biên giới.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
         { title: 'Thăm & giao lưu đối tác tại Đài Loan - Braintrust', icon: MapPin, desc: 'Mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Á (cùng Luật sư Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
         { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - LS Yoshio', icon: HandHeart, desc: 'Ký kết thỏa thuận hợp tác, tạo kênh hỗ trợ pháp lý trực tiếp cho các luồng đầu tư Việt - Nhật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
@@ -168,36 +164,37 @@ const dict = {
       local: {
         id: 'local',
         title: "Hoạt động cấp chi hội",
-        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Cap+Chi+Hoi',
         items: [
-          { name: "GUC - Launch To Leader", desc: "Chương trình phát triển năng lực lãnh đạo." },
-          { name: "Dòng Chảy Thành Công", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp." },
-          { name: "Sự kiện giao lưu Hiệp hội DN Tô Châu", desc: "Kết nối doanh nghiệp Trung Quốc với khu vực Đông Nam Á." }
+          { name: "GUC - Launch To Leader", desc: "Chương trình phát triển năng lực lãnh đạo.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Launch+To+Leader' },
+          { name: "Dòng Chảy Thành Công", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Dong+Chay' },
+          { name: "Sự kiện giao lưu Hiệp hội DN Tô Châu", desc: "Kết nối doanh nghiệp Trung Quốc với khu vực Đông Nam Á.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=To+Chau' }
         ]
       },
       national: {
         id: 'national',
         title: "Hoạt động cấp quốc gia",
-        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Cap+Quoc+Gia',
         items: [
-          { name: "Nghị sự NATCON & NYC (2024 - 2025)", desc: "Tham gia các kỳ họp cấp cao và hoạch định chiến lược." }
+          { name: "Nghị sự NATCON & NYC (2024 - 2025)", desc: "Tham gia các kỳ họp cấp cao và hoạch định chiến lược.", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
+          { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện BTC điều hành và xúc tiến quan hệ hợp tác, xây dựng cầu nối giao thương ASEAN.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
+          { name: "Sự kiện Rise To Shine 2025", desc: "Vinh danh Top 5 dự án xuất sắc, lan tỏa thông điệp JCI RISE về khát vọng phụng sự.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
         ]
       },
       international: {
         id: 'international',
         title: "Hoạt động cấp quốc tế",
-        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Cap+Quoc+Te',
         items: [
-          { name: "Đại biểu JCI Quốc tế", desc: "Tích cực tham gia các kỳ họp và giao thương tại khu vực." }
+          { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm mạng lưới lãnh đạo trẻ toàn cầu, kết nối giao thương với hội viên tinh hoa.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
+          { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra cơ hội ký kết hợp tác.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
+          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế bền vững.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Viet+An+Exchange' },
+          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Trung Quốc và Malaysia.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senator' }
         ]
       },
       social: {
         id: 'social',
         title: "Trách nhiệm Xã hội",
-        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Trach+Nhiem+Xa+Hoi',
         items: [
-          { name: "Chiến dịch \"Chung lòng mùa bão 2024\"", desc: "Liên quân JCI Miền Bắc hỗ trợ đồng bào vùng lũ." },
-          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đồng tổ chức (Co-host) cùng JCI Hải Phòng và JCI Hà Nội." }
+          { name: "Chiến dịch \"Chung lòng mùa bão 2024\"", desc: "Liên quân JCI Miền Bắc hỗ trợ đồng bào vùng lũ.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Chung+Long+Mua+Bao' },
+          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đồng tổ chức (Co-host) cùng JCI Hải Phòng và JCI Hà Nội.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
         ]
       }
     },
@@ -279,7 +276,6 @@ const dict = {
       {
         title: "M&A & Restructuring",
         icon: Building2,
-        image: "https://placehold.co/800x400/1d6266/ffffff?text=M&A+&+Restructuring",
         cases: [
           { text: "Acquisition of a major steel plant valued at", highlight: "VND 1,000 billion." },
           { text: "Transfer of Bai Dai Resort project valued at", highlight: "VND 1,600 billion." },
@@ -289,7 +285,6 @@ const dict = {
       {
         title: "Banking & Finance",
         icon: Landmark,
-        image: "https://placehold.co/800x400/2eb793/ffffff?text=Banking+&+Finance",
         cases: [
           { text: "Corporate bond issuance for a real estate project, sized at", highlight: "VND 800 billion." },
           { text: "Crisis resolution for 7 corporate bond issuances", highlight: "(VND 500-850B each)." },
@@ -299,7 +294,6 @@ const dict = {
       {
         title: "Investment & Real Estate",
         icon: Globe2,
-        image: "https://placehold.co/800x400/1d6266/ffffff?text=Investment+&+Real+Estate",
         cases: [
           { text: "Legal backing for a luxury resort featuring", highlight: "1,000+ Condotels." },
           { text: "PPP Policy Report advisor for Ministry of Finance (South Korea).", highlight: "" },
@@ -309,7 +303,6 @@ const dict = {
       {
         title: "Contracts & Disputes",
         icon: ShieldCheck,
-        image: "https://placehold.co/800x400/2eb793/ffffff?text=Contracts+&+Disputes",
         cases: [
           { text: "Standardized contracts for E-commerce platforms (Shopee, Lazada).", highlight: "" },
           { text: "Represented Construction Group in an EPC dispute", highlight: "(VND 250 billion)." },
@@ -341,13 +334,13 @@ const dict = {
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Workshop+2024' },
-        { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User, desc: 'Career orientation, inspiring and sharing practical experience for law students.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Shape+Your+Future' },
-        { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award, desc: 'Accompanying student innovation projects as an Expert Advisor and Judge.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=SIL+Dai+Nam' },
+        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
+        { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User, desc: 'Career orientation, inspiring and sharing practical experience for law students.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
+        { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award, desc: 'Accompanying student innovation projects as an Expert Advisor and Judge.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
         { title: 'Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart, desc: 'Establishing a strategic partnership to expand the comprehensive legal service ecosystem.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
-        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Promoting trade, connecting investment and legal cooperation opportunities between VN and India.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Trade+Expo+Mumbai' },
+        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Promoting trade, connecting investment and legal cooperation opportunities between VN and India.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
         { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc.', icon: Globe, desc: 'Participating in the international legal expert network, exchanging cross-border practice experience.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
         { title: 'Partner Visit in Taiwan - Braintrust', icon: MapPin, desc: 'Expanding the strategic partner network in East Asia (with Lawyer Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
         { title: 'Partnership with Japan Partner - Lawyer Yoshio', icon: HandHeart, desc: 'Signing cooperation agreements, creating a direct legal support channel for Vietnam - Japan investments.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
@@ -363,36 +356,37 @@ const dict = {
       local: {
         id: 'local',
         title: "Local Chapter Level",
-        image: 'https://placehold.co/800x400/1d6266/ffffff?text=Local+Chapter',
         items: [
-          { name: "GUC - Launch To Leader", desc: "Leadership capacity development program." },
-          { name: "Flow of Success", desc: "Practical business networking event series." },
-          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese enterprises with SE Asia." }
+          { name: "GUC - Launch To Leader", desc: "Leadership capacity development program.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Launch+To+Leader' },
+          { name: "Flow of Success", desc: "Practical business networking event series.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Flow+Of+Success' },
+          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese enterprises with SE Asia.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Suzhou+Exchange' }
         ]
       },
       national: {
         id: 'national',
         title: "National Level",
-        image: 'https://placehold.co/800x400/2eb793/ffffff?text=National+Level',
         items: [
-          { name: "NATCON & NYC Agendas", desc: "Participated in JCI Vietnam high-level meetings (2024 - 2025)." }
+          { name: "NATCON & NYC Agendas", desc: "Participated in JCI Vietnam high-level meetings (2024 - 2025).", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
+          { name: "\"Let's meet up Vietnam\" Forum (2025)", desc: "Trade bridge between ASEAN businesses & strategic advisors.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
+          { name: "\"Rise To Shine 2025\" Gala", desc: "Honored Top 5 outstanding community projects spreading the JCI RISE message.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
         ]
       },
       international: {
         id: 'international',
         title: "International Level",
-        image: 'https://placehold.co/800x400/1d6266/ffffff?text=International+Level',
         items: [
-          { name: "JCI International Delegate", desc: "Actively engaged in regional meetings and trade." }
+          { name: "JCI World Congress 2024 (Taiwan)", desc: "Global trade connections with elite members worldwide.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
+          { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "Cultural exchange and international MOU signings.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
+          { name: "Vietnam - India JCI Exchange", desc: "Bilateral bridge promoting socio-economic cooperation.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Vietnam+India' },
+          { name: "JCI ASEAN Senate Board", desc: "Vietnam delegate contributing to regional strategy meetings.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senate' }
         ]
       },
       social: {
         id: 'social',
         title: "Social Responsibility",
-        image: 'https://placehold.co/800x400/2eb793/ffffff?text=Social+Responsibility',
         items: [
-          { name: "\"Uniting through the 2024 Storm Season\"", desc: "Joined Northern JCI Alliance to support flood victims." },
-          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hanoi." }
+          { name: "\"Uniting through the 2024 Storm Season\"", desc: "Joined Northern JCI Alliance to support flood victims.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Storm+Season' },
+          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hanoi.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
         ]
       }
     },
@@ -682,13 +676,9 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Nội dung chi tiết xổ xuống */}
+                  {/* Nội dung chi tiết xổ xuống (Đã xóa khung ảnh) */}
                   <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                     <div className="overflow-hidden">
-                      {/* Khung ảnh cho từng lĩnh vực */}
-                      <div className="w-full h-40 md:h-48 rounded-xl overflow-hidden mb-5 border border-white/10 bg-black/20">
-                         <img src={area.image} alt={area.title} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
-                      </div>
                       <ul className="space-y-3 pb-2">
                         {area.cases.map((c, i) => (
                           <li key={i} className="flex items-start text-[13.5px] font-light text-slate-300">
@@ -868,21 +858,16 @@ export default function App() {
                        {/* Chi tiết xổ xuống */}
                        <div className={`grid transition-all duration-500 ease-in-out bg-slate-50 ${isActive ? 'grid-rows-[1fr] opacity-100 border-t border-slate-100' : 'grid-rows-[0fr] opacity-0'}`}>
                          <div className="overflow-hidden">
-                           <div className="p-8 pt-6">
-                             {/* Khung ảnh */}
-                             <div className="w-full h-36 rounded-xl overflow-hidden mb-6 bg-slate-200 shadow-inner">
-                                <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
-                             </div>
-                             
-                             <div className="space-y-5 relative z-10">
+                           <div className="p-5">
+                             <div className="space-y-4 relative z-10">
                                {category.items.map((item, i) => (
-                                 <div key={i} className="flex items-start group/item">
-                                   <div className="mt-1.5 mr-4 shrink-0">
-                                     <div className="w-1.5 h-1.5 rounded-full bg-[#1d6266]/30 group-hover/item:bg-[#2eb793] group-hover/item:scale-[2] transition-all duration-300"></div>
+                                 <div key={i} className="group/item bg-white p-3 rounded-2xl border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md transition-shadow">
+                                   <div className="w-full h-32 rounded-lg overflow-hidden mb-3 bg-slate-200">
+                                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" />
                                    </div>
-                                   <div>
+                                   <div className="px-1">
                                      <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                                     <p className="text-[13px] font-light leading-relaxed text-slate-500">{item.desc}</p>
+                                     <p className="text-[12px] font-light leading-relaxed text-slate-500">{item.desc}</p>
                                    </div>
                                  </div>
                                ))}
