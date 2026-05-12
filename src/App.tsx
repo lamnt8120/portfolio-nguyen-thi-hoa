@@ -82,39 +82,39 @@ const dict = {
     },
     practiceAreas: [
       {
-        title: "M&A & Tái cấu trúc",
+        title: "M&A & Tái cấu trúc doanh nghiệp",
         icon: Building2,
         cases: [
-          { text: "Đại diện mua nhà máy sản xuất thép (Miền Bắc) quy mô", highlight: "1.000 tỷ VNĐ." },
-          { text: "Cố vấn chuyển nhượng dự án BĐS nghỉ dưỡng Bãi Dài trị giá", highlight: "1.600 tỷ VNĐ." },
-          { text: "Tái cấu trúc tài chính Tập đoàn Khoáng sản Thái Nguyên", highlight: "(>1.000 tỷ VNĐ)." },
-        ]
-      },
-      {
-        title: "Tài chính - Ngân hàng",
-        icon: Landmark,
-        cases: [
-          { text: "Bảo trợ phát hành trái phiếu dự án tại BR-VT, quy mô", highlight: "800 tỷ VNĐ." },
-          { text: "Xử lý khủng hoảng cho 07 gói trái phiếu DN, giá trị", highlight: "500 - 850 tỷ VNĐ/gói." },
-          { text: "Thiết kế pháp lý vay & trả nợ nước ngoài", highlight: "(3.5 triệu USD)", suffix: " của Tập đoàn Hà Lan." },
+          { text: "Đại diện pháp lý bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) quy mô ", highlight: "1.000 tỷ VND." },
+          { text: "Cố vấn chiến lược M&A chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Cam Ranh) trị giá ", highlight: "1.600 tỷ VND." },
+          { text: "Thiết kế và triển khai phương án tái cấu trúc toàn diện tài chính, nhân sự, quy trình Tập đoàn Khoáng sản Thái Nguyên ", highlight: "(>1.000 tỷ VND)." },
         ]
       },
       {
         title: "Đầu tư quốc tế & BĐS",
         icon: Globe2,
         cases: [
-          { text: "Bảo trợ dự án tổ hợp nghỉ dưỡng", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
-          { text: "Cố vấn chính sách PPP tại Việt Nam cho Bộ KH&ĐT Hàn Quốc.", highlight: "" },
-          { text: "Thiết lập pháp nhân cho tập đoàn FDI từ Mỹ, Nhật, Hong Kong.", highlight: "" },
+          { text: "Bảo trợ pháp lý trọn gói dự án tổ hợp nghỉ dưỡng ", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
+          { text: "Thành viên nhóm chuyên gia cố vấn xây dựng Báo cáo chính sách về phương thức Hợp tác Công - Tư (PPP) tại Việt Nam cho Bộ Kinh tế và Tài chính Hàn Quốc.", highlight: "" },
+          { text: "Thiết lập và vận hành cấu trúc pháp lý cho loạt tập đoàn FDI (Nhật Bản, Hàn Quốc, Hong Kong...) rót vốn vào các khu công nghiệp Việt Nam.", highlight: "" },
+        ]
+      },
+      {
+        title: "Tài chính - Ngân hàng",
+        icon: Landmark,
+        cases: [
+          { text: "Bảo trợ pháp lý phát hành trái phiếu doanh nghiệp dự án điện rác (Bà Rịa - Vũng Tàu), quy mô ", highlight: "800 tỷ VND." },
+          { text: "Tư vấn giải pháp xử lý khủng hoảng và tái cơ cấu cho 07 gói trái phiếu doanh nghiệp, giá trị ", highlight: "500 - 850 tỷ VND/gói." },
+          { text: "Thiết kế khung pháp lý vay và trả nợ nước ngoài ", highlight: "(3.5 triệu USD)", suffix: " của Tập đoàn nông nghiệp Hà Lan đầu tư vào Việt Nam." },
         ]
       },
       {
         title: "Hợp đồng & Tranh chấp",
         icon: ShieldCheck,
         cases: [
-          { text: "Chuẩn hóa hợp đồng cung ứng E-commerce (Shopee, Lazada, Tiki).", highlight: "" },
-          { text: "Bảo vệ quyền lợi Tập đoàn Xây dựng VN dự án EPC", highlight: "(250 tỷ VNĐ)." },
-          { text: "Đại diện Chủ đầu tư tranh chấp thầu xây dựng tại Khánh Hòa", highlight: "(350 tỷ VNĐ)." },
+          { text: "Chuẩn hóa hệ thống hợp đồng cung ứng và vận chuyển cho các sàn E-commerce hàng đầu (Shopee, Lazada, Tiki...).", highlight: "" },
+          { text: "Bảo vệ thành công quyền lợi của Tập đoàn Xây dựng VN trong tranh chấp hợp đồng EPC ", highlight: "(250 tỷ VND)." },
+          { text: "Đại diện Chủ đầu tư xử lý thắng lợi tranh chấp thầu xây dựng tại Khánh Hòa ", highlight: "(350 tỷ VND)." },
         ]
       }
     ],
@@ -277,36 +277,36 @@ const dict = {
         title: "M&A & Restructuring",
         icon: Building2,
         cases: [
-          { text: "Acquisition of a major steel plant valued at", highlight: "VND 1,000 billion." },
-          { text: "Transfer of Bai Dai Resort project valued at", highlight: "VND 1,600 billion." },
-          { text: "Financial restructuring plan for Thai Nguyen Mineral Group", highlight: "(>VND 1,000 billion)." },
+          { text: "Legal representative for the buyer in the acquisition of a steel plant (Northern region) sized at ", highlight: "VND 1,000 billion." },
+          { text: "Strategic M&A advisor for the transfer of Bai Dai Resort project (Cam Ranh) valued at ", highlight: "VND 1,600 billion." },
+          { text: "Designed and implemented comprehensive financial, HR, and process restructuring plan for Thai Nguyen Mineral Group ", highlight: "(>VND 1,000 billion)." },
+        ]
+      },
+      {
+        title: "International Investment & Real Estate",
+        icon: Globe2,
+        cases: [
+          { text: "Comprehensive legal backing for a luxury resort featuring ", highlight: "1,000+ 5-star Condotels", suffix: " in Nha Trang." },
+          { text: "Member of the expert advisory group developing the Policy Report on Public-Private Partnerships (PPP) in Vietnam for the Ministry of Economy and Finance of South Korea.", highlight: "" },
+          { text: "Established and operated legal structures for multiple FDI groups (Japan, South Korea, Hong Kong...) investing in Vietnam's industrial zones.", highlight: "" },
         ]
       },
       {
         title: "Banking & Finance",
         icon: Landmark,
         cases: [
-          { text: "Corporate bond issuance for a real estate project, sized at", highlight: "VND 800 billion." },
-          { text: "Crisis resolution for 7 corporate bond issuances", highlight: "(VND 500-850B each)." },
-          { text: "Legal frameworks for foreign loans", highlight: "(USD 3.5M)", suffix: " for a Dutch Group." },
-        ]
-      },
-      {
-        title: "Investment & Real Estate",
-        icon: Globe2,
-        cases: [
-          { text: "Legal backing for a luxury resort featuring", highlight: "1,000+ Condotels." },
-          { text: "PPP Policy Report advisor for Ministry of Finance (South Korea).", highlight: "" },
-          { text: "Investment structures for FDI from US, Japan, Hong Kong.", highlight: "" },
+          { text: "Legal backing for corporate bond issuance of a waste-to-energy project (Ba Ria - Vung Tau), sized at ", highlight: "VND 800 billion." },
+          { text: "Advised on crisis resolution and restructuring solutions for 07 corporate bond issuances, valued at ", highlight: "VND 500-850B each." },
+          { text: "Designed legal frameworks for foreign loans ", highlight: "(USD 3.5M)", suffix: " for a Dutch agricultural group investing in Vietnam." },
         ]
       },
       {
         title: "Contracts & Disputes",
         icon: ShieldCheck,
         cases: [
-          { text: "Standardized contracts for E-commerce platforms (Shopee, Lazada).", highlight: "" },
-          { text: "Represented Construction Group in an EPC dispute", highlight: "(VND 250 billion)." },
-          { text: "Project Owner rights in a construction bidding dispute", highlight: "(VND 350 billion)." },
+          { text: "Standardized the supply and transportation contract system for leading E-commerce platforms (Shopee, Lazada, Tiki...).", highlight: "" },
+          { text: "Successfully defended the rights of a VN Construction Group in an EPC contract dispute ", highlight: "(VND 250 billion)." },
+          { text: "Represented the Project Owner to successfully resolve a construction bidding dispute in Khanh Hoa ", highlight: "(VND 350 billion)." },
         ]
       }
     ],
