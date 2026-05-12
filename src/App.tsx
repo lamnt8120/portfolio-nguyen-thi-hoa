@@ -386,7 +386,7 @@ const dict = {
         title: "Social Responsibility",
         items: [
           { name: "\"Uniting through the 2024 Storm Season\"", desc: "Joined Northern JCI Alliance to support flood victims.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Storm+Season' },
-          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hanoi.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
+          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hà Nội.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
         ]
       }
     },
@@ -721,8 +721,8 @@ export default function App() {
                         {/* Chi tiết xổ xuống */}
                         <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                           <div className="overflow-hidden">
-                             <div className="w-full h-40 rounded-xl overflow-hidden mb-4 bg-black/20">
-                               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                             <div className="w-full h-auto rounded-xl overflow-hidden mb-4 bg-black/20">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
                              </div>
                              <p className="text-[13px] text-slate-300 font-light leading-relaxed">{item.desc}</p>
                           </div>
@@ -753,8 +753,8 @@ export default function App() {
                         {/* Chi tiết xổ xuống */}
                         <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                           <div className="overflow-hidden">
-                             <div className="w-full h-40 rounded-xl overflow-hidden mb-4 bg-black/20">
-                               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                             <div className="w-full h-auto rounded-xl overflow-hidden mb-4 bg-black/20">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
                              </div>
                              <p className="text-[13px] text-slate-300 font-light leading-relaxed">{item.desc}</p>
                           </div>
@@ -862,8 +862,8 @@ export default function App() {
                              <div className="space-y-4 relative z-10">
                                {category.items.map((item, i) => (
                                  <div key={i} className="group/item bg-white p-3 rounded-2xl border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md transition-shadow">
-                                   <div className="w-full h-32 rounded-lg overflow-hidden mb-3 bg-slate-200">
-                                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" />
+                                   <div className="w-full h-auto rounded-lg overflow-hidden mb-3 bg-slate-200">
+                                      <img src={item.image} alt={item.name} className="w-full h-full object-contain group-hover/item:scale-105 transition-transform duration-500" />
                                    </div>
                                    <div className="px-1">
                                      <h5 className="text-[14px] font-bold text-slate-800 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
