@@ -85,9 +85,9 @@ const dict = {
         title: "M&A & Tái cấu trúc doanh nghiệp",
         icon: Building2,
         cases: [
-          { text: "Đại diện pháp lý bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) quy mô ", highlight: "1.000 tỷ VND." },
-          { text: "Cố vấn chiến lược M&A chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Cam Ranh) trị giá ", highlight: "1.600 tỷ VND." },
-          { text: "Thiết kế và triển khai phương án tái cấu trúc toàn diện tài chính, nhân sự, quy trình Tập đoàn Khoáng sản Thái Nguyên ", highlight: "(>1.000 tỷ VND)." },
+          { text: "Đại diện pháp lý bên mua trong thương vụ thâu tóm nhà máy sản xuất thép (Miền Bắc) quy mô ", highlight: "1.000 tỷ VNĐ." },
+          { text: "Cố vấn chiến lược M&A chuyển nhượng dự án Bất động sản nghỉ dưỡng Bãi Dài (Cam Ranh) trị giá ", highlight: "1.600 tỷ VNĐ." },
+          { text: "Thiết kế và triển khai phương án tái cấu trúc toàn diện tài chính, nhân sự, quy trình Tập đoàn Khoáng sản Thái Nguyên ", highlight: "(>1.000 tỷ VNĐ)." },
         ]
       },
       {
@@ -95,16 +95,16 @@ const dict = {
         icon: Globe2,
         cases: [
           { text: "Bảo trợ pháp lý trọn gói dự án tổ hợp nghỉ dưỡng ", highlight: "1000+ Condotel 5 sao", suffix: " tại Nha Trang." },
-          { text: "Thành viên nhóm chuyên gia cố vấn xây dựng Báo cáo chính sách về phương thức Hợp tác Công - Tư (PPP) tại Việt Nam cho Bộ Kinh tế và Tài chính Hàn Quốc.", highlight: "" },
-          { text: "Thiết lập và vận hành cấu trúc pháp lý cho loạt tập đoàn FDI (Nhật Bản, Hàn Quốc, Hong Kong...) rót vốn vào các khu công nghiệp Việt Nam.", highlight: "" },
+          { text: "Thành viên nhóm chuyên gia cố vấn xây dựng Báo cáo chính sách về phương thức Hợp tác Công - Tư (PPP) tại Việt Nam cho Bộ Kinh tế và Tài chính Hàn Quốc." },
+          { text: "Thiết lập và vận hành cấu trúc pháp lý cho loạt tập đoàn FDI (Nhật Bản, Hàn Quốc, Hong Kong...) rót vốn vào các khu công nghiệp Việt Nam." },
         ]
       },
       {
         title: "Tài chính - Ngân hàng",
         icon: Landmark,
         cases: [
-          { text: "Bảo trợ pháp lý phát hành trái phiếu doanh nghiệp dự án điện rác (Bà Rịa - Vũng Tàu), quy mô ", highlight: "800 tỷ VND." },
-          { text: "Tư vấn giải pháp xử lý khủng hoảng và tái cơ cấu cho 07 gói trái phiếu doanh nghiệp, giá trị ", highlight: "500 - 850 tỷ VND/gói." },
+          { text: "Bảo trợ pháp lý phát hành trái phiếu doanh nghiệp dự án điện rác (Bà Rịa - Vũng Tàu), quy mô ", highlight: "800 tỷ VNĐ." },
+          { text: "Tư vấn giải pháp xử lý khủng hoảng và tái cơ cấu cho 07 gói trái phiếu doanh nghiệp, giá trị ", highlight: "500 - 850 tỷ VNĐ/gói." },
           { text: "Thiết kế khung pháp lý vay và trả nợ nước ngoài ", highlight: "(3.5 triệu USD)", suffix: " của Tập đoàn nông nghiệp Hà Lan đầu tư vào Việt Nam." },
         ]
       },
@@ -112,9 +112,9 @@ const dict = {
         title: "Hợp đồng & Tranh chấp",
         icon: ShieldCheck,
         cases: [
-          { text: "Chuẩn hóa hệ thống hợp đồng cung ứng và vận chuyển cho các sàn E-commerce hàng đầu (Shopee, Lazada, Tiki...).", highlight: "" },
-          { text: "Bảo vệ thành công quyền lợi của Tập đoàn Xây dựng VN trong tranh chấp hợp đồng EPC ", highlight: "(250 tỷ VND)." },
-          { text: "Đại diện Chủ đầu tư xử lý thắng lợi tranh chấp thầu xây dựng tại Khánh Hòa ", highlight: "(350 tỷ VND)." },
+          { text: "Chuẩn hóa hệ thống hợp đồng cung ứng và vận chuyển cho các sàn E-commerce hàng đầu (Shopee, Lazada, Tiki...)." },
+          { text: "Bảo vệ thành công quyền lợi của Tập đoàn Xây dựng VN trong tranh chấp hợp đồng EPC ", highlight: "(250 tỷ VNĐ)." },
+          { text: "Đại diện Chủ đầu tư xử lý thắng lợi tranh chấp thầu xây dựng tại Khánh Hòa ", highlight: "(350 tỷ VNĐ)." },
         ]
       }
     ],
@@ -187,14 +187,6 @@ const dict = {
           { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra cơ hội ký kết hợp tác.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
           { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế bền vững.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Viet+An+Exchange' },
           { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Trung Quốc và Malaysia.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senator' }
-        ]
-      },
-      social: {
-        id: 'social',
-        title: "Trách nhiệm Xã hội",
-        items: [
-          { name: "Chiến dịch \"Chung lòng mùa bão 2024\"", desc: "Liên quân JCI Miền Bắc hỗ trợ đồng bào vùng lũ.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Chung+Long+Mua+Bao' },
-          { name: "Giải Pickleball Miền Bắc mở rộng", desc: "Đồng tổ chức (Co-host) cùng JCI Hải Phòng và JCI Hà Nội.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
         ]
       }
     },
@@ -277,7 +269,7 @@ const dict = {
         title: "M&A & Restructuring",
         icon: Building2,
         cases: [
-          { text: "Legal representative for the buyer in the acquisition of a steel plant (Northern region) sized at ", highlight: "VND 1,000 billion." },
+          { text: "Legal representative for the buyer in the acquisition of a steel plant (Northern region) valued at ", highlight: "VND 1,000 billion." },
           { text: "Strategic M&A advisor for the transfer of Bai Dai Resort project (Cam Ranh) valued at ", highlight: "VND 1,600 billion." },
           { text: "Designed and implemented comprehensive financial, HR, and process restructuring plan for Thai Nguyen Mineral Group ", highlight: "(>VND 1,000 billion)." },
         ]
@@ -287,8 +279,8 @@ const dict = {
         icon: Globe2,
         cases: [
           { text: "Comprehensive legal backing for a luxury resort featuring ", highlight: "1,000+ 5-star Condotels", suffix: " in Nha Trang." },
-          { text: "Member of the expert advisory group developing the Policy Report on Public-Private Partnerships (PPP) in Vietnam for the Ministry of Economy and Finance of South Korea.", highlight: "" },
-          { text: "Established and operated legal structures for multiple FDI groups (Japan, South Korea, Hong Kong...) investing in Vietnam's industrial zones.", highlight: "" },
+          { text: "Member of the expert advisory group developing the Policy Report on Public-Private Partnerships (PPP) in Vietnam for the Ministry of Economy and Finance of South Korea." },
+          { text: "Established and operated legal structures for multiple FDI groups (Japan, South Korea, Hong Kong...) investing in Vietnam's industrial zones." },
         ]
       },
       {
@@ -304,7 +296,7 @@ const dict = {
         title: "Contracts & Disputes",
         icon: ShieldCheck,
         cases: [
-          { text: "Standardized the supply and transportation contract system for leading E-commerce platforms (Shopee, Lazada, Tiki...).", highlight: "" },
+          { text: "Standardized the supply and transportation contract system for leading E-commerce platforms (Shopee, Lazada, Tiki...)." },
           { text: "Successfully defended the rights of a VN Construction Group in an EPC contract dispute ", highlight: "(VND 250 billion)." },
           { text: "Represented the Project Owner to successfully resolve a construction bidding dispute in Khanh Hoa ", highlight: "(VND 350 billion)." },
         ]
@@ -380,14 +372,6 @@ const dict = {
           { name: "Vietnam - India JCI Exchange", desc: "Bilateral bridge promoting socio-economic cooperation.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Vietnam+India' },
           { name: "JCI ASEAN Senate Board", desc: "Vietnam delegate contributing to regional strategy meetings.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senate' }
         ]
-      },
-      social: {
-        id: 'social',
-        title: "Social Responsibility",
-        items: [
-          { name: "\"Uniting through the 2024 Storm Season\"", desc: "Joined Northern JCI Alliance to support flood victims.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Storm+Season' },
-          { name: "Northern Open Pickleball Tournament", desc: "Co-hosted with JCI Hai Phong and JCI Hà Nội.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Pickleball' }
-        ]
       }
     },
     contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri St, Cau Giay, Hanoi" },
@@ -427,11 +411,12 @@ export default function App() {
   const [lang, setLang] = useState('vi');
   const t = dict[lang]; 
 
-  // States cho các thẻ mở rộng (Accordion)
-  const [activePractice, setActivePractice] = useState(null);
-  const [activeDomNetwork, setActiveDomNetwork] = useState(null);
-  const [activeIntNetwork, setActiveIntNetwork] = useState(null);
-  const [activeJciActivity, setActiveJciActivity] = useState(null);
+  // Thay đổi: Các thẻ mở rộng sẽ mở sẵn vị trí đầu tiên (0, hoặc 'local') 
+  // thay vì bị ẩn tất cả (null)
+  const [activePractice, setActivePractice] = useState(0);
+  const [activeDomNetwork, setActiveDomNetwork] = useState(0);
+  const [activeIntNetwork, setActiveIntNetwork] = useState(0);
+  const [activeJciActivity, setActiveJciActivity] = useState('local');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -676,14 +661,18 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Nội dung chi tiết xổ xuống (Đã xóa khung ảnh) */}
+                  {/* Nội dung chi tiết xổ xuống */}
                   <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-4 pt-4 border-t border-white/10 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                     <div className="overflow-hidden">
                       <ul className="space-y-3 pb-2">
                         {area.cases.map((c, i) => (
                           <li key={i} className="flex items-start text-[13.5px] font-light text-slate-300">
                             <ChevronRight className="w-4 h-4 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
-                            <span>{c.text} <span className="font-semibold text-white">{c.highlight}</span> {c.suffix}</span>
+                            <span>
+                              {c.text} 
+                              {c.highlight && <span className="font-semibold text-white">{c.highlight}</span>}
+                              {c.suffix && ` ${c.suffix}`}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -825,14 +814,13 @@ export default function App() {
                  <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h4>
                </div>
                
-               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
                  
                  {Object.values(t.jciActivities).map((category, idx) => {
                    // Lấy icon tương ứng
                    let IconMap = MapPin;
                    if(category.id === 'national') IconMap = Flag;
                    if(category.id === 'international') IconMap = Globe;
-                   if(category.id === 'social') IconMap = HandHeart;
 
                    const isActive = activeJciActivity === category.id;
 
