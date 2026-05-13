@@ -411,12 +411,11 @@ export default function App() {
   const [lang, setLang] = useState('vi');
   const t = dict[lang]; 
 
-  // Thay đổi: Các thẻ mở rộng sẽ mở sẵn vị trí đầu tiên (0, hoặc 'local') 
-  // thay vì bị ẩn tất cả (null)
-  const [activePractice, setActivePractice] = useState(0);
-  const [activeDomNetwork, setActiveDomNetwork] = useState(0);
-  const [activeIntNetwork, setActiveIntNetwork] = useState(0);
-  const [activeJciActivity, setActiveJciActivity] = useState('local');
+  // Các thẻ mở rộng sẽ bị ẩn tất cả (null) khi vừa vào trang
+  const [activePractice, setActivePractice] = useState(null);
+  const [activeDomNetwork, setActiveDomNetwork] = useState(null);
+  const [activeIntNetwork, setActiveIntNetwork] = useState(null);
+  const [activeJciActivity, setActiveJciActivity] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
