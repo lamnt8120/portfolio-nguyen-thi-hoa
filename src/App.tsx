@@ -145,14 +145,13 @@ const dict = {
         { title: 'Diễn giả Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
         { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User, desc: 'Dự án định hướng nghề nghiệp, truyền cảm hứng và chia sẻ kinh nghiệm thực chiến cho sinh viên ngành luật.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
         { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award, desc: 'Đồng hành cùng các dự án đổi mới sáng tạo của sinh viên trong vai trò Cố vấn chuyên môn và Ban giám khảo.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
-        { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart, desc: 'Thiết lập quan hệ đối tác chiến lược nhằm mở rộng hệ sinh thái dịch vụ pháp lý trọn gói.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
+        { title: 'Hợp tác với hãng luật BNA (2025)', icon: HandHeart, desc: 'Thiết lập quan hệ đối tác chiến lược nhằm mở rộng hệ sinh thái dịch vụ pháp lý trọn gói.', image: 'https://i.postimg.cc/cHR1jLVd/bna.jpg' }
       ],
       international: [
-        { title: 'Đại biểu đoàn Việt Nam Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
         { title: 'Triển lãm quốc tế về sản phẩm/dịch vụ ASEAN - Trade Expo Mumbai Ấn Độ (2024)', icon: Briefcase, desc: 'Tham gia gian hàng triển lãm, giới thiệu và xúc tiến các cơ hội hợp tác thương mại tại thị trường Ấn Độ.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
         { title: 'Giao lưu luật sư JCI toàn cầu với đoàn luật sư tại Đào Viên (2024)', icon: Globe, desc: 'Tham gia mạng lưới kết nối chuyên gia pháp lý quốc tế, trao đổi kinh nghiệm hành nghề xuyên biên giới.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
         { title: 'Thăm và giao lưu đối tác tại Đài Loan - Braintrust (Anh Hung Ou Yang) (2024)', icon: MapPin, desc: 'Mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Á.', image: 'https://i.postimg.cc/4NDP8h3D/braintrust.jpg' },
-        { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - LS Yoshio', icon: HandHeart, desc: 'Ký kết thỏa thuận hợp tác, tạo kênh hỗ trợ pháp lý trực tiếp cho các luồng đầu tư Việt - Nhật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
+        { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - LS Yoshio', icon: HandHeart, desc: 'Ký kết thỏa thuận hợp tác, tạo kênh hỗ trợ pháp lý trực tiếp cho các luồng đầu tư Việt - Nhật.', image: 'https://i.postimg.cc/9Qbd3WHt/ki-ke-t-o-nha-t.jpg' }
       ]
     },
     jciLeadership: [
@@ -330,14 +329,13 @@ const dict = {
         { title: 'Speaker at Workshop "Smart Legal Frameworks, Rational Cooperation" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
         { title: 'Speaker for the "Shape Your Future" Project (2023-2025)', icon: User, desc: 'Career orientation, inspiring and sharing practical experience for law students.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
         { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award, desc: 'Accompanying student innovation projects as an Expert Advisor and Judge.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
-        { title: 'Strategic Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart, desc: 'Establishing a strategic partnership to expand the comprehensive legal service ecosystem.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
+        { title: 'Strategic Partnership with BNA Law Firm (2025)', icon: HandHeart, desc: 'Establishing a strategic partnership to expand the comprehensive legal service ecosystem.', image: 'https://i.postimg.cc/cHR1jLVd/bna.jpg' }
       ],
       international: [
-        { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Promoting trade, connecting investment and legal cooperation opportunities between VN and India.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
         { title: 'International Exhibition of ASEAN Products/Services - Trade Expo Mumbai, India (2024)', icon: Briefcase, desc: 'Participating in the exhibition, promoting trade and introducing products to the Indian market.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
         { title: 'JCI Global Lawyers Exchange with the Taoyuan Bar Association (2024)', icon: Globe, desc: 'Participating in the international legal expert network, exchanging cross-border practice experience.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
         { title: 'Partner Visit & Exchange in Taiwan - Braintrust (Mr. Hung Ou Yang) (2024)', icon: MapPin, desc: 'Expanding the strategic partner network in East Asia.', image: 'https://i.postimg.cc/4NDP8h3D/braintrust.jpg' },
-        { title: 'Strategic Partnership with Japanese Partner - Lawyer Yoshio', icon: HandHeart, desc: 'Signing cooperation agreements, creating a direct legal support channel for Vietnam - Japan investments.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
+        { title: 'Strategic Partnership with Japanese Partner - Lawyer Yoshio', icon: HandHeart, desc: 'Signing cooperation agreements, creating a direct legal support channel for Vietnam - Japan investments.', image: 'https://i.postimg.cc/9Qbd3WHt/ki-ke-t-o-nha-t.jpg' }
       ]
     },
     jciLeadership: [
@@ -483,20 +481,22 @@ export default function App() {
             </div>
           </div>
 
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-slate-800 p-1">
-            {mobileMenuOpen ? <X className={`h-6 w-6 transition-colors ${isScrolled ? 'text-slate-800' : 'text-white'}`} /> : <Menu className={`h-6 w-6 transition-colors ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`} />}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-slate-800 p-2 -mr-2">
+            {mobileMenuOpen ? <X className={`h-7 w-7 transition-colors ${isScrolled ? 'text-slate-800' : 'text-white'}`} /> : <Menu className={`h-7 w-7 transition-colors ${isScrolled ? 'text-[#1d6266]' : 'text-white'}`} />}
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 flex flex-col items-center space-y-4 border-t border-slate-100">
+          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 flex flex-col items-center space-y-2 border-t border-slate-100">
             {t.nav.map((item, idx) => (
-              <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])} className="text-sm font-bold text-slate-700 uppercase tracking-widest w-full py-3">{item}</button>
+              <button key={idx} onClick={() => scrollTo(['ho-so', 'chuyen-mon', 'cong-dong'][idx])} className="text-[15px] font-bold text-slate-700 uppercase tracking-widest w-full py-3.5 hover:bg-slate-50 transition-colors">{item}</button>
             ))}
-             <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="text-sm font-bold text-[#1d6266] uppercase py-3 flex items-center w-full justify-center bg-slate-50">
-                <Globe className="w-4 h-4 mr-2" /> Ngôn ngữ: {lang === 'vi' ? 'VI' : 'EN'}
-             </button>
+             <div className="w-full px-6 pt-2 pb-1">
+                <button onClick={() => { setLang(lang === 'vi' ? 'en' : 'vi'); setMobileMenuOpen(false); }} className="text-[14px] font-bold text-white bg-[#1d6266] rounded-xl uppercase py-3.5 flex items-center w-full justify-center hover:bg-[#154a4d] transition-colors">
+                  <Globe className="w-5 h-5 mr-2" /> Ngôn ngữ: {lang === 'vi' ? 'Tiếng Việt' : 'English'}
+                </button>
+             </div>
           </div>
         )}
       </nav>
@@ -508,50 +508,50 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            <div className="lg:col-span-7 flex flex-col text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
+            <div className="lg:col-span-7 flex flex-col text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0">
                <div className="inline-flex items-center justify-center lg:justify-start space-x-3 mb-4 lg:mb-6">
                  <div className="h-[2px] w-6 lg:w-8 bg-[#2eb793]"></div>
                  <span className="text-[#2eb793] font-bold tracking-[0.2em] uppercase text-[10px] lg:text-xs">{t.hero.subtitle}</span>
                </div>
                
-               <h1 className="text-[40px] sm:text-5xl md:text-6xl lg:text-[80px] font-extrabold text-white mb-3 lg:mb-4 tracking-tight leading-[1.1] drop-shadow-lg">
+               <h1 className="text-[36px] sm:text-5xl md:text-6xl lg:text-[80px] font-extrabold text-white mb-3 lg:mb-4 tracking-tight leading-[1.15] drop-shadow-lg">
                  {lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}
                </h1>
                
-               <p className="text-lg md:text-xl lg:text-2xl text-[#2eb793] font-light italic mb-6 lg:mb-8">
+               <p className="text-[16px] md:text-xl lg:text-2xl text-[#2eb793] font-light italic mb-6 lg:mb-8">
                  {t.hero.quote}
                </p>
                
-               <p className="text-sm md:text-base lg:text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10 px-4 lg:px-0">
+               <p className="text-[14px] md:text-base lg:text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10 px-4 lg:px-0">
                  {t.hero.desc}
                </p>
 
-               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 lg:gap-4">
+               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-4">
                   <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-                    <a href="tel:+84911553686" className="w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center bg-[#2eb793] text-[#1d6266] rounded-full hover:bg-white transition-colors border border-[#2eb793] shadow-lg">
-                      <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
+                    <a href="tel:+84911553686" className="w-12 h-12 flex items-center justify-center bg-[#2eb793] text-[#1d6266] rounded-full hover:bg-white transition-colors border border-[#2eb793] shadow-lg">
+                      <Phone className="w-5 h-5" />
                     </a>
                   </TooltipQR>
                   <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-                    <a href="mailto:hoant@paxlaw.vn" className="w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
-                      <Mail className="w-4 h-4 lg:w-5 lg:h-5" />
+                    <a href="mailto:hoant@paxlaw.vn" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
+                      <Mail className="w-5 h-5" />
                     </a>
                   </TooltipQR>
-                  <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-                    <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
-                      <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <TooltipQR qrUrl="https://vn.linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
+                    <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
+                      <Linkedin className="w-5 h-5" />
                     </a>
                   </TooltipQR>
-                  <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
-                    <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
-                      <Facebook className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <TooltipQR qrUrl="https://www.facebook.com/Paxlaw.vn" scanText={t.hero.scanToConnect}>
+                    <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/20 shadow-lg">
+                      <Facebook className="w-5 h-5" />
                     </a>
                   </TooltipQR>
                </div>
             </div>
 
             <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 px-6 sm:px-0">
-               <div className="relative w-full max-w-[260px] sm:max-w-[320px] aspect-[4/5] lg:max-w-[400px] lg:h-[480px]">
+               <div className="relative w-full max-w-[240px] sm:max-w-[320px] aspect-[4/5] lg:max-w-[400px] lg:h-[480px]">
                  <div className="absolute inset-0 bg-[#2eb793] rounded-3xl transform translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4 opacity-50 blur-sm"></div>
                  <img 
                    src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" 
@@ -584,11 +584,11 @@ export default function App() {
                 <p className="border-l-[3px] lg:border-l-4 border-[#2eb793] pl-3 lg:pl-4 font-medium text-slate-800">{t.profile.desc2}</p>
               </div>
 
-              <div className="flex gap-4 md:gap-8 bg-slate-50 p-5 lg:p-6 rounded-2xl border border-slate-100 justify-around lg:justify-start">
+              <div className="flex gap-4 md:gap-8 bg-slate-50 p-5 lg:p-6 rounded-2xl border border-slate-100 justify-around lg:justify-start flex-wrap">
                 {t.stats.map((stat, idx) => (
-                  <div key={idx} className="text-center lg:text-left">
-                    <div className="text-2xl md:text-3xl font-extrabold text-[#1d6266] mb-1">{stat.value}</div>
-                    <div className="text-[9px] md:text-[11px] font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                  <div key={idx} className="text-center lg:text-left px-2">
+                    <div className="text-3xl lg:text-3xl font-extrabold text-[#1d6266] mb-1">{stat.value}</div>
+                    <div className="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -653,10 +653,10 @@ export default function App() {
                   
                   <div className="flex items-center justify-between pb-1 lg:pb-2">
                     <div className="flex items-center">
-                      <area.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-2 lg:mr-3" />
-                      <h3 className="text-[14px] lg:text-[16px] font-bold text-white tracking-wide">{area.title}</h3>
+                      <area.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-2 lg:mr-3 shrink-0" />
+                      <h3 className="text-[14px] lg:text-[16px] font-bold text-white tracking-wide pr-2">{area.title}</h3>
                     </div>
-                    <div className="flex items-center text-[#2eb793] text-[10px] lg:text-xs font-semibold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex items-center text-[#2eb793] text-[10px] lg:text-xs font-semibold tracking-wider uppercase opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity shrink-0">
                       <span className="hidden sm:inline">{isActive ? t.ui.hideDetails : t.ui.viewDetails}</span>
                       <ChevronDown className={`w-4 h-4 sm:ml-1 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
                     </div>
@@ -704,7 +704,7 @@ export default function App() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-start">
                              <item.icon className="w-8 h-8 lg:w-10 lg:h-10 text-[#2eb793] mr-3 lg:mr-4 shrink-0 p-1.5 lg:p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
-                             <h5 className="text-[13.5px] lg:text-[14.5px] font-medium text-slate-200 leading-snug mt-0.5 lg:mt-1 group-hover:text-white transition-colors pr-2 lg:pr-4">{item.title}</h5>
+                             <h5 className="text-[13px] lg:text-[14.5px] font-medium text-slate-200 leading-snug mt-0.5 lg:mt-1 group-hover:text-white transition-colors pr-2 lg:pr-4">{item.title}</h5>
                           </div>
                           <ChevronDown className={`w-4 h-4 lg:w-5 lg:h-5 text-slate-400 shrink-0 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2eb793]' : ''}`} />
                         </div>
@@ -736,7 +736,7 @@ export default function App() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-start">
                              <item.icon className="w-8 h-8 lg:w-10 lg:h-10 text-[#2eb793] mr-3 lg:mr-4 shrink-0 p-1.5 lg:p-2 bg-[#1d6266] rounded-xl group-hover:scale-110 transition-transform" />
-                             <h5 className="text-[13.5px] lg:text-[14.5px] font-medium text-slate-200 leading-snug mt-0.5 lg:mt-1 group-hover:text-white transition-colors pr-2 lg:pr-4">{item.title}</h5>
+                             <h5 className="text-[13px] lg:text-[14.5px] font-medium text-slate-200 leading-snug mt-0.5 lg:mt-1 group-hover:text-white transition-colors pr-2 lg:pr-4">{item.title}</h5>
                           </div>
                           <ChevronDown className={`w-4 h-4 lg:w-5 lg:h-5 text-slate-400 shrink-0 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2eb793]' : ''}`} />
                         </div>
@@ -790,7 +790,7 @@ export default function App() {
                   {/* Container scroll ngang trên mobile */}
                   <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 relative z-10 snap-x snap-mandatory hide-scroll pb-6 -mx-5 px-5 md:-mx-6 md:px-6 lg:mx-0 lg:px-0 lg:pb-0">
                     {t.jciLeadership.map((item, idx) => (
-                      <div key={idx} className="flex flex-col items-center group/item relative min-w-[75%] sm:min-w-[45%] md:min-w-[40%] lg:min-w-0 snap-center">
+                      <div key={idx} className="flex flex-col items-center group/item relative min-w-[80%] sm:min-w-[45%] md:min-w-[40%] lg:min-w-0 snap-center">
                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white border-[3px] lg:border-[4px] border-slate-100 flex items-center justify-center mb-4 lg:mb-6 z-10 shadow-sm group-hover/item:border-[#2eb793] group-hover/item:shadow-[0_0_20px_rgba(46,183,147,0.4)] group-hover/item:-translate-y-1 transition-all duration-300">
                            <item.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#1d6266] group-hover/item:text-[#2eb793] transition-colors" />
                          </div>
@@ -920,16 +920,16 @@ export default function App() {
           </div>
           <div className="flex gap-3 lg:gap-5">
              <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-               <a href="tel:+84911553686" className="w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Phone className="w-4 h-4"/></a>
+               <a href="tel:+84911553686" className="w-10 h-10 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Phone className="w-4 h-4"/></a>
              </TooltipQR>
              <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-               <a href="mailto:hoant@paxlaw.vn" className="w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Mail className="w-4 h-4"/></a>
+               <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Mail className="w-4 h-4"/></a>
              </TooltipQR>
-             <TooltipQR qrUrl="https://linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-               <a href="https://linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Linkedin className="w-4 h-4"/></a>
+             <TooltipQR qrUrl="https://vn.linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
+               <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Linkedin className="w-4 h-4"/></a>
              </TooltipQR>
-             <TooltipQR qrUrl="https://facebook.com/hoant.paxlaw" scanText={t.hero.scanToConnect}>
-               <a href="https://facebook.com/hoant.paxlaw" target="_blank" rel="noreferrer" className="w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Facebook className="w-4 h-4"/></a>
+             <TooltipQR qrUrl="https://www.facebook.com/Paxlaw.vn" scanText={t.hero.scanToConnect}>
+               <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-10 h-10 lg:w-10 lg:h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors"><Facebook className="w-4 h-4"/></a>
              </TooltipQR>
           </div>
         </div>
