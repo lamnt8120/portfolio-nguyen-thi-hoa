@@ -129,28 +129,29 @@ const dict = {
         {
           index: "2.",
           name: "Hội doanh nghiệp Việt Nam tại Benelux",
-          role: "Thành viên đại diện khu vực phía Bắc Việt Nam",
+          role: "Thành viên Ban chấp hành phụ trách Quan hệ Công chúng khu vực phía Bắc Việt Nam",
           icon: Globe
         },
         {
           index: "3.",
           name: "Hội đồng kinh doanh Việt Nam - Saudi",
-          role: "Thành viên sáng lập",
+          role: "Thành viên sáng lập Hội đồng điều hành lâm thời",
           icon: HandHeart
         }
       ]
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
+        { title: 'Diễn giả Workshop "Pháp lý thông minh, lý tình hợp tác" (2024)', icon: Mic, desc: 'Sự kiện chia sẻ kiến thức pháp lý ứng dụng thực tiễn cho cộng đồng khởi nghiệp và doanh nghiệp SME.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
         { title: 'Diễn giả Dự án "Shape Your Future" (2023-2025)', icon: User, desc: 'Dự án định hướng nghề nghiệp, truyền cảm hứng và chia sẻ kinh nghiệm thực chiến cho sinh viên ngành luật.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
         { title: 'Cố vấn & Giám khảo SIL Đại học Đại Nam (2024)', icon: Award, desc: 'Đồng hành cùng các dự án đổi mới sáng tạo của sinh viên trong vai trò Cố vấn chuyên môn và Ban giám khảo.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
         { title: 'Hợp tác với hãng luật BNA (chị Dung)', icon: HandHeart, desc: 'Thiết lập quan hệ đối tác chiến lược nhằm mở rộng hệ sinh thái dịch vụ pháp lý trọn gói.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
-        { title: 'Đại biểu đoàn VN Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
-        { title: 'Giao lưu LS JCI toàn cầu với đoàn LS tại Đào Viên', icon: Globe, desc: 'Tham gia mạng lưới kết nối chuyên gia pháp lý quốc tế, trao đổi kinh nghiệm hành nghề xuyên biên giới.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
-        { title: 'Thăm & giao lưu đối tác tại Đài Loan - Braintrust', icon: MapPin, desc: 'Mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Á (cùng Luật sư Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
+        { title: 'Đại biểu đoàn Việt Nam Triển lãm Quốc tế Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Xúc tiến giao thương, kết nối cơ hội đầu tư và hợp tác pháp lý giữa doanh nghiệp Việt Nam và Ấn Độ.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
+        { title: 'Triển lãm quốc tế về sản phẩm/dịch vụ ASEAN - Trade Expo Mumbai Ấn Độ (2024)', icon: Briefcase, desc: 'Tham gia gian hàng triển lãm, giới thiệu và xúc tiến các cơ hội hợp tác thương mại tại thị trường Ấn Độ.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
+        { title: 'Giao lưu luật sư JCI toàn cầu với đoàn luật sư tại Đào Viên (2024)', icon: Globe, desc: 'Tham gia mạng lưới kết nối chuyên gia pháp lý quốc tế, trao đổi kinh nghiệm hành nghề xuyên biên giới.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
+        { title: 'Thăm và giao lưu đối tác tại Đài Loan - Braintrust (Anh Hung Ou Yang) (2024)', icon: MapPin, desc: 'Mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Á.', image: 'https://i.postimg.cc/4NDP8h3D/braintrust.jpg' },
         { title: 'Giao kết hợp tác với đối tác tại Nhật Bản - LS Yoshio', icon: HandHeart, desc: 'Ký kết thỏa thuận hợp tác, tạo kênh hỗ trợ pháp lý trực tiếp cho các luồng đầu tư Việt - Nhật.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
       ]
     },
@@ -165,9 +166,9 @@ const dict = {
         id: 'local',
         title: "Hoạt động cấp chi hội",
         items: [
-          { name: "GUC - Launch To Leader", desc: "Chương trình phát triển năng lực lãnh đạo.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Launch+To+Leader' },
-          { name: "Dòng Chảy Thành Công", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Dong+Chay' },
-          { name: "Sự kiện giao lưu Hiệp hội DN Tô Châu", desc: "Kết nối doanh nghiệp Trung Quốc với khu vực Đông Nam Á.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=To+Chau' }
+          { name: "GUC - Launch To Leader (2024)", desc: "Chương trình phát triển năng lực lãnh đạo.", image: 'https://i.postimg.cc/c1nG6wVq/guc.jpg' },
+          { name: "Dòng Chảy Thành Công (2026)", desc: "Chuỗi sự kiện kết nối thực tế doanh nghiệp.", image: 'https://i.postimg.cc/RZjcCrtY/do-ng-cha-y-tha-nh-co-ng.jpg' },
+          { name: "Sự kiện giao lưu với Hiệp hội doanh nghiệp Tô Châu - Trung Quốc với khu vực Đông Nam Á", desc: "Kết nối doanh nghiệp Trung Quốc với khu vực Đông Nam Á.", image: 'https://i.postimg.cc/xdDzDvD9/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-57-38-SA.png' }
         ]
       },
       national: {
@@ -176,7 +177,7 @@ const dict = {
         items: [
           { name: "Nghị sự NATCON & NYC (2024 - 2025)", desc: "Tham gia các kỳ họp cấp cao và hoạch định chiến lược.", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
           { name: "Diễn đàn \"Let's meet up Việt Nam\" (2025)", desc: "Đại diện BTC điều hành và xúc tiến quan hệ hợp tác, xây dựng cầu nối giao thương ASEAN.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
-          { name: "Sự kiện Rise To Shine 2025", desc: "Vinh danh Top 5 dự án xuất sắc, lan tỏa thông điệp JCI RISE về khát vọng phụng sự.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
+          { name: "Rise To Shine JCI Vietnam 2025", desc: "Vinh danh Top 5 dự án xuất sắc, lan tỏa thông điệp JCI RISE về khát vọng phụng sự.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
         ]
       },
       international: {
@@ -185,8 +186,8 @@ const dict = {
         items: [
           { name: "JCI World Congress 2024 (Đài Loan)", desc: "Điểm chạm mạng lưới lãnh đạo trẻ toàn cầu, kết nối giao thương với hội viên tinh hoa.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
           { name: "JCI ASPAC 2024 & 2025 (Mông Cổ)", desc: "Không gian giao cảm văn hóa và chiến lược khu vực, mở ra cơ hội ký kết hợp tác.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
-          { name: "Giao lưu Quốc tế JCI Việt - Ấn", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế bền vững.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Viet+An+Exchange' },
-          { name: "Ban điều hành JCI ASEAN Senator", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Trung Quốc và Malaysia.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senator' }
+          { name: "Giao lưu Quốc tế JCI Marine Lines India & JCI Thanglong", desc: "Thúc đẩy tinh thần học hỏi đa văn hóa và kiến tạo cơ hội hợp tác kinh tế bền vững.", image: 'https://i.postimg.cc/mgMPwPzx/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-58-35-SA.png' },
+          { name: "JCI ASEAN Senator BOD Meeting (2025 - 2026)", desc: "Đại biểu chính thức đoàn Việt Nam tham gia chuỗi nghị sự tại Trung Quốc và Malaysia.", image: 'https://i.postimg.cc/4xbJyV7S/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-59-46-SA.png' }
         ]
       }
     },
@@ -313,28 +314,29 @@ const dict = {
         {
           index: "2.",
           name: "Vietnam Business Association in Benelux",
-          role: "Representative Member for Northern Vietnam",
+          role: "Executive Committee Member in charge of Public Relations for Northern Vietnam",
           icon: Globe
         },
         {
           index: "3.",
           name: "Vietnam - Saudi Business Council",
-          role: "Founding Member",
+          role: "Founding Member of the Interim Executive Council",
           icon: HandHeart
         }
       ]
     },
     networking: {
       domestic: [
-        { title: 'Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
+        { title: 'Speaker at Workshop "Smart Legal, Collaborative Spirit" (2024)', icon: Mic, desc: 'Sharing practical legal knowledge for startups and SME communities.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
         { title: 'Speaker for "Shape Your Future" Project (2023-2025)', icon: User, desc: 'Career orientation, inspiring and sharing practical experience for law students.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
         { title: 'Advisor & Judge for SIL at Dai Nam University (2024)', icon: Award, desc: 'Accompanying student innovation projects as an Expert Advisor and Judge.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
         { title: 'Partnership with BNA Law Firm (Ms. Dung)', icon: HandHeart, desc: 'Establishing a strategic partnership to expand the comprehensive legal service ecosystem.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=BNA+Partnership' }
       ],
       international: [
         { title: 'Vietnam Delegate at Trade Expo, Mumbai (2024)', icon: Flag, desc: 'Promoting trade, connecting investment and legal cooperation opportunities between VN and India.', image: 'https://i.postimg.cc/bvs6r8hh/la-nh-su-qua.jpg' },
-        { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc.', icon: Globe, desc: 'Participating in the international legal expert network, exchanging cross-border practice experience.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=JCI+Taoyuan' },
-        { title: 'Partner Visit in Taiwan - Braintrust', icon: MapPin, desc: 'Expanding the strategic partner network in East Asia (with Lawyer Hung Ou Yang).', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Braintrust+Taiwan' },
+        { title: 'International Exhibition of ASEAN Products/Services - Trade Expo Mumbai, India (2024)', icon: Briefcase, desc: 'Participating in the exhibition, promoting trade and introducing products to the Indian market.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
+        { title: 'JCI Global Lawyers Exchange with Taoyuan Bar Assoc. (2024)', icon: Globe, desc: 'Participating in the international legal expert network, exchanging cross-border practice experience.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
+        { title: 'Partner Visit in Taiwan - Braintrust (Mr. Hung Ou Yang) (2024)', icon: MapPin, desc: 'Expanding the strategic partner network in East Asia.', image: 'https://i.postimg.cc/4NDP8h3D/braintrust.jpg' },
         { title: 'Partnership with Japan Partner - Lawyer Yoshio', icon: HandHeart, desc: 'Signing cooperation agreements, creating a direct legal support channel for Vietnam - Japan investments.', image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Japan+Partnership' }
       ]
     },
@@ -349,18 +351,18 @@ const dict = {
         id: 'local',
         title: "Local Chapter Level",
         items: [
-          { name: "GUC - Launch To Leader", desc: "Leadership capacity development program.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Launch+To+Leader' },
-          { name: "Flow of Success", desc: "Practical business networking event series.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Flow+Of+Success' },
-          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese enterprises with SE Asia.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Suzhou+Exchange' }
+          { name: "GUC - Launch To Leader (2024)", desc: "Leadership capacity development program.", image: 'https://i.postimg.cc/c1nG6wVq/guc.jpg' },
+          { name: "Flow of Success (2026)", desc: "Practical business networking event series.", image: 'https://i.postimg.cc/RZjcCrtY/do-ng-cha-y-tha-nh-co-ng.jpg' },
+          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese enterprises with SE Asia.", image: 'https://i.postimg.cc/xdDzDvD9/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-57-38-SA.png' }
         ]
       },
       national: {
         id: 'national',
         title: "National Level",
         items: [
-          { name: "NATCON & NYC Agendas", desc: "Participated in JCI Vietnam high-level meetings (2024 - 2025).", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
+          { name: "NATCON & NYC Agendas (2024 - 2025)", desc: "Participated in JCI Vietnam high-level meetings.", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
           { name: "\"Let's meet up Vietnam\" Forum (2025)", desc: "Trade bridge between ASEAN businesses & strategic advisors.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
-          { name: "\"Rise To Shine 2025\" Gala", desc: "Honored Top 5 outstanding community projects spreading the JCI RISE message.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
+          { name: "Rise To Shine JCI Vietnam 2025", desc: "Honored Top 5 outstanding community projects spreading the JCI RISE message.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
         ]
       },
       international: {
@@ -369,8 +371,8 @@ const dict = {
         items: [
           { name: "JCI World Congress 2024 (Taiwan)", desc: "Global trade connections with elite members worldwide.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
           { name: "JCI ASPAC 2024 & 2025 (Mongolia)", desc: "Cultural exchange and international MOU signings.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
-          { name: "Vietnam - India JCI Exchange", desc: "Bilateral bridge promoting socio-economic cooperation.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=Vietnam+India' },
-          { name: "JCI ASEAN Senate Board", desc: "Vietnam delegate contributing to regional strategy meetings.", image: 'https://placehold.co/600x400/e2e8f0/1d6266?text=ASEAN+Senate' }
+          { name: "JCI Marine Lines India & JCI Thanglong Exchange", desc: "Bilateral bridge promoting socio-economic cooperation.", image: 'https://i.postimg.cc/mgMPwPzx/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-58-35-SA.png' },
+          { name: "JCI ASEAN Senator BOD Meeting (2025 - 2026)", desc: "Vietnam delegate contributing to regional strategy meetings.", image: 'https://i.postimg.cc/4xbJyV7S/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-59-46-SA.png' }
         ]
       }
     },
