@@ -842,29 +842,29 @@ export default function App() {
       {/* 2. Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
       {selectedJciModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedJciModal(null)}>
-          <div className="bg-white rounded-3xl w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
-            <div className="flex justify-between items-center p-5 lg:p-6 border-b border-slate-100 bg-slate-50 shrink-0">
+          <div className="bg-white rounded-3xl w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center p-4 lg:p-6 border-b border-slate-100 bg-slate-50 shrink-0">
               <h3 className="font-bold text-lg lg:text-xl text-slate-900 flex items-center">
                 <div className="w-10 h-10 rounded-xl bg-[#1d6266]/10 flex items-center justify-center mr-3 shrink-0">
                   {selectedJciModal.id === 'national' ? <Flag className="w-5 h-5 text-[#1d6266]" /> : selectedJciModal.id === 'international' ? <Globe className="w-5 h-5 text-[#1d6266]" /> : <MapPin className="w-5 h-5 text-[#1d6266]" />}
                 </div>
                 {selectedJciModal.title}
               </h3>
-              <button onClick={() => setSelectedJciModal(null)} className="p-2.5 bg-white border border-slate-200 hover:bg-slate-100 rounded-full transition-colors text-slate-600 shrink-0 shadow-sm">
+              <button onClick={() => setSelectedJciModal(null)} className="p-2 bg-white border border-slate-200 hover:bg-slate-100 rounded-full transition-colors text-slate-600 shrink-0 shadow-sm">
                 <X className="w-5 h-5" />
               </button>
             </div>
             
-            <div className="p-5 lg:p-8 overflow-y-auto hide-scroll flex-1 bg-white">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            <div className="p-4 lg:p-6 overflow-y-auto hide-scroll flex-1 bg-white">
+              <div className={`grid grid-cols-1 sm:grid-cols-2 ${selectedJciModal.items.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-4 lg:gap-5`}>
                 {selectedJciModal.items.map((item, i) => (
-                  <div key={i} className="group/item bg-white p-4 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-                    <div className="w-full h-40 lg:h-48 rounded-xl overflow-hidden mb-4 flex items-center justify-center bg-slate-50 border border-slate-100 p-2 shrink-0">
+                  <div key={i} className="group/item bg-white p-3 lg:p-4 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+                    <div className="w-full h-36 lg:h-40 rounded-xl overflow-hidden mb-3 lg:mb-4 flex items-center justify-center bg-slate-50 border border-slate-100 p-2 shrink-0">
                        <img src={item.image} alt={item.name} className="w-full h-full object-contain group-hover/item:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="flex flex-col flex-1">
-                      <h5 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-2 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                      <p className="text-[12.5px] lg:text-[13.5px] font-medium leading-relaxed text-slate-600 mt-auto">{item.desc}</p>
+                      <h5 className="text-[13px] lg:text-[14px] font-bold text-slate-900 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                      <p className="text-[12px] lg:text-[13px] font-medium leading-relaxed text-slate-600 mt-auto">{item.desc}</p>
                     </div>
                   </div>
                 ))}
