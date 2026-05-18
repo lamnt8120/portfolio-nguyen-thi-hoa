@@ -548,37 +548,51 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* Grid: Highlights & Career */}
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-10">
+                {/* Grid: Highlights & Career (Đã chỉnh cân đối Layout) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
                   
                   {/* Highlights */}
-                  <div className="space-y-6 lg:space-y-8">
-                    {t.highlights.map((item, idx) => (
-                      <div key={idx} className="flex items-start bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm">
-                        <item.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-3 lg:mr-4 mt-0.5 shrink-0" />
-                        <div>
-                          <h4 className="text-[13px] lg:text-sm font-bold text-slate-900 uppercase tracking-wide mb-2.5 lg:mb-3">{item.title}</h4>
-                          <ul className="space-y-1.5 lg:space-y-2">
-                            {item.items.map((li, i) => (
-                              <li key={i} className="text-[12.5px] lg:text-[13.5px] text-slate-600 font-light leading-snug">• {li}</li>
-                            ))}
-                          </ul>
+                  <div className="lg:col-span-5 bg-white p-6 md:p-8 lg:p-10 rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
+                    <h3 className="text-base lg:text-lg font-bold text-slate-900 mb-6 lg:mb-8 flex items-center">
+                      <Award className="w-5 h-5 lg:w-6 lg:h-6 mr-3 text-[#2eb793]" /> 
+                      {lang === 'vi' ? 'Năng lực cốt lõi' : 'Core Competencies'}
+                    </h3>
+                    <div className="space-y-6 lg:space-y-8 flex-1">
+                      {t.highlights.map((item, idx) => (
+                        <div key={idx} className="flex items-start pb-6 border-b border-slate-50 last:border-0 last:pb-0 group/hi">
+                          <div className="w-12 h-12 rounded-2xl bg-[#1d6266]/5 flex items-center justify-center mr-4 lg:mr-5 shrink-0 group-hover/hi:bg-[#1d6266]/10 transition-colors">
+                            <item.icon className="w-6 h-6 text-[#1d6266]" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-[13.5px] lg:text-[14.5px] font-bold text-slate-900 uppercase tracking-wide mb-2 lg:mb-3">{item.title}</h4>
+                            <ul className="space-y-1.5 lg:space-y-2">
+                              {item.items.map((li, i) => (
+                                <li key={i} className="text-[12.5px] lg:text-[13px] text-slate-600 font-medium leading-relaxed flex items-start">
+                                  <ChevronRight className="w-3.5 h-3.5 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
+                                  <span>{li}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
 
                   {/* Career Timeline */}
-                  <div className="bg-white p-6 md:p-8 lg:p-10 rounded-[1.5rem] border border-slate-100 shadow-sm h-fit">
-                    <h3 className="text-base lg:text-lg font-bold text-slate-900 mb-6 lg:mb-8 flex items-center"><Briefcase className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]"/> {t.career.title}</h3>
-                    <div className="space-y-6 lg:space-y-8">
+                  <div className="lg:col-span-7 bg-white p-6 md:p-8 lg:p-10 rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
+                    <h3 className="text-base lg:text-lg font-bold text-slate-900 mb-6 lg:mb-8 flex items-center">
+                      <Briefcase className="w-5 h-5 lg:w-6 lg:h-6 mr-3 text-[#2eb793]"/> 
+                      {t.career.title}
+                    </h3>
+                    <div className="space-y-6 lg:space-y-8 flex-1">
                       {t.timelineData.map((item, idx) => (
-                        <div key={idx} className="relative pl-5 lg:pl-6 pb-2 border-l border-slate-100 last:border-0 last:pb-0 group">
-                          <div className="absolute left-[-4.5px] top-1.5 w-2 h-2 rounded-full bg-slate-200 group-hover:bg-[#2eb793] transition-colors duration-300"></div>
-                          <span className="text-[10px] lg:text-[11px] font-bold text-[#1d6266] uppercase tracking-wider block mb-1">{item.period}</span>
-                          <h4 className="text-[14px] lg:text-[15px] font-bold text-slate-900">{item.role}</h4>
-                          <h5 className="text-[11px] lg:text-[12px] font-medium text-slate-500 uppercase mb-1.5 lg:mb-2">{item.company}</h5>
-                          <p className="text-[12.5px] lg:text-[13px] text-slate-600 font-light leading-relaxed">{item.desc}</p>
+                        <div key={idx} className="relative pl-6 lg:pl-8 pb-6 lg:pb-8 border-l-[2px] border-slate-100 last:border-0 last:pb-0 group/tl">
+                          <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-white border-[4px] border-slate-200 group-hover/tl:border-[#2eb793] transition-colors duration-300 shadow-sm"></div>
+                          <span className="inline-block px-3 py-1.5 bg-[#1d6266]/5 text-[#1d6266] rounded-lg text-[10px] lg:text-[11px] font-bold uppercase tracking-widest mb-3">{item.period}</span>
+                          <h4 className="text-[14.5px] lg:text-[16px] font-bold text-slate-900 mb-1">{item.role}</h4>
+                          <h5 className="text-[12px] lg:text-[13px] font-bold text-[#2eb793] uppercase mb-2.5">{item.company}</h5>
+                          <p className="text-[12.5px] lg:text-[13.5px] text-slate-600 font-medium leading-relaxed">{item.desc}</p>
                         </div>
                       ))}
                     </div>
