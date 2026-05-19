@@ -388,7 +388,7 @@ const TooltipQR = ({ children, qrUrl, scanText }) => {
   return (
     <div className="relative group flex flex-col items-center justify-center">
       {children}
-      {/* Ẩn hoàn toàn tooltip QR trên mobile (dùng hidden md:flex) để không bị vướng khi thao tác cảm ứng */}
+      {/* Ẩn hoàn toàn tooltip QR trên mobile để không bị vướng khi thao tác cảm ứng */}
       {qrImageSource && (
         <div className="hidden lg:flex absolute bottom-full mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50 w-max flex-col items-center pointer-events-none">
           <div className="bg-white/95 backdrop-blur-md p-2 shadow-xl rounded-xl border border-white/40 flex flex-col items-center">
@@ -419,7 +419,7 @@ export default function App() {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen lg:h-screen w-full bg-[#f8fafc] text-slate-800 selection:bg-[#2eb793] selection:text-[#ffffff] flex flex-col lg:flex-row lg:p-4 xl:p-8 relative"
+    <div className="min-h-screen lg:h-screen w-full bg-[#f8fafc] text-slate-800 selection:bg-[#2eb793] selection:text-[#ffffff] flex flex-col lg:flex-row lg:p-4 xl:p-6 relative"
          style={{ fontFamily: '"Montserrat", sans-serif' }}>
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -428,80 +428,80 @@ export default function App() {
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         /* Animation chuyển tab */
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
       `}} />
 
       {/* --- KHUNG ỨNG DỤNG CHÍNH --- */}
-      <div className="w-full h-full max-w-[1440px] mx-auto bg-white lg:rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] flex flex-col lg:flex-row overflow-hidden border border-slate-200/60 relative">
+      <div className="w-full h-full max-w-[1440px] mx-auto bg-white lg:rounded-[2rem] shadow-[0_15px_50px_-10px_rgba(0,0,0,0.1)] flex flex-col lg:flex-row overflow-hidden border border-slate-200/60 relative">
         
         {/* =========================================
             CỘT TRÁI (SIDEBAR) / HEADER TRÊN MOBILE
         ========================================= */}
-        <div className="w-full lg:w-[340px] xl:w-[380px] bg-[#1d6266] text-white flex flex-col shrink-0 relative z-20">
+        <div className="w-full lg:w-[320px] xl:w-[360px] bg-[#1d6266] text-white flex flex-col shrink-0 relative z-20">
            {/* Background Overlay */}
-           <div className="absolute inset-0 opacity-[0.07] bg-center bg-cover mix-blend-overlay" style={{ backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" }}></div>
+           <div className="absolute inset-0 opacity-[0.06] bg-center bg-cover mix-blend-overlay" style={{ backgroundImage: "url('https://i.postimg.cc/L8zfbHqn/Paxlaw-template-2.png')" }}></div>
            
            <div className="relative z-10 flex flex-col h-full">
              
              {/* Header Logo & Lang (Hiển thị chung) */}
-             <div className="flex justify-between items-center p-5 lg:p-8 pb-4 lg:pb-6">
-                <img src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" alt="PAXLAW Logo" className="h-8 lg:h-12 object-contain brightness-0 invert opacity-90" />
+             <div className="flex justify-between items-center p-4 lg:p-6 pb-3 lg:pb-5">
+                <img src="https://i.postimg.cc/Hsvp0Hy0/PAXLAW-logo-file-goc-02.png" alt="PAXLAW Logo" className="h-7 lg:h-10 object-contain brightness-0 invert opacity-90" />
                 <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} className="flex items-center text-[10px] lg:text-xs font-bold uppercase tracking-widest hover:text-[#2eb793] transition-colors bg-white/10 px-3 py-1.5 rounded-full border border-white/20">
                   <Globe className="w-3.5 h-3.5 mr-1.5" /> {lang === 'vi' ? 'EN' : 'VI'}
                 </button>
              </div>
 
              {/* Profile Info */}
-             <div className="flex flex-row lg:flex-col items-center lg:text-center px-5 lg:px-8 pb-4 lg:pb-8 border-b border-white/10 lg:border-none">
-                <div className="relative w-20 h-20 lg:w-44 lg:h-44 shrink-0 mr-4 lg:mr-0 lg:mb-6">
+             <div className="flex flex-row lg:flex-col items-center lg:text-center px-4 lg:px-6 pb-4 lg:pb-6 border-b border-white/10 lg:border-none">
+                <div className="relative w-16 h-16 lg:w-40 lg:h-40 shrink-0 mr-4 lg:mr-0 lg:mb-5">
                    <div className="absolute inset-0 bg-[#2eb793] rounded-full transform translate-x-1 translate-y-1 lg:translate-x-2 lg:translate-y-2 opacity-60 blur-sm"></div>
-                   <img src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" alt="Profile" className="absolute inset-0 w-full h-full object-cover rounded-full border-2 lg:border-4 border-white shadow-xl bg-slate-100 object-top" />
+                   <img src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" alt="Profile" className="absolute inset-0 w-full h-full object-cover rounded-full border-2 lg:border-[3px] border-white shadow-lg bg-slate-100 object-top" />
                 </div>
                 <div className="flex flex-col justify-center lg:items-center">
-                   <h1 className="text-xl lg:text-[28px] font-extrabold tracking-tight leading-none mb-1 lg:mb-2">{lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}</h1>
-                   <p className="text-[#2eb793] text-[9px] lg:text-[11px] font-bold tracking-widest uppercase mb-1.5 lg:mb-4">{t.hero.subtitle}</p>
-                   <p className="hidden lg:block text-white/70 italic text-[13px] font-light leading-relaxed max-w-[280px]">"{t.hero.desc}"</p>
+                   <h1 className="text-lg lg:text-[24px] font-extrabold tracking-tight leading-none mb-1 lg:mb-2">{lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}</h1>
+                   <p className="text-[#2eb793] text-[9px] lg:text-[10px] font-bold tracking-widest uppercase mb-1.5 lg:mb-3">{t.hero.subtitle}</p>
+                   <p className="hidden lg:block text-white/70 italic text-[12px] font-light leading-relaxed max-w-[260px]">"{t.hero.desc}"</p>
                 </div>
              </div>
 
              {/* Navigation Menu (Desktop Sidebar) */}
-             <div className="hidden lg:flex flex-col space-y-2.5 px-8 flex-1 mt-4">
+             <div className="hidden lg:flex flex-col space-y-2 px-6 flex-1 mt-2">
                {t.nav.map((item, idx) => (
                  <button 
                     key={idx} 
                     onClick={() => setActiveTab(idx)} 
-                    className={`px-5 py-3.5 rounded-2xl text-left font-bold tracking-wide transition-all duration-300 flex items-center justify-between group ${activeTab === idx ? 'bg-[#2eb793] text-[#1d6266] shadow-lg transform translate-x-2' : 'bg-transparent text-white/70 hover:bg-white/10 hover:text-white'}`}
+                    className={`px-4 py-3 rounded-[1rem] text-left font-bold tracking-wide transition-all duration-300 flex items-center justify-between group ${activeTab === idx ? 'bg-[#2eb793] text-[#1d6266] shadow-md transform translate-x-1.5' : 'bg-transparent text-white/70 hover:bg-white/10 hover:text-white'}`}
                  >
-                   <span className="uppercase text-[13px] tracking-widest">{item}</span>
+                   <span className="uppercase text-[12px] tracking-widest">{item}</span>
                    {activeTab === idx && <ChevronRight className="w-4 h-4" />}
                  </button>
                ))}
              </div>
 
              {/* Social Links (Desktop Bottom) */}
-             <div className="hidden lg:flex justify-center gap-3 p-8 mt-auto border-t border-white/10">
+             <div className="hidden lg:flex justify-center gap-3 p-6 mt-auto border-t border-white/10">
                 <TooltipQR qrUrl="tel:+84911553686" scanText={t.hero.scanToConnect}>
-                  <a href="tel:+84911553686" className="w-10 h-10 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Phone className="w-4 h-4" /></a>
+                  <a href="tel:+84911553686" className="w-9 h-9 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Phone className="w-4 h-4" /></a>
                 </TooltipQR>
                 <TooltipQR qrUrl="mailto:hoant@paxlaw.vn" scanText={t.hero.scanToConnect}>
-                  <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Mail className="w-4 h-4" /></a>
+                  <a href="mailto:hoant@paxlaw.vn" className="w-9 h-9 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Mail className="w-4 h-4" /></a>
                 </TooltipQR>
                 <TooltipQR qrUrl="https://vn.linkedin.com/in/lawyerhoanguyen" scanText={t.hero.scanToConnect}>
-                  <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Linkedin className="w-4 h-4" /></a>
+                  <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Linkedin className="w-4 h-4" /></a>
                 </TooltipQR>
                 <TooltipQR qrUrl="https://www.facebook.com/Paxlaw.vn" scanText={t.hero.scanToConnect}>
-                  <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Facebook className="w-4 h-4" /></a>
+                  <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center bg-white/5 text-white rounded-full hover:bg-[#2eb793] hover:text-[#1d6266] transition-colors border border-white/10"><Facebook className="w-4 h-4" /></a>
                 </TooltipQR>
              </div>
 
              {/* Navigation Menu (Mobile Horizontal Tab Bar) */}
-             <div className="lg:hidden flex overflow-x-auto hide-scroll bg-[#154a4d] p-3 gap-2 shadow-inner snap-x">
+             <div className="lg:hidden flex overflow-x-auto hide-scroll bg-[#154a4d] p-2.5 gap-2 shadow-inner snap-x">
                {t.nav.map((item, idx) => (
                  <button 
                     key={idx} 
                     onClick={() => setActiveTab(idx)} 
-                    className={`px-5 py-2.5 rounded-xl text-[12px] font-bold uppercase tracking-widest whitespace-nowrap transition-all snap-center ${activeTab === idx ? 'bg-[#2eb793] text-[#1d6266] shadow-sm' : 'text-white/60 hover:bg-white/10 hover:text-white'}`}
+                    className={`px-4 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest whitespace-nowrap transition-all snap-center ${activeTab === idx ? 'bg-[#2eb793] text-[#1d6266] shadow-sm' : 'text-white/60 hover:bg-white/10 hover:text-white'}`}
                  >
                    {item}
                  </button>
@@ -515,56 +515,56 @@ export default function App() {
         ========================================= */}
         <div ref={contentRef} className="flex-1 bg-slate-50 overflow-y-auto relative scroll-smooth hide-scroll">
           
-          <div className="max-w-5xl mx-auto p-5 md:p-8 lg:p-12 xl:p-16 min-h-full flex flex-col">
+          <div className="max-w-5xl mx-auto p-4 md:p-6 lg:p-8 xl:p-10 min-h-full flex flex-col">
             
             {/* --- TAB 0: TỔNG QUAN --- */}
             {activeTab === 0 && (
-              <div className="fade-in space-y-8 lg:space-y-12">
+              <div className="fade-in space-y-6 lg:space-y-8">
                 
                 {/* Intro */}
                 <div>
-                   <div className="inline-flex items-center space-x-3 mb-3">
-                       <div className="h-[2px] w-6 lg:w-8 bg-[#1d6266]"></div>
-                       <span className="text-[10px] lg:text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.profile.subtitle}</span>
+                   <div className="inline-flex items-center space-x-2 mb-2 lg:mb-3">
+                       <div className="h-[2px] w-5 lg:w-6 bg-[#1d6266]"></div>
+                       <span className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest text-[#1d6266]">{t.profile.subtitle}</span>
                    </div>
-                   <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 lg:mb-8">{t.profile.title}</h2>
-                   <div className="text-[14px] lg:text-[15px] text-slate-600 font-light leading-relaxed space-y-4 text-justify">
+                   <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-4 lg:mb-5">{t.profile.title}</h2>
+                   <div className="text-[13px] lg:text-[14px] text-slate-600 font-light leading-relaxed space-y-3 text-justify">
                       <p>{t.profile.desc1}</p>
-                      <p className="border-l-[3px] lg:border-l-4 border-[#2eb793] pl-3 lg:pl-4 font-medium text-slate-800">{t.profile.desc2}</p>
+                      <p className="border-l-[3px] border-[#2eb793] pl-3 font-medium text-slate-800">{t.profile.desc2}</p>
                    </div>
                 </div>
 
                 {/* Stats */}
-                <div className="flex gap-4 md:gap-8 bg-white p-5 lg:p-8 rounded-[1.5rem] border border-slate-100 shadow-sm justify-around lg:justify-start">
+                <div className="flex gap-4 bg-white p-4 lg:p-6 rounded-[1rem] lg:rounded-[1.5rem] border border-slate-100 shadow-sm justify-around lg:justify-start">
                   {t.stats.map((stat, idx) => (
                     <div key={idx} className="text-center lg:text-left">
-                      <div className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1d6266] mb-1">{stat.value}</div>
-                      <div className="text-[9px] md:text-[11px] font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                      <div className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#1d6266] mb-0.5">{stat.value}</div>
+                      <div className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
                     </div>
                   ))}
                 </div>
 
-                {/* Grid: Highlights & Career (Đã chỉnh cân đối Layout) */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+                {/* Grid: Highlights & Career */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch pb-6">
                   
                   {/* Highlights */}
-                  <div className="lg:col-span-5 bg-white p-6 md:p-8 lg:p-10 rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
-                    <h3 className="text-base lg:text-lg font-bold text-slate-900 mb-6 lg:mb-8 flex items-center">
-                      <Award className="w-5 h-5 lg:w-6 lg:h-6 mr-3 text-[#2eb793]" /> 
+                  <div className="lg:col-span-5 bg-white p-5 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
+                    <h3 className="text-[15px] lg:text-base font-bold text-slate-900 mb-5 flex items-center">
+                      <Award className="w-4 h-4 lg:w-5 lg:h-5 mr-2.5 text-[#2eb793]" /> 
                       {lang === 'vi' ? 'Năng lực cốt lõi' : 'Core Competencies'}
                     </h3>
-                    <div className="space-y-6 lg:space-y-8 flex-1">
+                    <div className="space-y-5 lg:space-y-6 flex-1">
                       {t.highlights.map((item, idx) => (
-                        <div key={idx} className="flex items-start pb-6 border-b border-slate-50 last:border-0 last:pb-0 group/hi">
-                          <div className="w-12 h-12 rounded-2xl bg-[#1d6266]/5 flex items-center justify-center mr-4 lg:mr-5 shrink-0 group-hover/hi:bg-[#1d6266]/10 transition-colors">
-                            <item.icon className="w-6 h-6 text-[#1d6266]" />
+                        <div key={idx} className="flex items-start pb-5 border-b border-slate-50 last:border-0 last:pb-0 group/hi">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl bg-[#1d6266]/5 flex items-center justify-center mr-3 lg:mr-4 shrink-0 group-hover/hi:bg-[#1d6266]/10 transition-colors">
+                            <item.icon className="w-5 h-5 text-[#1d6266]" />
                           </div>
                           <div className="flex-1">
-                            <h4 className="text-[13.5px] lg:text-[14.5px] font-bold text-slate-900 uppercase tracking-wide mb-2 lg:mb-3">{item.title}</h4>
-                            <ul className="space-y-1.5 lg:space-y-2">
+                            <h4 className="text-[12.5px] lg:text-[13.5px] font-bold text-slate-900 uppercase tracking-wide mb-1.5">{item.title}</h4>
+                            <ul className="space-y-1 lg:space-y-1.5">
                               {item.items.map((li, i) => (
-                                <li key={i} className="text-[12.5px] lg:text-[13px] text-slate-600 font-medium leading-relaxed flex items-start">
-                                  <ChevronRight className="w-3.5 h-3.5 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
+                                <li key={i} className="text-[12px] lg:text-[12.5px] text-slate-600 font-medium leading-relaxed flex items-start">
+                                  <ChevronRight className="w-3 h-3 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
                                   <span>{li}</span>
                                 </li>
                               ))}
@@ -576,19 +576,19 @@ export default function App() {
                   </div>
 
                   {/* Career Timeline */}
-                  <div className="lg:col-span-7 bg-white p-6 md:p-8 lg:p-10 rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
-                    <h3 className="text-base lg:text-lg font-bold text-slate-900 mb-6 lg:mb-8 flex items-center">
-                      <Briefcase className="w-5 h-5 lg:w-6 lg:h-6 mr-3 text-[#2eb793]"/> 
+                  <div className="lg:col-span-7 bg-white p-5 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] border border-slate-100 shadow-sm h-full flex flex-col">
+                    <h3 className="text-[15px] lg:text-base font-bold text-slate-900 mb-5 flex items-center">
+                      <Briefcase className="w-4 h-4 lg:w-5 lg:h-5 mr-2.5 text-[#2eb793]"/> 
                       {t.career.title}
                     </h3>
-                    <div className="space-y-6 lg:space-y-8 flex-1">
+                    <div className="space-y-5 lg:space-y-6 flex-1">
                       {t.timelineData.map((item, idx) => (
-                        <div key={idx} className="relative pl-6 lg:pl-8 pb-6 lg:pb-8 border-l-[2px] border-slate-100 last:border-0 last:pb-0 group/tl">
+                        <div key={idx} className="relative pl-5 lg:pl-6 pb-5 lg:pb-6 border-l-[2px] border-slate-100 last:border-0 last:pb-0 group/tl">
                           <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-white border-[4px] border-slate-200 group-hover/tl:border-[#2eb793] transition-colors duration-300 shadow-sm"></div>
-                          <span className="inline-block px-3 py-1.5 bg-[#1d6266]/5 text-[#1d6266] rounded-lg text-[10px] lg:text-[11px] font-bold uppercase tracking-widest mb-3">{item.period}</span>
-                          <h4 className="text-[14.5px] lg:text-[16px] font-bold text-slate-900 mb-1">{item.role}</h4>
-                          <h5 className="text-[12px] lg:text-[13px] font-bold text-[#2eb793] uppercase mb-2.5">{item.company}</h5>
-                          <p className="text-[12.5px] lg:text-[13.5px] text-slate-600 font-medium leading-relaxed">{item.desc}</p>
+                          <span className="inline-block px-2.5 py-1 bg-[#1d6266]/5 text-[#1d6266] rounded-md text-[9px] lg:text-[10px] font-bold uppercase tracking-widest mb-2">{item.period}</span>
+                          <h4 className="text-[13.5px] lg:text-[15px] font-bold text-slate-900 mb-0.5">{item.role}</h4>
+                          <h5 className="text-[11.5px] lg:text-[12px] font-bold text-[#2eb793] uppercase mb-1.5">{item.company}</h5>
+                          <p className="text-[12px] lg:text-[13px] text-slate-600 font-medium leading-relaxed">{item.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -600,41 +600,41 @@ export default function App() {
 
             {/* --- TAB 1: CHUYÊN MÔN --- */}
             {activeTab === 1 && (
-              <div className="fade-in space-y-10 lg:space-y-16">
+              <div className="fade-in space-y-8 lg:space-y-10">
                 
                 {/* Practice Areas */}
                 <div>
-                   <div className="inline-flex items-center space-x-3 mb-3">
-                       <div className="h-[2px] w-6 lg:w-8 bg-[#1d6266]"></div>
-                       <span className="text-[10px] lg:text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.practice.subtitle}</span>
+                   <div className="inline-flex items-center space-x-2 mb-2">
+                       <div className="h-[2px] w-5 lg:w-6 bg-[#1d6266]"></div>
+                       <span className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest text-[#1d6266]">{t.practice.subtitle}</span>
                    </div>
-                   <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 lg:mb-8">{t.practice.title}</h2>
+                   <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-5">{t.practice.title}</h2>
                    
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {t.practiceAreas.map((area, idx) => {
                         const isActive = activePractice === idx;
                         return (
-                          <div key={idx} className="bg-white border border-slate-200 rounded-[1.5rem] p-5 lg:p-6 shadow-sm hover:shadow-md transition-shadow">
+                          <div key={idx} className="bg-white border border-slate-200 rounded-[1rem] p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
                             <div 
                                onClick={() => setActivePractice(isActive ? null : idx)}
                                className="flex items-center justify-between cursor-pointer group pb-1"
                             >
                               <div className="flex items-center">
-                                <area.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-3 shrink-0" />
-                                <h3 className="text-[14px] lg:text-[15px] font-bold text-slate-900 tracking-wide pr-2 group-hover:text-[#1d6266] transition-colors">{area.title}</h3>
+                                <area.icon className="w-5 h-5 text-[#2eb793] mr-2.5 shrink-0" />
+                                <h3 className="text-[13.5px] lg:text-[14px] font-bold text-slate-900 tracking-wide pr-2 group-hover:text-[#1d6266] transition-colors">{area.title}</h3>
                               </div>
-                              <div className="flex items-center text-[#2eb793] text-[10px] lg:text-xs font-semibold tracking-wider uppercase shrink-0 bg-[#2eb793]/10 px-2 py-1 rounded-lg">
+                              <div className="flex items-center text-[#2eb793] text-[9px] lg:text-[10px] font-semibold tracking-wider uppercase shrink-0 bg-[#2eb793]/10 px-2 py-1 rounded-md">
                                 <span className="hidden sm:inline mr-1">{isActive ? t.ui.hideDetails : t.ui.viewDetails}</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
+                                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
                               </div>
                             </div>
 
-                            <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-3 pt-3 lg:mt-4 lg:pt-4 border-t border-slate-100 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                            <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] mt-3 pt-3 border-t border-slate-100 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                               <div className="overflow-hidden">
-                                <ul className="space-y-2.5 lg:space-y-3 pb-1">
+                                <ul className="space-y-2 pb-1">
                                   {area.cases.map((c, i) => (
-                                    <li key={i} className="flex items-start text-[12.5px] lg:text-[13.5px] font-light text-slate-600">
-                                      <ChevronRight className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#2eb793] shrink-0 mr-1.5 mt-0.5" />
+                                    <li key={i} className="flex items-start text-[12px] lg:text-[12.5px] font-light text-slate-600">
+                                      <ChevronRight className="w-3.5 h-3.5 text-[#2eb793] shrink-0 mr-1 mt-0.5" />
                                       <span>
                                         {c.text} 
                                         {c.highlight && <span className="font-semibold text-[#1d6266]">{c.highlight}</span>}
@@ -651,27 +651,28 @@ export default function App() {
                    </div>
                 </div>
 
-                {/* Networking - GRID CARDS */}
-                <div>
-                   <div className="text-left mb-6 lg:mb-8">
-                     <h3 className="text-xl lg:text-2xl font-bold text-slate-900 inline-flex items-center"><Mic className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-2 lg:mr-3" /> {t.practice.speakerTitle}</h3>
+                {/* Networking - DẠNG THẺ NGANG SIÊU GỌN */}
+                <div className="pb-6">
+                   <div className="text-left mb-5">
+                     <h3 className="text-lg lg:text-xl font-bold text-slate-900 inline-flex items-center"><Mic className="w-5 h-5 text-[#2eb793] mr-2" /> {t.practice.speakerTitle}</h3>
                    </div>
                    
                    {/* Domestic */}
-                   <div className="mb-10 lg:mb-12">
-                     <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><MapPin className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.domestic}</h4>
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                   <div className="mb-8">
+                     <h4 className="text-[13px] lg:text-[14px] font-bold text-[#1d6266] flex items-center mb-4 uppercase tracking-widest"><MapPin className="w-4 h-4 mr-1.5 text-[#2eb793]" /> {t.practice.domestic}</h4>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {t.networking.domestic.map((item, idx) => (
-                          <div key={idx} className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group">
-                            <div className="w-full h-48 sm:h-52 bg-slate-100 overflow-hidden relative border-b border-slate-100">
-                               <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                               <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md p-2 lg:p-2.5 rounded-xl shadow-sm">
-                                  <item.icon className="w-5 h-5 text-[#1d6266]" />
+                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32 cursor-default">
+                            <div className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2">
+                               {/* Sử dụng object-contain để không bị cắt ảnh */}
+                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm">
+                                  <item.icon className="w-3.5 h-3.5 text-[#1d6266]" />
                                </div>
                             </div>
-                            <div className="p-5 lg:p-6 flex flex-col flex-1">
-                               <h5 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-2 lg:mb-3 leading-snug group-hover:text-[#1d6266] transition-colors">{item.title}</h5>
-                               <p className="text-[13px] text-slate-600 font-light leading-relaxed mt-auto">{item.desc}</p>
+                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden">
+                               <h5 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 mb-1.5 leading-snug group-hover:text-[#1d6266] transition-colors line-clamp-2">{item.title}</h5>
+                               <p className="text-[11px] sm:text-[12px] text-slate-600 font-medium leading-relaxed line-clamp-2 sm:line-clamp-3">{item.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -680,19 +681,20 @@ export default function App() {
 
                    {/* International */}
                    <div>
-                     <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><Globe className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.international}</h4>
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                     <h4 className="text-[13px] lg:text-[14px] font-bold text-[#1d6266] flex items-center mb-4 uppercase tracking-widest"><Globe className="w-4 h-4 mr-1.5 text-[#2eb793]" /> {t.practice.international}</h4>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {t.networking.international.map((item, idx) => (
-                          <div key={idx} className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group">
-                            <div className="w-full h-48 sm:h-52 bg-slate-100 overflow-hidden relative border-b border-slate-100">
-                               <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                               <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md p-2 lg:p-2.5 rounded-xl shadow-sm">
-                                  <item.icon className="w-5 h-5 text-[#1d6266]" />
+                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32 cursor-default">
+                            <div className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2">
+                               {/* Sử dụng object-contain để không bị cắt ảnh */}
+                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm">
+                                  <item.icon className="w-3.5 h-3.5 text-[#1d6266]" />
                                </div>
                             </div>
-                            <div className="p-5 lg:p-6 flex flex-col flex-1">
-                               <h5 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-2 lg:mb-3 leading-snug group-hover:text-[#1d6266] transition-colors">{item.title}</h5>
-                               <p className="text-[13px] text-slate-600 font-light leading-relaxed mt-auto">{item.desc}</p>
+                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden">
+                               <h5 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 mb-1.5 leading-snug group-hover:text-[#1d6266] transition-colors line-clamp-2">{item.title}</h5>
+                               <p className="text-[11px] sm:text-[12px] text-slate-600 font-medium leading-relaxed line-clamp-2 sm:line-clamp-3">{item.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -705,37 +707,37 @@ export default function App() {
 
             {/* --- TAB 2: CỘNG ĐỒNG --- */}
             {activeTab === 2 && (
-              <div className="fade-in space-y-12 lg:space-y-16">
+              <div className="fade-in space-y-10 lg:space-y-12">
                 
                 {/* Intro JCI */}
-                <div className="text-center bg-white p-6 lg:p-10 rounded-[2rem] border border-slate-100 shadow-sm">
-                   <div className="inline-flex items-center space-x-3 mb-3 lg:mb-4">
-                      <div className="h-[2px] w-6 lg:w-8 bg-[#1d6266]"></div>
-                      <span className="text-[10px] lg:text-[11px] font-bold uppercase tracking-widest text-[#1d6266]">{t.community.subtitle}</span>
+                <div className="text-center bg-white p-5 lg:p-8 rounded-[1.5rem] border border-slate-100 shadow-sm">
+                   <div className="inline-flex items-center space-x-2 mb-2 lg:mb-3">
+                      <div className="h-[2px] w-5 lg:w-6 bg-[#1d6266]"></div>
+                      <span className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest text-[#1d6266]">{t.community.subtitle}</span>
                    </div>
-                   <h2 className="text-2xl lg:text-3xl font-extrabold text-[#1d6266] mb-4 lg:mb-6">{t.community.jciTitle}</h2>
-                   <p className="text-[13px] lg:text-[15px] text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">{t.community.jciIntro}</p>
+                   <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d6266] mb-3 lg:mb-4">{t.community.jciTitle}</h2>
+                   <p className="text-[12px] lg:text-[13.5px] text-slate-600 max-w-4xl mx-auto font-medium leading-relaxed">{t.community.jciIntro}</p>
                 </div>
 
                 {/* Timeline Lộ trình */}
                 <div>
-                   <h4 className="text-lg lg:text-xl font-bold text-slate-900 mb-6 lg:mb-10 text-center">{t.community.leadershipTitle}</h4>
+                   <h4 className="text-[15px] lg:text-base font-bold text-slate-900 mb-5 lg:mb-6 text-center">{t.community.leadershipTitle}</h4>
                    <div className="relative group/timeline">
-                      <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[4px] bg-slate-200 rounded-full z-0">
+                      <div className="hidden lg:block absolute top-[20px] left-[10%] right-[10%] h-[3px] bg-slate-200 rounded-full z-0">
                          <div className="absolute top-0 left-0 h-full w-0 group-hover/timeline:w-full bg-gradient-to-r from-[#1d6266] to-[#2eb793] transition-all duration-1000 ease-in-out rounded-full shadow-[0_0_10px_rgba(46,183,147,0.5)]"></div>
                       </div>
                       
-                      <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 md:gap-6 relative z-10 snap-x snap-mandatory hide-scroll pb-4 -mx-5 px-5 lg:mx-0 lg:px-0 lg:pb-0">
+                      <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 relative z-10 snap-x snap-mandatory hide-scroll pb-2 -mx-4 px-4 lg:mx-0 lg:px-0 lg:pb-0">
                         {t.jciLeadership.map((item, idx) => (
-                          <div key={idx} className="flex flex-col items-center group/item relative min-w-[75%] sm:min-w-[45%] md:min-w-[40%] lg:min-w-0 snap-center">
-                             <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white border-[3px] lg:border-[4px] border-slate-100 flex items-center justify-center mb-4 z-10 shadow-sm group-hover/item:border-[#2eb793] lg:group-hover/item:-translate-y-1 transition-all duration-300">
-                               <item.icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#1d6266] group-hover/item:text-[#2eb793] transition-colors" />
+                          <div key={idx} className="flex flex-col items-center group/item relative min-w-[65%] sm:min-w-[40%] lg:min-w-0 snap-center">
+                             <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-[3px] border-slate-100 flex items-center justify-center mb-3 z-10 shadow-sm group-hover/item:border-[#2eb793] lg:group-hover/item:-translate-y-1 transition-all duration-300">
+                               <item.icon className="w-4 h-4 lg:w-5 lg:h-5 text-[#1d6266] group-hover/item:text-[#2eb793] transition-colors" />
                              </div>
-                             <div className="bg-white w-full p-5 lg:p-6 rounded-2xl border border-slate-100 shadow-sm text-center flex-1 relative overflow-hidden lg:group-hover/item:-translate-y-1 transition-all duration-300">
+                             <div className="bg-white w-full p-4 lg:p-5 rounded-[1rem] border border-slate-100 shadow-sm text-center flex-1 relative overflow-hidden lg:group-hover/item:-translate-y-1 transition-all duration-300">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d6266] to-[#2eb793] transform origin-left scale-x-0 group-hover/item:scale-x-100 transition-transform duration-500"></div>
-                                <span className="inline-block px-2.5 py-1 bg-[#1d6266]/5 text-[#1d6266] rounded-md text-[10px] lg:text-[11px] font-bold uppercase tracking-widest mb-2.5">{item.year}</span>
-                                <h4 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-1.5 leading-snug">{item.title}</h4>
-                                <p className="text-[12px] lg:text-[13px] text-slate-600 font-light">{item.desc}</p>
+                                <span className="inline-block px-2 py-0.5 bg-[#1d6266]/5 text-[#1d6266] rounded-md text-[9px] lg:text-[10px] font-bold uppercase tracking-widest mb-2">{item.year}</span>
+                                <h4 className="text-[13px] lg:text-[14px] font-bold text-slate-900 mb-1 leading-snug">{item.title}</h4>
+                                <p className="text-[11px] lg:text-[12px] text-slate-600 font-medium">{item.desc}</p>
                              </div>
                           </div>
                         ))}
@@ -745,11 +747,11 @@ export default function App() {
 
                 {/* Hoạt động tiêu biểu (Cards Clickable -> Modal) */}
                 <div>
-                   <div className="flex items-center justify-center border-b border-slate-200 pb-4 mb-6 lg:mb-10">
-                     <h4 className="text-lg lg:text-2xl font-bold text-slate-900 text-center">{t.community.activityTitle}</h4>
+                   <div className="flex items-center justify-center border-b border-slate-200 pb-3 mb-5 lg:mb-6">
+                     <h4 className="text-[15px] lg:text-lg font-bold text-slate-900 text-center">{t.community.activityTitle}</h4>
                    </div>
                    
-                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8">
+                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
                      {Object.values(t.jciActivities).map((category, idx) => {
                        let IconMap = MapPin;
                        if(category.id === 'national') IconMap = Flag;
@@ -758,15 +760,15 @@ export default function App() {
                        return (
                          <div key={idx} 
                               onClick={() => setSelectedJciModal(category)}
-                              className="bg-white rounded-[1.5rem] lg:rounded-[2rem] shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 flex flex-col relative overflow-hidden group h-fit cursor-pointer hover:-translate-y-1">
-                           <div className="p-6 lg:p-8 flex flex-col items-center relative z-10">
-                             <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
-                               <IconMap className="w-7 h-7 lg:w-8 lg:h-8 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
+                              className="bg-white rounded-[1rem] lg:rounded-[1.5rem] shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 flex flex-col relative overflow-hidden group h-fit cursor-pointer hover:-translate-y-1">
+                           <div className="p-5 flex flex-col items-center relative z-10">
+                             <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-3 lg:mb-4 group-hover:bg-[#1d6266] transition-colors duration-500 border border-slate-100 group-hover:border-[#1d6266] shadow-sm transform group-hover:-rotate-3">
+                               <IconMap className="w-6 h-6 text-[#1d6266] group-hover:text-white transition-colors duration-500" />
                              </div>
-                             <h4 className="text-[15px] lg:text-[16px] font-extrabold uppercase tracking-widest text-slate-900 text-center mb-4">{category.title}</h4>
-                             <div className="flex items-center text-[#2eb793] text-[11px] lg:text-[12px] font-bold tracking-widest uppercase mt-auto bg-[#2eb793]/10 px-4 py-2 rounded-full group-hover:bg-[#2eb793] group-hover:text-white transition-colors">
+                             <h4 className="text-[13px] lg:text-[14px] font-extrabold uppercase tracking-widest text-slate-900 text-center mb-3 lg:mb-4">{category.title}</h4>
+                             <div className="flex items-center text-[#2eb793] text-[9px] lg:text-[10px] font-bold tracking-widest uppercase mt-auto bg-[#2eb793]/10 px-3 py-1.5 rounded-md group-hover:bg-[#2eb793] group-hover:text-white transition-colors">
                                {t.ui.viewDetails}
-                               <ChevronRight className="w-4 h-4 ml-1" />
+                               <ChevronRight className="w-3.5 h-3.5 ml-1" />
                              </div>
                            </div>
                          </div>
@@ -776,17 +778,17 @@ export default function App() {
                 </div>
 
                 {/* Other Communities */}
-                <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-4 lg:gap-6 snap-x snap-mandatory hide-scroll pb-4 -mx-5 px-5 lg:mx-0 lg:px-0">
+                <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-4 pb-6 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory hide-scroll">
                   {t.community.otherCommunities.map((org, idx) => (
-                    <div key={idx} className="min-w-[85%] md:min-w-0 snap-center bg-white rounded-[1.5rem] lg:rounded-[2rem] p-6 lg:p-8 shadow-sm border border-slate-100 hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden group">
-                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#1d6266]/5 flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-[#1d6266] transition-colors border border-slate-100 group-hover:border-[#1d6266] transform group-hover:-rotate-3">
-                        <org.icon className="w-7 h-7 lg:w-8 lg:h-8 text-[#1d6266] group-hover:text-white transition-colors" />
+                    <div key={idx} className="min-w-[85%] md:min-w-0 snap-center bg-white rounded-[1rem] lg:rounded-[1.5rem] p-5 lg:p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden group">
+                      <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#1d6266]/5 flex items-center justify-center mb-3 group-hover:bg-[#1d6266] transition-colors border border-slate-100 group-hover:border-[#1d6266] transform group-hover:-rotate-3">
+                        <org.icon className="w-6 h-6 text-[#1d6266] group-hover:text-white transition-colors" />
                       </div>
-                      <h4 className="text-[15px] lg:text-[16px] font-bold text-slate-900 mb-3 leading-snug group-hover:text-[#1d6266] transition-colors">
-                        <span className="text-[#1d6266] mr-1.5">{org.index}</span> 
+                      <h4 className="text-[13px] lg:text-[14.5px] font-bold text-slate-900 mb-2 leading-snug group-hover:text-[#1d6266] transition-colors">
+                        <span className="text-[#1d6266] mr-1">{org.index}</span> 
                         {org.name}
                       </h4>
-                      <div className="bg-[#2eb793]/10 text-[#1d6266] px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl text-[12px] lg:text-[13px] font-semibold border border-[#2eb793]/20">
+                      <div className="bg-[#2eb793]/10 text-[#1d6266] px-3 py-1.5 rounded-lg text-[11px] lg:text-[12px] font-semibold border border-[#2eb793]/20">
                         {org.role}
                       </div>
                     </div>
@@ -797,14 +799,14 @@ export default function App() {
             )}
 
             {/* Mobile Footer / Social Links (chỉ hiện trên Mobile ở cuối nội dung cuộn) */}
-            <div className="lg:hidden mt-auto pt-10 pb-6">
-               <div className="flex justify-center gap-4">
-                 <a href="tel:+84911553686" className="w-10 h-10 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Phone className="w-4 h-4" /></a>
-                 <a href="mailto:hoant@paxlaw.vn" className="w-10 h-10 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Mail className="w-4 h-4" /></a>
-                 <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Linkedin className="w-4 h-4" /></a>
-                 <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Facebook className="w-4 h-4" /></a>
+            <div className="lg:hidden mt-auto pt-6 pb-4 border-t border-slate-100">
+               <div className="flex justify-center gap-3">
+                 <a href="tel:+84911553686" className="w-9 h-9 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Phone className="w-4 h-4" /></a>
+                 <a href="mailto:hoant@paxlaw.vn" className="w-9 h-9 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Mail className="w-4 h-4" /></a>
+                 <a href="https://vn.linkedin.com/in/lawyerhoanguyen" target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Linkedin className="w-4 h-4" /></a>
+                 <a href="https://www.facebook.com/Paxlaw.vn" target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center bg-white text-[#1d6266] rounded-full shadow-sm border border-slate-200"><Facebook className="w-4 h-4" /></a>
                </div>
-               <p className="text-center text-slate-400 text-[10px] mt-4">{t.contactInfo.address}</p>
+               <p className="text-center text-slate-400 text-[9px] mt-3">{t.contactInfo.address}</p>
             </div>
 
           </div>
@@ -818,12 +820,12 @@ export default function App() {
       
       {/* Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
       {selectedJciModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedJciModal(null)}>
-          <div className="bg-white rounded-3xl w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
-            <div className="flex justify-between items-center p-4 lg:p-6 border-b border-slate-100 bg-slate-50 shrink-0">
-              <h3 className="font-bold text-lg lg:text-xl text-slate-900 flex items-center">
-                <div className="w-10 h-10 rounded-xl bg-[#1d6266]/10 flex items-center justify-center mr-3 shrink-0">
-                  {selectedJciModal.id === 'national' ? <Flag className="w-5 h-5 text-[#1d6266]" /> : selectedJciModal.id === 'international' ? <Globe className="w-5 h-5 text-[#1d6266]" /> : <MapPin className="w-5 h-5 text-[#1d6266]" />}
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedJciModal(null)}>
+          <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center p-4 lg:p-5 border-b border-slate-100 bg-slate-50 shrink-0">
+              <h3 className="font-bold text-base lg:text-lg text-slate-900 flex items-center">
+                <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg lg:rounded-xl bg-[#1d6266]/10 flex items-center justify-center mr-3 shrink-0">
+                  {selectedJciModal.id === 'national' ? <Flag className="w-4 h-4 text-[#1d6266]" /> : selectedJciModal.id === 'international' ? <Globe className="w-4 h-4 text-[#1d6266]" /> : <MapPin className="w-4 h-4 text-[#1d6266]" />}
                 </div>
                 {selectedJciModal.title}
               </h3>
@@ -835,13 +837,13 @@ export default function App() {
             <div className="p-4 lg:p-6 overflow-y-auto hide-scroll flex-1 bg-white">
               <div className={`grid grid-cols-1 sm:grid-cols-2 ${selectedJciModal.items.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-4 lg:gap-5`}>
                 {selectedJciModal.items.map((item, i) => (
-                  <div key={i} className="group/item bg-white p-3 lg:p-4 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-                    <div className="w-full h-36 lg:h-40 rounded-xl overflow-hidden mb-3 lg:mb-4 flex items-center justify-center bg-slate-50 border border-slate-100 p-2 shrink-0">
-                       <img src={item.image} alt={item.name} className="w-full h-full object-contain group-hover/item:scale-105 transition-transform duration-500" />
+                  <div key={i} className="group/item bg-white p-3 lg:p-4 rounded-[1rem] lg:rounded-2xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+                    <div className="w-full h-32 lg:h-40 rounded-xl overflow-hidden mb-3 flex items-center justify-center bg-slate-50 border border-slate-100 p-1.5 shrink-0">
+                       <img src={item.image} alt={item.name} className="max-w-full max-h-full object-contain group-hover/item:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="flex flex-col flex-1">
-                      <h5 className="text-[13px] lg:text-[14px] font-bold text-slate-900 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
-                      <p className="text-[12px] lg:text-[13px] font-medium leading-relaxed text-slate-600 mt-auto">{item.desc}</p>
+                      <h5 className="text-[12.5px] lg:text-[13.5px] font-bold text-slate-900 mb-1.5 leading-snug group-hover/item:text-[#1d6266] transition-colors">{item.name}</h5>
+                      <p className="text-[11.5px] lg:text-[12px] font-medium leading-relaxed text-slate-600 mt-auto">{item.desc}</p>
                     </div>
                   </div>
                 ))}
