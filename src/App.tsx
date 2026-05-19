@@ -408,9 +408,6 @@ export default function App() {
 
   // States cho Accordions trong các Tab
   const [activePractice, setActivePractice] = useState(null);
-  
-  // STATES CHO CỬA SỔ NỔI (MODALS) - Thay thế cho việc xổ nội dung dọc màn hình
-  const [selectedNetworkItem, setSelectedNetworkItem] = useState(null);
   const [selectedJciModal, setSelectedJciModal] = useState(null);
 
   // Tự động cuộn lên đầu và đóng Modals khi chuyển tab
@@ -418,7 +415,6 @@ export default function App() {
     if (contentRef.current) {
       contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    setSelectedNetworkItem(null);
     setSelectedJciModal(null);
   }, [activeTab]);
 
@@ -655,51 +651,55 @@ export default function App() {
                    </div>
                 </div>
 
-                {/* Networking */}
+                {/* Networking - GRID CARDS */}
                 <div>
                    <div className="text-left mb-6 lg:mb-8">
                      <h3 className="text-xl lg:text-2xl font-bold text-slate-900 inline-flex items-center"><Mic className="w-5 h-5 lg:w-6 lg:h-6 text-[#2eb793] mr-2 lg:mr-3" /> {t.practice.speakerTitle}</h3>
                    </div>
                    
-                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-                      {/* Domestic */}
-                      <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-5 md:p-6 lg:p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100">
-                        <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><MapPin className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.domestic}</h4>
-                        <div className="space-y-3 lg:space-y-4">
-                          {t.networking.domestic.map((item, idx) => (
-                            <div key={idx} 
-                                 onClick={() => setSelectedNetworkItem(item)}
-                                 className="bg-slate-50 border border-slate-200 hover:border-[#2eb793]/30 hover:bg-[#2eb793]/5 rounded-2xl p-4 transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center justify-between group">
-                               <div className="flex items-start">
-                                 <item.icon className="w-10 h-10 text-[#1d6266] mr-4 shrink-0 p-2 bg-white rounded-xl shadow-sm group-hover:text-[#2eb793] group-hover:scale-110 transition-all" />
-                                 <h5 className="text-[13.5px] lg:text-[14px] font-bold text-slate-800 leading-snug mt-1 group-hover:text-[#1d6266] transition-colors pr-2 line-clamp-2">{item.title}</h5>
+                   {/* Domestic */}
+                   <div className="mb-10 lg:mb-12">
+                     <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><MapPin className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.domestic}</h4>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                        {t.networking.domestic.map((item, idx) => (
+                          <div key={idx} className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group">
+                            <div className="w-full h-48 sm:h-52 bg-slate-100 overflow-hidden relative border-b border-slate-100">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                               <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md p-2 lg:p-2.5 rounded-xl shadow-sm">
+                                  <item.icon className="w-5 h-5 text-[#1d6266]" />
                                </div>
-                               <ChevronRight className="w-5 h-5 text-slate-400 shrink-0 group-hover:text-[#2eb793] transition-colors" />
                             </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* International */}
-                      <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-5 md:p-6 lg:p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100">
-                        <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><Globe className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.international}</h4>
-                        <div className="space-y-3 lg:space-y-4">
-                          {t.networking.international.map((item, idx) => (
-                            <div key={idx} 
-                                 onClick={() => setSelectedNetworkItem(item)}
-                                 className="bg-slate-50 border border-slate-200 hover:border-[#2eb793]/30 hover:bg-[#2eb793]/5 rounded-2xl p-4 transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center justify-between group">
-                               <div className="flex items-start">
-                                 <item.icon className="w-10 h-10 text-[#1d6266] mr-4 shrink-0 p-2 bg-white rounded-xl shadow-sm group-hover:text-[#2eb793] group-hover:scale-110 transition-all" />
-                                 <h5 className="text-[13.5px] lg:text-[14px] font-bold text-slate-800 leading-snug mt-1 group-hover:text-[#1d6266] transition-colors pr-2 line-clamp-2">{item.title}</h5>
-                               </div>
-                               <ChevronRight className="w-5 h-5 text-slate-400 shrink-0 group-hover:text-[#2eb793] transition-colors" />
+                            <div className="p-5 lg:p-6 flex flex-col flex-1">
+                               <h5 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-2 lg:mb-3 leading-snug group-hover:text-[#1d6266] transition-colors">{item.title}</h5>
+                               <p className="text-[13px] text-slate-600 font-light leading-relaxed mt-auto">{item.desc}</p>
                             </div>
-                          ))}
-                        </div>
-                      </div>
+                          </div>
+                        ))}
+                     </div>
                    </div>
-                </div>
 
+                   {/* International */}
+                   <div>
+                     <h4 className="text-sm lg:text-base font-bold text-[#1d6266] flex items-center mb-5 lg:mb-6 uppercase tracking-widest"><Globe className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#2eb793]" /> {t.practice.international}</h4>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                        {t.networking.international.map((item, idx) => (
+                          <div key={idx} className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group">
+                            <div className="w-full h-48 sm:h-52 bg-slate-100 overflow-hidden relative border-b border-slate-100">
+                               <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                               <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md p-2 lg:p-2.5 rounded-xl shadow-sm">
+                                  <item.icon className="w-5 h-5 text-[#1d6266]" />
+                               </div>
+                            </div>
+                            <div className="p-5 lg:p-6 flex flex-col flex-1">
+                               <h5 className="text-[14px] lg:text-[15px] font-bold text-slate-900 mb-2 lg:mb-3 leading-snug group-hover:text-[#1d6266] transition-colors">{item.title}</h5>
+                               <p className="text-[13px] text-slate-600 font-light leading-relaxed mt-auto">{item.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                     </div>
+                   </div>
+
+                </div>
               </div>
             )}
 
@@ -816,30 +816,7 @@ export default function App() {
           MODALS BẬT LÊN (KHÔNG CUỘN XUỐNG)
       ========================================= */}
       
-      {/* 1. Modal Chi tiết Sự kiện Mạng lưới (Networking) */}
-      {selectedNetworkItem && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-sm transition-opacity" onClick={() => setSelectedNetworkItem(null)}>
-           <div className="bg-[#1d6266] border border-white/10 rounded-3xl w-full max-w-2xl flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
-              <div className="flex justify-between items-start p-5 lg:p-6 border-b border-white/10 bg-white/5 shrink-0">
-                 <div className="flex items-start pr-4">
-                    <selectedNetworkItem.icon className="w-6 h-6 lg:w-8 lg:h-8 text-[#2eb793] mr-3 lg:mr-4 shrink-0 mt-0.5" />
-                    <h3 className="font-bold text-base lg:text-lg text-white leading-snug">{selectedNetworkItem.title}</h3>
-                 </div>
-                 <button onClick={() => setSelectedNetworkItem(null)} className="p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors text-white shrink-0">
-                   <X className="w-5 h-5" />
-                 </button>
-              </div>
-              <div className="p-5 lg:p-8 bg-[#1d6266] overflow-y-auto hide-scroll max-h-[75vh]">
-                 <div className="w-full h-auto max-h-[300px] lg:max-h-[400px] rounded-xl overflow-hidden mb-5 lg:mb-6 bg-black/20 flex items-center justify-center p-2 border border-white/10 shadow-inner">
-                   <img src={selectedNetworkItem.image} alt={selectedNetworkItem.title} className="w-full h-full object-contain" />
-                 </div>
-                 <p className="text-[14px] lg:text-[15px] text-white/90 font-medium leading-relaxed">{selectedNetworkItem.desc}</p>
-              </div>
-           </div>
-        </div>
-      )}
-
-      {/* 2. Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
+      {/* Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
       {selectedJciModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedJciModal(null)}>
           <div className="bg-white rounded-3xl w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
