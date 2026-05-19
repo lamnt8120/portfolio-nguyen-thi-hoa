@@ -408,7 +408,10 @@ export default function App() {
 
   // States cho Accordions trong các Tab
   const [activePractice, setActivePractice] = useState(null);
+  
+  // States cho Modals (Pop-ups)
   const [selectedJciModal, setSelectedJciModal] = useState(null);
+  const [enlargedImage, setEnlargedImage] = useState(null); // Modal phóng to ảnh
 
   // Tự động cuộn lên đầu và đóng Modals khi chuyển tab
   useEffect(() => {
@@ -416,21 +419,22 @@ export default function App() {
       contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setSelectedJciModal(null);
+    setEnlargedImage(null);
   }, [activeTab]);
 
   return (
     <div className="min-h-screen lg:h-screen w-full bg-[#f8fafc] text-slate-800 selection:bg-[#2eb793] selection:text-[#ffffff] flex flex-col lg:flex-row lg:p-4 xl:p-6 relative"
          style={{ fontFamily: '"Montserrat", sans-serif' }}>
       
-      <style dangerouslySetInnerHTML={{__html: `
+      {/* Khắc phục lỗi Unterminated string literal bằng cách viết lại chuẩn cấu trúc thẻ style */}
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
         * { font-family: 'Montserrat', sans-serif !important; }
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-        /* Animation chuyển tab */
         .fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-      `}} />
+      `}</style>
 
       {/* --- KHUNG ỨNG DỤNG CHÍNH --- */}
       <div className="w-full h-full max-w-[1440px] mx-auto bg-white lg:rounded-[2rem] shadow-[0_15px_50px_-10px_rgba(0,0,0,0.1)] flex flex-col lg:flex-row overflow-hidden border border-slate-200/60 relative">
@@ -651,7 +655,7 @@ export default function App() {
                    </div>
                 </div>
 
-                {/* Networking - DẠNG THẺ NGANG SIÊU GỌN */}
+                {/* Networking - DẠNG THẺ NGANG SIÊU GỌN VỚI TÍNH NĂNG PHÓNG TO ẢNH */}
                 <div className="pb-6">
                    <div className="text-left mb-5">
                      <h3 className="text-lg lg:text-xl font-bold text-slate-900 inline-flex items-center"><Mic className="w-5 h-5 text-[#2eb793] mr-2" /> {t.practice.speakerTitle}</h3>
@@ -662,15 +666,19 @@ export default function App() {
                      <h4 className="text-[13px] lg:text-[14px] font-bold text-[#1d6266] flex items-center mb-4 uppercase tracking-widest"><MapPin className="w-4 h-4 mr-1.5 text-[#2eb793]" /> {t.practice.domestic}</h4>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {t.networking.domestic.map((item, idx) => (
-                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32 cursor-default">
-                            <div className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2">
-                               {/* Sử dụng object-contain để không bị cắt ảnh */}
-                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
-                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm">
+                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32">
+                            <div 
+                               className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2 cursor-pointer overflow-hidden group/img"
+                               onClick={() => setEnlargedImage(item.image)}
+                               title="Nhấp để phóng to ảnh"
+                            >
+                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover/img:scale-110 transition-transform duration-500" />
+                               <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/5 transition-colors z-0"></div>
+                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm z-10 pointer-events-none">
                                   <item.icon className="w-3.5 h-3.5 text-[#1d6266]" />
                                </div>
                             </div>
-                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden">
+                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden cursor-default">
                                <h5 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 mb-1.5 leading-snug group-hover:text-[#1d6266] transition-colors line-clamp-2">{item.title}</h5>
                                <p className="text-[11px] sm:text-[12px] text-slate-600 font-medium leading-relaxed line-clamp-2 sm:line-clamp-3">{item.desc}</p>
                             </div>
@@ -684,15 +692,19 @@ export default function App() {
                      <h4 className="text-[13px] lg:text-[14px] font-bold text-[#1d6266] flex items-center mb-4 uppercase tracking-widest"><Globe className="w-4 h-4 mr-1.5 text-[#2eb793]" /> {t.practice.international}</h4>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {t.networking.international.map((item, idx) => (
-                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32 cursor-default">
-                            <div className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2">
-                               {/* Sử dụng object-contain để không bị cắt ảnh */}
-                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
-                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm">
+                          <div key={idx} className="bg-white rounded-[1rem] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-row group h-28 sm:h-32">
+                            <div 
+                               className="w-1/3 sm:w-32 bg-slate-50 flex-shrink-0 relative border-r border-slate-100 flex items-center justify-center p-2 cursor-pointer overflow-hidden group/img"
+                               onClick={() => setEnlargedImage(item.image)}
+                               title="Nhấp để phóng to ảnh"
+                            >
+                               <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain group-hover/img:scale-110 transition-transform duration-500" />
+                               <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/5 transition-colors z-0"></div>
+                               <div className="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-lg shadow-sm z-10 pointer-events-none">
                                   <item.icon className="w-3.5 h-3.5 text-[#1d6266]" />
                                </div>
                             </div>
-                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden">
+                            <div className="p-3 sm:p-4 flex flex-col flex-1 justify-center overflow-hidden cursor-default">
                                <h5 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 mb-1.5 leading-snug group-hover:text-[#1d6266] transition-colors line-clamp-2">{item.title}</h5>
                                <p className="text-[11px] sm:text-[12px] text-slate-600 font-medium leading-relaxed line-clamp-2 sm:line-clamp-3">{item.desc}</p>
                             </div>
@@ -818,7 +830,27 @@ export default function App() {
           MODALS BẬT LÊN (KHÔNG CUỘN XUỐNG)
       ========================================= */}
       
-      {/* Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
+      {/* 1. Modal Phóng to Ảnh (Dành riêng cho mục Chuyên môn -> Networking) */}
+      {enlargedImage && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm transition-opacity" onClick={() => setEnlargedImage(null)}>
+          <div className="relative w-full max-w-5xl h-full max-h-[90vh] flex flex-col justify-center items-center">
+            <button 
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-20 shadow-md backdrop-blur-sm" 
+              onClick={() => setEnlargedImage(null)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img 
+              src={enlargedImage} 
+              alt="Enlarged view" 
+              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl animate-in fade-in zoom-in-95 duration-200" 
+              onClick={(e) => e.stopPropagation()} 
+            />
+          </div>
+        </div>
+      )}
+
+      {/* 2. Modal Chi tiết Các cấp độ JCI (Giá trị kiến tạo) */}
       {selectedJciModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedJciModal(null)}>
           <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
