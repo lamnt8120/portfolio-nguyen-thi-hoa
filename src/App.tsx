@@ -203,7 +203,7 @@ const dict = {
     hero: {
       subtitle: "MANAGING ATTORNEY & SENIOR COUNSEL",
       quote: `"Global Mind, Silk Touch."`,
-      desc: "Law is the foundation for sustainable business advantage.",
+      desc: "Law is the framework that creates sustainable competitive advantages for your business.",
       contactBtn: "Book Consultation",
       scanToConnect: "Scan to connect"
     },
@@ -214,12 +214,12 @@ const dict = {
     },
     profile: {
       title: "Professional Summary",
-      subtitle: "Atty. Hoa Nguyen",
-      desc1: "With extensive experience advising founders and corporations, I provide practical legal strategies tailored to your business operations. Early legal protection is key to mitigating risks and ensuring stable growth.",
-      desc2: "We offer clear, actionable advice across Corporate, M&A, and Real Estate law. Client confidentiality and data protection are strictly upheld in every transaction."
+      subtitle: "Attorney Hoa Nguyen",
+      desc1: "With extensive experience advising founders and corporations, I provide practical legal strategies tailored to your business operations. Early legal protection is essential to mitigate risks and ensure stable growth.",
+      desc2: "We offer clear, actionable advice across Corporate, Mergers and Acquisitions, and Real Estate law. Client confidentiality and data protection are strictly upheld in every transaction."
     },
     stats: [
-      { value: "15+", label: "Years Experience" },
+      { value: "15+", label: "Years of Experience" },
       { value: "50+", label: "Global Partners" }
     ],
     highlights: [
@@ -227,9 +227,9 @@ const dict = {
         title: "Education & Credentials",
         icon: GraduationCap,
         items: [
-          "LL.M. in International Trade Policy & Law (FTU)",
-          "LL.B. in Commercial Law (HLU)",
-          "Lawyer Certification – Judicial Academy"
+          "Master of Laws in International Trade Policy and Law (Foreign Trade University)",
+          "Bachelor of Laws in Commercial Law (Hanoi Law University)",
+          "Lawyer Certification – Judicial Academy of Vietnam"
         ]
       },
       {
@@ -237,7 +237,7 @@ const dict = {
         icon: BookOpen,
         items: [
           "Visiting Lecturer of Banking Law – Thanh Dong University",
-          "Internal Trainer (FX Management) – Techcombank"
+          "Internal Trainer on Foreign Exchange Management – Techcombank"
         ]
       },
       {
@@ -254,10 +254,10 @@ const dict = {
       title: "Professional Experience"
     },
     timelineData: [
-      { period: "12/2024 - Present", role: "Managing Attorney", company: "Paxlaw", desc: "Providing comprehensive outsourced legal solutions for M&A and investments." },
-      { period: "2022 - Present", role: "Head of Legal", company: "Green Investment JSC", desc: "Overseeing risk management and legal compliance for investment projects." },
-      { period: "2018 - 2024", role: "Partner", company: "Penfield Law Firm", desc: "Led complex M&A transactions and corporate financial restructuring." },
-      { period: "2013 - 2018", role: "Senior Legal Counsel", company: "Techcombank", desc: "Advised wholesale corporate clients on foreign exchange and capital management." }
+      { period: "12/2024 - Present", role: "Managing Attorney", company: "Paxlaw", desc: "Providing comprehensive outsourced legal solutions for Mergers and Acquisitions and investments." },
+      { period: "2022 - Present", role: "Head of Legal", company: "Green Investment Joint Stock Company", desc: "Overseeing risk management and legal compliance for investment projects." },
+      { period: "2018 - 2024", role: "Partner", company: "Penfield Law Firm", desc: "Led complex Mergers and Acquisitions transactions and corporate financial restructuring." },
+      { period: "2013 - 2018", role: "Senior Legal Counsel", company: "Techcombank", desc: "Advised corporate clients on foreign exchange and capital management." }
     ],
     practice: {
       title: "Representative Matters",
@@ -268,54 +268,54 @@ const dict = {
     },
     practiceAreas: [
       {
-        title: "M&A & Corporate Restructuring",
+        title: "Mergers, Acquisitions & Restructuring",
         icon: Building2,
         cases: [
-          { text: "Buyer's legal counsel in the acquisition of a Northern steel plant valued at ", highlight: "VND 1,000B." },
-          { text: "Strategic M&A advisor for the transfer of Bai Dai Resort project (Cam Ranh) valued at ", highlight: "VND 1,600B." },
-          { text: "Executed comprehensive financial and operational restructuring for a major mineral group ", highlight: "(>VND 1,000B)." },
+          { text: "Buyer's legal counsel in the acquisition of a Northern steel plant valued at ", highlight: "1,000 Billion Vietnam Dong." },
+          { text: "Strategic advisor for the transfer of Bai Dai Resort project (Cam Ranh) valued at ", highlight: "1,600 Billion Vietnam Dong." },
+          { text: "Executed comprehensive financial and operational restructuring for a major mineral group ", highlight: "(Over 1,000 Billion Vietnam Dong)." },
         ]
       },
       {
-        title: "FDI & Real Estate",
+        title: "Foreign Direct Investment & Real Estate",
         icon: Globe2,
         cases: [
-          { text: "Full legal advisory for a luxury 5-star resort complex featuring ", highlight: "1,000+ Condotels", suffix: " in Nha Trang." },
-          { text: "Advisory expert for the Policy Report on PPPs in Vietnam for the South Korean Ministry of Economy and Finance." },
-          { text: "Established legal frameworks for FDI corporations (Japan, Korea, HK) investing in Vietnamese industrial zones." },
+          { text: "Comprehensive legal advisory for a luxury 5-star resort complex featuring ", highlight: "1,000+ Condotels", suffix: " in Nha Trang." },
+          { text: "Advisory expert for the Policy Report on Public-Private Partnerships in Vietnam for the South Korean Ministry of Economy and Finance." },
+          { text: "Established legal frameworks for international corporations (Japan, South Korea, Hong Kong) investing in Vietnamese industrial zones." },
         ]
       },
       {
         title: "Banking & Finance",
         icon: Landmark,
         cases: [
-          { text: "Legal backing for corporate bond issuance (Waste-to-Energy project), sized at ", highlight: "VND 800B." },
-          { text: "Crisis resolution and restructuring advisor for 7 corporate bond issuances, valued at ", highlight: "VND 500-850B each." },
-          { text: "Designed legal frameworks for foreign loans ", highlight: "(USD 3.5M)", suffix: " for a European agricultural corporation." },
+          { text: "Legal counsel for corporate bond issuance (Waste-to-Energy project), sized at ", highlight: "800 Billion Vietnam Dong." },
+          { text: "Crisis resolution and restructuring advisor for 7 corporate bond issuances, valued at ", highlight: "500 to 850 Billion Vietnam Dong each." },
+          { text: "Designed legal frameworks for foreign loans ", highlight: "(3.5 Million US Dollars)", suffix: " for a European agricultural corporation." },
         ]
       },
       {
         title: "Contracts & Dispute Resolution",
         icon: ShieldCheck,
         cases: [
-          { text: "Standardized supply and logistics contracts for leading E-commerce platforms (Shopee, Lazada, Tiki)." },
-          { text: "Successfully defended a top Construction Group in an EPC contract dispute ", highlight: "(VND 250B)." },
-          { text: "Represented Project Owner in a successful resolution of a construction bidding dispute ", highlight: "(VND 350B)." },
+          { text: "Standardized supply and logistics contracts for leading e-commerce platforms (Shopee, Lazada, Tiki)." },
+          { text: "Successfully defended a top Construction Group in a contract dispute ", highlight: "(250 Billion Vietnam Dong)." },
+          { text: "Represented Project Owner in a successful resolution of a construction bidding dispute ", highlight: "(350 Billion Vietnam Dong)." },
         ]
       }
     ],
     community: {
       title: "Community Impact",
       subtitle: "Global Network",
-      jciTitle: "1. JCI - Junior Chamber International",
-      jciIntro: "JCI is a global network of nearly 200,000 young leaders. In Vietnam, we actively promote sustainable value creation and business leadership across 15 chapters.",
+      jciTitle: "1. Junior Chamber International",
+      jciIntro: "Junior Chamber International is a global network of nearly 200,000 young leaders. In Vietnam, we actively promote sustainable value creation and business leadership across 15 chapters.",
       leadershipTitle: "Leadership Roles",
       activityTitle: "Featured Initiatives",
       otherCommunities: [
         {
           index: "2.",
-          name: "Vietnam Business Assoc. in Benelux",
-          role: "PR Executive Committee Member (Northern Vietnam)",
+          name: "Vietnam Business Association in Benelux",
+          role: "Public Relations Executive Committee Member (Northern Vietnam)",
           icon: Globe
         },
         {
@@ -328,23 +328,23 @@ const dict = {
     },
     networking: {
       domestic: [
-        { title: 'Speaker: "Smart Legal Frameworks" (2024)', icon: Mic, desc: 'Practical legal applications for SMEs and startups.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
+        { title: 'Speaker: "Smart Legal Frameworks" (2024)', icon: Mic, desc: 'Practical legal applications for small and medium enterprises and startups.', image: 'https://i.postimg.cc/y6P0M5MP/pha-p-ly-tho-ng-minh.jpg' },
         { title: 'Speaker: "Shape Your Future" (2023-2025)', icon: User, desc: 'Career orientation and real-world insights for law students.', image: 'https://i.postimg.cc/XYD8ThCZ/Hu-o-ng-nghie-p.jpg' },
-        { title: 'SIL Advisor & Judge, Dai Nam Uni (2024)', icon: Award, desc: 'Mentoring student innovation projects.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
+        { title: 'Innovation Advisor and Judge, Dai Nam University (2024)', icon: Award, desc: 'Mentoring student innovation projects.', image: 'https://i.postimg.cc/mgyTBfvz/SIL.jpg' },
         { title: 'Strategic Partnership: BNA Law Firm (2025)', icon: HandHeart, desc: 'Expanding comprehensive legal service ecosystems.', image: 'https://i.postimg.cc/cHR1jLVd/bna.jpg' }
       ],
       international: [
-        { title: 'ASEAN Trade Expo - Mumbai (2024)', icon: Briefcase, desc: 'Promoting Vietnamese products to the Indian market.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
-        { title: 'JCI Global Lawyers - Taoyuan Bar (2024)', icon: Globe, desc: 'Cross-border legal practice exchange.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
+        { title: 'Trade Exhibition of Southeast Asian Nations - Mumbai (2024)', icon: Briefcase, desc: 'Promoting Vietnamese products to the Indian market.', image: 'https://i.postimg.cc/VktkP5cD/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-9-45-02-SA.png' },
+        { title: 'Global Lawyers Exchange - Taoyuan Bar Association (2024)', icon: Globe, desc: 'Cross-border legal practice exchange.', image: 'https://i.postimg.cc/0QPHVKcX/Doa-n-Vie-n.jpg' },
         { title: 'Partner Visit: Braintrust, Taiwan (2024)', icon: MapPin, desc: 'Expanding strategic partnerships in East Asia.', image: 'https://i.postimg.cc/4NDP8h3D/braintrust.jpg' },
-        { title: 'MOU with Japanese Partner (2024)', icon: HandHeart, desc: 'Direct legal support channel for Vietnam-Japan investments.', image: 'https://i.postimg.cc/9Qbd3WHt/ki-ke-t-o-nha-t.jpg' }
+        { title: 'Partnership Agreement with Japanese Partner (2024)', icon: HandHeart, desc: 'Direct legal support channel for Vietnam-Japan investments.', image: 'https://i.postimg.cc/9Qbd3WHt/ki-ke-t-o-nha-t.jpg' }
       ]
     },
     jciLeadership: [
       { year: "2024", title: "Inaugural Project Director", desc: '"Launch To Leaders" Initiative', icon: Rocket },
-      { year: "2025", title: "Founding President", desc: "JCI Grace", icon: Crown },
-      { year: "2026", title: "Vice President", desc: "JCI Vietnam", icon: Network },
-      { year: "2024 - Present", title: "Founding Core Member", desc: "JCI Global Lawyers Council", icon: Scale },
+      { year: "2025", title: "Founding President", desc: "Grace Chapter", icon: Crown },
+      { year: "2026", title: "Vice President", desc: "Vietnam National Chapter", icon: Network },
+      { year: "2024 - Present", title: "Founding Core Member", desc: "Global Lawyers Council", icon: Scale },
     ],
     jciActivities: {
       local: {
@@ -353,15 +353,15 @@ const dict = {
         items: [
           { name: "Launch To Leader (2024)", desc: "Leadership development program.", image: 'https://i.postimg.cc/c1nG6wVq/guc.jpg' },
           { name: "Flow of Success (2026)", desc: "Business networking event series.", image: 'https://i.postimg.cc/RZjcCrtY/do-ng-cha-y-tha-nh-co-ng.jpg' },
-          { name: "Suzhou Business Assoc. Exchange", desc: "Connecting Chinese & SE Asian enterprises.", image: 'https://i.postimg.cc/xdDzDvD9/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-57-38-SA.png' }
+          { name: "Suzhou Business Association Exchange", desc: "Connecting Chinese and Southeast Asian enterprises.", image: 'https://i.postimg.cc/xdDzDvD9/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-57-38-SA.png' }
         ]
       },
       national: {
         id: 'national',
         title: "National Level",
         items: [
-          { name: "NATCON & NYC (2024 - 2025)", desc: "Strategic planning and high-level meetings.", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
-          { name: "Let's Meet Up Vietnam (2025)", desc: "Facilitating ASEAN trade bridges.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
+          { name: "National Convention and National Youth Council (2024 - 2025)", desc: "Strategic planning and high-level meetings.", image: 'https://i.postimg.cc/rmvwtSNk/Natcon-2025.jpg' },
+          { name: "Let's Meet Up Vietnam (2025)", desc: "Facilitating trade bridges among Southeast Asian Nations.", image: 'https://i.postimg.cc/NjLFPPt9/Let-s-meet-up.jpg' },
           { name: "Rise To Shine (2025)", desc: "Honoring outstanding community projects.", image: 'https://i.postimg.cc/Y0rt5Mk4/rise-to-shine.jpg' }
         ]
       },
@@ -369,16 +369,16 @@ const dict = {
         id: 'international',
         title: "International Level",
         items: [
-          { name: "JCI World Congress (Taiwan)", desc: "Global young leaders networking.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
-          { name: "JCI ASPAC (Mongolia)", desc: "Regional strategy and international MOUs.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
-          { name: "India & Thanglong Exchange", desc: "Multicultural learning and economic cooperation.", image: 'https://i.postimg.cc/mgMPwPzx/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-58-35-SA.png' },
-          { name: "ASEAN Senator BOD Meeting", desc: "Official Vietnam delegate in China & Malaysia.", image: 'https://i.postimg.cc/4xbJyV7S/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-59-46-SA.png' }
+          { name: "World Congress (Taiwan)", desc: "Global young leaders networking.", image: 'https://i.postimg.cc/4d0BV0Xp/congress.jpg' },
+          { name: "Asia-Pacific Conference (Mongolia)", desc: "Regional strategy and international partnership agreements.", image: 'https://i.postimg.cc/dVbkzkf1/aspac-2025.webp' },
+          { name: "India and Thanglong Exchange", desc: "Multicultural learning and economic cooperation.", image: 'https://i.postimg.cc/mgMPwPzx/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-58-35-SA.png' },
+          { name: "Southeast Asian Senator Board Meeting", desc: "Official Vietnam delegate in China and Malaysia.", image: 'https://i.postimg.cc/4xbJyV7S/A-nh-chu-p-Ma-n-hi-nh-2026-05-14-lu-c-8-59-46-SA.png' }
         ]
       }
     },
-    contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri, Trung Hoa, Cau Giay, Hanoi" },
+    contactInfo: { address: "5th Floor, 31A Nguyen Quoc Tri Street, Trung Hoa Ward, Cau Giay District, Hanoi" },
     footer: {
-      desc: "Strategic legal partnership for sustainable growth. Strict confidentiality guaranteed.",
+      desc: "Strategic legal partnership for sustainable growth. Strict confidentiality and data protection guaranteed.",
       linksTitle: "Expertise",
       contactTitle: "Contact Us"
     }
