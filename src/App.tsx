@@ -341,10 +341,10 @@ const dict = {
       ]
     },
     jciLeadership: [
-      { year: "2024", title: "Inaugural Project Director", desc: '"Launch To Leaders" Initiative', icon: Rocket },
-      { year: "2025", title: "Founding President", desc: "Grace Chapter", icon: Crown },
-      { year: "2026", title: "Vice President", desc: "Vietnam National Chapter", icon: Network },
-      { year: "2024 - Present", title: "Founding Core Member", desc: "Global Lawyers Council", icon: Scale },
+      { year: "2024", title: "Inaugural Project Director", desc: '"Launch To Leaders" Project', icon: Rocket },
+      { year: "2025", title: "Founding President", desc: "JCI Grace", icon: Crown },
+      { year: "2026", title: "Vice President", desc: "JCI Vietnam", icon: Network },
+      { year: "2024 - Present", title: "Development Officer", desc: "JCI Asia Pacific Development Council (APDC)", icon: Scale },
     ],
     jciActivities: {
       local: {
@@ -466,7 +466,7 @@ export default function App() {
              <div className="flex flex-row lg:flex-col items-center lg:text-center px-4 lg:px-6 pb-4 lg:pb-6 border-b border-white/10 lg:border-none">
                 <div className="relative w-16 h-16 lg:w-40 lg:h-40 shrink-0 mr-4 lg:mr-0 lg:mb-5">
                    <div className="absolute inset-0 bg-[#2eb793] rounded-full transform translate-x-1 translate-y-1 lg:translate-x-2 lg:translate-y-2 opacity-60 blur-sm"></div>
-                   <img src="https://paxlaw.vn/wp-content/uploads/2025/10/JCI-anh-co-Hoa-e1773280779616.png" alt="Profile" className="absolute inset-0 w-full h-full object-cover rounded-full border-2 lg:border-[3px] border-white shadow-lg bg-slate-100 object-top" />
+                   <img src="https://media.licdn.com/dms/image/v2/D5603AQHg14531Lq8rg/profile-displayphoto-shrink_200_200/B56Za0SlQlGoAY-/0/1746781492751?e=2147483647&v=beta&t=UUmahHHzAFpIOBkXNygo_jEY77F-wIKr4eeykHZStQM" alt="Profile" className="absolute inset-0 w-full h-full object-cover rounded-full border-2 lg:border-[3px] border-white shadow-lg bg-slate-100 object-top" />
                 </div>
                 <div className="flex flex-col justify-center lg:items-center">
                    <h1 className="text-lg lg:text-[24px] font-extrabold tracking-tight leading-none mb-1 lg:mb-2">{lang === 'vi' ? 'Nguyễn Thị Hoa' : 'Hoa Nguyen'}</h1>
